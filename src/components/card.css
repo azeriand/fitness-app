@@ -3,10 +3,9 @@
 }
 
 .card.glass{
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(200, 200, 200, 0.2));
+    background-color: color-mix(in oklch, var(--glass-color), transparent 80%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid color-mix(in oklch, var(--glass-color), transparent 40%);
 }
 
 .card.mate{
