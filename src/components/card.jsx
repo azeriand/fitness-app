@@ -1,6 +1,6 @@
 import './card.css'
 
-export default function CardStyle({children, fitWidth, noPadding, sharped, appearance}){
+export default function CardStyle({children, fitWidth, noPadding, rounded, appearance}){
     if (typeof appearance === 'undefined') {
         appearance = 'glass'
     }
@@ -18,9 +18,11 @@ export default function CardStyle({children, fitWidth, noPadding, sharped, appea
         cardStyle.padding = ''
     }
 
-    if (sharped === true){
+    if (rounded === 's'){
         cardStyle.borderRadius = '5px'
     }
+    else if (rounded === 'md')
+        cardStyle.borderRadius = '10px'
 
     const classNames = "card " + appearance
 

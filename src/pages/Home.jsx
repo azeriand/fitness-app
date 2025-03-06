@@ -6,8 +6,7 @@ import Rat from '../assets/rat-dance.gif'
 import Cocroach from '../assets/cocroach-dance.gif'
 import SectionName from '../components/section-name'
 import Badge from '../components/badge'
-import List from '../components/list-container'
-import ListItem from '../components/list-item'
+import Button from '../components/button'
 
 export default function Home(){
   return(
@@ -16,6 +15,10 @@ export default function Home(){
     <Card appearance='mate'/>
     <Card appearance='outlined'/>
     <Card appearance='ghost'/>
+    <Button label='Glass' appearance='glass'/>
+    <Button label='Mate' appearance='mate'/>
+    <Button label='Outlined' appearance='outlined'/>
+    <Button label='Ghost' appearance='ghost'/>
     <SectionName section='This is a section name'/>
     <Badge label='Badge'></Badge>
     <h1 style={{color:'white'}}>·:\Flowing hommies/:·</h1>
