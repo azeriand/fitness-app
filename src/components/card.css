@@ -9,7 +9,7 @@
 }
 
 .card.mate{
-    background-color: blueviolet;
+    background-color: var(--glass-color);
 }
 
 .card.outlined{
@@ -20,6 +20,14 @@
 
 }
 
-.card.ghost:hover{
+button .card.ghost:hover, button .card.outlined:hover{
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(200, 200, 200, 0.2));
+}
+
+button .card.glass:hover{
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+button .card.mate:hover{
+    background-color: color-mix(in oklch, var(--glass-color), white 10%) 
 }

@@ -1,10 +1,24 @@
 import './button.css'
 import Card from './card'
 
-export default function BasicButton({label, appearance, onButtonClicked}){
+export default function BasicButton({label, icon, appearance, color, intensity, fullWidth, position= 'left', onButtonClicked}){
+   const buttonStyle = {
+    width: ''
+   }
+
+   let classNames = `basic-button ${icon && !label ? 'onlyIcon' : ''}`
+
+   if (fullWidth){
+    buttonStyle.width = '100%'
+   }
+   
     return(
-        <button className='basic-button' onClick={onButtonClicked}>
-            <Card noPadding rounded='md' appearance={appearance}>{label}</Card>
+        <button style={buttonStyle} className={classNames} onClick={onButtonClicked}>
+            <Card noPadding rounded='md' appearance={appearance} color={color} intensity={intensity}>
+                {position === 'left' && icon}
+                {label}
+                {position === 'right' && icon}
+            </Card>
         </button>
     )
 }

@@ -1,12 +1,6 @@
-.list-item:hover{
-    background-color: rgb(136, 38, 136);
-    cursor: pointer;
-}
-
 .list-item{
     font-weight: bold;
     font-size: 1.5rem;
-    border-radius: 10px;
     padding-left: 1rem;
     padding-top: 0.30rem;
     padding-bottom: 0.30rem;

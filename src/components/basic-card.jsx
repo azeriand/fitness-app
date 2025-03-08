@@ -1,7 +1,7 @@
 import './basic-card.css'
 import Card from './card'
 
-function basicCard({title, src}){
+function basicCard({title, src, color, intensity}){
 
     return(
         <Card>
