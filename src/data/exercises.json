@@ -1,0 +1,489 @@
+[
+  {
+      "exercise_name": "Incline Bench Press",
+      "muscle_type": "Chest",
+      "sub_muscle": ["Triceps", "Shoulders"],
+      "techniques": ["Barbell", "Dumbbells", "Smith Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00251201-Barbell-Bench-Press_Chest_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00251201-Barbell-Bench-Press_Chest.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Decline Bench Press",
+      "muscle_type": "Chest",
+      "sub_muscle": ["Triceps", "Lower Chest"],
+      "techniques": ["Barbell", "Dumbbells", "Smith Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00331201-Barbell-Decline-Bench-Press_Chest_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00331201-Barbell-Decline-Bench-Press_Chest.mp4",
+      "unilateral": false
+
+    },
+    {
+      "exercise_name": "Chest Fly",
+      "muscle_type": "Chest",
+      "sub_muscle": ["Front Delts"],
+      "techniques": ["Dumbbells", "Cable", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/03081201-Dumbbell-Fly_Chest_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/03081201-Dumbbell-Fly_Chest.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Face Pull",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Rear Delts", "Upper Back"],
+      "techniques": ["Cable", "Resistance Band"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/08961101-Band-face-pull_Shoulders_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/08961101-Band-face-pull_Shoulders_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Lateral Raise",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Middle Delts"],
+      "techniques": ["Dumbbells", "Cable", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/03341201-Dumbbell-Lateral-Raise_shoulder_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/03341201-Dumbbell-Lateral-Raise_shoulder.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Front Raise",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Front Delts"],
+      "techniques": ["Dumbbells", "Cable", "Plate"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/03101201-Dumbbell-Front-Raise_Shoulders_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/03101201-Dumbbell-Front-Raise_Shoulders.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Hammer Curl",
+      "muscle_type": "Biceps",
+      "sub_muscle": ["Forearms"],
+      "techniques": ["Dumbbells", "Cable"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/03121201-Dumbbell-Hammer-Curl-(version-2)_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/03121201-Dumbbell-Hammer-Curl-(version-2)_Upper-Arms.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Preacher Curl",
+      "muscle_type": "Biceps",
+      "sub_muscle": ["Forearms"],
+      "techniques": ["Barbell", "Dumbbells", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05921201-Lever-Preacher-Curl_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05921201-Lever-Preacher-Curl_Upper-Arms.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Concentration Curl",
+      "muscle_type": "Biceps",
+      "sub_muscle": ["Forearms"],
+      "techniques": ["Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/02971201-Dumbbell-Concentration-Curl_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/02971201-Dumbbell-Concentration-Curl_Upper-Arms.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Overhead Triceps Extension",
+      "muscle_type": "Triceps",
+      "sub_muscle": ["Shoulders"],
+      "techniques": ["Dumbbells", "Cable", "EZ Bar"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/03621201-Dumbbell-One-Arm-Triceps-Extension-(on-bench)_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/03621201-Dumbbell-One-Arm-Triceps-Extension-(on-bench)_Upper-Arms.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Skull Crushers",
+      "muscle_type": "Triceps",
+      "sub_muscle": ["Forearms"],
+      "techniques": ["EZ Bar", "Barbell", "Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00351101-Barbell-Decline-Close-Grip-To-Skull-Press_Upper-Arms_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00351101-Barbell-Decline-Close-Grip-To-Skull-Press_Upper-Arms_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Close-Grip Bench Press",
+      "muscle_type": "Triceps",
+      "sub_muscle": ["Chest", "Shoulders"],
+      "techniques": ["Barbell", "Smith Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00301201-Barbell-Close-Grip-Bench-Press_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00301201-Barbell-Close-Grip-Bench-Press_Upper-Arms.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Seated Calf Raise",
+      "muscle_type": "Calves",
+      "sub_muscle": ["Soleus"],
+      "techniques": ["Machine", "Barbell", "Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05941201-Lever-Seated-Calf-Raise-(plate-loaded)_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05941201-Lever-Seated-Calf-Raise-(plate-loaded).mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Standing Calf Raise",
+      "muscle_type": "Calves",
+      "sub_muscle": ["Gastrocnemius"],
+      "techniques": ["Machine", "Smith Machine", "Bodyweight"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/01081101-Barbell-Standing-Leg-Calf-Raise_Calf_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/01081101-Barbell-Standing-Leg-Calf-Raise_Calf_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Hip Thrust",
+      "muscle_type": "Glutes",
+      "sub_muscle": ["Hamstrings", "Lower Back"],
+      "techniques": ["Barbell", "Dumbbells", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/10601101-Barbell-Hip-Thrust_Hips_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/10601101-Barbell-Hip-Thrust_Hips_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Step-Ups",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Quadriceps"],
+      "techniques": ["Bodyweight", "Dumbbells", "Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/08011101-Step-up_Hips_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/08011101-Step-up_Hips_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Romanian Deadlift",
+      "muscle_type": "Hamstrings",
+      "sub_muscle": ["Glutes", "Lower Back"],
+      "techniques": ["Barbell", "Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/22131201-Barbell-Romanian-Deadlift-(female)_Hips_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/22131201-Barbell-Romanian-Deadlift-(female)_Hips.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Good Mornings",
+      "muscle_type": "Lower Back",
+      "sub_muscle": ["Glutes", "Hamstrings"],
+      "techniques": ["Barbell", "Resistance Band"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00441201-Barbell-Good-Morning_Thighs_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00441201-Barbell-Good-Morning_Thighs.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Seated Row",
+      "muscle_type": "Back",
+      "sub_muscle": ["Biceps", "Rear Delts"],
+      "techniques": ["Cable", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/01801201-Cable-Low-Seated-Row_Back_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/01801201-Cable-Low-Seated-Row_Back.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "T-Bar Row",
+      "muscle_type": "Back",
+      "sub_muscle": ["Biceps", "Rear Delts"],
+      "techniques": ["Barbell", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/03271201-Dumbbell-Incline-Row_Back_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/03271201-Dumbbell-Incline-Row_Back.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Bent-Over Row",
+      "muscle_type": "Back",
+      "sub_muscle": ["Biceps", "Rear Delts"],
+      "techniques": ["Barbell", "Dumbbells", "Smith Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00271201-Barbell-Bent-Over-Row_Back_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00271201-Barbell-Bent-Over-Row_Back.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Hanging Leg Raises",
+      "muscle_type": "Abs",
+      "sub_muscle": ["Hip Flexors"],
+      "techniques": ["Bodyweight"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/17641201-Hanging-Leg-Hip-Raise_Waist_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17641201-Hanging-Leg-Hip-Raise_Waist.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Cable Crunches",
+      "muscle_type": "Abs",
+      "sub_muscle": ["Obliques"],
+      "techniques": ["Cable"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/01751201-Cable-Kneeling-Crunch_Waist_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/01751201-Cable-Kneeling-Crunch_Waist.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Russian Twists",
+      "muscle_type": "Abs",
+      "sub_muscle": ["Obliques"],
+      "techniques": ["Bodyweight", "Medicine Ball", "Plate"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/23711201-Weighted-Russian-Twist_Waist_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/23711201-Weighted-Russian-Twist_Waist.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Plank",
+      "muscle_type": "Core",
+      "sub_muscle": ["Lower Back", "Shoulders"],
+      "techniques": ["Bodyweight", "Weighted"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/04631201-Front-Plank-m_waist_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/04631201-Front-Plank-m_waist.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Farmer's Carry",
+      "muscle_type": "Full Body",
+      "sub_muscle": ["Forearms", "Traps", "Core"],
+      "techniques": ["Dumbbells", "Kettlebells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/21331201-Farmers-walk_Cardio_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/21331201-Farmers-walk_Cardio.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Reverse Fly",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Rear Delts", "Upper Back"],
+      "techniques": ["Dumbbells", "Cable", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/06021201-Lever-Seated-Reverse-Fly_Shoulders_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/06021201-Lever-Seated-Reverse-Fly_Shoulders.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Arnold Press",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Triceps", "Upper Chest"],
+      "techniques": ["Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/02871201-Dumbbell-Arnold-Press-II_Shoulders_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/02871201-Dumbbell-Arnold-Press-II_Shoulders.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Z Press",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Core", "Triceps"],
+      "techniques": ["Barbell", "Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/04471201-EZ-Barbell-Curl_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/04471201-EZ-Barbell-Curl_Upper-Arms.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Landmine Press",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Triceps", "Core"],
+      "techniques": ["Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05621201-Landmine-180_waist_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05621201-Landmine-180_waist.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Snatch Grip Deadlift",
+      "muscle_type": "Back",
+      "sub_muscle": ["Glutes", "Hamstrings", "Forearms"],
+      "techniques": ["Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/15331101-Barbell-Snatch_Weightlifts_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/15331101-Barbell-Snatch_Weightlifts_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Sumo Deadlift",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Hamstrings", "Lower Back"],
+      "techniques": ["Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/01171201-Barbell-Sumo-Deadlift_Hips_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/01171201-Barbell-Sumo-Deadlift_Hips.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Pistol Squat",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Quadriceps"],
+      "techniques": ["Bodyweight", "Weighted"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/17591101-Single-Leg-Squat-(pistol)-male_Thighs_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17591101-Single-Leg-Squat-(pistol)-male_Thighs_small.jpg",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Sissy Squat",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Quadriceps"],
+      "techniques": ["Bodyweight", "Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/08511201-Weighted-Sissy-Squat_Thighs_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/08511201-Weighted-Sissy-Squat_Thighs.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Bulgarian Split Squat",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Quadriceps"],
+      "techniques": ["Dumbbells", "Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/22901101-Dumbbell-Bulgarian-Split-Squat-(female)_Thighs_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/22901101-Dumbbell-Bulgarian-Split-Squat-(female)_Thighs_small.jpg",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Box Squat",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Hamstrings"],
+      "techniques": ["Barbell", "Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00261101-Barbell-Bench-Squat_Hips_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00261101-Barbell-Bench-Squat_Hips_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Goblet Squat",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Quadriceps"],
+      "techniques": ["Dumbbells", "Kettlebells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/22811201-Dumbbell-Goblet-Squat-(female)_Thighs_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/22811201-Dumbbell-Goblet-Squat-(female)_Thighs.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Zercher Squat",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Core"],
+      "techniques": ["Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/15451101-Barbell-full-Zercher-Squat_Thighs_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/15451101-Barbell-full-Zercher-Squat_Thighs_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Landmine Squat",
+      "muscle_type": "Legs",
+      "sub_muscle": ["Glutes", "Quadriceps"],
+      "techniques": ["Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/29761301-Landmine-Squat-and-Press_360_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/29761301-Landmine-Squat-and-Press_360.jpg",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Hip Abduction",
+      "muscle_type": "Glutes",
+      "sub_muscle": ["Outer Thigh"],
+      "techniques": ["Machine", "Cable", "Resistance Band"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05971201-Lever-Seated-Hip-Abduction_Hips_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05971201-Lever-Seated-Hip-Abduction_Hips.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Hip Adduction",
+      "muscle_type": "Inner Thigh",
+      "sub_muscle": ["Glutes"],
+      "techniques": ["Machine", "Cable", "Resistance Band"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05971201-Lever-Seated-Hip-Abduction_Hips_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05971201-Lever-Seated-Hip-Abduction_Hips.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Seated Hamstring Curl",
+      "muscle_type": "Hamstrings",
+      "sub_muscle": ["Glutes"],
+      "techniques": ["Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05991201-Lever-Seated-Leg-Curl_Thighs_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05991201-Lever-Seated-Leg-Curl_Thighs.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Lying Hamstring Curl",
+      "muscle_type": "Hamstrings",
+      "sub_muscle": ["Glutes"],
+      "techniques": ["Machine"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05861201-Lever-Lying-Leg-Curl_Thighs_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05861201-Lever-Lying-Leg-Curl_Thighs.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Nordic Hamstring Curl",
+      "muscle_type": "Hamstrings",
+      "sub_muscle": ["Glutes"],
+      "techniques": ["Bodyweight", "Assisted Band"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/42041101-Resistance-Band-Assisted-Nordic-Hamstring-Curl_Thighs_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/42041101-Resistance-Band-Assisted-Nordic-Hamstring-Curl_Thighs_small.jpg",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Cable Lateral Raise",
+      "muscle_type": "Shoulders",
+      "sub_muscle": ["Middle Delts"],
+      "techniques": ["Cable"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/01781201-Cable-Lateral-Raise_shoulder_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/01781201-Cable-Lateral-Raise_shoulder.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Chin-Up",
+      "muscle_type": "Back",
+      "sub_muscle": ["Biceps"],
+      "techniques": ["Bodyweight", "Weighted"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/13261201-Chin-Up_Back_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/13261201-Chin-Up_Back.mp4",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Cable Reverse Curl",
+      "muscle_type": "Biceps",
+      "sub_muscle": ["Forearms"],
+      "techniques": ["Cable"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/02061201-Cable-Reverse-Curl_Forearm_thumbnail_@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/02061201-Cable-Reverse-Curl_Forearm.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Incline Dumbbell Curl",
+      "muscle_type": "Biceps",
+      "sub_muscle": ["Forearms"],
+      "techniques": ["Dumbbells"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/03151201-Dumbbell-Incline-Biceps-Curl_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/03151201-Dumbbell-Incline-Biceps-Curl_Upper-Arms.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Spider Curl",
+      "muscle_type": "Biceps",
+      "sub_muscle": ["Forearms"],
+      "techniques": ["Dumbbells", "Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/00721201-Barbell-Prone-Incline-Curl_Upper-Arms_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00721201-Barbell-Prone-Incline-Curl_Upper-Arms.mp4",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Wrist Curl",
+      "muscle_type": "Forearms",
+      "sub_muscle": ["Grip Strength"],
+      "techniques": ["Dumbbells", "Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/0401-seated-palms-up-wrist-curl_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/0401-seated-palms-up-wrist-curl.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Hanging Knee Raises",
+      "muscle_type": "Abs",
+      "sub_muscle": ["Hip Flexors"],
+      "techniques": ["Bodyweight"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/04721101-Hanging-Leg-Raise_Hips_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/04721101-Hanging-Leg-Raise_Hips_small.jpg",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Dead Bug",
+      "muscle_type": "Core",
+      "sub_muscle": ["Lower Back"],
+      "techniques": ["Bodyweight"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/02761101-Dead-Bug_waist_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/02761101-Dead-Bug_waist_small.jpg",
+      "unilateral": false
+    },
+    {
+      "exercise_name": "Bird Dog",
+      "muscle_type": "Core",
+      "sub_muscle": ["Lower Back"],
+      "techniques": ["Bodyweight"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/12411101-Bird-Dog-male_Back_small_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/12411101-Bird-Dog-male_Back_small.jpg",
+      "unilateral": true
+    },
+    {
+      "exercise_name": "Ab Rollout",
+      "muscle_type": "Core",
+      "sub_muscle": ["Lower Back"],
+      "techniques": ["Ab Wheel", "Barbell"],
+      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/08571201-Wheel-Rollout_Waist_thumbnail@3x.jpg",
+      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/08571201-Wheel-Rollout_Waist.mp4",
+      "unilateral": false
+    }
+  ]
