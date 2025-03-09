@@ -1,11 +1,14 @@
 import './input.css'
 import Card from '../components/card'
 
-export default function Input({type, fitWidth, noPadding, roundes, appearance, color, intensity}){
+export default function Input({type, value, disabled, placeholder, fitWidth, noPadding, roundes, appearance, color, intensity, onChange}){
+    function inputUpdated(ev){
+        onChange(ev.target.value)
+    }
     return(
     <div className='input'>
         <Card noPadding>
-            <input type={type}></input>
+            <input onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type}></input>
         </Card>
     </div>
     )

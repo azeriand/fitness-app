@@ -19,9 +19,9 @@ export default function CardStyle({children, fitWidth, noPadding, rounded, appea
     if (rounded === 's'){
         cardStyle.borderRadius = '5px'
     }
-    else if (rounded === 'md')
+    else if (rounded === 'md'){
         cardStyle.borderRadius = '10px'
-
+    }
     const classNames = "card " + appearance
 
     return(

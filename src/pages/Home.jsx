@@ -9,9 +9,11 @@ import Badge from '../components/badge'
 import Button from '../components/button'
 import Checkbox from '../components/checkbox'
 import Input from '../components/input'
+import Avatar from '../components/avatar'
 import {FaDumbbell} from 'react-icons/fa'
 
 export default function Home(){
+
   return(
     <>
     <Card appearance='glass'/>
@@ -19,7 +21,8 @@ export default function Home(){
     <Card appearance='outlined'/>
     <Card appearance='ghost'/>
     <Checkbox label='This is a checkbox!'/>
-    <Input type='number'/>
+    <Input type='tel' placeholder='Phone number here'/>
+    <Avatar size='20' rounded='s' src={Goku}/>
     <div style={{display:'flex'}}>
       <Button label='Glass' icon={<FaDumbbell/>} position='left' appearance='glass'/>
       <Button label='Mate' appearance='mate' color='purple' intensity={500}/>
