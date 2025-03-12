@@ -1,15 +1,18 @@
 
-import BasicCard from '../components/basic-card'
-import Card from '../components/card'
+import BasicCard from '../components/common/basic-card'
+import Card from '../components/common/card'
 import Goku from '../assets/goku.jpg'
 import Rat from '../assets/rat-dance.gif'
 import Cocroach from '../assets/cocroach-dance.gif'
-import SectionName from '../components/section-name'
-import Badge from '../components/badge'
-import Button from '../components/button'
-import Checkbox from '../components/checkbox'
-import Input from '../components/input'
-import Avatar from '../components/avatar'
+import SectionName from '../components/common/section-name'
+import Badge from '../components/common/badge'
+import Button from '../components/common/button'
+import Checkbox from '../components/common/checkbox'
+import Input from '../components/common/input'
+import Avatar from '../components/common/avatar'
+import Timeline from '../components/common/timeline'
+import TlListItem from '../components/common/timeline-list-item'
+import TrainingWidget from '../components/training-widget'
 import {FaDumbbell} from 'react-icons/fa'
 
 export default function Home(){
@@ -20,9 +23,15 @@ export default function Home(){
     <Card appearance='mate' color='purple' intensity={500}/>
     <Card appearance='outlined'/>
     <Card appearance='ghost'/>
+    <TrainingWidget/>
     <Checkbox label='This is a checkbox!'/>
+    <Timeline>
+      <TlListItem label='Hip thrust' badge={<Badge label='Glutes' color='white'/>}/>
+      <TlListItem label='Leg extension' badge={<Badge label='Quads' color='white'/>}/>
+      <TlListItem label='Bench Press' badge={<Badge label='Chest' color='white'/>}/>
+    </Timeline>
     <Input type='tel' placeholder='Phone number here'/>
-    <Avatar size='20' rounded='s' src={Goku}/>
+    <Avatar size='5' rounded='s' src={Goku}/>
     <div style={{display:'flex'}}>
       <Button label='Glass' icon={<FaDumbbell/>} position='left' appearance='glass'/>
       <Button label='Mate' appearance='mate' color='purple' intensity={500}/>

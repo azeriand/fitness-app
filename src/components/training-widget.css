@@ -1,0 +1,41 @@
+.firstrow, .secondrow, .thirdrow{
+    display: flex;
+    align-items: center;
+}
+
+.play-stop{
+    display:flex;
+    align-items: center;
+}
+
+.firstrow{
+    justify-content: space-between;
+}
+
+.secondrow{
+    justify-content:space-between;
+}
+
+.secondrow ul{
+    padding-inline-start: 0;
+    padding-left: 1rem;
+}
+
+.input-display{
+    display: flex;
+    column-gap: 0.25rem;
+}
+
+.secondrow input{
+    width: 0.5rem;
+    height: 1.5rem;
+}
+
+.current-time{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.thirdrow{
+    justify-content: space-around;
+    column-gap: 0.5rem;
+}

@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 
-import Card from '../components/card'
+import Card from '../components/common/card'
 import {FaDumbbell} from 'react-icons/fa'
 import {FaChartSimple} from 'react-icons/fa6'
 import { IoMdSettings } from 'react-icons/io';
 import { TbHomeFilled } from 'react-icons/tb';
-import List from '../components/list-container'
-import ListItem from '../components/list-item';
+import List from '../components/common/list-container';
+import ListItem from '../components/common/list-item';
 
 export default function NavBar() {
 

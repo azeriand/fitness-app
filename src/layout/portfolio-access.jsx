@@ -1,5 +1,5 @@
 import './portfolio-access.css'
-import BasicButton from '../components/button.jsx'
+import BasicButton from '../components/common/button.jsx'
 
 export default function PortfolioAccess(){
     return(

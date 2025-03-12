@@ -5,7 +5,7 @@ import Stats from './pages/Stats.jsx'
 import Settings from './pages/Settings.jsx'
 import Train from './pages/Train.jsx'
 import NavBar from './layout/navbar'
-import Card from './components/card.jsx'
+import Card from './components/common/card.jsx'
 import PortfolioAccess from './layout/portfolio-access.jsx'
 
 
