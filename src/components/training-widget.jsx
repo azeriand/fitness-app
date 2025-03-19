@@ -22,12 +22,12 @@ export default function TrainingWidget(){
             </div>
             <div className='secondrow'>
                 <Timeline>
-                    <TlListItem label='Benchpress'/>
+                    <TlListItem label='Bench Press'/>
                 </Timeline>
                 <div className='input-display'>
                     <Button icon={<FaChevronLeft/>} appearance='mate'/>
-                    <Input rounded='md'/>
-                    <Input rounded='md'/>
+                    <Input rounded='md' maxlength='3'/>
+                    <Input rounded='md' maxlength='3'/>
                     <Button icon={<FaChevronRight/>} appearance='mate'/>
                 </div>
             </div>

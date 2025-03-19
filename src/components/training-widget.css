@@ -19,16 +19,24 @@
 .secondrow ul{
     padding-inline-start: 0;
     padding-left: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .input-display{
     display: flex;
+    align-items: center;
     column-gap: 0.25rem;
 }
 
 .secondrow input{
-    width: 0.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
 }
 
 .current-time{

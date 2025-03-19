@@ -1,7 +1,7 @@
 import './button.css'
 import Card from './card'
 
-export default function BasicButton({label, icon, appearance, color, intensity, fullWidth, position= 'left', onButtonClicked}){
+export default function BasicButton({children, label, icon, appearance, color, intensity, fullWidth, position= 'left', onButtonClicked}){
    const buttonStyle = {
     width: ''
    }
@@ -17,6 +17,7 @@ export default function BasicButton({label, icon, appearance, color, intensity, 
             <Card noPadding rounded='md' appearance={appearance} color={color} intensity={intensity}>
                 {position === 'left' && icon}
                 {label}
+                {children}
                 {position === 'right' && icon}
             </Card>
         </button>

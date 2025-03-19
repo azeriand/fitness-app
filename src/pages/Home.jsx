@@ -13,9 +13,25 @@ import Avatar from '../components/common/avatar'
 import Timeline from '../components/common/timeline'
 import TlListItem from '../components/common/timeline-list-item'
 import TrainingWidget from '../components/training-widget'
+import Tab from '../components/common/tab'
+import Dropdown from '../components/common/dropdown/dropdown'
+import CalendarView from '../components/common/calendar-view'
+import RoutineCard from '../components/routine-card'
 import {FaDumbbell} from 'react-icons/fa'
+import { DateCalendar } from '@mui/x-date-pickers';
 
 export default function Home(){
+
+  const exercises = [
+    {
+      name: "Hip Thrust",
+      type: "Glutes"
+    },
+    {
+      name: "Bench Press",
+      type: "Chest"
+    },
+  ]
 
   return(
     <>
@@ -23,6 +39,10 @@ export default function Home(){
     <Card appearance='mate' color='purple' intensity={500}/>
     <Card appearance='outlined'/>
     <Card appearance='ghost'/>
+    <RoutineCard exercises={exercises}/>
+    <CalendarView/>
+    <Dropdown buttonText='Dropdown Button'/>
+    <Tab/>
     <TrainingWidget/>
     <Checkbox label='This is a checkbox!'/>
     <Timeline>

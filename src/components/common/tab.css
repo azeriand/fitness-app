@@ -1,0 +1,5 @@
+.flex-buttons{
+    display: flex;
+    padding: 0.4rem;
+    column-gap: 0.5rem;
+}
