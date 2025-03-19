@@ -19,9 +19,8 @@ export default function RoutineCard({exercises}){
             </div>
             <Timeline>
                 {
-                    exercises.map((exercise) => (
-                        <TlListItem label={exercise.name} badge={<Badge label={exercise.type}/>}/>
-                        
+                    exercises.map((exercise, index) => (
+                        <TlListItem key={index} label={exercise.name} badge={<Badge label={exercise.type}/>}/>
                     ))
                 }
             </Timeline>

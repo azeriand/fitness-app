@@ -33,6 +33,12 @@ export default function Home(){
     },
   ]
 
+  const options = ['Item 1', 'Item 2', 'Item 3'];
+
+  const dropdownSelected = (option) => {
+    console.log('Elemento seleccionado', option);
+  }
+
   return(
     <>
     <Card appearance='glass'/>
@@ -41,7 +47,7 @@ export default function Home(){
     <Card appearance='ghost'/>
     <RoutineCard exercises={exercises}/>
     <CalendarView/>
-    <Dropdown buttonText='Dropdown Button'/>
+    <Dropdown buttonText='Dropdown Button' options={options} onSelected={dropdownSelected}></Dropdown>
     <Tab/>
     <TrainingWidget/>
     <Checkbox label='This is a checkbox!'/>

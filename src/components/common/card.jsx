@@ -1,6 +1,6 @@
 import './card.css'
 
-export default function CardStyle({children, fitWidth, noPadding, rounded, appearance = 'glass', color = 'neutral', intensity = 300}){
+export default function CardStyle({children, fitWidth, noPadding, rounded, appearance = 'glass', color = 'neutral', intensity = 300, className}){
     const cardStyle = {
         "--glass-color": `var(--color-${color}-${intensity})`,
         width: '',
@@ -22,7 +22,7 @@ export default function CardStyle({children, fitWidth, noPadding, rounded, appea
     else if (rounded === 'md'){
         cardStyle.borderRadius = '10px'
     }
-    const classNames = "card " + appearance
+    const classNames = `card ${appearance} ${className}`
 
     return(
     <article className={classNames} style={cardStyle}>
