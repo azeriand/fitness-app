@@ -1,5 +1,5 @@
 import { FaChevronDown } from 'react-icons/fa'
-import './dropdown.css'
+import './dropdown-button.css'
 import { FaCircleChevronUp } from 'react-icons/fa6'
 
 export default function DropdownButton({children, open, toggle}){

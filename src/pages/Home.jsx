@@ -39,6 +39,8 @@ export default function Home(){
     console.log('Elemento seleccionado', option);
   }
 
+  const tabsItems = ['Last Trainings', 'Muscle Groups', 'Per Exercise'];
+
   return(
     <>
     <Card appearance='glass'/>
@@ -48,7 +50,7 @@ export default function Home(){
     <RoutineCard exercises={exercises}/>
     <CalendarView/>
     <Dropdown buttonText='Dropdown Button' options={options} onSelected={dropdownSelected}></Dropdown>
-    <Tab/>
+    <Tab items={tabsItems} onTabSelected={(tab) => console.log('Tab Selected: ', tab)}/>
     <TrainingWidget/>
     <Checkbox label='This is a checkbox!'/>
     <Timeline>

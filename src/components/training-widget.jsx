@@ -26,8 +26,8 @@ export default function TrainingWidget(){
                 </Timeline>
                 <div className='input-display'>
                     <Button icon={<FaChevronLeft/>} appearance='mate'/>
-                    <Input rounded='md' maxlength='3'/>
-                    <Input rounded='md' maxlength='3'/>
+                    <Input rounded='md' maxLength='3'/>
+                    <Input rounded='md' maxLength='3'/>
                     <Button icon={<FaChevronRight/>} appearance='mate'/>
                 </div>
             </div>

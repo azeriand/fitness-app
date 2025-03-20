@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function Dropdown({buttonText, options, onSelected}){
 
     const [open, setOpen] = useState(false);
-    const [optionSelected, setOptionSelected] = useState(false);
+    const [optionSelected, setOptionSelected] = useState(buttonText);
     
     const toggleDropdown = () => {
         setOpen(open => !open);
@@ -15,20 +15,24 @@ export default function Dropdown({buttonText, options, onSelected}){
     const itemClicked = (option) => {
         setOptionSelected(option);
         onSelected(option);
+        setOpen(false);
     }
 
     return(
-        <div className='dropdown'>
+        <div tabIndex="0" className='dropdown' onBlur={() => setOpen(false)}>
             <DropdownButton toggle={toggleDropdown} open={open}>{ optionSelected }</DropdownButton>
-            <Card appearance='mate' className={`dropdown-content ${open ? "content-open" : null}`}>
-                {
-                    options.map(option => (
-                        <div key={option} className='dropdown-item' onClick={() => itemClicked(option)}>
-                            {option}
-                        </div>
-                    ))
-                }
-            </Card>
+            {
+                open &&
+                <Card appearance='mate' className="dropdown-content">
+                    {
+                        options.map(option => (
+                            <div key={option} className='dropdown-item' onClick={() => itemClicked(option)}>
+                                {option}
+                            </div>
+                        ))
+                    }
+                </Card>
+            }
         </div>
     )
 }
