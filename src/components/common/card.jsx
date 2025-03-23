@@ -1,11 +1,12 @@
 import './card.css'
 
-export default function CardStyle({children, fitWidth, noPadding, rounded, appearance = 'glass', color = 'neutral', intensity = 300, className}){
+export default function CardStyle({children, fitWidth, noPadding, rounded, appearance = 'glass', color = 'neutral', intensity = 300, className, style}){
     const cardStyle = {
         "--glass-color": `var(--color-${color}-${intensity})`,
         width: '',
         padding: '2rem',
         borderRadius: '20px',
+        ...style
     };
 
     if (fitWidth === true){

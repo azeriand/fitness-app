@@ -20,18 +20,16 @@ function App() {
         <Gradient/>
         <BrowserRouter>
           <NavBar></NavBar>
-          <div style={{height: '100%'}}>
+          <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <PortfolioAccess/>
-            <div style={{overflow: 'auto', height: '100%', minHeight: 0}}>
-              <Card intensity={500}>
-                  <Routes>
-                    <Route path='/' element={<Home/>}></Route>
-                    <Route path='/stats' element={<Stats/>}></Route>
-                    <Route path='/settings' element={<Settings/>}></Route>
-                    <Route path='/train' element={<Train/>}></Route>
-                  </Routes>
-              </Card>
-            </div>
+            <Card intensity={500} style={{overflow: 'scroll', height: '100%', overflowY: 'auto'}}>
+                <Routes>
+                  <Route path='/' element={<Home/>}></Route>
+                  <Route path='/stats' element={<Stats/>}></Route>
+                  <Route path='/settings' element={<Settings/>}></Route>
+                  <Route path='/train' element={<Train/>}></Route>
+                </Routes>
+            </Card>
           </div>
         </BrowserRouter>
       </LocalizationProvider>
