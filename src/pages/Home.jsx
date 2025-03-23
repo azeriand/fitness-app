@@ -15,10 +15,8 @@ import TlListItem from '../components/common/timeline-list-item'
 import TrainingWidget from '../components/training-widget'
 import Tab from '../components/common/tab'
 import Dropdown from '../components/common/dropdown/dropdown'
-import CalendarView from '../components/common/calendar-view'
 import RoutineCard from '../components/routine-card'
 import {FaDumbbell} from 'react-icons/fa'
-import { DateCalendar } from '@mui/x-date-pickers';
 
 export default function Home(){
 
@@ -48,7 +46,6 @@ export default function Home(){
     <Card appearance='outlined'/>
     <Card appearance='ghost'/>
     <RoutineCard exercises={exercises}/>
-    <CalendarView/>
     <Dropdown buttonText='Dropdown Button' options={options} onSelected={dropdownSelected}></Dropdown>
     <Tab items={tabsItems} onTabSelected={(tab) => console.log('Tab Selected: ', tab)}/>
     <TrainingWidget/>
