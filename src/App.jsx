@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import Stats from './pages/Stats.jsx'
 import Settings from './pages/Settings.jsx'
 import Train from './pages/Train.jsx'
+import Training from './pages/Training.jsx'
 import NavBar from './layout/navbar'
 import Card from './components/common/card.jsx'
 import PortfolioAccess from './layout/portfolio-access.jsx'
@@ -28,6 +29,7 @@ function App() {
                   <Route path='/stats' element={<Stats/>}></Route>
                   <Route path='/settings' element={<Settings/>}></Route>
                   <Route path='/train' element={<Train/>}></Route>
+                  <Route path='/training' element={<Training/>}></Route>
                 </Routes>
             </Card>
           </div>

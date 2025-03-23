@@ -7,23 +7,31 @@ import TlListItem from './common/timeline-list-item'
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
-export default function RoutineCard({exercises}){
+export default function RoutineCard({exercises, label, timeAgo}){
     return (
-        <Card fitWidth intensity={500}>
-            <div>
-                <p>Chest</p>
-                <div>
-                    <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
-                    <Button appearance='mate' label='Start' icon={<FaPlay/>} position='right'/>
+        <Card noPadding>
+            <div className='rc-card'>
+                <div className='routine-card'>
+                    <div className='rc-description'>
+                        <div className='rc-label'>{label}</div>
+                        <div className='rc-timeago'>{timeAgo}</div>
+                    </div>
+
+                    <div>
+                        <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
+                        <Button appearance='mate' label='Start' icon={<FaPlay/>} position='right'/>
+                    </div>
+                </div>
+                <div className='routine-card-ul'>
+                    <Timeline>
+                        {
+                            exercises.map((exercise, index) => (
+                                <TlListItem key={index} label={exercise.name} badge={<Badge label={exercise.type}/>}/>
+                            ))
+                        }
+                    </Timeline>
                 </div>
             </div>
-            <Timeline>
-                {
-                    exercises.map((exercise, index) => (
-                        <TlListItem key={index} label={exercise.name} badge={<Badge label={exercise.type}/>}/>
-                    ))
-                }
-            </Timeline>
         </Card>
     );
 }

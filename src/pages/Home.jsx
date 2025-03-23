@@ -29,6 +29,10 @@ export default function Home(){
       name: "Bench Press",
       type: "Chest"
     },
+    {
+      name: "Leg Extension",
+      type: "Quads"
+    },
   ]
 
   const options = ['Item 1', 'Item 2', 'Item 3'];
@@ -45,7 +49,7 @@ export default function Home(){
     <Card appearance='mate' color='purple' intensity={500}/>
     <Card appearance='outlined'/>
     <Card appearance='ghost'/>
-    <RoutineCard exercises={exercises}/>
+    <RoutineCard exercises={exercises} label='Chest' timeAgo='Last time: 4 years ago.'/>
     <Dropdown buttonText='Dropdown Button' options={options} onSelected={dropdownSelected}></Dropdown>
     <Tab items={tabsItems} onTabSelected={(tab) => console.log('Tab Selected: ', tab)}/>
     <TrainingWidget/>

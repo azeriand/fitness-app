@@ -27,7 +27,12 @@ input::-webkit-inner-spin-button {
 input:focus{
     outline: none;
 }
+
 .input{
     display: flex;
     width: fit-content;
+}
+
+.full-width{
+    width: 100%;
 }

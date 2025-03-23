@@ -1,0 +1,16 @@
+.page-name{
+    text-align: start;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.train-routine-card{
+    display: grid;
+    justify-content: stretch;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1rem;
+    gap: 1.5rem;
+}
+
