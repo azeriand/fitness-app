@@ -12,7 +12,7 @@ export default function NavBar() {
 
     const navigate = useNavigate()
     return (
-        <Card>
+        <Card intensity={500}>
             <div>
                 <FaDumbbell></FaDumbbell>
                 <FaChartSimple></FaChartSimple>

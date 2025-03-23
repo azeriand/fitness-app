@@ -9,6 +9,7 @@ import Card from './components/common/card.jsx'
 import PortfolioAccess from './layout/portfolio-access.jsx'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import Gradient from './components/common/gradient.jsx'
 
 
 function App() {
@@ -16,18 +17,21 @@ function App() {
   return(
     <div className='viewport'>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <Gradient/>
         <BrowserRouter>
           <NavBar></NavBar>
-          <div>
+          <div style={{height: '100%'}}>
             <PortfolioAccess/>
-            <Card>
-                <Routes>
-                  <Route path='/' element={<Home/>}></Route>
-                  <Route path='/stats' element={<Stats/>}></Route>
-                  <Route path='/settings' element={<Settings/>}></Route>
-                  <Route path='/train' element={<Train/>}></Route>
-                </Routes>
-            </Card>
+            <div style={{overflow: 'auto', height: '100%', minHeight: 0}}>
+              <Card intensity={500}>
+                  <Routes>
+                    <Route path='/' element={<Home/>}></Route>
+                    <Route path='/stats' element={<Stats/>}></Route>
+                    <Route path='/settings' element={<Settings/>}></Route>
+                    <Route path='/train' element={<Train/>}></Route>
+                  </Routes>
+              </Card>
+            </div>
           </div>
         </BrowserRouter>
       </LocalizationProvider>
