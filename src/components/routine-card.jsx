@@ -9,7 +9,7 @@ import { MdEdit } from "react-icons/md";
 
 export default function RoutineCard({exercises}){
     return (
-        <Card fitWidth>
+        <Card fitWidth intensity={500}>
             <div>
                 <p>Chest</p>
                 <div>

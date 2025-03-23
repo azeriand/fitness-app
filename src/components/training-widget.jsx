@@ -11,7 +11,7 @@ import Input from './common/input'
 
 export default function TrainingWidget(){
     return(
-        <Card>
+        <Card intensity={500}>
             <div className='firstrow'>
                 <div className='current-time'>12:26</div>
                 <div className='play-stop'>

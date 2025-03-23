@@ -4,7 +4,7 @@ import Card from './card'
 function basicCard({title, src, color, intensity}){
 
     return(
-        <Card>
+        <Card intensity={500}>
             <div className='basic-card'>
                 <img  className='img-card' src={src} alt='imagen ejercicio'/>
                 <aside className='name-card'>{title}</aside>
