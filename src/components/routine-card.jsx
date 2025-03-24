@@ -19,7 +19,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
                     <div>
                         <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
-                        <Button appearance='mate' label='Start' icon={<FaPlay/>} position='right'/>
+                        <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right'/>
                     </div>
                 </div>
                 <div className='routine-card-ul'>
