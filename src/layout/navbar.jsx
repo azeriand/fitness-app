@@ -9,12 +9,12 @@ import List from '../components/common/list-container';
 import ListItem from '../components/common/list-item';
 import CalendarView from '../components/common/calendar-view'
 import generateTrainingDays from '../data/generateTrainingDays';
+import { useState } from 'react';
 
 export default function NavBar() {
-
-    const selectedDates = generateTrainingDays();
-
     const navigate = useNavigate()
+    const [selectedDates] = useState(generateTrainingDays().map(({day}) => day));
+    
     return (
         <Card intensity={500} noPadding>
             <CalendarView selectedDates={selectedDates}/>
