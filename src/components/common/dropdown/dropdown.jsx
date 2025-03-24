@@ -23,10 +23,10 @@ export default function Dropdown({buttonText, options, onSelected}){
             <DropdownButton toggle={toggleDropdown} open={open}>{ optionSelected }</DropdownButton>
             {
                 open &&
-                <Card appearance='mate' className="dropdown-content">
+                <Card noBlur appearance='mate' className="dropdown-content">
                     {
                         options.map(option => (
-                            <div key={option} className='dropdown-item' onClick={() => itemClicked(option)}>
+                            <div key={option} className='dropdown-item' onMouseDown={() => itemClicked(option)}>
                                 {option}
                             </div>
                         ))

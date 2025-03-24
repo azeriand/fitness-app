@@ -1,6 +1,6 @@
 import './card.css'
 
-export default function CardStyle({children, fitWidth, fullWidth, noPadding, rounded, appearance = 'glass', color = 'neutral', intensity = 300, onClick, className, style}){
+export default function CardStyle({children, fitWidth, fullWidth, noPadding, rounded, noBlur = false, appearance = 'glass', color = 'neutral', intensity = 300, onClick, className, style}){
     const cardStyle = {
         "--glass-color": `var(--color-${color}-${intensity})`,
         width: '',
@@ -8,6 +8,10 @@ export default function CardStyle({children, fitWidth, fullWidth, noPadding, rou
         borderRadius: '20px',
         ...style
     };
+
+    if (appearance === 'glass' && !noBlur) {
+        cardStyle.backdropFilter = 'blur(10px)';
+    }
 
     if (fitWidth === true){
         cardStyle.width = 'fit-content'

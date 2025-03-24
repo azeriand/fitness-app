@@ -15,7 +15,7 @@ export default function Tab({items, onTabSelected, ...cardProps}){
     return(
         <>
             <SectionName section='Filter by'/>
-            <Card noPadding fitWidth rounded='md' {...cardProps}>
+            <Card noBlur noPadding fitWidth rounded='md' {...cardProps}>
                 <div className='flex-buttons'>
                     {
                         items.map(item => <Button onClick={() => selectTab(item)} key={item} appearance={item === tabSelected ? 'mate' : 'ghost'} label={item}/>)

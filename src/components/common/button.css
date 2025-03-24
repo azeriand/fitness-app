@@ -12,18 +12,3 @@ button{
 button:focus {
     outline: revert;
 }
-
-button .card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 0.40rem;
-    height: 2.5rem;
-    min-width: 2.5rem;
-    box-sizing: border-box;
-}
-
-button:not(.onlyIcon) .card {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}

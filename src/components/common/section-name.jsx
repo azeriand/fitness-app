@@ -1,12 +1,12 @@
 import './section-name.css'
 
-export default function SectionName({section, fontSmall}){
+export default function SectionName({section, size}){
 
     const sectionStyle = {
         fontSize: ''
     }
 
-    if (fontSmall === true){
+    if (size === "sm"){
         sectionStyle.fontSize = '0.75rem'
     }
 

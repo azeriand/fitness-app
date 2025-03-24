@@ -9,7 +9,7 @@ import { MdEdit } from "react-icons/md";
 
 export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
     return (
-        <Card noPadding {...cardProps}>
+        <Card noBlur noPadding {...cardProps}>
             <div className='rc-card'>
                 <div className='routine-card'>
                     <div className='rc-description'>

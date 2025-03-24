@@ -19,20 +19,22 @@ function CustomDay(props) {
     );
   }
 
-export default function CalendarView({selectedDates}){
+export default function CalendarView({selectedDates, ...cardProps}){
     const theme = createTheme({
         palette: {
             mode: "dark"
         },
     });
     return(
-        <ThemeProvider theme={theme}>
-            <DateCalendar
-                slots={{ day: CustomDay }}
-                slotProps={{
-                day: { highlightedDays: selectedDates ? selectedDates.map(dayjs) : [] },
-                }}
-            />
-        </ThemeProvider>
+        <Card appearance={cardProps.appearance ?? 'ghost'} noPadding {...cardProps}>
+            <ThemeProvider theme={theme}>
+                <DateCalendar
+                    slots={{ day: CustomDay }}
+                    slotProps={{
+                    day: { highlightedDays: selectedDates ? selectedDates.map(dayjs) : [] },
+                    }}
+                />
+            </ThemeProvider>
+        </Card>
     )
 }

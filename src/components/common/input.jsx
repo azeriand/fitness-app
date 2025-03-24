@@ -6,10 +6,10 @@ export default function Input({type, value, disabled, placeholder, rounded, size
         onChange(ev.target.value)
     }
 
-    const classnames = `input ${fullWidth ? 'full-width' : ''}`
+    const classnames = `input ${cardProps.fullWidth ? 'full-width' : ''}`
     return(
     <div className={classnames}>
-        <Card noPadding rounded={rounded} {...cardProps}>
+        <Card noBlur noPadding rounded={rounded} {...cardProps}>
             <input onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} size={size} maxLength={maxLength}></input>
         </Card>
     </div>

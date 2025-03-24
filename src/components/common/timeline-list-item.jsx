@@ -5,7 +5,7 @@ import Badge from './badge'
 export default function TlListItem({label, badge, ...cardProps}){
     return(
         <li>
-            <Card appearance='ghost' noPadding {...cardProps}>
+            <Card noBlur appearance='ghost' noPadding {...cardProps}>
                 <div className='tl-li'>
                     {label}
                     {badge}
