@@ -1,6 +1,6 @@
 import './card.css'
 
-export default function CardStyle({children, fitWidth, fullWidth, noPadding, rounded, appearance = 'glass', color = 'neutral', intensity = 300, className, style}){
+export default function CardStyle({children, fitWidth, fullWidth, noPadding, rounded, appearance = 'glass', color = 'neutral', intensity = 300, onClick, className, style}){
     const cardStyle = {
         "--glass-color": `var(--color-${color}-${intensity})`,
         width: '',
@@ -30,7 +30,7 @@ export default function CardStyle({children, fitWidth, fullWidth, noPadding, rou
     const classNames = `card ${appearance} ${className}`
 
     return(
-    <article className={classNames} style={cardStyle}>
+    <article className={classNames} style={cardStyle} onClick={onClick}>
         {children}
     </article>
     )

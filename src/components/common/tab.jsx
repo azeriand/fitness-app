@@ -5,7 +5,7 @@ import Card from './card'
 import SectionName from './section-name'
 import Button from './button'
 
-export default function Tab({items, onTabSelected}){
+export default function Tab({items, onTabSelected, ...cardProps}){
     const [tabSelected, setTabSelected] = useState(null);
 
     const selectTab = (item) => {
@@ -15,7 +15,7 @@ export default function Tab({items, onTabSelected}){
     return(
         <>
             <SectionName section='Filter by'/>
-            <Card noPadding fitWidth rounded='md'>
+            <Card noPadding fitWidth rounded='md' {...cardProps}>
                 <div className='flex-buttons'>
                     {
                         items.map(item => <Button onClick={() => selectTab(item)} key={item} appearance={item === tabSelected ? 'mate' : 'ghost'} label={item}/>)
