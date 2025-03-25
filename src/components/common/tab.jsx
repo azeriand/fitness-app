@@ -12,7 +12,7 @@ export default function Tab({items, onTabSelected, ...cardProps}){
         setTabSelected(item)
         onTabSelected(item)
     }
-    return(
+    return (
         <>
             <SectionName section='Filter by'/>
             <Card noBlur noPadding fitWidth rounded='md' {...cardProps}>
