@@ -55,9 +55,9 @@ export default function Home(){
     <TrainingWidget/>
     <Checkbox label='This is a checkbox!'/>
     <Timeline>
-      <TlListItem label='Hip thrust' badge={<Badge label='Glutes' color='white'/>}/>
-      <TlListItem label='Leg extension' badge={<Badge label='Quads' color='white'/>}/>
-      <TlListItem label='Bench Press' badge={<Badge label='Chest' color='white'/>}/>
+      <TlListItem label='Hip thrust' badge={<Badge label='Glutes' color='neutral'/>}/>
+      <TlListItem label='Leg extension' badge={<Badge label='Quads' color='neutral'/>}/>
+      <TlListItem label='Bench Press' badge={<Badge label='Chest' color='neutral'/>}/>
     </Timeline>
     <Input type='tel' placeholder='Phone number here'/>
     <Avatar size='5' rounded='s' src={Goku}/>

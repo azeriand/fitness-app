@@ -13,7 +13,7 @@ import SectionName from './common/section-name';
 
 export default function SetsWidget({children}){
     return(
-        <Card>
+        <Card noBlur>
             <div className='header-sets'>
                 <div className='avatar-sets'>
                     <Button icon={<RxDragHandleDots2/>} appearance='ghost'/>
@@ -35,11 +35,11 @@ export default function SetsWidget({children}){
             <div className='sn-set'>
             </div>
             <div className='set-grid'>
-                <SectionName fontSmall section='set'/>
-                <SectionName fontSmall section='previous'/>
-                <SectionName fontSmall section='reps'/>
-                <SectionName fontSmall section='kg'/>
-                <SectionName fontSmall section='done'/>
+                <SectionName size="sm" section='set'/>
+                <SectionName size="sm" section='previous'/>
+                <SectionName size="sm" section='reps'/>
+                <SectionName size="sm" section='kg'/>
+                <SectionName size="sm" section='done'/>
                 {children}
             </div>
             <Button label='Add Set' color='blue' intensity='600' fullWidth/>

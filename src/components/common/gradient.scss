@@ -25,25 +25,25 @@
 
 @keyframes moveVertical {
 0% {
-    transform: translateY(-50%);
+    transform: translate3D(0, -50%, 0);
 }
 50% {
-    transform: translateY(50%);
+    transform: translate3D(0, 50%, 0);
 }
 100% {
-    transform: translateY(-50%);
+    transform: translate3D(0, -50%, 0);
 }
 }
 
 @keyframes moveHorizontal {
 0% {
-    transform: translateX(-50%) translateY(-10%);
+    transform: translate3D(-50%, -10%, 0);
 }
 50% {
-    transform: translateX(50%) translateY(10%);
+    transform: translate3D(50%, 10%, 0);
 }
 100% {
-    transform: translateX(-50%) translateY(-10%);
+    transform: translate3D(-50%, -10%, 0);
 }
 }
 
@@ -85,6 +85,7 @@ svg {
     animation: moveVertical 30s ease infinite;
 
     opacity: 1;
+    will-change: transform, opacity;
 }
 
 .g2 {
@@ -101,6 +102,7 @@ svg {
     animation: moveInCircle 40s reverse infinite;
 
     opacity: 1;
+    will-change: transform, opacity;
 }
 
 .g3 {
@@ -117,6 +119,7 @@ svg {
     animation: moveInCircle 60s linear infinite;
 
     opacity: 1;
+    will-change: transform, opacity;
 }
 
 .g4 {
@@ -133,6 +136,7 @@ svg {
     animation: moveHorizontal 60s ease infinite;
 
     opacity: 0.7;
+    will-change: transform, opacity;
 }
 
 .g5 {
@@ -149,6 +153,7 @@ svg {
     animation: moveInCircle 40s ease infinite;
 
     opacity: 1;
+    will-change: transform, opacity;
 }
 
 .interactive {
@@ -162,5 +167,6 @@ svg {
     left: -50%;
 
     opacity: 0.7;
+    will-change: transform, opacity;
 }
 }

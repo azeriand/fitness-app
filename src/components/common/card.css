@@ -4,7 +4,6 @@
 
 .card.glass{
     background-color: color-mix(in oklch, var(--glass-color), transparent 80%);
-    backdrop-filter: blur(10px);
     border: 1px solid color-mix(in oklch, var(--glass-color), transparent 40%);
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;

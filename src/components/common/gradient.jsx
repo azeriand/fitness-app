@@ -3,29 +3,36 @@ import "./gradient.scss";
 
 export default function Gradient() {
     const interactiveElementRef = useRef(null);
+    const curX = useRef(0);
+    const curY = useRef(0);
+    const tgX = useRef(0);
+    const tgY = useRef(0);
+    const animationFrame = useRef(null);
 
     useEffect(() => {
-        let curX = 0;
-        let curY = 0;
-        let tgX = 0;
-        let tgY = 0;
-    
         function move() {
-            curX += (tgX - curX) / 20;
-            curY += (tgY - curY) / 20;
-            interactiveElementRef.current.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-            requestAnimationFrame(() => {
-                move();
-            });
+            if (!interactiveElementRef.current) return;
+            
+            curX.current += (tgX.current - curX.current) / 20;
+            curY.current += (tgY.current - curY.current) / 20;
+            interactiveElementRef.current.style.transform = `translate(${Math.round(curX.current)}px, ${Math.round(curY.current)}px)`;
+
+            animationFrame.current = requestAnimationFrame(move);
         }
-    
-        window.addEventListener('mousemove', (event) => {
-            tgX = event.clientX;
-            tgY = event.clientY;
-        });
-    
-        move();
-    }, [])
+
+        function onMouseMove(event) {
+            tgX.current = event.clientX;
+            tgY.current = event.clientY;
+            if (!animationFrame.current) move(); // Start animation only if not running
+        }
+
+        window.addEventListener("mousemove", onMouseMove);
+
+        return () => {
+            window.removeEventListener("mousemove", onMouseMove);
+            if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
+        };
+    }, []);
 
     return (
     <div className="gradient-bg">

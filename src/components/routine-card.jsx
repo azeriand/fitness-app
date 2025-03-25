@@ -7,9 +7,9 @@ import TlListItem from './common/timeline-list-item'
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
-export default function RoutineCard({exercises, label, timeAgo}){
+export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
     return (
-        <Card noPadding>
+        <Card noBlur noPadding {...cardProps}>
             <div className='rc-card'>
                 <div className='routine-card'>
                     <div className='rc-description'>
@@ -19,7 +19,7 @@ export default function RoutineCard({exercises, label, timeAgo}){
 
                     <div>
                         <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
-                        <Button appearance='mate' label='Start' icon={<FaPlay/>} position='right'/>
+                        <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right'/>
                     </div>
                 </div>
                 <div className='routine-card-ul'>
