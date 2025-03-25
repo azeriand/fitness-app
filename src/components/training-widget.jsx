@@ -9,7 +9,7 @@ import Timeline from './common/timeline';
 import TlListItem from './common/timeline-list-item'
 import Input from './common/input'
 
-export default function TrainingWidget({cardProps}){
+export default function TrainingWidget({...cardProps}){
     return(
         <Card noBlur intensity={500} {...cardProps}>
             <div className='firstrow'>
