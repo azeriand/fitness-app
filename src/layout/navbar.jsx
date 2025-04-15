@@ -9,6 +9,7 @@ import List from '../components/common/list-container';
 import ListItem from '../components/common/list-item';
 import CalendarView from '../components/common/calendar-view'
 import generateTrainingDays from '../data/generateTrainingDays';
+import Logo from '../components/logo'
 import { useState } from 'react';
 
 export default function NavBar() {
@@ -17,6 +18,7 @@ export default function NavBar() {
     
     return (
         <Card intensity={500} noPadding>
+            <Logo></Logo>
             <CalendarView selectedDates={selectedDates}/>
             <div style={{padding: '1rem'}}>
                 <List name='List name'>
