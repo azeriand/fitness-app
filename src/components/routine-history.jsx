@@ -1,0 +1,74 @@
+import './routine-history.css'
+import Card from './common/card'
+import Input from './common/input'
+import Button from './common/button'
+import Badge from './common/badge'
+import Avatar from './common/avatar'
+import SectionName from './common/section-name'
+import ExerciseCard from './common/exercise-card'
+import Goku from '../assets/goku2.jpg'
+import dayjs from 'dayjs'
+import {FaDumbbell} from 'react-icons/fa'
+import { IoTimerOutline } from "react-icons/io5";
+import { useState, useEffect } from 'react'
+
+
+export default function RoutineHistory({routine}){
+
+    const [cardExpanded, setCardExpanded] = useState(false);
+
+    const onButtonClicked = () => {
+        setCardExpanded(!cardExpanded);
+    }
+    
+    const limitCollapsedExercises = 3
+    const buttonTextCollapsed = 'See ' + (routine.exercises.length - limitCollapsedExercises) + ' more exercises'
+    const buttonTextExpanded = 'See less'
+    const [collapsedButtonText, setCollapsedButtonText] = useState(buttonTextCollapsed)
+
+    const [collapsedExercises, setCollapsedExercises] = useState(routine.exercises.slice(0, 3))
+
+    useEffect(() => {
+       setCollapsedExercises(routine.exercises.slice(0, cardExpanded ? routine.exercises.length : 3))
+       setCollapsedButtonText(cardExpanded ? buttonTextExpanded : buttonTextCollapsed)
+    }, [cardExpanded])
+
+
+    return(
+        <Card>
+            <div>
+                <div className='flex space-btwn'>
+                    <div className='flex column-gap'>
+                        <Avatar src={Goku} size='3' rounded='s'/>
+                        <div className='aside-avatar'>
+                            <p>{routine.user}</p>
+                            <p className='last-time'>{dayjs(routine.day).format('dddd')}</p>
+                        </div>
+                    </div>
+                    <div className='flex input'>
+                        <Input value={routine.duration} rounded='s' icon={<IoTimerOutline/>} disabled/>
+                        <Input value={routine.volume} rounded='s' icon={<FaDumbbell/>} disabled/>
+                    </div>
+                </div>
+
+                <div className='flex column-gap paddingtb'>
+                    <p className='routine-name'>{routine.name}</p>
+                    <Badge label={routine.type}/>
+                </div>
+
+                <div className='grid'>
+                    <SectionName section='exercise'/>   
+                    <SectionName section='sets'/>
+
+                    {
+                        collapsedExercises.map((exercise, index) => (
+                            <ExerciseCard key={index} label={exercise.exercise_name} sets={exercise.sets.length} badge={<Badge label={exercise.muscle_type}/>}/> 
+                        ))
+                    }
+                    
+                </div>
+                <Button label={collapsedButtonText} onClick={onButtonClicked}/>
+            </div>
+        </Card>
+    )
+}
