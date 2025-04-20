@@ -8,6 +8,11 @@ import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
 export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
+
+    const trainingWidgetStyle = {
+        height: '4.5rem',
+    }
+
     return (
         <Card noBlur noPadding {...cardProps}>
             <div className='rc-card'>
@@ -23,7 +28,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
                     </div>
                 </div>
                 <div className='routine-card-ul'>
-                    <Timeline>
+                    <Timeline style={trainingWidgetStyle}>
                         {
                             exercises.map((exercise, index) => (
                                 <TlListItem key={index} label={exercise.name} badge={<Badge label={exercise.type}/>}/>
