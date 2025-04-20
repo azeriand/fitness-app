@@ -16,25 +16,16 @@ import TrainingWidget from '../components/training-widget'
 import Tab from '../components/common/tab'
 import Dropdown from '../components/common/dropdown/dropdown'
 import RoutineCard from '../components/routine-card'
+import RoutineHistory from '../components/routine-history'
 import {FaDumbbell} from 'react-icons/fa'
+import { useContext } from 'react'
+import {ThemeContext} from '../components/common/theme-context'
+import { TrainingContext } from '../components/common/training-context'
+import dayjs from 'dayjs'
 
 export default function Home(){
 
-  const exercises = [
-    {
-      name: "Hip Thrust",
-      type: "Glutes"
-    },
-    {
-      name: "Bench Press",
-      type: "Chest"
-    },
-    {
-      name: "Leg Extension",
-      type: "Quads"
-    },
-  ]
-
+  const {history} = useContext(TrainingContext)
   const options = ['Item 1', 'Item 2', 'Item 3'];
 
   const dropdownSelected = (option) => {
@@ -49,7 +40,6 @@ export default function Home(){
     <Card appearance='mate' color='purple' intensity={500}/>
     <Card appearance='outlined'/>
     <Card appearance='ghost'/>
-    <RoutineCard exercises={exercises} label='Chest' timeAgo='Last time: 4 years ago.'/>
     <Dropdown buttonText='Dropdown Button' options={options} onSelected={dropdownSelected}></Dropdown>
     <Tab items={tabsItems} onTabSelected={(tab) => console.log('Tab Selected: ', tab)}/>
     <TrainingWidget/>
@@ -59,6 +49,11 @@ export default function Home(){
       <TlListItem label='Leg extension' badge={<Badge label='Quads' color='neutral'/>}/>
       <TlListItem label='Bench Press' badge={<Badge label='Chest' color='neutral'/>}/>
     </Timeline>
+
+    {
+      history.map((routine) => <RoutineHistory routine={routine}/>)
+    }
+
     <Input type='tel' placeholder='Phone number here'/>
     <Avatar size='5' rounded='s' src={Goku}/>
     <div style={{display:'flex'}}>
