@@ -1,5 +1,6 @@
 .card{
     /* border-radius: 20px; */
+    color: var(--card-text-color, white);
 }
 
 .card.glass{
@@ -20,7 +21,7 @@
 }
 
 .card.outlined{
-    border: solid white 2px
+    border: solid white 2px;
 }
 
 .card.ghost{

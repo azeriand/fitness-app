@@ -1,42 +1,44 @@
 import './card.css'
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from './theme-context';
 
-export default function CardStyle({children, fitWidth, fullWidth, noPadding, rounded, noBlur = false, appearance = 'glass', color = 'neutral', intensity = 300, dark = true, onClick, className, style}){
-    const cardStyle = {
-        "--glass-color": `var(--color-${color}-${intensity})`,
-        width: '',
-        padding: '2rem',
-        borderRadius: '20px',
-        color: dark ? 'white' : 'black',
-        ...style
-    };
+export default function Card({children, fitWidth, fullWidth, noPadding, rounded, noBlur = false, appearance = 'glass', color = 'neutral', intensity, dark = true, onClick, className, style}){
+    
+    let [classNames, setClassNames] = useState("")
+    let [cardStyle, setCardStyle] = useState({})
+    const {theme} = useContext(ThemeContext)
 
-    if (appearance === 'glass' && !noBlur) {
-        cardStyle.backdropFilter = 'blur(10px)';
+    const roundedMap = {
+        s: '5px',
+        md: '10px'
     }
 
-    if (fitWidth === true){
-        cardStyle.width = 'fit-content'
-    }
+    useEffect(() => {
 
-    if (fullWidth === true){
-        cardStyle.width = '100%'
-    }
+        let intensityValue = intensity
+    
+        if (intensityValue === undefined){
+            intensityValue = theme === 'dark' ? 600 : 300;
+        }
+    
+        setCardStyle({
+            "--glass-color": `var(--color-${color}-${intensityValue})`,
+            "--card-text-color": `var(--color-${color}-${dark ? '100' : '800'})`,
+            width: fitWidth ? 'fit-content' : fullWidth ? '100%' : '',
+            padding: noPadding ? '' : '2rem',
+            borderRadius: roundedMap[rounded] ?? '20px',
+            backdropFilter: appearance === 'glass' && !noBlur ? 'blur(10px)' : undefined,
+            ...style
+        });
 
-    if (noPadding === true){
-        cardStyle.padding = ''
-    }
-
-    if (rounded === 's'){
-        cardStyle.borderRadius = '5px'
-    }
-    else if (rounded === 'md'){
-        cardStyle.borderRadius = '10px'
-    }
-    const classNames = `card ${appearance} ${className}`
+        setClassNames(`card ${appearance} ${className}`)
+    
+    }, [color, intensity, dark, appearance, noBlur, className, fitWidth, fullWidth, rounded, theme])
 
     return(
-    <article className={classNames} style={cardStyle} onClick={onClick}>
-        {children}
-    </article>
+        <article className={classNames} style={cardStyle} onClick={onClick}>
+            {children}
+        </article>
     )
+
 }
