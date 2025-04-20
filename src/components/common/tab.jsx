@@ -12,8 +12,7 @@ export default function Tab({items, onTabSelected, defaultValue, ...cardProps}){
         setTabSelected(item)
         onTabSelected(item)
     }
-    
-    return(
+    return (
         <>
             <SectionName section='Filter by'/>
             <Card noBlur noPadding fitWidth rounded='md' {...cardProps} color='blue'>

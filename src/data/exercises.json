@@ -208,15 +208,6 @@
       "unilateral": false
     },
     {
-      "exercise_name": "Russian Twists",
-      "muscle_type": "Abs",
-      "sub_muscle": ["Obliques"],
-      "techniques": ["Bodyweight", "Medicine Ball", "Plate"],
-      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/23711201-Weighted-Russian-Twist_Waist_thumbnail@3x.jpg",
-      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/23711201-Weighted-Russian-Twist_Waist.mp4",
-      "unilateral": false
-    },
-    {
       "exercise_name": "Plank",
       "muscle_type": "Core",
       "sub_muscle": ["Lower Back", "Shoulders"],
@@ -325,15 +316,6 @@
       "unilateral": false
     },
     {
-      "exercise_name": "Goblet Squat",
-      "muscle_type": "Legs",
-      "sub_muscle": ["Glutes", "Quadriceps"],
-      "techniques": ["Dumbbells", "Kettlebells"],
-      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/22811201-Dumbbell-Goblet-Squat-(female)_Thighs_thumbnail@3x.jpg",
-      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/22811201-Dumbbell-Goblet-Squat-(female)_Thighs.mp4",
-      "unilateral": false
-    },
-    {
       "exercise_name": "Zercher Squat",
       "muscle_type": "Legs",
       "sub_muscle": ["Glutes", "Core"],
@@ -341,15 +323,6 @@
       "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/15451101-Barbell-full-Zercher-Squat_Thighs_small_thumbnail@3x.jpg",
       "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/15451101-Barbell-full-Zercher-Squat_Thighs_small.jpg",
       "unilateral": false
-    },
-    {
-      "exercise_name": "Landmine Squat",
-      "muscle_type": "Legs",
-      "sub_muscle": ["Glutes", "Quadriceps"],
-      "techniques": ["Barbell"],
-      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/29761301-Landmine-Squat-and-Press_360_thumbnail@3x.jpg",
-      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/29761301-Landmine-Squat-and-Press_360.jpg",
-      "unilateral": true
     },
     {
       "exercise_name": "Hip Abduction",
@@ -385,15 +358,6 @@
       "techniques": ["Machine"],
       "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/05861201-Lever-Lying-Leg-Curl_Thighs_thumbnail@3x.jpg",
       "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/05861201-Lever-Lying-Leg-Curl_Thighs.mp4",
-      "unilateral": true
-    },
-    {
-      "exercise_name": "Nordic Hamstring Curl",
-      "muscle_type": "Hamstrings",
-      "sub_muscle": ["Glutes"],
-      "techniques": ["Bodyweight", "Assisted Band"],
-      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/42041101-Resistance-Band-Assisted-Nordic-Hamstring-Curl_Thighs_small_thumbnail@3x.jpg",
-      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/42041101-Resistance-Band-Assisted-Nordic-Hamstring-Curl_Thighs_small.jpg",
       "unilateral": true
     },
     {
@@ -466,24 +430,6 @@
       "techniques": ["Bodyweight"],
       "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/02761101-Dead-Bug_waist_small_thumbnail@3x.jpg",
       "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/02761101-Dead-Bug_waist_small.jpg",
-      "unilateral": false
-    },
-    {
-      "exercise_name": "Bird Dog",
-      "muscle_type": "Core",
-      "sub_muscle": ["Lower Back"],
-      "techniques": ["Bodyweight"],
-      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/12411101-Bird-Dog-male_Back_small_thumbnail@3x.jpg",
-      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/12411101-Bird-Dog-male_Back_small.jpg",
-      "unilateral": true
-    },
-    {
-      "exercise_name": "Ab Rollout",
-      "muscle_type": "Core",
-      "sub_muscle": ["Lower Back"],
-      "techniques": ["Ab Wheel", "Barbell"],
-      "img": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-thumbnails/08571201-Wheel-Rollout_Waist_thumbnail@3x.jpg",
-      "video": "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/08571201-Wheel-Rollout_Waist.mp4",
       "unilateral": false
     }
   ]

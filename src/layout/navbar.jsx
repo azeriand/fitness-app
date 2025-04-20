@@ -10,6 +10,7 @@ import generateTrainingDays from '../data/generateTrainingDays';
 import SectionName from '../components/common/section-name';
 import StreakInfo from '../components/common/streak-info';
 import TrainingWidget from '../components/training-widget';
+import Logo from '../components/logo'
 import { useState } from 'react';
 
 export default function NavBar() {
@@ -30,6 +31,7 @@ export default function NavBar() {
 
     return (
         <Card intensity={500} noPadding>
+            <Logo></Logo>
             <StreakInfo/>
             <SectionName section='streak'/>
             {/* <CalendarView selectedDates={selectedDates}/> */}
