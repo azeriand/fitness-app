@@ -10,8 +10,16 @@ import TlListItem from './common/timeline-list-item'
 import Input from './common/input'
 
 export default function TrainingWidget({...cardProps}){
+    const trainingWidgetProps = {
+        padding: '0.5rem'
+    }
+
+    const inputProps ={
+        height: '2rem',
+        width: '2rem',
+    }
     return(
-        <Card noBlur intensity={500} {...cardProps}>
+        <Card noBlur intensity={500} {...cardProps} style={{...cardProps.style, ...trainingWidgetProps}}>
             <div className='firstrow'>
                 <div className='current-time'>12:26</div>
                 <div className='play-stop'>
@@ -21,14 +29,12 @@ export default function TrainingWidget({...cardProps}){
 
             </div>
             <div className='secondrow'>
-                <Timeline>
-                    <TlListItem label='Bench Press'/>
-                </Timeline>
+                <div className='exerciseName'>Bench Press</div>
                 <div className='input-display'>
-                    <Button icon={<FaChevronLeft/>} appearance='mate'/>
-                    <Input rounded='md' maxLength='3'/>
-                    <Input rounded='md' maxLength='3'/>
-                    <Button icon={<FaChevronRight/>} appearance='mate'/>
+                    <Button icon={<FaChevronLeft/>} appearance='mate' size='sm'/>
+                    <Input rounded='md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
+                    <Input rounded='md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
+                    <Button icon={<FaChevronRight/>} appearance='mate' size='sm'/>
                 </div>
             </div>
             <div className='thirdrow'>
