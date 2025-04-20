@@ -22,7 +22,7 @@ export default function NavBar() {
     
     const listItems = [
         {logo: <TbHomeFilled/>, label: 'Home', destination: '/'},
-        {logo: <FaDumbbell/>, label: 'Train', destination: '/train'},
+        {logo: <FaDumbbell/>, label: 'Routines', destination: '/routines'},
         {logo: <FaChartSimple/>, label: 'Stats', destination: '/stats'},
         {logo: <IoMdSettings/>, label: 'Settings', destination: '/settings'}
     ]

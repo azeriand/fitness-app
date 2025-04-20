@@ -1,4 +1,4 @@
-import './Train.css'
+import './Routines.css'
 import RoutineCard from "../components/routine-card"
 import SectionName from '../components/common/section-name'
 
@@ -21,7 +21,7 @@ export default function Train(){
     return(
         <>
             <p className='page-name'>Train</p>
-            <SectionName section='Trainings'/>
+            <SectionName section='Routines'/>
             <div className="train-routine-card">
                 <RoutineCard exercises={exercises} label='Chest' timeAgo='Last time: 4 years ago.'/>
                 <RoutineCard exercises={exercises} label='Chest' timeAgo='Last time: 4 years ago.'/>
