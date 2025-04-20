@@ -1,0 +1,11 @@
+.vertical-line::before {
+    content: "";
+    position: absolute;
+    width: 1.5px;
+    height: 100%;
+    background-color: white;
+    left: 1.20rem;
+    top: 0;
+    list-style-position: outside;
+    transform: translateX(10px);
+}
