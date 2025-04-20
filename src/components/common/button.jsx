@@ -1,7 +1,7 @@
 import './button.css'
 import Card from './card'
 
-export default function BasicButton({children, label, icon, fullWidth, position='left', onClick, ...cardProps}){
+export default function BasicButton({children, label, icon, fullWidth, position='left', onClick, size, ...cardProps}){
    const buttonStyle = {
     width: ''
    }
@@ -26,9 +26,23 @@ export default function BasicButton({children, label, icon, fullWidth, position=
     if (label) {
         cardStyle.padding = '0 1rem'
     }
+
+    if (size === 'sm'){
+        cardStyle.height = '2rem';
+        cardStyle.width = '2rem';
+        cardStyle.fontStyle = '1rem';
+        cardStyle.padding = '';
+        cardStyle.minWidth = 'auto';
+    }
+
+    const buttonClick = () => {
+        if (typeof onClick === 'function') { 
+            onClick()
+        }
+    }
    
     return(
-        <button style={buttonStyle} className={classNames} onClick={onClick}>
+        <button style={buttonStyle} className={classNames} onClick={buttonClick}>
             <Card noBlur rounded='md' style={cardStyle} {...cardProps}>
                 {position === 'left' && icon}
                 {label}
