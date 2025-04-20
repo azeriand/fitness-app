@@ -12,6 +12,8 @@ import Input from './common/input';
 import SectionName from './common/section-name';
 
 export default function SetsWidget({children}){
+
+    const options = ["Barbell", "Dumbbells", "Smith Machine"]
     return(
         <Card noBlur>
             <div className='header-sets'>
@@ -24,7 +26,7 @@ export default function SetsWidget({children}){
                     </div>
                 </div>
                 <div className='dropdown-sets'>
-                    <Dropdown buttonText='Barbell'/>
+                    <Dropdown buttonText='Barbell' options={options}/>
                     <Button icon={<TbDotsVertical/>} appearance='ghost'/>
                 </div>
                 
@@ -42,7 +44,9 @@ export default function SetsWidget({children}){
                 <SectionName size="sm" section='done'/>
                 {children}
             </div>
-            <Button label='Add Set' color='blue' intensity='600' fullWidth/>
+            <div className='add-set'>
+                <Button label='Add Set' color='blue' intensity='600' fullWidth/>
+            </div>
         </Card>
     )
 }

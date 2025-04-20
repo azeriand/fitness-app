@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .avatar-sets{
@@ -31,4 +32,9 @@
     gap: 0.5rem;
     justify-items: stretch;
     align-items: stretch;
+    margin-top: 1.5rem;
+}
+
+.add-set{
+    margin-top: 1.5rem;
 }
