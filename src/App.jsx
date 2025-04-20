@@ -11,30 +11,39 @@ import PortfolioAccess from './layout/portfolio-access.jsx'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import Gradient from './components/common/gradient.jsx'
+import TopBar from './layout/top-bar.jsx'
+
+//Envolviendo todos los componentes en el 'entorno' para que puedan usar el contexto
+import ThemeContextComponent from './components/common/theme-context.jsx'
+import TrainingContextComponent from './components/common/training-context.jsx'
 
 
 function App() {
 
   return(
     <div className='viewport'>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <Gradient/>
-        <BrowserRouter>
-          <NavBar></NavBar>
-          <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
-            <PortfolioAccess/>
-            <Card intensity={500} style={{overflow: 'scroll', height: '100%', overflowY: 'auto'}}>
-                <Routes>
-                  <Route path='/' element={<Home/>}></Route>
-                  <Route path='/stats' element={<Stats/>}></Route>
-                  <Route path='/settings' element={<Settings/>}></Route>
-                  <Route path='/train' element={<Train/>}></Route>
-                  <Route path='/training' element={<Training/>}></Route>
-                </Routes>
-            </Card>
-          </div>
-        </BrowserRouter>
-      </LocalizationProvider>
+      <ThemeContextComponent>
+        <TrainingContextComponent>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Gradient/>
+            <BrowserRouter>
+              <NavBar></NavBar>
+              <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
+                <TopBar/>
+                <Card intensity={500} style={{overflow: 'scroll', height: '100%', overflowY: 'auto'}}>
+                    <Routes>
+                      <Route path='/' element={<Home/>}></Route>
+                      <Route path='/stats' element={<Stats/>}></Route>
+                      <Route path='/settings' element={<Settings/>}></Route>
+                      <Route path='/train' element={<Train/>}></Route>
+                      <Route path='/training' element={<Training/>}></Route>
+                    </Routes>
+                </Card>
+              </div>
+            </BrowserRouter>
+          </LocalizationProvider>
+        </TrainingContextComponent>
+      </ThemeContextComponent>
     </div>
   )
 }
