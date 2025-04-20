@@ -259,6 +259,7 @@
   --color-white: #fff;
 
   --glass-color: var(--color-neutral-400);
+  --card-text-color: var(--color-neutral-100);
   --glass-opacity: 80%;
 }
 
