@@ -20,7 +20,7 @@ export default function Train(){
 
     return(
         <>
-            <p className='page-name'>Train</p>
+            <p className='text-start text-[2rem] font-bold m-0'>Train</p>
             <SectionName section='Routines'/>
             <div className="train-routine-card">
                 <RoutineCard exercises={exercises} label='Chest' timeAgo='Last time: 4 years ago.'/>

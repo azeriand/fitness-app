@@ -36,15 +36,3 @@ input:focus{
 .full-width{
     width: 100%;
 }
-
-.left{
-    display: flex;
-    padding-left: 1rem;
-    align-items: center;
-}
-
-.right{
-    display: flex;
-    padding-right: 1rem;
-    align-items: center;
-}

@@ -18,7 +18,7 @@ export default function Home(){
 
   return(
     <>
-      <p className='page-name'>Home</p>
+      <p className='text-start text-[2rem] font-bold m-0 pb-[1rem]'>Home</p>
       <div className='home-container'>
         <div>
           {

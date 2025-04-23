@@ -1,5 +1,4 @@
 import Button from './button'
-import './checkbox.css'
 import { FaCheck } from "react-icons/fa";
 import { useState } from 'react';
 
@@ -13,7 +12,7 @@ export default function Checkbox({label, checkedDefault = false, onChange}){
     }
 
     return(
-        <div className='check' onClick={checkboxClicked}>
+        <div className='flex content-center gap-0.5 w-fit' onClick={checkboxClicked}>
                 <Button icon={checked ? <FaCheck/> : null }>
                 </Button>
                 {label}

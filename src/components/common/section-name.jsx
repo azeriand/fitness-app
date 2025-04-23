@@ -11,7 +11,7 @@ export default function SectionName({section, size}){
     }
 
     return(
-        <div className='section-name' style={sectionStyle}>
+        <div className='uppercase font-bold tracking-[0.15rem] w-fit section-name' style={sectionStyle}>
             {section}
         </div>
     )

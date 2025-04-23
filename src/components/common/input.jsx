@@ -19,9 +19,9 @@ export default function Input({type, value, disabled, placeholder, rounded, size
     return(
     <div className={classnames}>
         <Card noBlur noPadding rounded={rounded} {...cardProps} style={inputStyle}>
-            <div className='left'>{iconPosition === 'left' && icon}</div>
+            <div className='flex pl-[1rem] items-center'>{iconPosition === 'left' && icon}</div>
             <input onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} size={size} maxLength={maxLength} style={inputStyle}></input>
-            <div className='right'>{iconPosition === 'right' && icon}</div>
+            <div className='flex pr-[1rem] items-center'>{iconPosition === 'right' && icon}</div>
         </Card>
     </div>
     )

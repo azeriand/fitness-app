@@ -1,5 +1,3 @@
-import './avatar.css'
-
 
 export default function Avatar({src, size, rounded}){
     const avatarStyle = {
@@ -16,6 +14,6 @@ export default function Avatar({src, size, rounded}){
     }
 
     return(
-        <img className ='avatarImg' src={src} style={avatarStyle}/>
+        <img className ='h-1 w-1' src={src} style={avatarStyle}/>
     )
 }

@@ -1,5 +1,4 @@
-import './tab.css'
-import './tab-item.css'
+
 import { useState } from 'react'
 import Card from './card'
 import SectionName from './section-name'
@@ -16,7 +15,7 @@ export default function Tab({items, onTabSelected, defaultValue, ...cardProps}){
         <>
             <SectionName section='Filter by'/>
             <Card noBlur noPadding fitWidth rounded='md' {...cardProps} color='blue'>
-                <div className='flex-buttons'>
+                <div className='flex p-[0.4rem] gap-x-[0.5rem]'>
                     {
                         items.map(item => <Button onClick={() => selectTab(item)} color='blue' key={item} appearance={item === tabSelected ? 'mate' : 'ghost'} dark={item === tabSelected ? false : true } label={item}/>)
                     }

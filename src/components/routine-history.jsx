@@ -37,22 +37,22 @@ export default function RoutineHistory({routine}){
     return(
         <Card>
             <div>
-                <div className='flex space-btwn'>
-                    <div className='flex column-gap'>
+                <div className='flex items-center justify-between'>
+                    <div className='flex items-center gap-x-[1rem]'>
                         <Avatar src={Goku} size='3' rounded='s'/>
                         <div className='aside-avatar'>
-                            <p>{routine.user}</p>
-                            <p className='last-time'>{dayjs(routine.day).format('dddd')}</p>
+                            <p className='p-0 m-0 text-start'>{routine.user}</p>
+                            <p className='p-0 m-0 text-start text-[0.75rem] last-time'>{dayjs(routine.day).format('dddd')}</p>
                         </div>
                     </div>
-                    <div className='flex input'>
+                    <div className='flex items-center justify-end'>
                         <Input value={routine.duration} rounded='s' icon={<IoTimerOutline/>} disabled/>
                         <Input value={routine.volume} rounded='s' icon={<FaDumbbell/>} disabled/>
                     </div>
                 </div>
 
-                <div className='flex column-gap paddingtb'>
-                    <p className='routine-name'>{routine.name}</p>
+                <div className='flex items-center gap-x-[1rem] py-[1rem]'>
+                    <p className='font-bold text-[1.5rem]'>{routine.name}</p>
                     <Badge label={routine.type}/>
                 </div>
 

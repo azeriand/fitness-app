@@ -7,8 +7,6 @@ import Dropdown from './common/dropdown/dropdown'
 import Button from './common/button'
 import Card from './common/card'
 import Avatar from './common/avatar';
-import RowSet from './common/row-set';
-import Input from './common/input';
 import SectionName from './common/section-name';
 
 export default function SetsWidget({children}){
@@ -16,25 +14,25 @@ export default function SetsWidget({children}){
     const options = ["Barbell", "Dumbbells", "Smith Machine"]
     return(
         <Card noBlur>
-            <div className='header-sets'>
-                <div className='avatar-sets'>
+            <div className='flex items-center justify-between mb-[1rem]'>
+                <div className='flex items-center gap-x-[0.5rem]'>
                     <Button icon={<RxDragHandleDots2/>} appearance='ghost'/>
                     <Avatar src={Goku} size='3' rounded='s'/>
                     <div>
-                        <p className='exercise-title'>Chess Press</p>
+                        <p className='m-0'>Chess Press</p>
                         <Badge label='Chest'/>
                     </div>
                 </div>
-                <div className='dropdown-sets'>
+                <div className='flex'>
                     <Dropdown buttonText='Barbell' options={options}/>
                     <Button icon={<TbDotsVertical/>} appearance='ghost'/>
                 </div>
                 
             </div>
             <Card noPadding rounded='md'>
-                <p className='exercise-notes'>Lore ipsum no se que, lo que siempre ponen aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                <p className='m-0 p-[0.5rem] text-[0.75rem] text-start'>Lore ipsum no se que, lo que siempre ponen aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
             </Card>
-            <div className='sn-set'>
+            <div>
             </div>
             <div className='set-grid'>
                 <SectionName size="sm" section='set'/>
@@ -44,7 +42,7 @@ export default function SetsWidget({children}){
                 <SectionName size="sm" section='done'/>
                 {children}
             </div>
-            <div className='add-set'>
+            <div className='mt-[1.5rem]'>
                 <Button label='Add Set' color='blue' intensity='600' fullWidth/>
             </div>
         </Card>

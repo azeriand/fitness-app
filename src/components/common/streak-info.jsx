@@ -1,4 +1,4 @@
-import './streak-info.css'
+
 import Card from './card'
 import Avatar from './avatar'
 import SectionName from './section-name'
@@ -18,8 +18,8 @@ export default function StreakInfo({...cardProps}){
         <Card {...cardProps} style={{...cardStyle, ...cardProps.style}} appearance='ghost'>
             <Avatar src={Goku2} size='5'/>
             <div>
-                <p className='profile-name'>Profile 1</p>
-                <div className='sectionIcon'>
+                <p className='m-0 p-0 font-bold text-start'>Profile 1</p>
+                <div className='flex items-center gap-x-[0.5rem]'>
                     <SectionName size='sm' section='12 streak weeks'/>
                     <FaArrowTrendUp/>
                 </div>

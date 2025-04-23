@@ -9,10 +9,10 @@ export default function ExerciseCard({exercises, label, badge, sets, ...cardProp
 
     return(
         <>
-            <div className='flex width-100'>
+            <div className='flex items-center gap-x-[1rem] w-full'>
                 <Avatar size='3' rounded='s' src={Goku}/>
-                <div className='width-100'>
-                    <p>{label}</p>
+                <div className='w-full'>
+                    <p className='m-0 p-0 text-start'>{label}</p>
                     {badge}
                 </div>
             </div> 

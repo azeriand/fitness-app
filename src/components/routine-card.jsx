@@ -15,11 +15,11 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
     return (
         <Card noBlur noPadding {...cardProps}>
-            <div className='rc-card'>
-                <div className='routine-card'>
-                    <div className='rc-description'>
-                        <div className='rc-label'>{label}</div>
-                        <div className='rc-timeago'>{timeAgo}</div>
+            <div className='p-[1.25rem]'>
+                <div className='flex items-center gap-x-[1rem]'>
+                    <div className='text-start'>
+                        <div className='font-bold text-[1.5rem]'>{label}</div>
+                        <div className='rc-timeago text-[0.75rem]'>{timeAgo}</div>
                     </div>
 
                     <div>
