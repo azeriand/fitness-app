@@ -1,0 +1,17 @@
+.stop-play{
+    display:flex;
+    align-items: center;
+}
+
+.routine-time{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    column-gap: 7rem;
+}
