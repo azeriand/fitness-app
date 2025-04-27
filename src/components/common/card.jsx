@@ -23,7 +23,7 @@ export default function Card({children, noPadding, noBlur = false, appearance = 
             ...style
         });
 
-        setClassNames(`card ${appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`)
+        setClassNames(`card rounded-md ${appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`)
     
     }, [color, intensity, dark, appearance, noBlur, className, theme])
 

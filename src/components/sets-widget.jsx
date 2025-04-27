@@ -35,11 +35,11 @@ export default function SetsWidget({children}){
             <div>
             </div>
             <div className='set-grid'>
-                <SectionName size="sm" section='set'/>
-                <SectionName size="sm" section='previous'/>
-                <SectionName size="sm" section='reps'/>
-                <SectionName size="sm" section='kg'/>
-                <SectionName size="sm" section='done'/>
+                <SectionName className='text-xs' section='set'/>
+                <SectionName className='text-xs' section='previous'/>
+                <SectionName className='text-xs' section='reps'/>
+                <SectionName className='text-xs' section='kg'/>
+                <SectionName className='text-xs' section='done'/>
                 {children}
             </div>
             <div className='mt-[1.5rem]'>
