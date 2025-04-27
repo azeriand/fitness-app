@@ -5,7 +5,7 @@ import Button from './common/button'
 import Badge from './common/badge'
 import Avatar from './common/avatar'
 import SectionName from './common/section-name'
-import ExerciseCard from './common/exercise-card'
+import ExerciseCard from './exercise-card'
 import Goku from '../assets/goku2.jpg'
 import dayjs from 'dayjs'
 import {FaDumbbell} from 'react-icons/fa'
@@ -39,7 +39,7 @@ export default function RoutineHistory({routine}){
             <div>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-x-[1rem]'>
-                        <Avatar src={Goku} size='3' rounded='s'/>
+                        <Avatar src={Goku} className='rounded-sm'/>
                         <div className='aside-avatar'>
                             <p className='p-0 m-0 text-start'>{routine.user}</p>
                             <p className='p-0 m-0 text-start text-[0.75rem] last-time'>{dayjs(routine.day).format('dddd')}</p>
