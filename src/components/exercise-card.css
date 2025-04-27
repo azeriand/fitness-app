@@ -1,0 +1,15 @@
+
+.flex-end{
+    justify-content: flex-end;
+}
+
+
+.flex input{
+    width: 5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
