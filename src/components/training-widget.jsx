@@ -30,8 +30,8 @@ export default function TrainingWidget({...cardProps}){
                 <div className='truncate text-[1.1rem] font-bold justify-center'>Bench Press</div>
                 <div className='flex items-center gap-x-[0.25rem]'>
                     <Button icon={<FaChevronLeft/>} appearance='mate' size='sm'/>
-                    <Input rounded='md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
-                    <Input rounded='md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
+                    <Input className='rounded-md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
+                    <Input className='rounded-md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
                     <Button icon={<FaChevronRight/>} appearance='mate' size='sm'/>
                 </div>
             </div>

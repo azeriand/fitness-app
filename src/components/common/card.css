@@ -24,10 +24,6 @@
     border: solid white 2px;
 }
 
-.card.ghost{
-
-}
-
 button .card.ghost:hover, button .card.outlined:hover{
     background: color-mix(in oklch, var(--glass-color), transparent 80%);
 }

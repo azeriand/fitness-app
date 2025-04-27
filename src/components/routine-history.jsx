@@ -46,8 +46,8 @@ export default function RoutineHistory({routine}){
                         </div>
                     </div>
                     <div className='flex items-center justify-end'>
-                        <Input value={routine.duration} rounded='s' icon={<IoTimerOutline/>} disabled/>
-                        <Input value={routine.volume} rounded='s' icon={<FaDumbbell/>} disabled/>
+                        <Input className='rounded-sm' value={routine.duration} icon={<IoTimerOutline/>} disabled/>
+                        <Input className='rounded-sm' value={routine.volume} icon={<FaDumbbell/>} disabled/>
                     </div>
                 </div>
 

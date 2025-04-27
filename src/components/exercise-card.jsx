@@ -16,7 +16,7 @@ export default function ExerciseCard({exercises, label, badge, sets, ...cardProp
                     {badge}
                 </div>
             </div> 
-            <Input style={{...cardProps.style}} maxLength='7' rounded='s' value= {sets} disabled/>
+            <Input className='rounded-sm' style={{...cardProps.style}} maxLength='7' value= {sets} disabled/>
 
         </>
     )

@@ -2,7 +2,7 @@ import './input.css'
 import Card from './card'
 import CardStyle from './card'
 
-export default function Input({type, value, disabled, placeholder, rounded, size, maxLength, onChange, iconPosition='left', icon, ...cardProps}){
+export default function Input({type, value, disabled, placeholder, size, maxLength, onChange, iconPosition='left', icon, ...cardProps}){
     function inputUpdated(ev){
         onChange(ev.target.value)
     }
@@ -15,12 +15,12 @@ export default function Input({type, value, disabled, placeholder, rounded, size
         alignItems: 'center'
     }
 
-    const classnames = `input ${cardProps.fullWidth ? 'full-width' : ''}`
+    const classnames = `flex w-fit ${cardProps.fullWidth ? 'w-full' : ''}`
     return(
     <div className={classnames}>
-        <Card noBlur noPadding rounded={rounded} {...cardProps} style={inputStyle}>
+        <Card noBlur noPadding {...cardProps} style={inputStyle}>
             <div className='flex pl-[1rem] items-center'>{iconPosition === 'left' && icon}</div>
-            <input onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} size={size} maxLength={maxLength} style={inputStyle}></input>
+            <input className='border-none bg-none py-[0.5rem] px-[1rem] m-0' onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} size={size} maxLength={maxLength} style={inputStyle}></input>
             <div className='flex pr-[1rem] items-center'>{iconPosition === 'right' && icon}</div>
         </Card>
     </div>

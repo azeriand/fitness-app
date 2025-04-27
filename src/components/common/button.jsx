@@ -3,7 +3,7 @@ import Card from './card'
 
 export default function BasicButton({children, label, icon, position='left', onClick, size, className, ...cardProps}){
 
-    let cardClassNames = 'flex justify-center items-center gap-x-[0.40rem] h-[2.5rem] min-w-[2.5rem] box-border p-0'
+    let cardClassNames = 'flex justify-center items-center gap-x-[0.40rem] h-[2.5rem] min-w-[2.5rem] box-border p-0 rounded-md'
 
     if (label) {
         cardClassNames += ' px-0 py-1'
@@ -21,7 +21,7 @@ export default function BasicButton({children, label, icon, position='left', onC
    
     return(
         <button className={className} onClick={buttonClick}>
-            <Card noBlur noPadding rounded='md' className={cardClassNames} {...cardProps}>
+            <Card noBlur noPadding className={cardClassNames} {...cardProps}>
                 {position === 'left' && icon}
                 {label}
                 {children}

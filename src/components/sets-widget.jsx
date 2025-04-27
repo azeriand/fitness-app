@@ -29,7 +29,7 @@ export default function SetsWidget({children}){
                 </div>
                 
             </div>
-            <Card noPadding rounded='md'>
+            <Card className='rounded-md' noPadding>
                 <p className='m-0 p-[0.5rem] text-[0.75rem] text-start'>Lore ipsum no se que, lo que siempre ponen aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
             </Card>
             <div>
