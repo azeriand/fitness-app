@@ -1,38 +1,16 @@
 import './button.css'
 import Card from './card'
 
-export default function BasicButton({children, label, icon, fullWidth, position='left', onClick, size, ...cardProps}){
-   const buttonStyle = {
-    width: ''
-   }
+export default function BasicButton({children, label, icon, position='left', onClick, size, className, ...cardProps}){
 
-   let classNames = `basic-button`
-
-   if (fullWidth){
-    buttonStyle.width = '100%'
-   }
-
-   const cardStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    columnGap: '0.40rem',
-    height: '2.5rem',
-    minWidth: '2.5rem',
-    boxSizing: 'border-box',
-    padding: 0,
-}
+    let cardClassNames = 'flex justify-center items-center gap-x-[0.40rem] h-[2.5rem] min-w-[2.5rem] box-border p-0'
 
     if (label) {
-        cardStyle.padding = '0 1rem'
+        cardClassNames += ' px-0 py-1'
     }
 
     if (size === 'sm'){
-        cardStyle.height = '2rem';
-        cardStyle.width = '2rem';
-        cardStyle.fontStyle = '1rem';
-        cardStyle.padding = '';
-        cardStyle.minWidth = 'auto';
+        cardClassNames += ' h-[2rem] w-[2rem] min-w-auto'
     }
 
     const buttonClick = () => {
@@ -42,8 +20,8 @@ export default function BasicButton({children, label, icon, fullWidth, position=
     }
    
     return(
-        <button style={buttonStyle} className={classNames} onClick={buttonClick}>
-            <Card noBlur rounded='md' style={cardStyle} {...cardProps}>
+        <button className={className} onClick={buttonClick}>
+            <Card noBlur noPadding rounded='md' className={cardClassNames} {...cardProps}>
                 {position === 'left' && icon}
                 {label}
                 {children}

@@ -17,7 +17,7 @@ export default function SetsWidget({children}){
             <div className='flex items-center justify-between mb-[1rem]'>
                 <div className='flex items-center gap-x-[0.5rem]'>
                     <Button icon={<RxDragHandleDots2/>} appearance='ghost'/>
-                    <Avatar src={Goku} size='3' rounded='s'/>
+                    <Avatar src={Goku} className='rounded-sm'/>
                     <div>
                         <p className='m-0'>Chess Press</p>
                         <Badge label='Chest'/>
@@ -43,7 +43,7 @@ export default function SetsWidget({children}){
                 {children}
             </div>
             <div className='mt-[1.5rem]'>
-                <Button label='Add Set' color='blue' intensity='600' fullWidth/>
+                <Button label='Add Set' color='blue' intensity='600' className='w-full'/>
             </div>
         </Card>
     )

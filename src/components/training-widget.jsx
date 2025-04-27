@@ -36,9 +36,9 @@ export default function TrainingWidget({...cardProps}){
                 </div>
             </div>
             <div className='flex items-center justify-around gap-x-[0.5rem]'>
-                <Button label='Open' fullWidth/>
-                <Button label='Finish' color='green' intensity='600' fullWidth/>
-                <Button label='Discard' color='red' intensity='600' fullWidth/>
+                <Button label='Open' className='w-full'/>
+                <Button label='Finish' color='green' intensity='600' className='w-full'/>
+                <Button label='Discard' color='red' intensity='600' className='w-full'/>
             </div>
         </Card>
     )

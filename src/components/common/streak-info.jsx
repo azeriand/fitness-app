@@ -16,7 +16,7 @@ export default function StreakInfo({...cardProps}){
 
     return(
         <Card {...cardProps} style={{...cardStyle, ...cardProps.style}} appearance='ghost'>
-            <Avatar src={Goku2} size='5'/>
+            <Avatar src={Goku2} className='size-[5rem] rounded-2xl'/>
             <div>
                 <p className='m-0 p-0 font-bold text-start'>Profile 1</p>
                 <div className='flex items-center gap-x-[0.5rem]'>
