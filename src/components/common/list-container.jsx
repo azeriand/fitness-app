@@ -20,7 +20,7 @@ export default function List({children, onListItemSelected, name, defaultValue, 
             <ul className='list-none ps-[0]'>
                 {items.map(item =>
                     <>
-                        <Card noBlur appearance={item.destination === listItemSelected.destination ? 'mate' : 'ghost'} rounded='md' noPadding onClick={() => onItemClicked(item)} {...cardProps}>
+                        <Card className='rounded-md' noBlur appearance={item.destination === listItemSelected.destination ? 'mate' : 'ghost'} noPadding onClick={() => onItemClicked(item)} {...cardProps}>
                             <div  className='font-bold text-[1.5rem] pl-[1rem] py-[0.3rem] flex items-center gap-x-[0.5rem] content-start'>
                                 {item.logo}
                                 {item.label}

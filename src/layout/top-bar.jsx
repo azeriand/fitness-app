@@ -11,7 +11,7 @@ export default function TopBar(){
     const {theme, setTheme} = useContext(ThemeContext);
 
     return(
-        <Card appearance='ghost' noPadding fullWidth>
+        <Card className='w-full' appearance='ghost' noPadding>
             <Button label='Go to portfolio!'/>
             <Button icon={theme === 'dark' ? <MdLightMode/> : <MdDarkMode/>} onClick={() => setTheme((oldValue) => oldValue === 'dark' ? 'light' : 'dark')}/>
         </Card>

@@ -5,10 +5,10 @@ import Checkbox from './checkbox'
 export default function RowSet(){
     return(
         <>
-            <Input noPadding disabled placeholder='1' fullWidth/>
-            <Input noPadding disabled placeholder='Previous' fullWidth/>
-            <Input noPadding type='number' fullWidth/>
-            <Input noPadding type='number' fullWidth/>
+            <Input className='w-full' noPadding disabled placeholder='1'/>
+            <Input className='w-full' noPadding disabled placeholder='Previous'/>
+            <Input className='w-full' noPadding type='number'/>
+            <Input className='w-full' noPadding type='number'/>
             <Checkbox/>
         </>
     )
