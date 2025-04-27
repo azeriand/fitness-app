@@ -1,4 +1,4 @@
-import './time-controller.css'
+
 import Card from './card'
 import Button from './button'
 import { FaPause } from "react-icons/fa";

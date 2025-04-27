@@ -22,7 +22,7 @@ export default function Home(){
       <div className='home-container'>
         <div>
           {
-            history.map((routine) => <RoutineHistory routine={routine}/>)
+            history.slice(0, 6).map((routine) => <RoutineHistory routine={routine}/>)
           }
         </div>
         <div>
