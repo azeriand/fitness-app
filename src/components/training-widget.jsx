@@ -11,15 +11,7 @@ export default function TrainingWidget({...cardProps}){
         padding: '0.5rem'
     }
 
-    const inputProps ={
-        width: '2.5rem',
-        height: '2.5rem',
-        fontSize: '1rem',
-        boxSizing: 'border-box',
-        padding: '0',
-        textAlign: 'center',
-        fontWeight: 'bold',
-    }
+    const inputClassNames = 'rounded-sm w-[2.5rem] h-[2.5rem] text-base box-border !px-0 text-center font-bold'
 
     return(
         <Card noBlur intensity={500} {...cardProps} style={{...cardProps.style, ...trainingWidgetProps}}>
@@ -35,8 +27,8 @@ export default function TrainingWidget({...cardProps}){
                 <div className='truncate text-[1.1rem] font-bold justify-center'>Bench Press</div>
                 <div className='flex items-center gap-x-[0.25rem]'>
                     <Button icon={<FaChevronLeft/>} appearance='mate' size='sm'/>
-                    <Input className='rounded-md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
-                    <Input className='rounded-md' maxLength='3' style={{...cardProps.style, ...inputProps}}/>
+                    <Input className={inputClassNames} maxLength='3' style={cardProps.style}/>
+                    <Input className={inputClassNames} maxLength='3' style={cardProps.style}/>
                     <Button icon={<FaChevronRight/>} appearance='mate' size='sm'/>
                 </div>
             </div>

@@ -27,7 +27,7 @@ export default function AddExercise(){
             <Card appearance='ghost'>
                 <SectionName section='add exercise'/>
                 <Card>
-                    <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} fullWidth onChange={inputUpdated} />
+                    <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full' />
                     {
                         exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchbarValue)))
                                  .map((exercise) => 

@@ -3,15 +3,7 @@ import Avatar from './common/avatar'
 import Input from './common/input'
 
 export default function ExerciseCard({label, badge, sets, ...cardProps}){
-    const inputStyle = {
-        width: '5rem',
-        height: '2.5rem',
-        fontSize: '1rem',
-        boxSizing: 'border-box',
-        padding: '0',
-        textAlign: 'center',
-        fontWeight: 'bold',
-    }
+    const inputClassNames = 'rounded-sm w-[5rem] h-[2.5rem] text-base box-border p-0 text-center font-bold'
     return(
         <>
             <div className='flex items-center gap-x-[1rem] w-full'>
@@ -22,7 +14,7 @@ export default function ExerciseCard({label, badge, sets, ...cardProps}){
                 </div>
             </div> 
             {
-                sets && <Input className='rounded-sm' style={{...cardProps.style, ...inputStyle}} maxLength='7' value={sets} disabled/>
+                sets && <Input className={inputClassNames} style={cardProps.style} maxLength='7' value={sets} disabled/>
             }
 
         </>
