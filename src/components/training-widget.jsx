@@ -1,4 +1,3 @@
-import './training-widget.css'
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
@@ -13,9 +12,15 @@ export default function TrainingWidget({...cardProps}){
     }
 
     const inputProps ={
-        height: '2rem',
-        width: '2rem',
+        width: '2.5rem',
+        height: '2.5rem',
+        fontSize: '1rem',
+        boxSizing: 'border-box',
+        padding: '0',
+        textAlign: 'center',
+        fontWeight: 'bold',
     }
+
     return(
         <Card noBlur intensity={500} {...cardProps} style={{...cardProps.style, ...trainingWidgetProps}}>
             <div className='flex items-center justify-between'>
@@ -26,7 +31,7 @@ export default function TrainingWidget({...cardProps}){
                 </div>
 
             </div>
-            <div className='flex items-center justify-between py-[0.5rem] secondrow'>
+            <div className='flex items-center justify-between py-[0.5rem]'>
                 <div className='truncate text-[1.1rem] font-bold justify-center'>Bench Press</div>
                 <div className='flex items-center gap-x-[0.25rem]'>
                     <Button icon={<FaChevronLeft/>} appearance='mate' size='sm'/>
