@@ -4,6 +4,7 @@ import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/common/row-set'
 import Button from '../components/common/button'
 import TimeController from '../components/common/time-controller'
+import AddExercise from '../components/add-exercise'
 
 export default function Training(){
     return(
@@ -18,6 +19,7 @@ export default function Training(){
                 </div>
             </div>
             <SectionName section='Exercises'/>
+            <AddExercise/>
         </>
     )
 }
