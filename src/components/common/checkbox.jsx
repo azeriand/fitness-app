@@ -12,7 +12,7 @@ export default function Checkbox({label, checkedDefault = false, onChange}){
     }
 
     return(
-        <div className='flex content-center gap-0.5 w-fit' onClick={checkboxClicked}>
+        <div className='flex items-center gap-0.5 w-fit' onClick={checkboxClicked}>
                 <Button icon={checked ? <FaCheck/> : null }>
                 </Button>
                 {label}
