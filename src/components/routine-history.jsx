@@ -56,7 +56,7 @@ export default function RoutineHistory({routine}){
                     <Badge label={routine.type}/>
                 </div>
 
-                <div className='grid'>
+                <div className='grid grid-cols-[80%_20%] gap-[1rem]'>
                     <SectionName section='exercise'/>   
                     <SectionName section='sets'/>
 
