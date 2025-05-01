@@ -1,4 +1,3 @@
-import './Home.css'
 
 import RoutineHistory from '../components/routine-history'
 import CalendarView from '../components/common/calendar-view'
@@ -19,7 +18,7 @@ export default function Home(){
   return(
     <>
       <p className='text-start text-[2rem] font-bold m-0 pb-[1rem]'>Home</p>
-      <div className='home-container'>
+      <div className='grid grid-cols-[70%_30%] grid-rows-[100%] gap-x-[1rem]'>
         <div>
           {
             history.slice(0, 6).map((routine) => <RoutineHistory routine={routine}/>)
