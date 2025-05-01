@@ -1,4 +1,4 @@
-import './sets-widget.css'
+
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
 import Goku from '../assets/goku.jpg'
@@ -34,7 +34,7 @@ export default function SetsWidget({children}){
             </Card>
             <div>
             </div>
-            <div className='set-grid'>
+            <div className='grid grid-cols-[1fr_4fr_2fr_2fr_1fr] justify-items-stretch items-stretch gap-[0.5rem] mt-[1.5rem]'>
                 <SectionName className='text-xs' section='set'/>
                 <SectionName className='text-xs' section='previous'/>
                 <SectionName className='text-xs' section='reps'/>

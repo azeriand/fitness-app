@@ -1,9 +1,0 @@
-
-.set-grid{
-    display: grid;
-    grid-template-columns: 1fr 4fr 2fr 2fr 1fr;
-    gap: 0.5rem;
-    justify-items: stretch;
-    align-items: stretch;
-    margin-top: 1.5rem;
-}
