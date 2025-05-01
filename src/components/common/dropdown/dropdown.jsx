@@ -19,14 +19,14 @@ export default function Dropdown({buttonText, options, onSelected}){
     }
 
     return(
-        <div tabIndex="0" className='dropdown' onBlur={() => setOpen(false)}>
+        <div tabIndex="0" className='relative w-fit' onBlur={() => setOpen(false)}>
             <DropdownButton toggle={toggleDropdown} open={open}>{ optionSelected }</DropdownButton>
             {
                 open &&
-                <Card noBlur appearance='mate' className="dropdown-content">
+                <Card noBlur appearance='mate' className="absolute flex flex-col items-center p-[1rem] mt-[0.5rem] bg-white rounded-lg overflow-y-scroll dropdown-content">
                     {
                         options.map(option => (
-                            <div key={option} className='dropdown-item' onMouseDown={() => itemClicked(option)}>
+                            <div key={option} className='p-[0.5rem] m-[0.1rem] w-full rounded-lg cursor-pointer' onMouseDown={() => itemClicked(option)}>
                                 {option}
                             </div>
                         ))
