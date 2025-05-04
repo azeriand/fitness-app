@@ -15,7 +15,7 @@ export default function Input({type, value, disabled, placeholder, size, maxLeng
 
     return(
     <div className={classnames}>
-        <Card className={`flex justify-center items-center rounded-md ${className} ${directionClassName}`} noBlur noPadding {...cardProps} style={cardProps.style}>
+        <Card className={`flex justify-center items-center rounded-md ${className} ${icon ? directionClassName : ''}`} noBlur noPadding {...cardProps} style={cardProps.style}>
             { icon && <div className='flex items-center'>{ icon }</div> }
             <input className={inputClassName} onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} size={size} maxLength={maxLength} style={cardProps.style}></input>
         </Card>
