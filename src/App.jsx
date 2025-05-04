@@ -30,7 +30,7 @@ function App() {
               <NavBar></NavBar>
               <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
                 <TopBar/>
-                <Card intensity={500} style={{overflow: 'scroll', height: '100%', overflowY: 'auto'}}>
+                <Card intensity={500} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}}>
                     <Routes>
                       <Route path='/' element={<Home/>}></Route>
                       <Route path='/stats' element={<Stats/>}></Route>
