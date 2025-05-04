@@ -1,3 +1,9 @@
+import SectionName from '../components/common/section-name'
+import Card from '../components/common/card'
+import FilterByStats from '../components/filter-by-stats'
+import CalendarView from '../components/common/calendar-view'
+import ChartStats from '../components/chart-stats'
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,6 +16,7 @@ import {
   } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
+import { TrainingContext } from '../components/common/training-context'
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
@@ -48,12 +55,17 @@ export const data = {
     ],
   };
 
-export default function Stats(){
+export default function Stats(){ 
 
-    return(
-        <>
-            <h1>STATS</h1>
-            <Line options={options} data={data} />
-        </>
-    )
+  return(
+      <>
+          <p className='text-start text-[2rem] font-bold m-0'>Stats</p>
+          <div className='grid grid-cols-[30%_70%] gap-[1rem] row-span-[100%] h-full'>
+            <FilterByStats/>
+            <ChartStats/>
+            {/* <Line options={options} data={data}/> */}
+          </div>
+
+      </>
+  )
 }

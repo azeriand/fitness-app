@@ -24,7 +24,7 @@ export default function AddExercise(){
 
     return(
         <>
-            <Card appearance='ghost'>
+            <Card noPadding appearance='ghost'>
                 <SectionName section='add exercise'/>
                 <Card>
                     <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full' />
