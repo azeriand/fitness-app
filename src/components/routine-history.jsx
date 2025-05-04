@@ -45,9 +45,9 @@ export default function RoutineHistory({routine}){
                             <p className='p-0 m-0 text-start text-[0.75rem] last-time'>{dayjs(routine.day).format('dddd')}</p>
                         </div>
                     </div>
-                    <div className='flex items-center justify-end'>
-                        <Input className='rounded-sm' value={routine.duration} icon={<IoTimerOutline/>} disabled/>
-                        <Input className='rounded-sm' value={routine.volume} icon={<FaDumbbell/>} disabled/>
+                    <div className='flex items-center justify-end gap-x-2'>
+                        <Input className='rounded-sm w-26' centerText value={routine.duration} icon={<IoTimerOutline/>} disabled/>
+                        <Input className='rounded-sm w-26' centerText value={routine.volume} icon={<FaDumbbell/>} disabled/>
                     </div>
                 </div>
 

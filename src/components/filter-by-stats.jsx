@@ -26,7 +26,7 @@ export default function FilterByStats(){
 
         <Card noPadding className={`h-full overflow-y-scroll p-[1rem] ${customScrollbar}`}>
             <SectionName section='filter by'/>
-            <Input type='search' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full'/>
+            <Input type='search' iconPosition='right' placeholder='Search Exercise' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full'/>
 
             {
             exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchValue)))

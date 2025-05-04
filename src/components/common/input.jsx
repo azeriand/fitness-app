@@ -2,14 +2,14 @@ import './input.css'
 import Card from './card'
 import CardStyle from './card'
 
-export default function Input({type, value, disabled, placeholder, size, maxLength, onChange, iconPosition='left', icon, className, ...cardProps}){
+export default function Input({type, value, disabled, placeholder, size, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}){
     function inputUpdated(ev){
         onChange(ev.target.value)
     }
 
     const classnames = `flex`
 
-    const inputClassName=`flex justify-center items-center border-none bg-none py-[0.5rem] px-[1rem] m-0 ${className}`
+    const inputClassName=`flex justify-center items-center border-none bg-none py-[0.5rem] px-[1rem] m-0 w-full ${centerText ? 'text-center' : ''}`
 
     const directionClassName = iconPosition === 'left' ? 'pl-2' : 'flex-row-reverse pr-2'
 
