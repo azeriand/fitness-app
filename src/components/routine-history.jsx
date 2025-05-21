@@ -62,12 +62,12 @@ export default function RoutineHistory({routine}){
 
                     {
                         collapsedExercises.map((exercise, index) => (
-                            <ExerciseCard key={index} label={exercise.exercise_name} sets={exercise.sets.length} badge={<Badge label={exercise.muscle_type}/>}/> 
+                            <ExerciseCard key={index} label={exercise.exercise_name} sets={exercise.sets.length} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}/> 
                         ))
                     }
                     
                 </div>
-                <Button label={collapsedButtonText} onClick={onButtonClicked}/>
+                <Button label={collapsedButtonText} onClick={onButtonClicked} className='w-full mt-[1rem]'/>
             </div>
         </Card>
     )

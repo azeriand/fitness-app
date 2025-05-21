@@ -29,11 +29,11 @@ export default function AddExercise(){
                 <Card>
                     <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full' />
                     {
-                        exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchbarValue)))
+                        exercises.filter((filteredExercise) => formatString(filteredExercise.exercise_name).includes(formatString(searchbarValue)))
                                  .map((exercise) => 
                                     <div className='flex' key={exercise.exercise_name}>
                                         <Button appearance='ghost' icon={<HiPlusSm/>}/>
-                                        <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>}></ExerciseCard>
+                                        <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}></ExerciseCard>
                                     </div>
                                 )
                     }
