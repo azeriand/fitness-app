@@ -1,36 +1,40 @@
 
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
-import Goku from '../assets/goku.jpg'
+import Goku from '../assets/goku2.jpg'
 import Badge from './common/badge'
 import Dropdown from './common/dropdown/dropdown'
 import Button from './common/button'
 import Card from './common/card'
 import Avatar from './common/avatar';
 import SectionName from './common/section-name';
+import { useContext, useState } from 'react'
 
-export default function SetsWidget({children}){
 
-    const options = ["Barbell", "Dumbbells", "Smith Machine"]
+export default function SetsWidget({children, exercise}){
+
+    const options = ["Barbell", "Dumbbells", "Smith Machine"]    
+
+    console.log("exercise", exercise)
     return(
         <Card noBlur>
             <div className='flex items-center justify-between mb-[1rem]'>
                 <div className='flex items-center gap-x-[0.5rem]'>
                     <Button icon={<RxDragHandleDots2/>} appearance='ghost'/>
-                    <Avatar src={Goku} className='rounded-sm'/>
+                    <Avatar src={exercise.img} className='rounded-sm'/>
                     <div>
-                        <p className='m-0'>Chess Press</p>
-                        <Badge label='Chest'/>
+                        <p className='m-0'>{exercise.exercise_name}</p>
+                        <Badge label={exercise.muscle_type}/>
                     </div>
                 </div>
                 <div className='flex'>
-                    <Dropdown buttonText='Barbell' options={options}/>
+                    <Dropdown buttonText={exercise.techniques[0]} options={exercise.techniques}/>
                     <Button icon={<TbDotsVertical/>} appearance='ghost'/>
                 </div>
                 
             </div>
             <Card className='rounded-md' noPadding>
-                <p className='m-0 p-[0.5rem] text-[0.75rem] text-start'>Lore ipsum no se que, lo que siempre ponen aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                <p className='m-0 p-[0.5rem] text-[0.75rem] text-start'>Lore lore macu macu ipsum.</p>
             </Card>
             <div>
             </div>
