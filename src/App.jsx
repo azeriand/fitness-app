@@ -25,7 +25,6 @@ function App() {
       <ThemeContextComponent>
         <TrainingContextComponent>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Gradient/>
             <BrowserRouter>
               <NavBar></NavBar>
               <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
