@@ -1,0 +1,71 @@
+[
+   {
+    "routine_name" : "Legs and glutes 1",
+    "created_day" : "17/05/2024 12:43",
+    "exercises" : [
+        {
+            "exercise_name": "Squat",
+            "sets": [
+                {
+                    "KG": "89",
+                    "reps": "12"
+                },
+                {
+                    "KG": "108",
+                    "reps": "8"
+                },
+                {
+                    "KG": "116",
+                    "reps": "5"
+                },
+                {
+                    "KG": "135",
+                    "reps": "1"
+                }
+            ]
+        },
+        {
+            "exercise_name": "Hip Thrust",
+            "sets": [
+                {
+                    "KG": "20",
+                    "reps": "12"
+                },
+                {
+                    "KG": "25",
+                    "reps": "8"
+                },
+                {
+                    "KG": "30",
+                    "reps": "8"
+                },
+                {
+                    "KG": "35",
+                    "reps": "6"
+                }
+            ]
+        },
+        {
+            "exercise_name": "Bulgarian Split Squat",
+            "sets": [
+                {
+                    "KG": "89",
+                    "reps": "12"
+                },
+                {
+                    "KG": "108",
+                    "reps": "8"
+                },
+                {
+                    "KG": "116",
+                    "reps": "5"
+                },
+                {
+                    "KG": "135",
+                    "reps": "1"
+                }
+            ]
+        }
+    ]
+   }
+]
