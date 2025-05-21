@@ -4,10 +4,10 @@ import CalendarView from './common/calendar-view'
 
 export default function ChartStats(){
 
-    const customScrollbar = "max-h-100 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+    const customScrollbar = "overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
 
     return(
-        <Card noPadding appearance='ghost' className={`grid grid-cols-[50%_50%] gap-[1rem] p-[1rem] h-full overflow-y-scroll ${customScrollbar}`}>
+        <Card noPadding appearance='ghost' className={`grid grid-cols-2 gap-[1rem] w-full h-full overflow-y-scroll ${customScrollbar}`}>
         <div>
           <SectionName section='completed days'/>
           <Card noPadding>
