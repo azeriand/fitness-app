@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import './routine-card.css'
 import Button from './common/button'
 import Badge from './common/badge'
@@ -9,6 +10,7 @@ import { MdEdit } from "react-icons/md";
 
 export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
+    const navigate = useNavigate()
     const trainingWidgetStyle = {
         height: '4.5rem',
     }
@@ -24,7 +26,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
                     <div>
                         <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
-                        <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right'/>
+                        <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right' onClick={() => navigate('/training')}/>
                     </div>
                 </div>
                 <div className='routine-card-ul'>
