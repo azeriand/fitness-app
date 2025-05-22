@@ -17,7 +17,7 @@ export default function Tab({items, onTabSelected, defaultValue, ...cardProps}){
             <Card className='rounded-md w-fit' noBlur noPadding {...cardProps} color='blue'>
                 <div className='flex p-[0.4rem] gap-x-[0.5rem]'>
                     {
-                        items.map(item => <Button onClick={() => selectTab(item)} color='blue' key={item} appearance={item === tabSelected ? 'mate' : 'ghost'} dark={item === tabSelected ? false : true } label={item}/>)
+                        items.map(item => <Button key={item} onClick={() => selectTab(item)} color='blue' key={item} appearance={item === tabSelected ? 'mate' : 'ghost'} dark={item === tabSelected ? false : true } label={item}/>)
                     }
                 </div>
             </Card>

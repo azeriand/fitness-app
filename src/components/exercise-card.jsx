@@ -3,7 +3,6 @@ import Avatar from './common/avatar'
 import Input from './common/input'
 
 export default function ExerciseCard({label, badge, sets, img, ...cardProps}){
-    console.log("IMG", img)
     const inputClassNames = 'rounded-sm w-20 h-[2.5rem] text-base box-border p-0 text-center font-bold'
     return(
         <>

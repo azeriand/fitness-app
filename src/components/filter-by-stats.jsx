@@ -31,7 +31,7 @@ export default function FilterByStats(){
             {
             exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchValue)))
                         .map((exercise) => 
-                        <div className='p-[0.5rem]'>
+                        <div className='p-[0.5rem]' key={exercise.exercise_name}>
                             <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}/>
                         </div>)
             }
