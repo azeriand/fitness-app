@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
@@ -7,6 +8,7 @@ import Card from './common/card'
 import Input from './common/input'
 
 export default function TrainingWidget({...cardProps}){
+    const navigate = useNavigate()
     const trainingWidgetProps = {
         padding: '0.5rem'
     }
@@ -33,7 +35,7 @@ export default function TrainingWidget({...cardProps}){
                 </div>
             </div>
             <div className='flex items-center justify-around gap-x-[0.5rem]'>
-                <Button label='Open' className='w-full'/>
+                <Button label='Open' className='w-full' onClick={()=> navigate('/training')}/>
                 <Button label='Finish' color='green' intensity='600' className='w-full'/>
                 <Button label='Discard' color='red' intensity='600' className='w-full'/>
             </div>
