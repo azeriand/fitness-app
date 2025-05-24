@@ -9,10 +9,6 @@ export default function Home(){
   const {history} = useContext(TrainingContext)
   const options = ['Item 1', 'Item 2', 'Item 3'];
 
-  const dropdownSelected = (option) => {
-    console.log('Elemento seleccionado', option);
-  }
-
   const tabsItems = ['Last Trainings', 'Muscle Groups', 'Per Exercise'];
 
   return(
@@ -21,7 +17,7 @@ export default function Home(){
       <div className='grid grid-cols-[70%_30%] grid-rows-[100%] gap-x-[1rem]'>
         <div>
           {
-            history.slice(0, 6).map((routine) => <RoutineHistory routine={routine}/>)
+            history.slice(0, 6).map((routine) => <RoutineHistory key={routine} routine={routine}/>)
           }
         </div>
         <div>
