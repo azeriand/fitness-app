@@ -6,16 +6,20 @@ import TimeController from '../components/common/time-controller'
 import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/common/row-set'
-import { useContext, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { TrainingContext } from '../components/common/training-context'
 
 export default function Training(){
-    const {trainingData, setTrainingData, exercises, routines} = useContext(TrainingContext)
+    const {trainingData, startTraining, switchTimer, exercises} = useContext(TrainingContext)
 
     function getExercise(exerciseName){
-        console.log("EXERCISE NAME", exerciseName)
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
     }
+
+    useEffect(() => {
+        startTraining()
+    }, [])
+
     return(
         <>
             <p className='text-start text-[2rem] font-bold m-0'>{trainingData.routine_name}</p>
@@ -23,8 +27,8 @@ export default function Training(){
                 <TimeController/>
                 <div className='flex'>
                     <Button label='View Routine'/>
-                    <Button label='Finish Routine' color='green'/>
-                    <Button label='Discard Routine' color='red'/>
+                    <Button label='Finish Routine' color='green' onClick={switchTimer}/>
+                    <Button label='Discard Routine' color='red' onClick={switchTimer}/>
                 </div>
             </div>
 
@@ -40,7 +44,7 @@ export default function Training(){
                             if (!exercise) return null;
                             return (
                             <SetsWidget exercise={exercise}>
-                                {exercise.sets.map((set, index) => <RowSet num={index +1} reps={set.reps} kg={set.KG}/>)}
+                                {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG}/>)}
                             </SetsWidget>
                         )})
                     }

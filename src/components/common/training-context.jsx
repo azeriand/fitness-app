@@ -7,6 +7,8 @@ export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const history = generateTrainingDays();
+    const [intervalId, setIntervalId] = useState(null)
+    let [isTraining, setIsTraining] = useState(false)
 
     const [timer, setTimer] = useState(0)
     const [timerformat, setTimerFormat] = useState("00:00:00")
@@ -18,20 +20,53 @@ export default function TrainingContextComponent({ children }) {
             let hours = Math.floor(oldValue/3600)
             let minutes = Math.floor((oldValue%3600)/60)
             let seconds = (oldValue%3600)%60
-            console.log(hours, minutes, seconds, oldValue)
 
             const format = (time) => time<10 ? `0${time}` : `${time}`
             setTimerFormat(`${format(hours)}:${format(minutes)}:${format(seconds)}`)
 
             return oldValue + 1
         })
+        
+    }
+
+    function startTraining(){
+        setIsTraining(true)
+        setIntervalId(setInterval(updateTimer, 1000))
+        console.log(intervalId)
+    }
+
+    function stopTraining() {
+        setIsTraining(false)
+        clearInterval(intervalId)
+        setIntervalId(null)
+    }
+
+    function switchTimer(){
+        console.log(intervalId)
+        if (isTraining){
+            stopTraining()
+        }
+        else{
+            startTraining()
+        }
+    }
+
+    function addSet(exerciseName){
+        setTrainingData((oldTrainingData) => {
+            let targetExercise = oldTrainingData.exercises.find(({exercise_name}) => {
+                return exercise_name === exerciseName
+            })
+
+            targetExercise.sets.push({"KG":"", "reps":""})
+            return oldTrainingData
+        })
+
+        
 
     }
 
-    useEffect(() => { setInterval(updateTimer, 1000) }, [])
-
     return (
-        <TrainingContext.Provider value={{ history, exercises, routines, trainingData, setTrainingData, timer, timerformat}}>
+        <TrainingContext.Provider value={{ history, exercises, routines, trainingData, addSet, setTrainingData, startTraining, switchTimer, timer, timerformat}}>
             {children}
         </TrainingContext.Provider>
     )
