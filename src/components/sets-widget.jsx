@@ -9,13 +9,13 @@ import Card from './common/card'
 import Avatar from './common/avatar';
 import SectionName from './common/section-name';
 import { useContext, useState } from 'react'
+import { TrainingContext } from '../components/common/training-context'
 
 
 export default function SetsWidget({children, exercise}){
 
-    const options = ["Barbell", "Dumbbells", "Smith Machine"]    
+    const {addSet} = useContext(TrainingContext)
 
-    console.log("exercise", exercise)
     return(
         <Card noBlur>
             <div className='flex items-center justify-between mb-[1rem]'>
@@ -47,7 +47,7 @@ export default function SetsWidget({children, exercise}){
                 {children}
             </div>
             <div className='mt-[1.5rem]'>
-                <Button label='Add Set' color='blue' intensity='600' className='w-full'/>
+                <Button label='Add Set' color='blue' intensity='600' className='w-full' onClick={() => addSet(exercise.exercise_name)}/>
             </div>
         </Card>
     )
