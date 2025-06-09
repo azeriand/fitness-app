@@ -9,6 +9,15 @@ export default function BasicButton({children, label, icon, position='left', onC
         cardClassNames += ' px-0 py-1'
     }
 
+    
+
+    if (className){
+        const roundedMatch = className.match(/rounded\-[a-z]+/g)
+        if (roundedMatch){
+            cardClassNames += ' ' + roundedMatch[roundedMatch.length-1]
+        }
+    }
+
     if (size === 'sm'){
         cardClassNames += ' h-[2rem] w-[2rem] min-w-auto'
     }
