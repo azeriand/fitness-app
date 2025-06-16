@@ -10,7 +10,7 @@ export default function TrainingContextComponent({ children }) {
     const [intervalId, setIntervalId] = useState(null)
     let [isTraining, setIsTraining] = useState(false)
 
-    const [timer, setTimer] = useState(0)
+    const [timer, setTimer] = useState(parseInt(localStorage.getItem('localtimer')) || 0)
     const [timerformat, setTimerFormat] = useState("00:00:00")
     const [trainingData, setTrainingData] = useState(routines[0])
 
@@ -28,6 +28,10 @@ export default function TrainingContextComponent({ children }) {
         })
         
     }
+
+    useEffect(() => {
+        localStorage.setItem('localtimer', timer.toString())
+    },[timer])
 
     function startTraining(){
         setIsTraining(true)
@@ -60,8 +64,6 @@ export default function TrainingContextComponent({ children }) {
             targetExercise.sets.push({"KG":"", "reps":""})
             return oldTrainingData
         })
-
-        
 
     }
 
