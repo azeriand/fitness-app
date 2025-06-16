@@ -3,16 +3,15 @@ import Card from './card'
 
 export default function BasicButton({children, label, icon, position='left', onClick, size, className, ...cardProps}){
 
-    let cardClassNames = 'flex justify-center items-center gap-x-[0.40rem] h-[2.5rem] min-w-[2.5rem] box-border p-0 rounded-md'
+    let cardClassNames = 'flex justify-center items-center gap-x-[0.40rem] h-[2.5rem] min-w-[2.5rem] box-border p-0'
 
     if (label) {
         cardClassNames += ' px-0 py-1'
     }
 
-    
 
     if (className){
-        const roundedMatch = className.match(/rounded\-[a-z]+/g)
+        const roundedMatch = className.match(/rounded\-[a-z0-9]+/g)
         if (roundedMatch){
             cardClassNames += ' ' + roundedMatch[roundedMatch.length-1]
         }
