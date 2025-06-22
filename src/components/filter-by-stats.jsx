@@ -10,7 +10,10 @@ import ExerciseCard from './exercise-card'
 
 export default function FilterByStats(){
 
-    const {exercises, searchValue, setSearchValue} = useContext(TrainingContext)
+    const {exercises, searchValue, setSearchValue} = useContext(ExerciseContext)
+    const [exerciseSelected, setExerciseSelected] = useState()
+    const [badgeSelected, setBadgeSelected] = useState()
+    
 
     function inputUpdated(value){
         setSearchValue(value)
@@ -32,7 +35,7 @@ export default function FilterByStats(){
             <div className='flex flex-wrap gap-[0.5rem] py-[1rem]'>
                 {
                     muscleTypes.map((type) => 
-                                <Badge label={type}/>)
+                                <Badge label={type} onClick={() => {setBadgeSelected(type)}} appearance={badgeSelected === type ? 'mate' : ''}/>)
                 }
             </div>
 
@@ -41,7 +44,7 @@ export default function FilterByStats(){
                 exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchValue)))
                         .map((exercise) => 
                         <div className='p-[0.5rem]' key={exercise.exercise_name}>
-                            <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}/>
+                            <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img} onClick ={() => {setExerciseSelected(exercise.exercise_name)}} appearance={exerciseSelected === exercise.exercise_name ? 'mate' : ''}/>
                         </div>)
             }
 
