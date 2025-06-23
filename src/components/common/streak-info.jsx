@@ -13,7 +13,7 @@ export default function StreakInfo({className, ...cardProps}){
             <div>
                 <p className='m-0 p-0 font-bold text-start'>Profile 1</p>
                 <div className='flex items-center gap-x-[0.5rem]'>
-                    <SectionName className='text-xs' section='12 streak weeks'/>
+                    <SectionName className='text-xs text-left' section='12 streak weeks'/>
                     <FaArrowTrendUp/>
                 </div>
             </div>
