@@ -23,6 +23,7 @@ export default function FilterByStats(){
         return str.toLowerCase().replace(/[^A-Z0-9]/ig, "")
     }
 
+
     const customScrollbar = "overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
 
     let muscleTypes = [...new Set(exercises.map((exercise) => exercise.muscle_type))]
@@ -30,7 +31,7 @@ export default function FilterByStats(){
 
         <Card noPadding className={`h-full overflow-y-scroll p-[1rem] rounded-lg ${customScrollbar}`}>
             <SectionName section='filter by'/>
-            <Input type='search' iconPosition='right' placeholder='Search Exercise' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full'/>
+            <Input type='search' iconPosition='right' value={searchValue} placeholder='Search Exercise' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full'/>
             <SectionName section='muscle groups' className='pt-[1rem]'/>
             <div className='flex flex-wrap gap-[0.5rem] py-[1rem]'>
                 {
@@ -44,7 +45,11 @@ export default function FilterByStats(){
                 exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchValue)))
                         .map((exercise) => 
                         <div className='p-[0.5rem]' key={exercise.exercise_name}>
-                            <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img} onClick ={() => {setExerciseSelected(exercise.exercise_name)}} appearance={exerciseSelected === exercise.exercise_name ? 'mate' : ''}/>
+                            <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img} 
+                            onClick ={() => {
+                                setExerciseSelected(exercise.exercise_name)
+                                setSearchValue(exercise.exercise_name)
+                                }} appearance={exerciseSelected === exercise.exercise_name ? 'mate' : ''}/>
                         </div>)
             }
 
