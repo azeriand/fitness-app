@@ -42,7 +42,7 @@ export default function FilterByStats(){
 
             <SectionName section='exercises'/>
             {
-                exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchValue)))
+                exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchValue)) || formatString(exercise.muscle_type).includes(formatString(searchValue)))
                         .map((exercise) => 
                         <div className='p-[0.5rem]' key={exercise.exercise_name}>
                             <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img} 
