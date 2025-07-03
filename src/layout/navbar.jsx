@@ -32,13 +32,13 @@ export default function NavBar() {
     return (
         <Card intensity={500} noPadding>
             <Logo></Logo>
-            <StreakInfo/>
-            <SectionName section='streak'/>
+            <StreakInfo noPadding/>
+            <SectionName section='streak' className='pl-[1rem]'/>
             {/* <CalendarView selectedDates={selectedDates}/> */}
             <div style={{padding: '1rem'}}>
                 <List name='List name' items={listItems} defaultValue={currentItem} onListItemSelected={(itemSelected) => navigate(itemSelected.destination)}/>
             </div>
-            <TrainingWidget/>
+            <TrainingWidget className='m-[1rem]'/>
         </Card>
     )
 }

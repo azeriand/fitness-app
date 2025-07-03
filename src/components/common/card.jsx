@@ -23,8 +23,18 @@ export default function Card({children, noPadding, noBlur = false, appearance = 
             ...style
         });
 
-        setClassNames(`card rounded-md ${appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`)
-    
+        let rounded = 'rounded-md'
+
+        if (className){
+            const roundedMatch = className.match(/rounded\-[a-z0-9]+/g)
+            if (roundedMatch){
+                rounded = roundedMatch[roundedMatch.length - 1]
+            }
+        }
+
+        setClassNames(`card ${rounded} ${appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`)
+
+       
     }, [color, intensity, dark, appearance, noBlur, className, theme])
 
     return(

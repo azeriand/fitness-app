@@ -3,6 +3,7 @@ import Card from '../components/common/card'
 import FilterByStats from '../components/filter-by-stats'
 import CalendarView from '../components/common/calendar-view'
 import ChartStats from '../components/chart-stats'
+import ExerciseContextComponent from '../components/exercise-context'
 
 import {
     Chart as ChartJS,
@@ -59,12 +60,14 @@ export default function Stats(){
 
   return(
       <>
+        <ExerciseContextComponent>
           <p className='text-start text-[2rem] font-bold m-0'>Stats</p>
           <div className='grid grid-cols-[30%_70%] gap-[1rem] row-span-[100%] h-[calc(100%-3rem)]'>
             <FilterByStats/>
             <ChartStats/>
             {/* <Line options={options} data={data}/> */}
           </div>
+        </ExerciseContextComponent>
 
       </>
   )
