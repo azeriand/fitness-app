@@ -6,6 +6,7 @@ import Settings from './pages/Settings.jsx'
 import Routines from './pages/Routines.jsx'
 import Training from './pages/Training.jsx'
 import Finished_training from './pages/Finished_training.jsx'
+import CreateRoutine from './pages/Create_routine.jsx'
 import NavBar from './layout/navbar'
 import Card from './components/common/card.jsx'
 import PortfolioAccess from './layout/portfolio-access.jsx'
@@ -38,7 +39,8 @@ function App() {
                       <Route path='/settings' element={<Settings/>}></Route>
                       <Route path='/routines' element={<Routines/>}></Route>
                       <Route path='/training' element={<Training/>}></Route>
-                      <Route path='/finished_training' element={<Finished_training/>}></Route>
+                      <Route path='/finished-training' element={<Finished_training/>}></Route>
+                      <Route path='/edit-routine' element={<CreateRoutine/>}></Route>
                     </Routes>
                 </Card>
               </div>
