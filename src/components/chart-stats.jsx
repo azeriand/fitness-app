@@ -1,6 +1,8 @@
 import Card from '../components/common/card'
 import SectionName from './common/section-name'
 import CalendarView from './common/calendar-view'
+import VolumeTimeCard from './volume-time-card'
+
 
 export default function ChartStats(){
 
@@ -18,7 +20,7 @@ export default function ChartStats(){
         <div>
           <SectionName section='volume over time'/>
           <Card noPadding>
-            <CalendarView/>
+            <VolumeTimeCard/>
           </Card>
         </div>
 
