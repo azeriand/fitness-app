@@ -3,10 +3,10 @@ import Button from '../components/common/button'
 
 export default function VolumeTimeCard(){
     return(
-        <Card noPadding>
-            <div className='flex justify-start gap-[1rem]'>
-                <Button noPadding appearance='mate' label='VOLUME' className='p-[3rem]'/>
-                <Button noPadding appearance='mate' label='TIME' className='p-[3rem]'/>
+        <Card>
+            <div className='flex justify-start gap-[1rem] w-[50%]'>
+                <Button appearance='mate' label='VOLUME' className='w-full'/>
+                <Button appearance='mate' label='TIME' className='w-full'/>
             </div>
             <div>
                 - Chart Here! -
