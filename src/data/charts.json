@@ -1,0 +1,5 @@
+[
+	{ "component_name": "muscle_chart", "type": ["muscle"] },
+	{ "component_name": "global_chart", "type": ["no_selected"] },
+	{ "component_name": "exercise_chart", "type": ["exercise"] }
+]
