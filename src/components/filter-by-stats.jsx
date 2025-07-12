@@ -10,9 +10,7 @@ import ExerciseCard from './exercise-card'
 
 export default function FilterByStats(){
 
-    const {exercises, searchValue, setSearchValue} = useContext(ExerciseContext)
-    const [exerciseSelected, setExerciseSelected] = useState()
-    const [badgeSelected, setBadgeSelected] = useState()
+    const {exercises, searchValue, setSearchValue, filterSelected, setFilterSelected} = useContext(ExerciseContext)
     
 
     function inputUpdated(value){
@@ -35,8 +33,8 @@ export default function FilterByStats(){
             <SectionName section='muscle groups' className='pt-[1rem]'/>
             <div className='flex flex-wrap gap-[0.5rem] py-[1rem]'>
                 {
-                    muscleTypes.map((type) => 
-                                <Badge label={type} onClick={() => {setBadgeSelected(type)}} appearance={badgeSelected === type ? 'mate' : 'ghost'}/>)
+                    muscleTypes.map((muscleGroup) => 
+                                <Badge label={muscleGroup} onClick={() => {setFilterSelected({name: muscleGroup, type: 'muscle_group'})}} appearance={filterSelected && filterSelected.name === muscleGroup ? 'mate' : 'ghost'}/>)
                 }
             </div>
 
@@ -47,9 +45,9 @@ export default function FilterByStats(){
                         <div className='p-[0.5rem]' key={exercise.exercise_name}>
                             <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img} 
                             onClick ={() => {
-                                setExerciseSelected(exercise.exercise_name)
+                                setFilterSelected({name: exercise.exercise_name, type: 'exercise'})
                                 setSearchValue(exercise.exercise_name)
-                                }} appearance={exerciseSelected === exercise.exercise_name ? 'mate' : ''}/>
+                                }} appearance={filterSelected && filterSelected.name === exercise.exercise_name ? 'mate' : ''}/>
                         </div>)
             }
 
