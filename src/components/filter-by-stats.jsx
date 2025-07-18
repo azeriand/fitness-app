@@ -34,7 +34,10 @@ export default function FilterByStats(){
             <div className='flex flex-wrap gap-[0.5rem] py-[1rem]'>
                 {
                     muscleTypes.map((muscleGroup) => 
-                                <Badge label={muscleGroup} onClick={() => {setFilterSelected({name: muscleGroup, type: 'muscle_group'})}} appearance={filterSelected && filterSelected.name === muscleGroup ? 'mate' : 'ghost'}/>)
+                                <Badge label={muscleGroup} onClick={() => {
+                                    setFilterSelected({name: muscleGroup, type: 'muscle_group'})
+                                    setSearchValue(muscleGroup)
+                                }} appearance={filterSelected && filterSelected.name === muscleGroup ? 'mate' : 'ghost'}/>)
                 }
             </div>
 
