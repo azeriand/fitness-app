@@ -1,6 +1,7 @@
 import Card from '../components/common/card'
 import SectionName from './common/section-name'
 import CalendarView from './common/calendar-view'
+import DataRow from './data-row'
 import VolumeTimeCard from './volume-time-card'
 import { useContext, useEffect } from 'react'
 import { ExerciseContext } from './exercise-context';
@@ -12,7 +13,8 @@ export default function ChartStats(){
         'calendar': <CalendarView/>,
         'muscle_chart': <div>MUSCLE CHART</div>,
         'global_chart': <div>GLOBAL CHART</div>,
-        'exercise_chart': <div>EXERCISE CHART</div>
+        'exercise_chart': <div>EXERCISE CHART</div>,
+        'data_row': <DataRow/>
     }
 
     const {filterSelected, searchValue} = useContext(ExerciseContext)
@@ -29,8 +31,7 @@ export default function ChartStats(){
 
             charts.map((chart) => (chart.type.includes(filterSelected && filterSelected.type) || (chart.type.includes('no_selected') && (!filterSelected || searchValue === ''))) &&
             <div>
-              <SectionName section='volume over time'/>
-              <Card noPadding>
+              <Card noPadding appearance='ghost'>
                 {componentMapping[chart.component_name]}
               </Card>
             </div>

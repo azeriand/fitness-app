@@ -1,34 +1,39 @@
 import Card from '../components/common/card'
 import SectionName from '../components/common/section-name'
+import { useContext } from 'react'
+import { TrainingContext } from './common/training-context';
 
-export default function DataRow{
+export default function DataRow(){
+    const {totalFrequency, lastYearFrequency, lastMonthFrequency, rmWeight} = useContext(TrainingContext)
+
     return(
-        <>
+        <Card noPadding appearance='ghost' className='grid grid-rows-2 gap-y-[3rem]'>
             <div>
-                <SectionName section='frequency'/>
-                <Card className='flex flex-wrap p-[1rem]'>
-                    <Card>
-                        <SectionName section='total'/>
+                <SectionName section='frequency' className='pb-[0.5rem] tracking-normal'/>
+                <Card noPadding className='grid grid-cols-3 flex-wrap p-[1rem] rounded-xl'>
+                    <Card noPadding className='content-center justify-items-center'>
+                        <SectionName section='total' className='text-xs tracking-normal'/>
+                        <div className='text-xs font-bold'>{totalFrequency}</div>
                     </Card>
-                    <Card>
-                        <SectionName section='last year'/>
+                    <Card noPadding className='content-center justify-items-center'>
+                        <SectionName section='last year' className='text-xs tracking-normal'/>
+                        <div className='text-xs font-bold'>{lastYearFrequency}</div>
                     </Card>
-                    <Card>
-                        <SectionName section='last month'/>
+                    <Card noPadding className='content-center justify-items-center'>
+                        <SectionName section='last month' className='text-xs tracking-normal'/>
+                        <div className='text-xs font-bold'>{lastMonthFrequency}</div>
                     </Card>
                 </Card>
             </div>
             <div>
-                <SectionName section='weigth'/>
-                <Card>
-                    <Card>
-                        <SectionName section='rm'/>
+                <SectionName section='weigth' className='pb-[0.5rem] tracking-normal'/>
+                <Card noPadding className='grid grid-cols-3 flex-wrap p-[1rem] rounded-xl'>
+                    <Card noPadding className='content-center justify-items-center'>
+                        <SectionName section='rm' className='text-xs tracking-normal'/>
+                        <div className='text-xs font-bold'>{rmWeight}</div>
                     </Card>
                 </Card>
             </div>
-            <div>
-                <SectionName section='estimate training'/>
-            </div>
-        </>
+        </Card>
     )
 }

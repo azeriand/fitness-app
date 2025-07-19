@@ -14,6 +14,10 @@ export default function TrainingContextComponent({ children }) {
     const [timerformat, setTimerFormat] = useState("00:00:00")
     const [trainingData, setTrainingData] = useState(routines[0])
 
+    const [totalFrequency, setTotalFrequency] = useState(1020)
+    const [lastYearFrequency, setLastYearFrequency] = useState(340)
+    const [lastMonthFrequency, setLastMonthFrequency] = useState(100)
+    const [rmWeight, setRmWeight] = useState(120)
 
     function updateTimer() {
         setTimer((oldValue) => {
@@ -68,7 +72,7 @@ export default function TrainingContextComponent({ children }) {
     }
 
     return (
-        <TrainingContext.Provider value={{ history, exercises, routines, trainingData, addSet, setTrainingData, startTraining, switchTimer, timer, timerformat}}>
+        <TrainingContext.Provider value={{ history, exercises, routines, trainingData, addSet, setTrainingData, startTraining, switchTimer, timer, timerformat, totalFrequency, setTotalFrequency, lastYearFrequency, setLastYearFrequency, lastMonthFrequency, setLastMonthFrequency, rmWeight, setRmWeight}}>
             {children}
         </TrainingContext.Provider>
     )
