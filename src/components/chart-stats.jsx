@@ -14,7 +14,8 @@ export default function ChartStats(){
         'muscle_chart': <div>MUSCLE CHART</div>,
         'global_chart': <div>GLOBAL CHART</div>,
         'exercise_chart': <div>EXERCISE CHART</div>,
-        'data_row': <DataRow/>
+        'data_row': <DataRow/>,
+        'volume_time_card': <VolumeTimeCard/>
     }
 
     const {filterSelected, searchValue} = useContext(ExerciseContext)

@@ -10,7 +10,7 @@ export default function DataRow(){
         <Card noPadding appearance='ghost' className='grid grid-rows-2 gap-y-[3rem]'>
             <div>
                 <SectionName section='frequency' className='pb-[0.5rem] tracking-normal'/>
-                <Card noPadding className='grid grid-cols-3 flex-wrap p-[1rem] rounded-xl'>
+                <Card noPadding className='grid grid-cols-3 gap-x-[0.5rem] flex-wrap p-[1rem] rounded-xl'>
                     <Card noPadding className='content-center justify-items-center'>
                         <SectionName section='total' className='text-xs tracking-normal'/>
                         <div className='text-xs font-bold'>{totalFrequency}</div>
@@ -27,7 +27,7 @@ export default function DataRow(){
             </div>
             <div>
                 <SectionName section='weigth' className='pb-[0.5rem] tracking-normal'/>
-                <Card noPadding className='grid grid-cols-3 flex-wrap p-[1rem] rounded-xl'>
+                <Card noPadding className='grid grid-cols-3 gap-x-[0.5rem] flex-wrap p-[1rem] rounded-xl'>
                     <Card noPadding className='content-center justify-items-center'>
                         <SectionName section='rm' className='text-xs tracking-normal'/>
                         <div className='text-xs font-bold'>{rmWeight}</div>
