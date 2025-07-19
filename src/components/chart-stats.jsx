@@ -15,7 +15,7 @@ export default function ChartStats(){
         'exercise_chart': <div>EXERCISE CHART</div>
     }
 
-    const {filterSelected} = useContext(ExerciseContext)
+    const {filterSelected, searchValue} = useContext(ExerciseContext)
 
     useEffect(() => {
       console.log('Filter selected:', filterSelected);
@@ -26,7 +26,8 @@ export default function ChartStats(){
     return(
         <Card noPadding appearance='ghost' className={`grid grid-cols-1 md:grid-cols-2 gap-[1rem] w-full h-full overflow-y-scroll ${customScrollbar}`}>
           {
-            charts.map((chart) => (chart.type.includes(filterSelected && filterSelected.type) || (chart.type.includes('no_selected') && !filterSelected)) &&
+
+            charts.map((chart) => (chart.type.includes(filterSelected && filterSelected.type) || (chart.type.includes('no_selected') && (!filterSelected || searchValue === ''))) &&
             <div>
               <SectionName section='volume over time'/>
               <Card noPadding>
