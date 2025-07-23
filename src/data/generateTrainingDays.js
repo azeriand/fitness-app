@@ -1,4 +1,5 @@
 import exercises from "./exercises.json"
+import dayjs from "dayjs";
 
 const routine = [
     ['Chest', 'Biceps'],
@@ -108,7 +109,7 @@ while (currentWeekStart >= oneYearAgo) {
         }
     });
     
-    dates = dates.concat(weekDates);
+    dates = dates.concat(weekDates).sort((a, b) => dayjs(a.day).isAfter(dayjs(b.day)) ? -1 : 1);
     currentWeekStart.setDate(currentWeekStart.getDate() - 7); // Move to the previous week
 }
 

@@ -9,13 +9,16 @@ import { TrainingContext } from './common/training-context'
 export default function VolumeTimeCard(){
 
     const [volumeData, setVolumeData] = useState([]);
+    const [xData, setXData] = useState([]);
     const { history } = useContext(TrainingContext)
     const { filterSelected } = useContext(ExerciseContext)
 
     function getLineChartData() {
         let dataValue = [];
+        let xLabels = []
         history.forEach((day) => {
             let volumeCount = 0;
+            let date = day.day
             let filteredExercises = day.exercises;
 
             if (filterSelected) {
@@ -26,18 +29,24 @@ export default function VolumeTimeCard(){
                 }
             }
 
-            filteredExercises.forEach((exercise) => {
+            for (const exercise of filteredExercises) {
                 exercise.sets.forEach((set) => volumeCount += set.weight * set.reps);
-            });
+            }
 
             dataValue = [...dataValue, volumeCount];
+            xLabels = [...xLabels, date];
 
             const limit = 15;
             if (dataValue.length > limit) {
-                dataValue = dataValue.splice(dataValue.length - limit, limit);
+                dataValue = dataValue.splice(0, limit);
+            }
+
+            if (xLabels.length > limit) {
+                xLabels = xLabels.splice(0, limit);
             }
         })
-        setVolumeData(dataValue);
+        setVolumeData(dataValue.reverse());
+        setXData(xLabels.reverse());
     }
 
     useEffect(() => {
@@ -55,7 +64,7 @@ export default function VolumeTimeCard(){
                 </div>
                 <div>
                     {
-                        volumeData.length > 0 && <LineChart series={[{ data: volumeData, label: 'Volume' }]} />
+                        volumeData.length > 0 && <LineChart series={[{ data: volumeData, label: 'Volume' }]} xAxis={[{ scaleType: 'point', data: xData }]} />
                     }
                 </div>
             </Card>
