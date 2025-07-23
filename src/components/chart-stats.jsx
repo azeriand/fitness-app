@@ -6,6 +6,8 @@ import VolumeTimeCard from './volume-time-card'
 import { useContext, useEffect } from 'react'
 import { ExerciseContext } from './exercise-context';
 import charts from '../data/charts';
+import PerMuscleGroupCard from './per-muscle-group'
+import RepsVsWeightCard from './reps-vs-weight'
 
 export default function ChartStats(){
 
@@ -15,7 +17,9 @@ export default function ChartStats(){
         'global_chart': <div>GLOBAL CHART</div>,
         'exercise_chart': <div>EXERCISE CHART</div>,
         'data_row': <DataRow/>,
-        'volume_time_card': <VolumeTimeCard/>
+        'volume_time_card': <VolumeTimeCard/>,
+        'per_muscle_group': <PerMuscleGroupCard/>,
+        'reps_vs_weight': <RepsVsWeightCard/>,
     }
 
     const {filterSelected, searchValue} = useContext(ExerciseContext)
