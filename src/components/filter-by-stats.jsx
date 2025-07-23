@@ -14,6 +14,9 @@ export default function FilterByStats(){
     
 
     function inputUpdated(value){
+        if (value === '') {
+            setFilterSelected(null);
+        }
         setSearchValue(value)
     }
 
