@@ -4,5 +4,8 @@
 	{ "component_name": "global_chart", "type": ["no_selected"] },
 	{ "component_name": "exercise_chart", "type": ["exercise"] },
 	{ "component_name": "data_row", "type": ["muscle_group", "exercise", "no_selected"]},
-	{ "component_name": "volume_time_card", "type": ["muscle_group", "exercise", "no_selected"]}
+	{ "component_name": "volume_time_card", "type": ["muscle_group", "exercise", "no_selected"]},
+	{ "component_name": "per_muscle_group", "type": ["muscle_group"]},
+	{ "component_name": "reps_vs_weight", "type": ["muscle_group"]}
+
 ]
