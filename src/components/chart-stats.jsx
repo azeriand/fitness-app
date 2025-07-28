@@ -8,6 +8,7 @@ import { ExerciseContext } from './exercise-context';
 import charts from '../data/charts';
 import PerMuscleGroupCard from './per-muscle-group'
 import RepsVsWeightCard from './reps-vs-weight'
+import EstimateTraining from './estimate-training'
 
 export default function ChartStats(){
 
@@ -20,6 +21,7 @@ export default function ChartStats(){
         'volume_time_card': <VolumeTimeCard/>,
         'per_muscle_group': <PerMuscleGroupCard/>,
         'reps_vs_weight': <RepsVsWeightCard/>,
+        'estimate_training': <EstimateTraining/>,
     }
 
     const {filterSelected, searchValue} = useContext(ExerciseContext)
