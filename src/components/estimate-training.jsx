@@ -39,7 +39,10 @@ export default function EstimateTraining() {
     };
 
     const getReps = (weight) => {
-        return Math.round((1.0278 - (weight / rm)) / 0.0278);
+        let reps = Math.round((1.0278 - (weight / rm)) / 0.0278)
+        if (reps > 0) {
+            return reps;
+        }
     }
     
     useEffect(getRM, [filterSelected])
