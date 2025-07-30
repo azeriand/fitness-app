@@ -2,24 +2,51 @@ import { de } from '@faker-js/faker'
 import Card from '../components/common/card'
 import SectionName from './common/section-name'
 import { ScatterChart } from '@mui/x-charts/ScatterChart';
+import { useContext, useEffect, useState } from 'react';
+import { ExerciseContext } from './exercise-context';
+import { TrainingContext } from './common/training-context';
 
 
 export default function RepsVsWeightCard() {
-    return(
-        <Card noPadding appearance='ghost'>
-            <SectionName section='reps vs weight' className='pb-[0.5rem] tracking-normal'/>
-            <Card noPadding className='p-[1rem] rounded-xl'>
-                <ScatterChart
-                    dataset={dataset}
-                    series={[
-                        { datasetKeys: { id: 'version', x: 'a1', y: 'a2' }, label: 'Series A' },
-                        { datasetKeys: { id: 'version', x: 'b1', y: 'b2' }, label: 'Series B' },
-                    ]}
-                    {...chartSetting}
-                />
-            </Card>
-        </Card>
-    )
+
+  const {history} = useContext(TrainingContext)
+  const {filterSelected} = useContext(ExerciseContext)
+  const [dataChart, setdataChart] = useState([]);
+
+  function getChartData() {
+    let chartData = [];
+    let exercisesList =[];
+    let sortedChartData = [];
+    
+    if (filterSelected && filterSelected.type === 'exercise') {
+      history.forEach((day) => {
+        const exercisesFound = day.exercises.filter((exercise) => exercise.exercise_name === filterSelected.name)
+        exercisesList = [...exercisesList, ...exercisesFound];
+      })
+      chartData = exercisesList.flatMap((exercise) => exercise.sets)
+    }
+    sortedChartData = chartData.sort((a, b) => (a.reps * a.weight) - (b.reps * b.weight));
+    setdataChart(sortedChartData);
+    console.log("exercise found", exercisesList, chartData, sortedChartData)
+
+  }
+
+  useEffect(getChartData, [filterSelected])
+
+  return(
+      <Card noPadding appearance='ghost'>
+          <SectionName section='reps vs weight' className='pb-[0.5rem] tracking-normal'/>
+          <Card noPadding className='p-[1rem] rounded-xl'>
+              <ScatterChart
+                  dataset={dataChart}
+                  series={[
+                      { datasetKeys: { id: 'version', x: 'weight', y: 'reps' }, label: 'Series A' },
+                  ]}
+                  {...chartSetting}
+              />
+          </Card>
+      </Card>
+  )
 }
 
 const dataset = [
