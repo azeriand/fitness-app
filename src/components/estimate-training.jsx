@@ -31,7 +31,14 @@ export default function EstimateTraining() {
         setRm(exerciseRM.reduce((prev, curr) => prev + curr, 0) / exerciseRM.length);
     }
 
+    const getWeightLifted = (reps) =>{
+        return Math.round((1.0278 - (0.0278 * reps)) * rm);
+    };
 
+    const getReps = (weight) => {
+        return Math.round((1.0278 - (weight / rm)) / 0.0278);
+    }
+    
     useEffect(getRM, [filterSelected])
 
     return(
@@ -39,10 +46,10 @@ export default function EstimateTraining() {
             <SectionName section='estimate training' className='pb-[0.5rem] tracking-normal'/>
             <Card noPadding className='rounded-xl p-[1rem]'>
                 <SectionName section='max weight per rep' className='pb-[0.5rem] tracking-normal'/>
-                <SliderSpecific defaultValue='50' label='rm' calcFunction={duplicateSliderValue}/>
+                <SliderSpecific defaultValue='50' label='rm' calcFunction={getWeightLifted}/>
 
                 <SectionName section='max reps per weight' className='pb-[0.5rem] tracking-normal'/>
-                <SliderSpecific defaultValue='50' label='reps' calcFunction={duplicateSliderValue}/>
+                <SliderSpecific defaultValue='50' label='reps' calcFunction={getReps}/>
             </Card>
         </Card>
     )
