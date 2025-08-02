@@ -62,6 +62,19 @@ export default function PerMuscleGroupCard() {
     useEffect(getMuscleData, [])
     useEffect(getExerciseData, [])
 
+    function chartElementsShowed(number){
+        let reducedMuscleData = muscleData.slice(0, number)
+        let otherExercises = muscleData.slice(number, muscleData.lenght)
+        let value = 0
+        otherExercises.forEach((exercise) => value = value + exercise.value)
+        let others = {label: 'Others', value: value, id: muscleData.length + 1}
+        let chartData = [...reducedMuscleData, others]
+
+        return chartData
+    }
+
+    console.log(chartElementsShowed(5))
+
     return(
         <Card noPadding appearance='ghost'>
             <SectionName section='per muscle group' className='pb-[0.5rem] tracking-normal'/>
@@ -73,7 +86,7 @@ export default function PerMuscleGroupCard() {
                 <PieChart
                     series={[
                         {
-                        data: muscleData,
+                        data: chartElementsShowed(6),
                         },
                     ]}
                     width={200}
