@@ -1,6 +1,6 @@
 
 import Card from './card'
-import Avatar from './avatar'
+import { Avatar } from 'azeriand-library'
 import SectionName from './section-name'
 import Goku2 from '../../assets/goku2.jpg'
 import { FaArrowTrendUp } from "react-icons/fa6";

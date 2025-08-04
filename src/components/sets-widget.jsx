@@ -6,7 +6,7 @@ import Badge from './common/badge'
 import Dropdown from './common/dropdown/dropdown'
 import Button from './common/button'
 import Card from './common/card'
-import Avatar from './common/avatar';
+import { Avatar } from 'azeriand-library'
 import SectionName from './common/section-name';
 import { useContext, useState } from 'react'
 import { TrainingContext } from '../components/common/training-context'

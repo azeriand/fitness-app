@@ -1,5 +1,5 @@
 import Card from './common/card'
-import Avatar from './common/avatar'
+import { Avatar } from 'azeriand-library'
 import Input from './common/input'
 
 export default function ExerciseCard({label, badge, sets, img, ...cardProps}){
