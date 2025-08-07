@@ -28,9 +28,6 @@
 - [ ] I have tested the functionality in the browser
 - [ ] I have checked the console for any errors
 
-## Pre-submission Checklist ✅
-<!-- Go through all the following points, and put an `x` in all the boxes that apply -->
-
 ## Learning Reflection 📚
 <!-- This section helps you reflect on your development process and what you learned -->
 
