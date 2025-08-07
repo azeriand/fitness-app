@@ -1,5 +1,5 @@
 import './timeline.css'
-import Card from './card'
+import { Card } from 'azeriand-library'
 
 export default function Timeline({children, faded, ...cardProps}){
     const timelineStyle = {

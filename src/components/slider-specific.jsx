@@ -1,4 +1,4 @@
-import Card from "./common/card";
+import { Card } from 'azeriand-library'
 import SliderComponent from "./common/slider-component";
 import SectionName from "./common/section-name";
 import { useState } from "react";

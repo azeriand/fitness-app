@@ -1,4 +1,4 @@
-import Card from './common/card'
+import { Card } from 'azeriand-library'
 import Input from './common/input';
 import Badge from './common/badge'
 import SectionName from './common/section-name';

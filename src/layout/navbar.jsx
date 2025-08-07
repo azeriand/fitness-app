@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import Card from '../components/common/card'
+import { Card } from 'azeriand-library'
 import {FaDumbbell} from 'react-icons/fa'
 import {FaChartSimple} from 'react-icons/fa6'
 import { IoMdSettings } from 'react-icons/io';

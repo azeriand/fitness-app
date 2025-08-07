@@ -1,6 +1,6 @@
 import './dropdown.css'
 import DropdownButton from './dropdown-button'
-import Card from '../card'
+import { Card } from 'azeriand-library'
 import { useState } from 'react';
 
 export default function Dropdown({buttonText, options, onSelected}){

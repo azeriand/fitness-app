@@ -1,5 +1,5 @@
 import './button.css'
-import Card from './card'
+import { Card } from 'azeriand-library'
 
 export default function BasicButton({children, label, icon, position='left', onClick, size, className, ...cardProps}){
 

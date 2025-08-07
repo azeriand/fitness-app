@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import Card from './card'
+import { Card } from 'azeriand-library'
 import SectionName from './section-name'
 import Button from './button'
 

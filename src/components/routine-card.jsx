@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import './routine-card.css'
 import Button from './common/button'
 import Badge from './common/badge'
-import Card from './common/card'
+import { Card } from 'azeriand-library'
 import Timeline from './common/timeline'
 import TlListItem from './common/timeline-list-item'
 import { FaPlay } from "react-icons/fa";

@@ -1,5 +1,4 @@
-import { de } from '@faker-js/faker'
-import Card from '../components/common/card'
+import { Card } from 'azeriand-library'
 import SectionName from './common/section-name'
 import { ScatterChart } from '@mui/x-charts/ScatterChart';
 import { useContext, useEffect, useState } from 'react';

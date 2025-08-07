@@ -1,5 +1,5 @@
 import './routine-history.css'
-import Card from './common/card'
+import { Card } from 'azeriand-library'
 import Input from './common/input'
 import Button from './common/button'
 import Badge from './common/badge'

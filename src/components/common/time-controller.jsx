@@ -1,5 +1,5 @@
 
-import Card from './card'
+import { Card } from 'azeriand-library'
 import Button from './button'
 import { FaPause } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";

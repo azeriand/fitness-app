@@ -1,4 +1,4 @@
-import Card from '../components/common/card'
+import { Card } from 'azeriand-library'
 import SectionName from './common/section-name'
 import CalendarView from './common/calendar-view'
 import DataRow from './data-row'

@@ -1,4 +1,4 @@
-import Card from './common/card'
+import { Card } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'
 import Input from './common/input'
 

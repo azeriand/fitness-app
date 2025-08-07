@@ -1,6 +1,6 @@
 
 import SectionName from '../components/common/section-name'
-import Card from '../components/common/card'
+import { Card } from 'azeriand-library'
 import Button from '../components/common/button'
 import TimeController from '../components/common/time-controller'
 import AddExercise from '../components/add-exercise'
