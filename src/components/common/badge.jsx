@@ -1,5 +1,4 @@
-
-import Card from './card'
+import { Card } from 'azeriand-library'
 
 export default function Badge({label, ...cardProps}){
     return(

@@ -4,7 +4,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import Button from './common/button'
-import Card from './common/card'
+import { Card } from 'azeriand-library'
 import Input from './common/input'
 
 export default function TrainingWidget({...cardProps}){

@@ -1,4 +1,4 @@
-import Card from '../components/common/card'
+import { Card } from 'azeriand-library'
 import Button from '../components/common/button'
 import SectionName from './common/section-name'
 import { LineChart } from '@mui/x-charts/LineChart'

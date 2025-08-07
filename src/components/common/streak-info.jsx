@@ -1,5 +1,5 @@
 
-import Card from './card'
+import { Card } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'
 import SectionName from './section-name'
 import Goku2 from '../../assets/goku2.jpg'

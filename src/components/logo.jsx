@@ -1,6 +1,4 @@
 import { FaDumbbell } from "react-icons/fa";
-import Card from '../components/common/card'
-import { color } from "chart.js/helpers";
 
 export default function Logo() {
     const logoWrapper = {

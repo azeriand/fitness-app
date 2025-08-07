@@ -1,4 +1,4 @@
-import Card from '../components/common/card'
+import { Card } from 'azeriand-library'
 import SectionName from '../components/common/section-name'
 import { useContext, useState, useEffect } from 'react'
 import { TrainingContext } from './common/training-context';

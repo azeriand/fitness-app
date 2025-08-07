@@ -1,4 +1,4 @@
-import Card from '../components/common/card'
+import { Card } from 'azeriand-library'
 import Button from '../components/common/button'
 import TlListItem from '../components/common/timeline-list-item'
 import Timeline from '../components/common/timeline'

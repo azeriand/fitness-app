@@ -1,6 +1,6 @@
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
-import Card from './card.jsx';
+import { Card } from 'azeriand-library'
 
 export default function SliderComponent({defaultValue, onChange}){
     return (

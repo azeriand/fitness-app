@@ -1,6 +1,5 @@
 import './input.css'
-import Card from './card'
-import CardStyle from './card'
+import { Card } from 'azeriand-library'
 
 export default function Input({type, value, disabled, placeholder, size, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}){
     function inputUpdated(ev){

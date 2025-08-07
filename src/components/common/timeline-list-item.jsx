@@ -1,6 +1,4 @@
-
-import Card from './card'
-
+import { Card } from 'azeriand-library'
 
 export default function TlListItem({label, badge, ...cardProps}){
     return(

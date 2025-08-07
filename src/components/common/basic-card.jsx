@@ -1,5 +1,4 @@
-
-import Card from './card'
+import { Card } from 'azeriand-library'
 
 function basicCard({title, src, color, intensity, ...cardProps}){
 

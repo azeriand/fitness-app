@@ -1,6 +1,6 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { DateCalendar, PickersDay } from '@mui/x-date-pickers';
-import Card from './card'
+import { Card } from 'azeriand-library'
 import './calendar-view.css'
 import dayjs from "dayjs";
 

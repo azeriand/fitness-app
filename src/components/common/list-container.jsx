@@ -1,6 +1,6 @@
 
 import './list-item.css'
-import Card from './card.jsx'
+import { Card } from 'azeriand-library'
 import SectionName from './section-name'
 import { useState } from 'react'
 

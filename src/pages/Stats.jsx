@@ -1,7 +1,4 @@
-import SectionName from '../components/common/section-name'
-import Card from '../components/common/card'
 import FilterByStats from '../components/filter-by-stats'
-import CalendarView from '../components/common/calendar-view'
 import ChartStats from '../components/chart-stats'
 import ExerciseContextComponent from '../components/exercise-context'
 

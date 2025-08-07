@@ -8,7 +8,7 @@ import Training from './pages/Training.jsx'
 import Finished_training from './pages/Finished_training.jsx'
 import CreateRoutine from './pages/Create_routine.jsx'
 import NavBar from './layout/navbar'
-import Card from './components/common/card.jsx'
+import { Card } from 'azeriand-library'
 import PortfolioAccess from './layout/portfolio-access.jsx'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -18,7 +18,7 @@ import TopBar from './layout/top-bar.jsx'
 //Envolviendo todos los componentes en el 'entorno' para que puedan usar el contexto
 import ThemeContextComponent from './components/common/theme-context.jsx'
 import TrainingContextComponent from './components/common/training-context.jsx'
-
+import 'azeriand-library/dist/styles/globals.css';
 
 function App() {
 
