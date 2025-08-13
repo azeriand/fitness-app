@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import Button from './common/button'
+import { Button } from 'azeriand-library'
 import SectionName from './common/section-name'
 import Input from './common/input'
 import ExerciseCard from './exercise-card'
