@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import Button from '../components/common/button'
+import { Button } from 'azeriand-library'
 import TlListItem from '../components/common/timeline-list-item'
 import Timeline from '../components/common/timeline'
 import Logo from '../components/logo'

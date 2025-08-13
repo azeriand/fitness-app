@@ -1,4 +1,4 @@
-import Button from './button'
+import { Button } from 'azeriand-library'
 import { FaCheck } from "react-icons/fa";
 import { useState } from 'react';
 

@@ -1,7 +1,7 @@
 
 import SectionName from '../components/common/section-name'
 import { Card } from 'azeriand-library'
-import Button from '../components/common/button'
+import { Button } from 'azeriand-library'
 import TimeController from '../components/common/time-controller'
 import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'

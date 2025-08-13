@@ -3,7 +3,7 @@ import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
 import Badge from './common/badge'
 import Dropdown from './common/dropdown/dropdown'
-import Button from './common/button'
+import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'
 import SectionName from './common/section-name';

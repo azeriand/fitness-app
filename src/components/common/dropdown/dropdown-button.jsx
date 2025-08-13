@@ -1,6 +1,6 @@
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
 import './dropdown-button.css'
-import Button from '../button'
+import { Button } from 'azeriand-library'
 
 export default function DropdownButton({children, open, toggle}){
     return(

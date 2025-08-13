@@ -1,7 +1,7 @@
 import './routine-history.css'
 import { Card } from 'azeriand-library'
 import Input from './common/input'
-import Button from './common/button'
+import { Button } from 'azeriand-library'
 import Badge from './common/badge'
 import { Avatar } from 'azeriand-library'
 import SectionName from './common/section-name'

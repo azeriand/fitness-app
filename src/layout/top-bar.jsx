@@ -1,6 +1,6 @@
 
 import { Card } from 'azeriand-library'
-import Button from '../components/common/button'
+import { Button } from 'azeriand-library'
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { useContext } from 'react'
