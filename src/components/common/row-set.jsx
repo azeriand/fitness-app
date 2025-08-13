@@ -7,8 +7,8 @@ export default function RowSet({num, reps, kg}){
         <>
             <Input className='w-full' noPadding disabled placeholder={num}/>
             <Input className='w-full' noPadding disabled placeholder={reps !== '' ? `${reps} x ${kg} Kg` : ''}/>
-            <Input className='w-full' noPadding type='r'/>
-            <Input className='w-full' noPadding type='number'/>
+            <Input className='w-full' noPadding type='number' placeholder='0'/>
+            <Input className='w-full' noPadding type='number' placeholder='0'/>
             <Checkbox/>
         </>
     )

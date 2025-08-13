@@ -3,7 +3,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
-import Button from './common/button'
+import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import Input from './common/input'
 

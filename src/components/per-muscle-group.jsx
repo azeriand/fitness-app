@@ -1,6 +1,6 @@
 import { PieChart } from '@mui/x-charts/PieChart';
 import { Card } from 'azeriand-library'
-import Button from '../components/common/button'
+import { Button } from 'azeriand-library'
 import SectionName from './common/section-name'
 import { useContext, useEffect, useState } from 'react'
 import { ExerciseContext } from './exercise-context'

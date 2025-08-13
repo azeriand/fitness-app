@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import './routine-card.css'
-import Button from './common/button'
+import { Button } from 'azeriand-library'
 import Badge from './common/badge'
 import { Card } from 'azeriand-library'
 import Timeline from './common/timeline'

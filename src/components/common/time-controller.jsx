@@ -1,6 +1,6 @@
 
 import { Card } from 'azeriand-library'
-import Button from './button'
+import { Button } from 'azeriand-library'
 import { FaPause } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import { useContext } from 'react'

@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import Button from '../components/common/button'
+import { Button } from 'azeriand-library'
 import SectionName from './common/section-name'
 import { LineChart } from '@mui/x-charts/LineChart'
 import { useContext, useEffect, useState } from 'react'
