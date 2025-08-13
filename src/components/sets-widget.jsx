@@ -6,6 +6,7 @@ import Dropdown from './common/dropdown/dropdown'
 import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'
+import Input from './common/input'
 import SectionName from './common/section-name';
 import { useContext, useState } from 'react'
 import { TrainingContext } from '../components/common/training-context'
@@ -33,7 +34,7 @@ export default function SetsWidget({children, exercise}){
                 
             </div>
             <Card className='rounded-md' noPadding>
-                <p className='m-0 p-[0.5rem] text-[0.75rem] text-start'>Lore lore macu macu ipsum.</p>
+                <Input placeholder='Write your notes here!' type='text' className='m-0 p-[0.5rem] text-[0.75rem] text-start w-full'/>
             </Card>
             <div>
             </div>
