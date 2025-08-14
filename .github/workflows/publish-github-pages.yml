@@ -41,7 +41,8 @@ jobs:
           cmd: install --frozen-lockfile
       - name: Build
         uses: borales/actions-yarn@v4
-        run: build
+        with:
+          cmd: build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
