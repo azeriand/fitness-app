@@ -18,7 +18,7 @@ import TopBar from './layout/top-bar.jsx'
 //Envolviendo todos los componentes en el 'entorno' para que puedan usar el contexto
 import ThemeContextComponent from './components/common/theme-context.jsx'
 import TrainingContextComponent from './components/common/training-context.jsx'
-import 'azeriand-library/dist/styles/globals.css';
+import 'azeriand-library/dist/styles.css';
 
 function App() {
 
