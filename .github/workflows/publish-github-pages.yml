@@ -35,10 +35,13 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install --frozen-lockfile
       - name: Build
-        run: npm run build
+        uses: borales/actions-yarn@v4
+        run: build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
