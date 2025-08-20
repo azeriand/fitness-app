@@ -1,24 +1,34 @@
 import { Card } from 'azeriand-library'
 import Input from '../components/common/input'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { SettingsContext } from '../components/settings-context'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 
 export default function Settings(){
 
-    const {defaultStreak, setDefaultStreak} = useContext(SettingsContext)
+    const [storedStreak, setStoredStreak] = useLocalStorage('streak', 3);
+    const {setDefaultStreak} = useContext(SettingsContext)
 
-    function handleChange(event) {
-        setDefaultStreak(event.target.value)
+    useEffect(() => {
+        setDefaultStreak(storedStreak)
+    }, [storedStreak, setDefaultStreak])
+
+    function handleChange(value) {
+        const eventValue = parseInt(value);
+        setDefaultStreak(eventValue)
+        setStoredStreak(eventValue)
+
     }
+
 
     return(
         <>
             <h1>SETTINGS</h1>
-            <Card>
+            <div className='mt-[1rem] flex flex-start'>
                 <p>Set the default streak value:</p>
-                <Input value={defaultStreak} onChange={handleChange}/>
-            </Card>
+                <Input type='number' min={0} value={storedStreak} onChange={handleChange}/>
+            </div>
 
         </>
     )
