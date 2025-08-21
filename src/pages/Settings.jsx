@@ -26,7 +26,7 @@ export default function Settings(){
         <>
             <h1>SETTINGS</h1>
             <div className='mt-[1rem] flex flex-start'>
-                <p>Set the default streak value:</p>
+                <p>The default number of training days to count the week as a streak:</p>
                 <Input type='number' min={0} value={storedStreak} onChange={handleChange}/>
             </div>
 

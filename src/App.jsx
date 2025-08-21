@@ -25,9 +25,10 @@ function App() {
 
   return(
     <div className='viewport'>
-      <SettingsContextComponent>
-        <ThemeContextComponent>
-          <TrainingContextComponent>
+      
+      <ThemeContextComponent>
+        <TrainingContextComponent>
+          <SettingsContextComponent>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               {/* <Gradient/> */}
               <BrowserRouter>
@@ -48,9 +49,10 @@ function App() {
                 </div>
               </BrowserRouter>
             </LocalizationProvider>
-          </TrainingContextComponent>
-        </ThemeContextComponent>
-      </SettingsContextComponent>
+          </SettingsContextComponent>
+        </TrainingContextComponent>
+      </ThemeContextComponent>
+
     </div>
   )
 }
