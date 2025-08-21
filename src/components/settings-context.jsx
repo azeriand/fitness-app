@@ -66,7 +66,7 @@ export default function SettingsContextComponent({children}){
     console.log(defaultStreak)
 
     return(
-        <SettingsContext.Provider value={{defaultStreak, setDefaultStreak}}>
+        <SettingsContext.Provider value={{defaultStreak, setDefaultStreak, currentStreak, setCurrentStreak}}>
             {children}
         </SettingsContext.Provider>
     )
