@@ -9,7 +9,7 @@ import { TrainingContext } from './common/training-context.jsx';
 
 export default function TrainingWidget({...cardProps}){
 
-    const {timerformat, startTraining, stopTraining, switchTimer} = useContext(TrainingContext);
+    const {timerformat, startTraining, stopTraining, switchTimer, resetTimer} = useContext(TrainingContext);
 
     const navigate = useNavigate()
     const trainingWidgetProps = {
@@ -24,7 +24,7 @@ export default function TrainingWidget({...cardProps}){
                 <div className='font-bold text-[1.5rem] w-fit'>{timerformat}</div>
                 <div className='flex items-center'>
                     <Button icon={<FaPause/>} appearance='ghost' onClick={switchTimer}/>
-                    <Button icon={<FaStop/>} appearance='mate' onClick={stopTraining}/>
+                    <Button icon={<FaStop/>} appearance='mate' onClick={resetTimer}/>
                 </div>
                 <Button label='View More' className='w-full' onClick={()=> navigate('/training')}/>
             </Card>

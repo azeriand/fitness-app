@@ -8,7 +8,7 @@ import { TrainingContext } from './training-context'
 
 export default function TimeController(){
     
-    const {timerformat, switchTimer} = useContext(TrainingContext)
+    const {timerformat, switchTimer, resetTimer} = useContext(TrainingContext)
 
     return(
         <Card className='w-fit' noPadding>
@@ -16,7 +16,7 @@ export default function TimeController(){
                 <div className='text-[1.5rem] font-bold'>{timerformat}</div>
                 <div className='flex items-center'>
                     <Button icon={<FaPause/>} appearance='ghost' onClick={switchTimer}/>
-                    <Button icon={<FaStop/>} appearance='mate' onClick={switchTimer}/>
+                    <Button icon={<FaStop/>} appearance='mate' onClick={resetTimer}/>
                 </div>
             </div>
         </Card>

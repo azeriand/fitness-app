@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 import generateTrainingDays from '../../data/generateTrainingDays'
 import exercises from '../../data/exercises.json'
 import routines from '../../data/routines.json'
@@ -9,45 +9,51 @@ export default function TrainingContextComponent({ children }) {
     const history = generateTrainingDays();
     console.log('history', history);
     
-    const [intervalId, setIntervalId] = useState(null)
     let [isTraining, setIsTraining] = useState(false)
+    const intervalRef = useRef(null); 
 
     const [timer, setTimer] = useState(parseInt(localStorage.getItem('localtimer')) || 0)
     const [timerformat, setTimerFormat] = useState("00:00:00")
     const [trainingData, setTrainingData] = useState(routines[0])
 
     function updateTimer() {
-        setTimer((oldValue) => {
-            let hours = Math.floor(oldValue/3600)
-            let minutes = Math.floor((oldValue%3600)/60)
-            let seconds = (oldValue%3600)%60
-
-            const format = (time) => time<10 ? `0${time}` : `${time}`
-            setTimerFormat(`${format(hours)}:${format(minutes)}:${format(seconds)}`)
-
-            return oldValue + 1
-        })
-        
+        setTimer((oldTimer) => oldTimer + 1)
     }
 
-    useEffect(() => {
+    function formatTimer() {
+        let hours = Math.floor(timer/3600)
+        let minutes = Math.floor((timer%3600)/60)
+        let seconds = (timer%3600)%60
+
+        const format = (time) => time<10 ? `0${time}` : `${time}`
+        setTimerFormat(`${format(hours)}:${format(minutes)}:${format(seconds)}`)
+        
         localStorage.setItem('localtimer', timer.toString())
-    },[timer])
+
+    }
+    
+    useEffect(() => {formatTimer()},[timer])
 
     function startTraining(){
-        setIsTraining(true)
-        setIntervalId(setInterval(updateTimer, 1000))
-        console.log(intervalId)
+        if (intervalRef.current) return; // evita intervalos duplicados
+        setIsTraining(true);
+        intervalRef.current = setInterval(updateTimer, 1000);
+        console.log("intervalId ->", intervalRef.current);
     }
 
     function stopTraining() {
-        setIsTraining(false)
-        clearInterval(intervalId)
-        setIntervalId(null)
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+        setIsTraining(false);   
+    }
+
+    function resetTimer() {
+        stopTraining();
+        setTimer(0);
+        localStorage.removeItem("localtimer");
     }
 
     function switchTimer(){
-        console.log(intervalId)
         if (isTraining){
             stopTraining()
         }
@@ -69,7 +75,7 @@ export default function TrainingContextComponent({ children }) {
     }
 
     return (
-        <TrainingContext.Provider value={{ history, exercises, routines, trainingData, addSet, setTrainingData, startTraining, switchTimer, timer, timerformat}}>
+        <TrainingContext.Provider value={{ history, exercises, routines, trainingData, addSet, setTrainingData, startTraining, switchTimer, resetTimer, timer, timerformat}}>
             {children}
         </TrainingContext.Provider>
     )
