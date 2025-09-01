@@ -9,7 +9,7 @@ import { IoMdSearch } from "react-icons/io";
 import { useContext, useState } from 'react'
 import { TrainingContext } from '../components/common/training-context'
 
-export default function AddExercise(){
+export default function AddExercise({ onExerciseAdded }){
 
     const {exercises} = useContext(TrainingContext)
     const [searchbarValue, setSearchbarValue] = useState('')
@@ -32,7 +32,7 @@ export default function AddExercise(){
                         exercises.filter((filteredExercise) => formatString(filteredExercise.exercise_name).includes(formatString(searchbarValue)))
                                  .map((exercise) => 
                                     <div className='flex' key={exercise.exercise_name}>
-                                        <Button appearance='ghost' icon={<HiPlusSm/>}/>
+                                        <Button appearance='ghost' icon={<HiPlusSm/>} onClick={() => onExerciseAdded(exercise.exercise_name)} />
                                         <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}></ExerciseCard>
                                     </div>
                                 )
