@@ -66,10 +66,59 @@ export default function TrainingContextComponent({ children }) {
                 return exercise_name === exerciseName
             })
 
-            targetExercise.sets.push({"KG":"", "reps":""})
-            return oldTrainingData
+            targetExercise.sets.push({ KG: "", reps: "" })
+            return newTrainingData
         })
 
+    }
+
+    const SetProperties = {
+        REPS: 'reps',
+        KG: 'KG'
+    }
+
+    function updateSetValue(property, exerciseName, setIndex, newValue) {
+        setTrainingData((oldTrainingData) => {
+            const newTrainingData = {...oldTrainingData}
+            const targetExercise = newTrainingData.exercises.find(({exercise_name}) => {
+                return exercise_name === exerciseName
+            })
+    
+            const targetSet = targetExercise.sets[setIndex];
+            
+            if (property === 'reps') {
+                targetSet.reps = newValue;
+            } else {
+                targetSet.KG = newValue;
+            }
+    
+            return newTrainingData
+        })
+    }
+
+    function updateReps(exerciseName, setIndex, newValue) {
+        updateSetValue(SetProperties.REPS, exerciseName, setIndex, newValue);
+    }
+    
+    function updateKg(exerciseName, setIndex, newValue) {
+        updateSetValue(SetProperties.KG, exerciseName, setIndex, newValue);
+    }
+
+    const exportItems = {
+        history, 
+        exercises, 
+        routines, 
+        trainingData, 
+        addExercise,
+        addSet, 
+        setTrainingData, 
+        startTraining, 
+        switchTimer, 
+        resetTimer, 
+        timer, 
+        timerformat, 
+        updateReps, 
+        updateKg
     }
 
     return (

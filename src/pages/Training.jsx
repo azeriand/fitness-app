@@ -10,7 +10,7 @@ import { useContext, useEffect } from 'react'
 import { TrainingContext } from '../components/common/training-context'
 
 export default function Training(){
-    const {trainingData, startTraining, switchTimer, exercises} = useContext(TrainingContext)
+    const {trainingData, updateReps, addExercise, updateKg, startTraining, switchTimer, exercises} = useContext(TrainingContext)
 
     function getExercise(exerciseName){
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
@@ -43,8 +43,8 @@ export default function Training(){
                             }
                             if (!exercise) return null;
                             return (
-                            <SetsWidget exercise={exercise}>
-                                {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG}/>)}
+                            <SetsWidget exercise={exercise} key={exercise.exercise_name}>
+                                {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG} onRepsChange={(value) => updateReps(exercise.exercise_name, index, value)} onKgChange={(value) => updateKg(exercise.exercise_name, index, value)}/>)}
                             </SetsWidget>
                         )})
                     }
@@ -52,7 +52,7 @@ export default function Training(){
                     <Button label='Add Exercise' className='w-full mt-[1rem]'/>
                 </Card>
                 <Card noPadding appearance='ghost'>
-                    <AddExercise/>
+                    <AddExercise onExerciseAdded={addExercise}/>
                 </Card>
             </div>
         </>
