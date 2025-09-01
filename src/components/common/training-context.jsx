@@ -2,21 +2,29 @@ import { createContext, useState, useEffect, useRef } from "react";
 import generateTrainingDays from '../../data/generateTrainingDays'
 import exercises from '../../data/exercises.json'
 import routines from '../../data/routines.json'
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const history = generateTrainingDays();
     
-    let [isTraining, setIsTraining] = useState(false)
     const intervalRef = useRef(null); 
 
-    const [timer, setTimer] = useState(parseInt(localStorage.getItem('localtimer')) || 0)
+    const [timer, setTimer, removeTimer] = useLocalStorage('training-timer', 0)
     const [timerformat, setTimerFormat] = useState("00:00:00")
-    const [trainingData, setTrainingData] = useState(routines[0])
+    const [trainingData, setTrainingData, removeTrainingData] = useLocalStorage('current-training', {
+        "routine_name" : "",
+        "created_day" : "17/05/2024 12:43",
+        "exercises" : [],
+        "state": "RUNNING"
+    })
 
     function updateTimer() {
-        setTimer((oldTimer) => oldTimer + 1)
+        setTimer((oldTimer) => {
+            console.log('Timer', oldTimer)
+            return oldTimer + 1
+        })
     }
 
     function formatTimer() {
@@ -27,42 +35,56 @@ export default function TrainingContextComponent({ children }) {
         const format = (time) => time<10 ? `0${time}` : `${time}`
         setTimerFormat(`${format(hours)}:${format(minutes)}:${format(seconds)}`)
         
-        localStorage.setItem('localtimer', timer.toString())
+        // localStorage.setItem('localtimer', timer.toString())
 
     }
     
     useEffect(() => {formatTimer()},[timer])
 
     function startTraining(){
-        if (intervalRef.current) return; // evita intervalos duplicados
-        setIsTraining(true);
+        if (intervalRef.current) return;
+        setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'RUNNING'}))
         intervalRef.current = setInterval(updateTimer, 1000);
     }
 
-    function stopTraining() {
+    function pauseTraining() {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
-        setIsTraining(false);   
+        setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'PAUSED'}))
     }
-
+    
     function resetTimer() {
-        stopTraining();
-        setTimer(0);
-        localStorage.removeItem("localtimer");
+        pauseTraining();
+        removeTimer();
+        removeTrainingData();
+        setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'RUNNING'}))
     }
 
     function switchTimer(){
-        if (isTraining){
-            stopTraining()
+        if (trainingData.state === 'RUNNING'){
+            pauseTraining()
         }
         else{
             startTraining()
         }
     }
 
-    function addSet(exerciseName){
+    function addExercise(exerciseName) {
         setTrainingData((oldTrainingData) => {
-            let targetExercise = oldTrainingData.exercises.find(({exercise_name}) => {
+            const newTrainingData = {...oldTrainingData}
+            newTrainingData.exercises.push({
+                exercise_name: exercises.find((ex) => ex.exercise_name === exerciseName).exercise_name,
+                sets: []
+            });
+            return newTrainingData;
+        })
+    }
+
+    function addSet(exerciseName){
+        
+        setTrainingData((oldTrainingData) => {
+            const newTrainingData = {...oldTrainingData}
+            const targetExercise = newTrainingData.exercises.find(({exercise_name}) => {
                 return exercise_name === exerciseName
             })
 
@@ -122,7 +144,7 @@ export default function TrainingContextComponent({ children }) {
     }
 
     return (
-        <TrainingContext.Provider value={{ history, exercises, routines, trainingData, addSet, setTrainingData, startTraining, switchTimer, resetTimer, timer, timerformat}}>
+        <TrainingContext.Provider value={exportItems}>
             {children}
         </TrainingContext.Provider>
     )

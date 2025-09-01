@@ -17,8 +17,15 @@ export default function Training(){
     }
 
     useEffect(() => {
-        startTraining()
+        if (trainingData.state === 'RUNNING') {
+            startTraining()
+        }
     }, [])
+
+    const discard = () => {
+        switchTimer()
+        window.location.href = '/routines'
+    }
 
     return(
         <>
@@ -28,7 +35,7 @@ export default function Training(){
                 <div className='flex'>
                     <Button label='View Routine'/>
                     <Button label='Finish Routine' color='green' onClick={switchTimer}/>
-                    <Button label='Discard Routine' color='red' onClick={switchTimer}/>
+                    <Button label='Discard Routine' color='red' onClick={discard}/>
                 </div>
             </div>
 
