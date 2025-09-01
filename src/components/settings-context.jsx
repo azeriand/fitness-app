@@ -16,11 +16,9 @@ export default function SettingsContextComponent({children}){
         //Add the history days into an array
         let days = history.map((routine) => routine.day)
         let daysReversed = [...days].reverse();
-        console.log("days", daysReversed)
 
         //Transform the array elements into days of the week (0-6)
         let daysOfWeek = daysReversed.map((day) => dayjs(day).day());
-        console.log("daysOfWeek", daysOfWeek)
 
         //Create a loop that goes through the days, +1 to a counter if the day is less than or equal to the next (if it reach the defaultStreak, +1 is added to the streak), if it's greater, reset the counter
         let dayCounter = 0;
@@ -56,12 +54,10 @@ export default function SettingsContextComponent({children}){
                     streakActive = false;
                 }
             }
-            console.log("dayCounter", dayCounter, "streakCounter", streakCounter)
         }
     }
     
     useEffect(calculateCurrentStreak,[defaultStreak])
-    console.log(defaultStreak)
 
     return(
         <SettingsContext.Provider value={{defaultStreak, setDefaultStreak, currentStreak, setCurrentStreak}}>

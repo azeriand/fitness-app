@@ -56,9 +56,7 @@ export default function PerMuscleGroupCard() {
             
         })
     }
-    
-    console.log('muscleData', muscleData, 'exerciseData', exerciseData, exercisesNames)
-    console.log(exercises)
+
     useEffect(getMuscleData, [])
     useEffect(getExerciseData, [])
 
@@ -72,8 +70,6 @@ export default function PerMuscleGroupCard() {
 
         return chartData
     }
-
-    console.log(chartElementsShowed(5))
 
     return(
         <Card noPadding appearance='ghost'>

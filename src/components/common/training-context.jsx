@@ -7,7 +7,6 @@ export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const history = generateTrainingDays();
-    console.log('history', history);
     
     let [isTraining, setIsTraining] = useState(false)
     const intervalRef = useRef(null); 
@@ -38,7 +37,6 @@ export default function TrainingContextComponent({ children }) {
         if (intervalRef.current) return; // evita intervalos duplicados
         setIsTraining(true);
         intervalRef.current = setInterval(updateTimer, 1000);
-        console.log("intervalId ->", intervalRef.current);
     }
 
     function stopTraining() {

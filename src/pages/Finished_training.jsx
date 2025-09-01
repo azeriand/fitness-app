@@ -13,7 +13,6 @@ import { TbStopwatch } from "react-icons/tb";
 export default function Finished_training(){
 
     const {trainingData} = useContext(TrainingContext)
-    useEffect(() => console.log(trainingData), [])
     const [isTextShared, setTextShared] = useState(false)
     const [timeoutId, setTimeoutId] = useState();
  

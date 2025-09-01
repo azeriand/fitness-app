@@ -26,7 +26,6 @@ export default function RepsVsWeightCard() {
     }
     sortedChartData = chartData.sort((a, b) => (a.reps * a.weight) - (b.reps * b.weight));
     setdataChart(sortedChartData);
-    console.log("exercise found", exercisesList, chartData, sortedChartData)
 
   }
 
