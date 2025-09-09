@@ -6,10 +6,11 @@ import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { useContext } from 'react';
 import { TrainingContext } from './common/training-context.jsx';
+import { render } from 'react-dom';
 
 export default function TrainingWidget({...cardProps}){
 
-    const {timerformat, startTraining, stopTraining, switchTimer, resetTimer} = useContext(TrainingContext);
+    const {timerformat, startTraining, stopTraining, switchTimer, resetTimer, trainingData} = useContext(TrainingContext);
 
     const navigate = useNavigate()
     const trainingWidgetProps = {
@@ -18,20 +19,36 @@ export default function TrainingWidget({...cardProps}){
 
     const inputClassNames = 'rounded-sm w-[2.5rem] h-[2.5rem] text-base box-border !px-0 text-center font-bold'
 
-    return(
-        <>
-            <Card noBlur intensity={500} {...cardProps} style={{...cardProps.style, ...trainingWidgetProps}} className='flex items-center gap-x-[1rem] justify-between m-[0.5rem]'>
-                <div className='font-bold text-[1.5rem] w-fit'>{timerformat}</div>
-                <div className='flex items-center'>
-                    <Button icon={<FaPause/>} appearance='ghost' onClick={switchTimer}/>
-                    <Button icon={<FaStop/>} appearance='mate' onClick={resetTimer}/>
-                </div>
-                <Button label='View More' className='w-full' onClick={()=> navigate('/training')}/>
-            </Card>
+    const renderOptions = () => {
 
-            <Card noPadding noBlur className='m-[0.5rem]'>
-                <Button label='Start Training' icon={<FaPlay/>} position='right' className='w-full' onClick={()=> navigate('/routines')}/>
-            </Card>
-        </>
-    )
+        const renderIcon = () => {
+            if (trainingData.state === 'RUNNING') return <FaPause/>
+            if (trainingData.state === 'PAUSED') return <FaPlay/>
+            return <FaPlay/>
+        }
+
+        if (trainingData.state ==='STOPPED' || trainingData.state === null ){
+            return (
+                <Card noPadding noBlur className='m-[0.5rem]'>
+                    <Button label='Start Training' icon={<FaPlay/>} position='right' className='w-full' onClick={()=> navigate('/routines')}/>
+                </Card>            
+            )
+        }
+
+        else if (trainingData.state === 'RUNNING' || trainingData.state === 'PAUSED'){
+            return (
+                <Card noBlur intensity={500} {...cardProps} style={{...cardProps.style, ...trainingWidgetProps}} className='flex items-center gap-x-[1rem] justify-between m-[0.5rem]'>
+                    <div className='font-bold text-[1.5rem] w-fit'>{timerformat}</div>
+                    <div className='flex items-center'>
+                        <Button icon={renderIcon()} appearance='ghost' onClick={switchTimer}/>
+                        <Button icon={<FaStop/>} appearance='mate' onClick={resetTimer}/>
+                    </div>
+                    <Button label='View More' className='w-full' onClick={()=> navigate('/training')}/>
+                </Card>            
+            )
+        }
+
+    }
+    
+    return renderOptions()
 }
