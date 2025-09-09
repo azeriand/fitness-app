@@ -57,7 +57,9 @@ export default function TrainingContextComponent({ children }) {
         pauseTraining();
         removeTimer();
         removeTrainingData();
-        setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'RUNNING'}))
+        setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'STOPPED'}));
+        window.location.href = '/routines'
+
     }
 
     function switchTimer(){

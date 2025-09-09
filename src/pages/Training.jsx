@@ -10,21 +10,20 @@ import { useContext, useEffect } from 'react'
 import { TrainingContext } from '../components/common/training-context'
 
 export default function Training(){
-    const {trainingData, updateReps, addExercise, updateKg, startTraining, switchTimer, exercises} = useContext(TrainingContext)
+    const {trainingData, updateReps, addExercise, updateKg, startTraining, switchTimer, resetTimer, exercises} = useContext(TrainingContext)
 
     function getExercise(exerciseName){
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
     }
 
     useEffect(() => {
-        if (trainingData.state === 'RUNNING') {
+        if (trainingData.state === 'STOPPED') {
             startTraining()
         }
     }, [])
 
     const discard = () => {
-        switchTimer()
-        window.location.href = '/routines'
+        resetTimer()
     }
 
     return(
