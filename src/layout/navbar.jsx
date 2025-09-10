@@ -30,14 +30,16 @@ export default function NavBar() {
     const currentItem = listItems.find(item => item.destination === pathname);
 
     return (
-        <Card intensity={500} noPadding>
-            <Logo></Logo>
-            <StreakInfo noPadding/>
-            {/* <CalendarView selectedDates={selectedDates}/> */}
-            <div style={{padding: '1rem'}}>
-                <List items={listItems} defaultValue={currentItem} onListItemSelected={(itemSelected) => navigate(itemSelected.destination)}/>
+        <Card intensity={500} noPadding className='flex flex-col justify-between h-full'>
+            <div>
+                <Logo></Logo>
+                <StreakInfo noPadding/>
+                {/* <CalendarView selectedDates={selectedDates}/> */}
+                <div style={{padding: '1rem'}}>
+                    <List items={listItems} defaultValue={currentItem} onListItemSelected={(itemSelected) => navigate(itemSelected.destination)}/>
+                </div>
             </div>
-            <TrainingWidget className='m-[1rem]'/>
+            <TrainingWidget className='justify-self-end'/>
         </Card>
     )
 }
