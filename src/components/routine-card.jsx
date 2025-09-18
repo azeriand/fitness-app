@@ -17,10 +17,6 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
         height: '4.5rem',
     }
 
-    useEffect(() => {
-        console.log(exerciseList)
-    }, [exerciseList])
-
     return (
         <Card noBlur noPadding {...cardProps}>
             <div className='p-[1.25rem]'>
