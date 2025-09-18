@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import completeExercises from '../data/exercises.json'
 
 type Exercise = { exercise_name: string; muscle_type: string; sub_muscle: string[]; techniques: string[]; img: string; video: string; unilateral: boolean; }
@@ -6,12 +6,14 @@ type Exercise = { exercise_name: string; muscle_type: string; sub_muscle: string
 export default function useGetExercises(exercisesList: string[]) {
 
     const [filteredExercises, setFilteredExercises] = useState([])
-    const exercisesSet = new Set(exercisesList)
+    
+    const stableExercisesList = useMemo(() => exercisesList, [JSON.stringify(exercisesList)])
 
     useEffect(() => {
+        const exercisesSet = new Set(stableExercisesList)
         const filteredList = completeExercises.filter(({exercise_name}) => exercisesSet.has(exercise_name))
-        setFilteredExercises(filteredList)}, [exercisesList]
-    )
+        setFilteredExercises(filteredList)
+    }, [stableExercisesList])
 
     return filteredExercises
 }
