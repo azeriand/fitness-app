@@ -17,7 +17,7 @@ export default function Home(){
       <div className='grid grid-cols-[70%_30%] grid-rows-[100%] gap-x-[1rem]'>
         <div>
           {
-            history.slice(0, 6).map((routine) => <RoutineHistory key={routine} routine={routine}/>)
+            history.slice(0, 6).map((routine) => <RoutineHistory key={routine.day} routine={routine}/>)
           }
         </div>
         <div>
