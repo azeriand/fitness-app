@@ -23,7 +23,6 @@ export default function TrainingContextComponent({ children }) {
 
     function updateTimer() {
         setTimer((oldTimer) => {
-            console.log('Timer', oldTimer)
             return oldTimer + 1
         })
     }

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import useGetExercises from '../hooks/useGetExercises';
 import './routine-card.css'
 import { Button } from 'azeriand-library'
 import Badge from './common/badge'
@@ -7,13 +8,18 @@ import Timeline from './common/timeline'
 import TlListItem from './common/timeline-list-item'
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
+import { useEffect } from 'react';
 
 export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
-
+    const exerciseList = useGetExercises(exercises.map((exercise, index) => exercise.exercise_name))
     const navigate = useNavigate()
     const trainingWidgetStyle = {
         height: '4.5rem',
     }
+
+    useEffect(() => {
+        console.log(exerciseList)
+    }, [exerciseList])
 
     return (
         <Card noBlur noPadding {...cardProps}>
@@ -32,13 +38,14 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
                 <div className='routine-card-ul'>
                     <Timeline style={trainingWidgetStyle}>
                         {
-                            exercises.map((exercise, index) => (
-                                <TlListItem key={index} label={exercise.name} badge={<Badge label={exercise.type}/>}/>
+                            exerciseList.map((exercise, index) => (
+                                <TlListItem key={index} label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>}/>
                             ))
                         }
                     </Timeline>
                 </div>
             </div>
         </Card>
+
     );
 }
