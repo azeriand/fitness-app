@@ -33,8 +33,8 @@ export default function Training(){
                 <TimeController/>
                 <div className='flex'>
                     <Button label='View Routine'/>
-                    <Button label='Finish Routine' color='green' onClick={switchTimer}/>
-                    <Button label='Discard Routine' color='red' onClick={discard}/>
+                    <Button label='Finish Training' color='green' onClick={switchTimer}/>
+                    <Button label='Discard Training' color='red' onClick={discard}/>
                 </div>
             </div>
 
