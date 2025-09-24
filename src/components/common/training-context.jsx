@@ -7,6 +7,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
+    const routinesList = routines
     const history = generateTrainingDays();
     
     const intervalRef = useRef(null); 
@@ -22,7 +23,6 @@ export default function TrainingContextComponent({ children }) {
 
     function updateTimer() {
         setTimer((oldTimer) => {
-            console.log('Timer', oldTimer)
             return oldTimer + 1
         })
     }
@@ -130,8 +130,8 @@ export default function TrainingContextComponent({ children }) {
 
     const exportItems = {
         history, 
-        exercises, 
-        routines, 
+        exercises,
+        routinesList,
         trainingData, 
         addExercise,
         addSet, 

@@ -1,4 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import useGetExercises from '../hooks/useGetExercises';
+import { useContext } from 'react';
+import { TrainingContext } from './common/training-context';
 import './routine-card.css'
 import { Button } from 'azeriand-library'
 import Badge from './common/badge'
@@ -7,12 +10,22 @@ import Timeline from './common/timeline'
 import TlListItem from './common/timeline-list-item'
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
+import { use } from 'react';
 
 export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
+    const exerciseList = useGetExercises(exercises.map((exercise, index) => exercise.exercise_name))
     const navigate = useNavigate()
+    const { routinesList, setTrainingData } = useContext(TrainingContext)
     const trainingWidgetStyle = {
         height: '4.5rem',
+    }
+
+    const activeRoutine = routinesList.find((routine) => routine.routine_name === label)
+
+    function handleStart(){
+        navigate('/training')
+        setTrainingData({...activeRoutine, state: 'RUNNING'})
     }
 
     return (
@@ -26,19 +39,20 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
                     <div>
                         <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
-                        <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right' onClick={() => navigate('/training')}/>
+                        <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right' onClick={() => {handleStart()}}/>
                     </div>
                 </div>
                 <div className='routine-card-ul'>
                     <Timeline style={trainingWidgetStyle}>
                         {
-                            exercises.map((exercise, index) => (
-                                <TlListItem key={index} label={exercise.name} badge={<Badge label={exercise.type}/>}/>
+                            exerciseList.map((exercise, index) => (
+                                <TlListItem key={index} label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>}/>
                             ))
                         }
                     </Timeline>
                 </div>
             </div>
         </Card>
+
     );
 }
