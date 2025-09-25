@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useRef } from "react";
+import dayjs from "dayjs";
 import generateTrainingDays from '../../data/generateTrainingDays'
 import exercises from '../../data/exercises.json'
 import routines from '../../data/routines.json'
@@ -8,7 +9,7 @@ export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const routinesList = routines
-    const history = generateTrainingDays();
+    const [history, setHistory] = useState(generateTrainingDays());
     
     const intervalRef = useRef(null); 
 
@@ -16,7 +17,7 @@ export default function TrainingContextComponent({ children }) {
     const [timerformat, setTimerFormat] = useState("00:00:00")
     const [trainingData, setTrainingData, removeTrainingData] = useLocalStorage('current-training', {
         "routine_name" : "",
-        "created_day" : "17/05/2024 12:43",
+        "created_day" : "2024-06-17",
         "exercises" : [],
         "state": "RUNNING"
     })

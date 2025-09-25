@@ -25,8 +25,8 @@ export default function Finished_training(){
                 <div className='flex justify-between items-center gap-x-[1rem] px-[1.5rem] pb-[1.5rem]'>
                     <Timeline>
                         {
-                            trainingData.exercises.map((exercise) =>
-                            <TlListItem label={exercise.exercise_name}/>)
+                            trainingData.exercises.map((exercise, key) =>
+                            <TlListItem label={exercise.exercise_name} key={exercise.exercise_name}/>)
                         }
                     </Timeline>
                     <div>
