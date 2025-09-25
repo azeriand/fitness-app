@@ -16,6 +16,12 @@ export default function Training(){
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
     }
 
+    function finish(){
+        finishTraining()
+        navigate('/finished-training')
+        resetTimer()
+    }
+
     useEffect(() => {
         if (trainingData.state === 'RUNNING') {
             startTraining()
@@ -33,7 +39,7 @@ export default function Training(){
                 <TimeController/>
                 <div className='flex'>
                     <Button label='View Routine'/>
-                    <Button label='Finish Training' color='green' onClick={switchTimer}/>
+                    <Button label='Finish Training' color='green' onClick={finish}/>
                     <Button label='Discard Training' color='red' onClick={discard}/>
                 </div>
             </div>

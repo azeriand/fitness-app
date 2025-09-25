@@ -21,6 +21,19 @@ export default function TrainingContextComponent({ children }) {
         "state": "RUNNING"
     })
 
+    function finishTraining(){
+       const elementFormat = {
+            'day': '2025-01-01',
+            'duration': timer,
+            'exercises': trainingData.exercises,
+            'name': trainingData.routine_name,
+            'type': 'add type',
+            'user': 'add user',
+            'volume' : 'add volume',
+        }
+        setHistory([...history, elementFormat].sort((a, b) => dayjs(a.day).isAfter(dayjs(b.day)) ? -1 : 1))
+    }
+
     function updateTimer() {
         setTimer((oldTimer) => {
             return oldTimer + 1
