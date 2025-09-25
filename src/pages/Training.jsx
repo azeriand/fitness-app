@@ -43,7 +43,7 @@ export default function Training(){
             <div className='flex justify-between'>
                 <TimeController/>
                 <div className='flex'>
-                    <Button label='View Routine'/>
+                    <Button label='View Routine' onClick={() => navigate('/edit-routine')}/>
                     <Button label='Finish Training' color='green' onClick={finish}/>
                     <Button label='Discard Training' color='red' onClick={discard}/>
                 </div>

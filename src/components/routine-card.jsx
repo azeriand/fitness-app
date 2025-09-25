@@ -38,7 +38,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
                     </div>
 
                     <div>
-                        <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
+                        <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right' onClick={() => navigate('/edit-routine')}/>
                         <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right' onClick={() => {handleStart()}}/>
                     </div>
                 </div>
