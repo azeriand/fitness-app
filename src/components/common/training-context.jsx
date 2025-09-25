@@ -11,7 +11,7 @@ export default function TrainingContextComponent({ children }) {
     const routinesList = routines
     const [history, setHistory] = useState(generateTrainingDays());
     
-    const intervalRef = useRef(null); 
+    const intervalRef = useRef(null);
 
     const [timer, setTimer, removeTimer] = useLocalStorage('training-timer', 0)
     const [timerformat, setTimerFormat] = useState("00:00:00")
@@ -72,7 +72,6 @@ export default function TrainingContextComponent({ children }) {
         removeTimer();
         removeTrainingData();
         setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'STOPPED'}));
-        window.location.href = '/routines'
 
     }
 
@@ -152,7 +151,8 @@ export default function TrainingContextComponent({ children }) {
         setTrainingData, 
         startTraining, 
         switchTimer, 
-        resetTimer, 
+        resetTimer,
+        finishTraining, 
         timer, 
         timerformat, 
         updateReps, 

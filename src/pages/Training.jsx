@@ -7,10 +7,12 @@ import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/common/row-set'
 import { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { TrainingContext } from '../components/common/training-context'
 
 export default function Training(){
-    const {trainingData, updateReps, addExercise, updateKg, startTraining, switchTimer, resetTimer, exercises, routineID} = useContext(TrainingContext)
+    const {trainingData, updateReps, addExercise, updateKg, startTraining, switchTimer, resetTimer, exercises, finishTraining} = useContext(TrainingContext)
+    const navigate = useNavigate();
 
     function getExercise(exerciseName){
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
@@ -30,7 +32,10 @@ export default function Training(){
 
     const discard = () => {
         resetTimer()
+        navigate('/routines')
     }
+
+    
 
     return(
         <>
