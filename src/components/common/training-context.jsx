@@ -41,6 +41,10 @@ export default function TrainingContextComponent({ children }) {
     
     useEffect(() => {formatTimer()},[timer])
 
+    function getRoutineByName(name) {
+        return routinesList.find(({routine_name}) => routine_name === name);
+    }
+
     function startTraining(){
         if (intervalRef.current) return;
         setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'RUNNING'}))
@@ -132,9 +136,10 @@ export default function TrainingContextComponent({ children }) {
         history, 
         exercises,
         routinesList,
+        getRoutineByName,
         trainingData, 
         addExercise,
-        addSet, 
+        addSet,
         setTrainingData, 
         startTraining, 
         switchTimer, 
