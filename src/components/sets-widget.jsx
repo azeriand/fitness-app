@@ -1,7 +1,7 @@
 
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
-import Badge from './common/badge'
+import { Badge } from 'azeriand-library'
 import Dropdown from './common/dropdown/dropdown'
 import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'

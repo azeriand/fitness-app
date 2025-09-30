@@ -3,7 +3,7 @@ import { Button } from 'azeriand-library'
 import SectionName from './common/section-name'
 import Input from './common/input'
 import ExerciseCard from './exercise-card'
-import Badge from './common/badge'
+import { Badge } from 'azeriand-library'
 import { HiPlusSm } from "react-icons/hi";
 import { IoMdSearch } from "react-icons/io";
 import { useContext, useState } from 'react'
