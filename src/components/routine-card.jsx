@@ -10,22 +10,27 @@ import Timeline from './common/timeline'
 import TlListItem from './common/timeline-list-item'
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-import { use } from 'react';
+
 
 export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
     const exerciseList = useGetExercises(exercises.map((exercise, index) => exercise.exercise_name))
     const navigate = useNavigate()
     const { routinesList, setTrainingData } = useContext(TrainingContext)
+
     const trainingWidgetStyle = {
         height: '4.5rem',
     }
 
-    const activeRoutine = routinesList.find((routine) => routine.routine_name === label)
+    const currentRoutine = routinesList.find((routine) => routine.routine_name === label)
 
     function handleStart(){
         navigate('/training')
-        setTrainingData({...activeRoutine, state: 'RUNNING'})
+        setTrainingData({...currentRoutine, state: 'RUNNING'})
+    }
+
+    function editRoutine() {
+        navigate('/edit-routine?name=' + currentRoutine.routine_name)
     }
 
     return (
@@ -38,7 +43,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
                     </div>
 
                     <div>
-                        <Button appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
+                        <Button onClick={editRoutine} appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
                         <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right' onClick={() => {handleStart()}}/>
                     </div>
                 </div>

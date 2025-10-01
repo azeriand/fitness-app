@@ -10,7 +10,7 @@ import { useContext, useEffect } from 'react'
 import { TrainingContext } from '../components/common/training-context'
 
 export default function Training(){
-    const {trainingData, updateReps, addExercise, updateKg, startTraining, switchTimer, resetTimer, exercises, routineID} = useContext(TrainingContext)
+    const {trainingData, updateReps, addExercise, addSet, updateKg, startTraining, switchTimer, resetTimer, exercises, routineID} = useContext(TrainingContext)
 
     function getExercise(exerciseName){
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
@@ -49,7 +49,7 @@ export default function Training(){
                             }
                             if (!exercise) return null;
                             return (
-                            <SetsWidget exercise={exercise} key={exercise.exercise_name}>
+                            <SetsWidget exercise={exercise} key={exercise.exercise_name} onAddSet={() => addSet(exercise.exercise_name)}>
                                 {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG} onRepsChange={(value) => updateReps(exercise.exercise_name, index, value)} onKgChange={(value) => updateKg(exercise.exercise_name, index, value)}/>)}
                             </SetsWidget>
                         )})
