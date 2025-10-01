@@ -1,25 +1,40 @@
 import { createContext, useState, useEffect, useRef } from "react";
+import dayjs from "dayjs";
 import generateTrainingDays from '../../data/generateTrainingDays'
 import exercises from '../../data/exercises.json'
 import routines from '../../data/routines.json'
 import useLocalStorage from "../../hooks/useLocalStorage";
+import {getCurrentDateTime} from "../../utils/datetime.js";
 
 export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const routinesList = routines
-    const history = generateTrainingDays();
+    const [history, setHistory] = useState(generateTrainingDays());
     
-    const intervalRef = useRef(null); 
+    const intervalRef = useRef(null);
 
     const [timer, setTimer, removeTimer] = useLocalStorage('training-timer', 0)
     const [timerformat, setTimerFormat] = useState("00:00:00")
     const [trainingData, setTrainingData, removeTrainingData] = useLocalStorage('current-training', {
         "routine_name" : "",
-        "created_day" : "17/05/2024 12:43",
+        "created_day" : getCurrentDateTime(),
         "exercises" : [],
         "state": "RUNNING"
     })
+
+    function finishTraining(){
+       const elementFormat = {
+            'day': getCurrentDateTime(),
+            'duration': timer,
+            'exercises': trainingData.exercises,
+            'name': trainingData.routine_name,
+            'type': 'add type',
+            'user': 'add user',
+            'volume' : 'add volume',
+        }
+        setHistory([...history, elementFormat].sort((a, b) => dayjs(a.day).isAfter(dayjs(b.day)) ? -1 : 1))
+    }
 
     function updateTimer() {
         setTimer((oldTimer) => {
@@ -62,7 +77,6 @@ export default function TrainingContextComponent({ children }) {
         removeTimer();
         removeTrainingData();
         setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'STOPPED'}));
-        window.location.href = '/routines'
 
     }
 
@@ -143,7 +157,8 @@ export default function TrainingContextComponent({ children }) {
         setTrainingData, 
         startTraining, 
         switchTimer, 
-        resetTimer, 
+        resetTimer,
+        finishTraining, 
         timer, 
         timerformat, 
         updateReps, 

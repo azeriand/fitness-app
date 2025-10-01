@@ -7,13 +7,22 @@ import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/common/row-set'
 import { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { TrainingContext } from '../components/common/training-context'
 
 export default function Training(){
+  
     const {trainingData, updateReps, addExercise, addSet, updateKg, startTraining, switchTimer, resetTimer, exercises, routineID} = useContext(TrainingContext)
+    const navigate = useNavigate();
 
     function getExercise(exerciseName){
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
+    }
+
+    function finish(){
+        finishTraining()
+        navigate('/finished-training')
+        resetTimer()
     }
 
     useEffect(() => {
@@ -24,7 +33,10 @@ export default function Training(){
 
     const discard = () => {
         resetTimer()
+        navigate('/routines')
     }
+
+    
 
     return(
         <>
@@ -32,9 +44,9 @@ export default function Training(){
             <div className='flex justify-between'>
                 <TimeController/>
                 <div className='flex'>
-                    <Button label='View Routine'/>
-                    <Button label='Finish Routine' color='green' onClick={switchTimer}/>
-                    <Button label='Discard Routine' color='red' onClick={discard}/>
+                    <Button label='View Routine' onClick={() => navigate('/edit-routine')}/>
+                    <Button label='Finish Training' color='green' onClick={finish}/>
+                    <Button label='Discard Training' color='red' onClick={discard}/>
                 </div>
             </div>
 
