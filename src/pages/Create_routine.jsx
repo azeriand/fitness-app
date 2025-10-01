@@ -9,7 +9,7 @@ import RowSet from '../components/common/row-set'
 import { useContext, useEffect, useState } from 'react'
 import { TrainingContext } from '../components/common/training-context'
 import { useSearchParams } from "react-router";
-import { getCurrentDateTime } from '../utils/datetime'
+import { getCurrentDateTime } from '../utils/datetime.js'
 
 export default function CreateRoutine(){
     const [routine, setRoutine] = useState({

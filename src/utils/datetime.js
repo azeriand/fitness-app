@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
 
 export function getCurrentDateTime() {
-    return dayjs('DD/MM/YYYY HH:mm')
+    return dayjs().format('DD/MM/YYYY HH:mm')
 }

@@ -4,6 +4,7 @@ import generateTrainingDays from '../../data/generateTrainingDays'
 import exercises from '../../data/exercises.json'
 import routines from '../../data/routines.json'
 import useLocalStorage from "../../hooks/useLocalStorage";
+import {getCurrentDateTime} from "../../utils/datetime.js";
 
 export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
@@ -17,14 +18,14 @@ export default function TrainingContextComponent({ children }) {
     const [timerformat, setTimerFormat] = useState("00:00:00")
     const [trainingData, setTrainingData, removeTrainingData] = useLocalStorage('current-training', {
         "routine_name" : "",
-        "created_day" : "2024-06-17",
+        "created_day" : getCurrentDateTime(),
         "exercises" : [],
         "state": "RUNNING"
     })
 
     function finishTraining(){
        const elementFormat = {
-            'day': '2025-01-01',
+            'day': getCurrentDateTime(),
             'duration': timer,
             'exercises': trainingData.exercises,
             'name': trainingData.routine_name,
