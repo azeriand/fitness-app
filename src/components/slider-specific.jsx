@@ -1,6 +1,6 @@
 import { Card } from 'azeriand-library'
 import SliderComponent from "./common/slider-component";
-import SectionName from "./common/section-name";
+import { SectionName } from "azeriand-library";
 import { useState } from "react";
 
 export default function SliderSpecific({defaultValue, label, calcFunction }){

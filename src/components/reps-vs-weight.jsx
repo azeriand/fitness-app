@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import SectionName from './common/section-name'
+import { SectionName } from 'azeriand-library'
 import { ScatterChart } from '@mui/x-charts/ScatterChart';
 import { useContext, useEffect, useState } from 'react';
 import { ExerciseContext } from './exercise-context';

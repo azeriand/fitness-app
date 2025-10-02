@@ -1,7 +1,6 @@
-
 import './list-item.css'
 import { Card } from 'azeriand-library'
-import SectionName from './section-name'
+import { SectionName } from 'azeriand-library'
 import { useState } from 'react'
 
 export default function List({children, onListItemSelected, name, defaultValue, items, ...cardProps}){

@@ -1,8 +1,7 @@
 
 import RoutineCard from "../components/routine-card"
-import SectionName from '../components/common/section-name'
-import { Card } from "azeriand-library"
-import { useContext, useEffect } from "react"
+import { SectionName } from 'azeriand-library'
+import { useContext } from "react"
 import { TrainingContext } from "../components/common/training-context"
 
 export default function Train(){

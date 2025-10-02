@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import SectionName from '../components/common/section-name'
+import { SectionName } from 'azeriand-library'
 import { useContext, useState, useEffect } from 'react'
 import { TrainingContext } from './common/training-context';
 import { ExerciseContext } from './exercise-context';

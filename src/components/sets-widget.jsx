@@ -7,10 +7,7 @@ import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'
 import Input from './common/input'
-import SectionName from './common/section-name';
-import { useContext, useState } from 'react'
-import { TrainingContext } from '../components/common/training-context'
-
+import { SectionName } from 'azeriand-library';
 
 export default function SetsWidget({children, exercise, onAddSet}){
     return(
