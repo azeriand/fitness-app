@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { TrainingContext } from './common/training-context';
 import './routine-card.css'
 import { Button } from 'azeriand-library'
-import Badge from './common/badge'
+import { Badge } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import Timeline from './common/timeline'
 import TlListItem from './common/timeline-list-item'
