@@ -33,7 +33,6 @@ export default function NavBar() {
             <div>
                 <Logo></Logo>
                 <StreakInfo noPadding/>
-                {/* <CalendarView selectedDates={selectedDates}/> */}
                 <div style={{padding: '1rem'}}>
                     <List items={listItems} defaultValue={currentItem} onListItemSelected={(itemSelected) => navigate(itemSelected.destination)}/>
                 </div>
