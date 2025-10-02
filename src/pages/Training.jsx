@@ -1,5 +1,4 @@
-
-import SectionName from '../components/common/section-name'
+import { SectionName } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { Button } from 'azeriand-library'
 import TimeController from '../components/common/time-controller'

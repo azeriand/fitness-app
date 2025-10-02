@@ -7,7 +7,6 @@ import { IoMdSettings } from 'react-icons/io';
 import { TbHomeFilled } from 'react-icons/tb';
 import List from '../components/common/list-container';
 import generateTrainingDays from '../data/generateTrainingDays';
-import SectionName from '../components/common/section-name';
 import StreakInfo from '../components/common/streak-info';
 import TrainingWidget from '../components/training-widget';
 import Logo from '../components/logo'

@@ -1,6 +1,6 @@
 import { Card } from 'azeriand-library'
 import { Button } from 'azeriand-library'
-import SectionName from './common/section-name'
+import { SectionName } from 'azeriand-library'
 import Input from './common/input'
 import ExerciseCard from './exercise-card'
 import { Badge } from 'azeriand-library'

@@ -1,7 +1,7 @@
 import { Card } from 'azeriand-library'
 import Input from './common/input';
 import { Badge } from 'azeriand-library'
-import SectionName from './common/section-name';
+import { SectionName } from 'azeriand-library';
 import { useState, useContext } from 'react'
 import { TrainingContext } from './common/training-context';
 import { ExerciseContext } from './exercise-context';
