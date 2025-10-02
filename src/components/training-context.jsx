@@ -1,10 +1,10 @@
 import { createContext, useState, useEffect, useRef } from "react";
 import dayjs from "dayjs";
-import generateTrainingDays from '../../data/generateTrainingDays'
-import exercises from '../../data/exercises.json'
-import routines from '../../data/routines.json'
-import useLocalStorage from "../../hooks/useLocalStorage";
-import {getCurrentDateTime} from "../../utils/datetime.js";
+import generateTrainingDays from '../data/generateTrainingDays.js'
+import exercises from '../data/exercises.json'
+import routines from '../data/routines.json'
+import useLocalStorage from "../hooks/useLocalStorage.js";
+import {getCurrentDateTime} from "../utils/datetime.js";
 
 export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {

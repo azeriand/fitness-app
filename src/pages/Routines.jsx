@@ -2,7 +2,7 @@
 import RoutineCard from "../components/routine-card"
 import { SectionName } from 'azeriand-library'
 import { useContext } from "react"
-import { TrainingContext } from "../components/common/training-context"
+import { TrainingContext } from "../components/training-context"
 
 export default function Train(){
 

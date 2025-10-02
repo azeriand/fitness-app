@@ -7,7 +7,7 @@ import { Badge } from 'azeriand-library'
 import { HiPlusSm } from "react-icons/hi";
 import { IoMdSearch } from "react-icons/io";
 import { useContext, useState } from 'react'
-import { TrainingContext } from '../components/common/training-context'
+import { TrainingContext } from '../components/training-context'
 
 export default function AddExercise({ onExerciseAdded }){
 

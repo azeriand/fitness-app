@@ -2,7 +2,7 @@ import { Card } from 'azeriand-library'
 import { SectionName } from 'azeriand-library';
 import SliderSpecific from "./slider-specific";
 import { useContext, useEffect, useState } from "react";
-import { TrainingContext } from "./common/training-context";
+import { TrainingContext } from "./training-context";
 import { ExerciseContext } from "./exercise-context";
 
 export default function EstimateTraining() {

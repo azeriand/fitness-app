@@ -5,7 +5,7 @@ import { FaPause } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import { useContext } from 'react'
-import { TrainingContext } from './training-context'
+import { TrainingContext } from '../training-context'
 
 export default function TimeController(){
     

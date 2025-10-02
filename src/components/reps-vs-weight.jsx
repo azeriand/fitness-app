@@ -3,7 +3,7 @@ import { SectionName } from 'azeriand-library'
 import { ScatterChart } from '@mui/x-charts/ScatterChart';
 import { useContext, useEffect, useState } from 'react';
 import { ExerciseContext } from './exercise-context';
-import { TrainingContext } from './common/training-context';
+import { TrainingContext } from './training-context';
 
 
 export default function RepsVsWeightCard() {

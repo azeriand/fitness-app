@@ -5,7 +5,7 @@ import { FaPlay } from "react-icons/fa";
 import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { useContext } from 'react';
-import { TrainingContext } from './common/training-context.jsx';
+import { TrainingContext } from './training-context.jsx';
 import { render } from 'react-dom';
 
 export default function TrainingWidget({...cardProps}){

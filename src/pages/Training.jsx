@@ -7,7 +7,7 @@ import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/common/row-set'
 import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { TrainingContext } from '../components/common/training-context'
+import { TrainingContext } from '../components/training-context'
 
 export default function Training(){
   

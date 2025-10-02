@@ -6,7 +6,7 @@ import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/common/row-set'
 import { useContext, useEffect, useState } from 'react'
-import { TrainingContext } from '../components/common/training-context'
+import { TrainingContext } from '../components/training-context'
 import { useSearchParams } from "react-router";
 import { getCurrentDateTime } from '../utils/datetime.js'
 

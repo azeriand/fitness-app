@@ -1,7 +1,7 @@
 import { Card } from 'azeriand-library'
 import { SectionName } from 'azeriand-library'
 import { useContext, useState, useEffect } from 'react'
-import { TrainingContext } from './common/training-context';
+import { TrainingContext } from './training-context';
 import { ExerciseContext } from './exercise-context';
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
