@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import Input from './common/input';
+import { Input } from 'azeriand-library';
 import { Badge } from 'azeriand-library'
 import { SectionName } from 'azeriand-library';
 import { useState, useContext } from 'react'

@@ -6,7 +6,7 @@ import Dropdown from './common/dropdown/dropdown'
 import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'
-import Input from './common/input'
+import { Input } from 'azeriand-library'
 import { SectionName } from 'azeriand-library';
 
 export default function SetsWidget({children, exercise, onAddSet}){

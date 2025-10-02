@@ -1,7 +1,7 @@
 import { SectionName } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { Button } from 'azeriand-library'
-import Input from '../components/common/input'
+import { Input } from 'azeriand-library'
 import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/common/row-set'

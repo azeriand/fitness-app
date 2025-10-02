@@ -1,5 +1,4 @@
-import { Card } from 'azeriand-library'
-import Input from '../components/common/input'
+import { Input } from 'azeriand-library'
 import { useContext, useEffect } from 'react'
 import { SettingsContext } from '../components/settings-context'
 import useLocalStorage from '../hooks/useLocalStorage'

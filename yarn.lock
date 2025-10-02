@@ -1359,10 +1359,10 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-azeriand-library@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.6.0.tgz#113bd0aab8ff74afc157dca2e379be909bcc54e6"
-  integrity sha512-s85Piv7jvHMU8CBJ6FRabaxeRUJESEPaCHEEWIbS6wpsFvEnEOeKeOVqmFg1PHFuBm0Y/7PLBZlI0YLmuPIerQ==
+azeriand-library@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.7.0.tgz#2944d5d9123ca6f404ad76e487bcae2d28e5738f"
+  integrity sha512-LmNW6c8lgHyR9VLBuDVH3SadQLvmRw9pkV3kVBRc0cZZUpAo5MQnv9y3Huok/1GHsIx5CTxCmdfs8kHg0wHI3A==
   dependencies:
     react-icons "^5.5.0"
 
