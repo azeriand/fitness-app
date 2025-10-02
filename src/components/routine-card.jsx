@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import useGetExercises from '../hooks/useGetExercises';
 import { useContext } from 'react';
-import { TrainingContext } from './common/training-context';
+import { TrainingContext } from './training-context';
 import './routine-card.css'
 import { Button } from 'azeriand-library'
 import { Badge } from 'azeriand-library'

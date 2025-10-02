@@ -12,9 +12,8 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+  
 import { faker } from '@faker-js/faker';
-import { TrainingContext } from '../components/common/training-context'
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 

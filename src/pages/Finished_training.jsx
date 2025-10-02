@@ -4,7 +4,7 @@ import TlListItem from '../components/common/timeline-list-item'
 import Timeline from '../components/common/timeline'
 import Logo from '../components/logo'
 import { useContext, useEffect, useState } from 'react'
-import { TrainingContext } from '../components/common/training-context'
+import { TrainingContext } from '../components/training-context'
 import { TiArrowForward } from "react-icons/ti";
 import { FaWeightHanging } from "react-icons/fa6";
 import { TbStopwatch } from "react-icons/tb";

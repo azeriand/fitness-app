@@ -4,7 +4,7 @@ import { SectionName } from 'azeriand-library'
 import { LineChart } from '@mui/x-charts/LineChart'
 import { useContext, useEffect, useState } from 'react'
 import { ExerciseContext } from './exercise-context'
-import { TrainingContext } from './common/training-context'
+import { TrainingContext } from './training-context'
 
 export default function VolumeTimeCard(){
 

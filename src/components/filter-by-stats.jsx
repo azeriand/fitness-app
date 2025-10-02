@@ -3,7 +3,6 @@ import { Input } from 'azeriand-library';
 import { Badge } from 'azeriand-library'
 import { SectionName } from 'azeriand-library';
 import { useState, useContext } from 'react'
-import { TrainingContext } from './common/training-context';
 import { ExerciseContext } from './exercise-context';
 import { IoMdSearch } from "react-icons/io";
 import ExerciseCard from './exercise-card'

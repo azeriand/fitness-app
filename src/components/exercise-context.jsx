@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react'
-import { TrainingContext } from './common/training-context';
+import { TrainingContext } from './training-context';
 
 export const ExerciseContext = createContext();
 export default function ExerciseContextComponent({ children }){

@@ -2,7 +2,7 @@
 import RoutineHistory from '../components/routine-history'
 import CalendarView from '../components/common/calendar-view'
 import { useContext } from 'react'
-import { TrainingContext } from '../components/common/training-context'
+import { TrainingContext } from '../components/training-context'
 
 export default function Home(){
 

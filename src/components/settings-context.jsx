@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import useLocalStorage from '../hooks/useLocalStorage';
-import { TrainingContext } from "./common/training-context";
+import { TrainingContext } from "./training-context";
 import dayjs from "dayjs";
 
 export const SettingsContext = createContext();
