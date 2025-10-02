@@ -1,6 +1,6 @@
 
 import Input from './input'
-import Checkbox from './checkbox'
+import { Checkbox } from 'azeriand-library'
 import { useState } from 'react'
 
 export default function RowSet({num, reps, kg, onRepsChange, onKgChange}){
