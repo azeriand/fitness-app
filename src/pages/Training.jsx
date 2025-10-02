@@ -1,10 +1,10 @@
 import { SectionName } from 'azeriand-library'
 import { Card } from 'azeriand-library'
 import { Button } from 'azeriand-library'
-import TimeController from '../components/common/time-controller'
+import TimeController from '../components/time-controller'
 import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
-import RowSet from '../components/common/row-set'
+import RowSet from '../components/row-set'
 import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { TrainingContext } from '../components/training-context'

@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import CalendarView from './common/calendar-view'
+import CalendarView from './calendar-view'
 import DataRow from './data-row'
 import VolumeTimeCard from './volume-time-card'
 import { useContext, useEffect } from 'react'
