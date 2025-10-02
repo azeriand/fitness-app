@@ -1,6 +1,6 @@
 import './routine-history.css'
 import { Card } from 'azeriand-library'
-import Input from './common/input'
+import { Input } from 'azeriand-library'
 import { Button } from 'azeriand-library'
 import { Badge } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'

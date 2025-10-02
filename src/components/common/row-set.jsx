@@ -1,5 +1,5 @@
 
-import Input from './input'
+import { Input } from 'azeriand-library'
 import { Checkbox } from 'azeriand-library'
 import { useState } from 'react'
 

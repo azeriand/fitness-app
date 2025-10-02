@@ -1,6 +1,6 @@
 import { Card } from 'azeriand-library'
 import { Avatar } from 'azeriand-library'
-import Input from './common/input'
+import { Input } from 'azeriand-library'
 
 export default function ExerciseCard({label, badge, sets, img, ...cardProps}){
     const inputClassNames = 'rounded-sm w-20 h-[2.5rem] text-base box-border p-0 text-center font-bold'
