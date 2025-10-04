@@ -5,7 +5,7 @@ import {FaDumbbell} from 'react-icons/fa'
 import {FaChartSimple} from 'react-icons/fa6'
 import { IoMdSettings } from 'react-icons/io';
 import { TbHomeFilled } from 'react-icons/tb';
-import List from '../components/common/list-container';
+import List from '../components/list-container';
 import generateTrainingDays from '../data/generateTrainingDays';
 import StreakInfo from '../components/streak-info';
 import TrainingWidget from '../components/training-widget';
