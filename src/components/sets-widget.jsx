@@ -1,13 +1,7 @@
 
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
-import { Badge } from 'azeriand-library'
-import Dropdown from './common/dropdown/dropdown'
-import { Button } from 'azeriand-library'
-import { Card } from 'azeriand-library'
-import { Avatar } from 'azeriand-library'
-import { Input } from 'azeriand-library'
-import { SectionName } from 'azeriand-library';
+import { Badge, Button, Card, Avatar, Input, SectionName, Dropdown} from 'azeriand-library'
 
 export default function SetsWidget({children, exercise, onAddSet}){
     return(
