@@ -4,7 +4,7 @@ import { Button } from 'azeriand-library'
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { useContext } from 'react'
-import { ThemeContext } from '../components/common/theme-context';
+import { ThemeContext } from 'azeriand-library';
 
 export default function TopBar(){
 
