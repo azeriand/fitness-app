@@ -1,6 +1,6 @@
 
 import RoutineHistory from '../components/routine-history'
-import CalendarView from '../components/calendar-view'
+import { Calendar } from 'azeriand-library'
 import { useContext } from 'react'
 import { TrainingContext } from '../components/training-context'
 
@@ -21,7 +21,7 @@ export default function Home(){
           }
         </div>
         <div>
-          <CalendarView selectedDates={history}/>
+          <Calendar selectedDates={history}/>
         </div>
       </div>
     </>

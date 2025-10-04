@@ -1,5 +1,5 @@
 import { Card } from 'azeriand-library'
-import CalendarView from './calendar-view'
+import { Calendar } from 'azeriand-library'
 import DataRow from './data-row'
 import VolumeTimeCard from './volume-time-card'
 import { useContext, useEffect } from 'react'
@@ -12,7 +12,7 @@ import EstimateTraining from './estimate-training'
 export default function ChartStats(){
 
     const componentMapping = {
-        'calendar': <CalendarView/>,
+        'calendar': <Calendar/>,
         'muscle_chart': <div>MUSCLE CHART</div>,
         'global_chart': <div>GLOBAL CHART</div>,
         'exercise_chart': <div>EXERCISE CHART</div>,

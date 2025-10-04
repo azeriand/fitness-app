@@ -8,13 +8,10 @@ import Training from './pages/Training.jsx'
 import Finished_training from './pages/Finished_training.jsx'
 import CreateRoutine from './pages/Create_routine.jsx'
 import NavBar from './layout/navbar'
-import { Card } from 'azeriand-library'
-import { LocalizationProvider } from '@mui/x-date-pickers'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { ThemeContextComponent, Card } from 'azeriand-library'
 import TopBar from './layout/top-bar.jsx'
 
 //Envolviendo todos los componentes en el 'entorno' para que puedan usar el contexto
-import ThemeContextComponent from './components/common/theme-context.jsx'
 import TrainingContextComponent from './components/training-context.jsx'
 import 'azeriand-library/dist/styles.css';
 import SettingsContextComponent from './components/settings-context.jsx'
@@ -27,26 +24,24 @@ function App() {
       <ThemeContextComponent>
         <TrainingContextComponent>
           <SettingsContextComponent>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              {/* <Gradient/> */}
-              <BrowserRouter>
-                <NavBar></NavBar>
-                <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
-                  <TopBar/>
-                  <Card intensity={500} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}}>
-                      <Routes>
-                        <Route path='/' element={<Home/>}></Route>
-                        <Route path='/stats' element={<Stats/>}></Route>
-                        <Route path='/settings' element={<Settings/>}></Route>
-                        <Route path='/routines' element={<Routines/>}></Route>
-                        <Route path='/training' element={<Training/>}></Route>
-                        <Route path='/finished-training' element={<Finished_training/>}></Route>
-                        <Route path='/edit-routine' element={<CreateRoutine/>}></Route>
-                      </Routes>
-                  </Card>
-                </div>
-              </BrowserRouter>
-            </LocalizationProvider>
+            {/* <Gradient/> */}
+            <BrowserRouter>
+              <NavBar></NavBar>
+              <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
+                <TopBar/>
+                <Card intensity={500} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}}>
+                    <Routes>
+                      <Route path='/' element={<Home/>}></Route>
+                      <Route path='/stats' element={<Stats/>}></Route>
+                      <Route path='/settings' element={<Settings/>}></Route>
+                      <Route path='/routines' element={<Routines/>}></Route>
+                      <Route path='/training' element={<Training/>}></Route>
+                      <Route path='/finished-training' element={<Finished_training/>}></Route>
+                      <Route path='/edit-routine' element={<CreateRoutine/>}></Route>
+                    </Routes>
+                </Card>
+              </div>
+            </BrowserRouter>
           </SettingsContextComponent>
         </TrainingContextComponent>
       </ThemeContextComponent>
