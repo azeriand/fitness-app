@@ -1,9 +1,6 @@
-import { Card } from 'azeriand-library'
-import { Button } from 'azeriand-library'
-import TlListItem from '../components/common/timeline-list-item'
-import Timeline from '../components/common/timeline'
+import { Card, Button, Timeline, TlListItem } from 'azeriand-library'
 import Logo from '../components/logo'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { TrainingContext } from '../components/training-context'
 import { TiArrowForward } from "react-icons/ti";
 import { FaWeightHanging } from "react-icons/fa6";

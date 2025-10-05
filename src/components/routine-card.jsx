@@ -3,11 +3,7 @@ import useGetExercises from '../hooks/useGetExercises';
 import { useContext } from 'react';
 import { TrainingContext } from './training-context';
 import './routine-card.css'
-import { Button } from 'azeriand-library'
-import { Badge } from 'azeriand-library'
-import { Card } from 'azeriand-library'
-import Timeline from './common/timeline'
-import TlListItem from './common/timeline-list-item'
+import { Button, Badge, Card, Timeline, TlListItem } from 'azeriand-library'
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
