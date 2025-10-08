@@ -20,7 +20,7 @@ export default function NavBar() {
     const [selectedDates] = useState(generateTrainingDays().map(({day}) => day));
     
     const listItems = [
-        {logo: <TbHomeFilled/>, label: 'Home', destination: '/'},
+        {logo: <TbHomeFilled/>, label: 'Feed', destination: '/'},
         {logo: <FaDumbbell/>, label: 'Routines', destination: '/routines'},
         {logo: <FaChartSimple/>, label: 'Stats', destination: '/stats'},
         {logo: <IoMdSettings/>, label: 'Settings', destination: '/settings'}

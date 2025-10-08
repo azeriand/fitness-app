@@ -13,7 +13,7 @@ export default function Home(){
 
   return(
     <>
-      <p className='text-start text-[2rem] font-bold m-0 pb-[1rem]'>Home</p>
+      <p className='text-start text-[2rem] font-bold m-0 pb-[1rem]'>Your latest Trainings</p>
       <div className='grid grid-cols-[70%_30%] grid-rows-[100%] gap-x-[1rem]'>
         <div>
           {
