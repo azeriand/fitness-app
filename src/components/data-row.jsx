@@ -15,7 +15,7 @@ export default function DataRow(){
     const [totalFrequency, setTotalFrequency] = useState(0)
     const [lastYearFrequency, setLastYearFrequency] = useState(340)
     const [lastMonthFrequency, setLastMonthFrequency] = useState(100)
-    const [rmWeight, setRmWeight] = useState(120)
+    const [rmWeight, setRmWeight] = useState(0)
 
     const yearAgoDate = dayjs().subtract(1, 'year');
     const monthAgoDate = dayjs().subtract(1, 'month');
@@ -78,10 +78,34 @@ export default function DataRow(){
         setLastMonthFrequency(count);
     }
 
+    function calculateRMWeight() {
+        let maxWeight = 0;
+        history.forEach((day) => {
+            day.exercises.forEach((exercise) => {
+                if (filterSelected && exercise.exercise_name === filterSelected.name) {
+                    exercise.sets.forEach((set) => {
+                        if (set.weight > maxWeight) {
+                            maxWeight = set.weight;
+                        }
+                    })
+                }
+                else if (filterSelected && exercise.muscle_type === filterSelected.name) {
+                    exercise.sets.forEach((set) => {
+                        if (set.weight > maxWeight) {
+                            maxWeight = set.weight;
+                        }
+                    })
+                }
+            })
+        })
+        setRmWeight(maxWeight);
+    }
+
     useEffect(() => {
         calculateTotalFrequency()
         calculateLastYearFrequency()
         calculateLastMonthFrequency()
+        calculateRMWeight()
     }, [filterSelected])
 
 
@@ -104,15 +128,21 @@ export default function DataRow(){
                     </Card>
                 </Card>
             </div>
-            <div>
-                <SectionName section='weight' className='pb-[0.5rem] tracking-normal'/>
-                <Card noPadding className='grid grid-cols-3 gap-x-[0.5rem] flex-wrap p-[1rem] rounded-xl'>
-                    <Card noPadding className='content-center justify-items-center'>
-                        <SectionName section='rm' className='text-xs tracking-normal'/>
-                        <div className='text-xs font-bold'>{rmWeight}</div>
-                    </Card>
-                </Card>
-            </div>
+
+            {
+                filterSelected && filterSelected.type !== 'no_selected' && (
+                    <div>
+                        <SectionName section='weight' className='pb-[0.5rem] tracking-normal'/>
+                        <Card noPadding className='grid grid-cols-3 gap-x-[0.5rem] flex-wrap p-[1rem] rounded-xl'>
+                            <Card noPadding className='content-center justify-items-center'>
+                                <SectionName section='rm' className='text-xs tracking-normal'/>
+                                <div className='text-xs font-bold'>{rmWeight}</div>
+                            </Card>
+                        </Card>
+                    </div>
+                )
+            }
+            
         </Card>
     )
 }
