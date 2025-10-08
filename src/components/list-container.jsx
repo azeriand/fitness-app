@@ -15,7 +15,7 @@ export default function List({children, onListItemSelected, name, defaultValue, 
     return(
         <div>
              <SectionName section={name}/>
-            <ul className='list-none ps-[0]'>
+            <ul className='list-none ps-[0] hover:cursor-pointer'>
                 {items.map((item, index)=>
                     <div key={item.label}>
                         <Card className='rounded-md' noBlur appearance={item.destination === listItemSelected.destination ? 'mate' : 'ghost'} noPadding onClick={() => onItemClicked(item)} {...cardProps}>
