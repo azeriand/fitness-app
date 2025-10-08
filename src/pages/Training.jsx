@@ -41,8 +41,8 @@ export default function Training(){
         <>
             <p className='text-start text-[2rem] font-bold m-0'>{trainingData.routine_name}</p>
             <div className='flex justify-between'>
-                <TimeController/>
-                <div className='flex'>
+                <TimeController cardAppearance='mate'/>
+                <div className='flex gap-x-[0.5rem]'>
                     <Button label='View Routine' onClick={() => navigate('/edit-routine')}/>
                     <Button label='Finish Training' color='green' onClick={finish}/>
                     <Button label='Discard Training' color='red' onClick={discard}/>
