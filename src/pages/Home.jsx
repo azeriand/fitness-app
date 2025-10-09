@@ -13,9 +13,9 @@ export default function Home(){
 
   return(
     <>
-      <p className='text-start text-[2rem] font-bold m-0 pb-[1rem]'>Your latest Trainings</p>
-      <div className='grid grid-cols-[70%_30%] grid-rows-[100%] gap-x-[1rem]'>
-        <div>
+      <p className='text-start text-[2rem] font-bold'>Your latest Trainings</p>
+      <div className='grid grid-cols-[70%_30%] grid-rows-[100%] gap-x-[1rem] mt-[2rem]'>
+        <div className='flex flex-col gap-y-[1rem]'>
           {
             history.slice(0, 6).map((routine) => <RoutineHistory key={routine.day} routine={routine}/>)
           }
