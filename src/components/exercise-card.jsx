@@ -12,10 +12,12 @@ export default function ExerciseCard({label, badge, sets, img, ...cardProps}){
                     <p className='m-0 p-0 text-start'>{label}</p>
                     {badge}
                 </div>
-            </Card> 
-            {
-                sets && <Input centerText className={inputClassNames} style={cardProps.style} maxLength='7' value={sets} disabled/>
-            }
+            </Card>
+            <div className='flex items-center'>
+                {
+                    sets && <Input centerText className={inputClassNames} style={cardProps.style} maxLength='7' value={sets} disabled/>
+                }
+            </div> 
 
         </>
     )
