@@ -56,7 +56,7 @@ export default function RoutineHistory({routine}){
                     <Badge label={routine.type}/>
                 </div>
 
-                <div className='grid grid-cols-[80%_20%] gap-[1rem]'>
+                <div className='grid grid-cols-[80%_20%] gap-[1rem] mb-[1rem]'>
                     <SectionName section='exercise'/>   
                     <SectionName section='sets'/>
 
@@ -67,7 +67,7 @@ export default function RoutineHistory({routine}){
                     }
                     
                 </div>
-                <Button label={collapsedButtonText} onClick={onButtonClicked} className='w-full mt-[1rem]'/>
+                <Button label={collapsedButtonText} onClick={onButtonClicked} className='w-full'/>
             </div>
         </Card>
     )
