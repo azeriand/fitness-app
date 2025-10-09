@@ -49,7 +49,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
                     <Timeline style={trainingWidgetStyle}>
                         {
                             exerciseList.map((exercise, index) => (
-                                <TlListItem key={index} label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>}/>
+                                <TlListItem key={index} label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type} size='sm'/>}/>
                             ))
                         }
                     </Timeline>
