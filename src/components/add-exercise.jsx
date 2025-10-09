@@ -1,9 +1,5 @@
-import { Card } from 'azeriand-library'
-import { Button } from 'azeriand-library'
-import { SectionName } from 'azeriand-library'
-import { Input } from 'azeriand-library'
+import { Card, Button, SectionName, Input, Badge } from 'azeriand-library'
 import ExerciseCard from './exercise-card'
-import { Badge } from 'azeriand-library'
 import { HiPlusSm } from "react-icons/hi";
 import { IoMdSearch } from "react-icons/io";
 import { useContext, useState } from 'react'
@@ -25,15 +21,15 @@ export default function AddExercise({ onExerciseAdded }){
     return(
         <>
             <Card noPadding appearance='ghost'>
-                <SectionName section='add exercise'/>
+                <SectionName section='add exercise' className='mb-[0.5rem]'/>
                 <Card>
-                    <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full' />
+                    <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full mb-[1rem]' />
                     {
                         exercises.filter((filteredExercise) => formatString(filteredExercise.exercise_name).includes(formatString(searchbarValue)))
                                  .map((exercise) => 
-                                    <div className='flex' key={exercise.exercise_name}>
+                                    <div className='grid grid-cols-[20%_80%] gap-y-[1rem]' key={exercise.exercise_name}>
                                         <Button appearance='ghost' icon={<HiPlusSm/>} onClick={() => onExerciseAdded(exercise.exercise_name)} />
-                                        <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}></ExerciseCard>
+                                        <ExerciseCard appearance='ghost' label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}></ExerciseCard>
                                     </div>
                                 )
                     }
