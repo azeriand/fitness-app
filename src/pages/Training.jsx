@@ -3,14 +3,16 @@ import TimeController from '../components/time-controller'
 import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/row-set'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { TrainingContext } from '../components/training-context'
 
 export default function Training(){
   
-    const {trainingData, updateReps, addExercise, addSet, updateKg, startTraining, switchTimer, resetTimer, exercises, routineID} = useContext(TrainingContext)
+    const {trainingData, setTrainingData, updateReps, addExercise, addSet, updateKg, startTraining, switchTimer, resetTimer, exercises, routineID} = useContext(TrainingContext)
     const navigate = useNavigate();
+    const [draggedCardIndex, setDraggedCardIndex] = useState(null);
+    const [newDragPosition, setNewDragPosition] = useState(null);
 
     function getExercise(exerciseName){
         return exercises.find((exercise) => exercise.exercise_name === exerciseName)
@@ -33,6 +35,36 @@ export default function Training(){
         navigate('/routines')
     }
 
+    function onDragStart(index){
+        console.log('START',index);
+        
+        setDraggedCardIndex(index);
+        setDivOpacity(0);
+        console.log(divOpacity);
+    }
+    
+    function onDragOver(e, index){
+        e.preventDefault(); // Allow drop
+        console.log('OVER', index);
+        setNewDragPosition(index);
+    }
+    
+    function onDrop(e){
+        e.preventDefault();
+        if (draggedCardIndex !== null && newDragPosition !== null){
+            let newExercisesArray = [...trainingData.exercises];
+            let exerciseMoved = newExercisesArray[draggedCardIndex];
+            newExercisesArray.splice(draggedCardIndex, 1); // Remove dragged item
+            newExercisesArray.splice(newDragPosition, 0, exerciseMoved); // Insert at new position
+            setTrainingData((oldTrainingData) => ({
+                ...oldTrainingData,
+                exercises: newExercisesArray
+            }))
+        }
+        setDraggedCardIndex(null);
+        setNewDragPosition(null);
+        setDivOpacity(100);
+    }
     
 
     return(
@@ -47,21 +79,24 @@ export default function Training(){
                 </div>
             </div>
 
-            <div className='grid grid-cols-[70%_30%] gap-[1rem] mt-[2rem]'>
+            <div onDrop={onDrop} className='grid grid-cols-[70%_30%] gap-[1rem] mt-[2rem]'>
                 <Card noPadding appearance='ghost'>
                     <SectionName section='Exercises' className='mb-[0.5rem]'/>
                     <div className='flex flex-col gap-[1rem]'>
                         {
-                            trainingData.exercises.map((routine) => {
+                            trainingData.exercises.map((routine, index) => {
                                 const exercise = {
                                     ...getExercise(routine.exercise_name),
                                     ...routine
                                 }
                                 if (!exercise) return null;
                                 return (
-                                <SetsWidget exercise={exercise} key={exercise.exercise_name} onAddSet={() => addSet(exercise.exercise_name)}>
-                                    {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG} onRepsChange={(value) => updateReps(exercise.exercise_name, index, value)} onKgChange={(value) => updateKg(exercise.exercise_name, index, value)}/>)}
-                                </SetsWidget>
+                                <div key={exercise.exercise_name} draggable='true' className={`${draggedCardIndex === index? 'opacity-25' : 'opacity-100'}`} onDragStart={() => onDragStart(index)} onDragOver={(e) => onDragOver(e, index)}>
+                                    <SetsWidget exercise={exercise} key={exercise.exercise_name} onAddSet={() => addSet(exercise.exercise_name)}>
+                                        {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG} onRepsChange={(value) => updateReps(exercise.exercise_name, index, value)} onKgChange={(value) => updateKg(exercise.exercise_name, index, value)}/>)}
+                                    </SetsWidget>
+                                    <div className={`bg-white h-[3px] w-full mt-[1rem] ${newDragPosition !== index? 'hidden' : ''}`}/>
+                                </div>
                             )})
                         }
                     </div>
