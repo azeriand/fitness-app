@@ -11,6 +11,11 @@ export default function TrainingContextComponent({ children }) {
 
     const routinesList = routines
     const [history, setHistory] = useState(generateTrainingDays());
+
+    useEffect(() => {
+        console.log(history);
+        
+    }, [history]);
     
     const intervalRef = useRef(null);
 
