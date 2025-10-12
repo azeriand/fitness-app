@@ -1,10 +1,8 @@
 [
-	{ "component_name": "calendar", "type": ["muscle_group", "exercise", "no_selected"] },
-	{ "component_name": "data_row", "type": ["muscle_group", "exercise", "no_selected"]},
-	{ "component_name": "volume_time_card", "type": ["muscle_group", "exercise", "no_selected"]},
-	{ "component_name": "per_muscle_group", "type": ["no_selected"]},
-	{ "component_name": "reps_vs_weight", "type": ["exercise"]},
-	{ "component_name": "estimate_training", "type": ["exercise"]}
-
-
+	{ "component_name": "data_row", "type": ["muscle_group", "exercise", "no_selected"], "full_width": false },
+	{ "component_name": "calendar", "type": ["muscle_group", "exercise", "no_selected"], "full_width": true },
+	{ "component_name": "volume_time_card", "type": ["muscle_group", "exercise", "no_selected"], "full_width": true },
+	{ "component_name": "per_muscle_group", "type": ["no_selected"], "full_width": false },
+	{ "component_name": "reps_vs_weight", "type": ["exercise"], "full_width": false },
+	{ "component_name": "estimate_training", "type": ["exercise"], "full_width": false }
 ]
