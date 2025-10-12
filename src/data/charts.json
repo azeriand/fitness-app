@@ -1,5 +1,5 @@
 [
-	{ "component_name": "data_row", "type": ["muscle_group", "exercise", "no_selected"], "full_width": false },
+	{ "component_name": "data_row", "type": ["muscle_group", "exercise", "no_selected"], "full_width": true },
 	{ "component_name": "calendar", "type": ["muscle_group", "exercise", "no_selected"], "full_width": true },
 	{ "component_name": "volume_time_card", "type": ["muscle_group", "exercise", "no_selected"], "full_width": true },
 	{ "component_name": "per_muscle_group", "type": ["no_selected"], "full_width": false },
