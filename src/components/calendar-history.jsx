@@ -1,4 +1,4 @@
-import { Calendar } from 'azeriand-library'
+import { Calendar, Card, SectionName } from 'azeriand-library'
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { ExerciseContext } from './exercise-context';
 import { TrainingContext } from './training-context';
@@ -48,7 +48,7 @@ export function CalendarHistory() {
         dayRM: maxWeight,
         volume: Math.round(totalVolume)
       };
-    }).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 7); // Sort by date descending and limit to 7 items
+    }).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 6); // Sort by date descending and limit to 7 items
   }, [filteredExercises])
   
   function getChartData() {
@@ -76,43 +76,48 @@ export function CalendarHistory() {
 
     useEffect(getChartData, [filterSelected, history])
     return (
-        <div className="flex gap-8 w-full">
+      <>
+      <SectionName section="Training History" className="text-lg mb-[1rem]"/>
+        <div className="flex gap-[1rem] w-full h-full">
             <div className="flex-1">
-                <Calendar selectedDates={trainedDays}/>
+                <Card title="Training Calendar" className='h-full'>
+                    <Calendar selectedDates={trainedDays}/>
+                </Card>
             </div>
             
             <div className="flex-1">
-                <div className="border rounded-lg">
-                    <table className="w-full table-auto">
-                        <thead className="sticky top-0">
-                            <tr>
-                                <th className="px-4 py-2 text-left border-b">Date</th>
-                                <th className="px-4 py-2 text-left border-b">Day RM (kg)</th>
-                                <th className="px-4 py-2 text-left border-b">Volume (kg)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <Card title="Training Stats">
+                    <div className="space-y-4">
+                        <Card noPadding className='p-2'>
+                            <div className="flex justify-between items-center font-medium text-gray-300">
+                                <span>Date</span>
+                                <span>Day RM (kg)</span>
+                                <span>Volume (kg)</span>
+                            </div>
+                        </Card>
+                        <div className="space-y-2">
                             {dayStats.map((day) => (
-                                <tr key={day.date}>
-                                    <td className="px-4 py-2 border-b text-sm">
+                                <div key={day.date} className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-700/20 border border-gray-600/20">
+                                    <span className="text-sm">
                                         {new Date(day.date).toLocaleDateString('en-US', {
                                             month: 'short',
                                             day: 'numeric',
                                             year: 'numeric'
                                         })}
-                                    </td>
-                                    <td className="px-4 py-2 border-b text-sm font-medium">
+                                    </span>
+                                    <span className="text-sm font-medium">
                                         {day.dayRM}
-                                    </td>
-                                    <td className="px-4 py-2 border-b text-sm">
+                                    </span>
+                                    <span className="text-sm">
                                         {day.volume.toLocaleString()}
-                                    </td>
-                                </tr>
+                                    </span>
+                                </div>
                             ))}
-                        </tbody>
-                    </table>
-                </div>
+                        </div>
+                    </div>
+                </Card>
             </div>
         </div>
+      </>
     );
 }
