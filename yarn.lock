@@ -1449,10 +1449,10 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-azeriand-library@^1.13.3:
-  version "1.13.3"
-  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.13.3.tgz#5e00a2b56d4cd1720e28320b87d84618d1ced232"
-  integrity sha512-qpRNKq4VH/XSvjkANK0CteCxtpZI+4BlC/ctkqqsEJ7okdR9DHPEEUaygrWyT7UJjaPYa/44fwhMQgY2t94w5A==
+azeriand-library@^1.13.4:
+  version "1.13.4"
+  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.13.4.tgz#9c99791bcbca82ca3074a7483be2c94af0105247"
+  integrity sha512-ozrfuLtzwrkTQOVGFjcCg9RYlsOvgFqhg2PzndEZaNaHPZthwCRSEEFxD7Ul0X5mafWn77sOu121mKvrhLYaFA==
   dependencies:
     "@emotion/react" "^11.14.0"
     "@emotion/styled" "^11.14.1"
