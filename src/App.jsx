@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Stats from './pages/Stats.jsx'
 import Settings from './pages/Settings.jsx'
@@ -25,7 +25,7 @@ function App() {
         <TrainingContextComponent>
           <SettingsContextComponent>
             {/* <Gradient/> */}
-            <BrowserRouter>
+            <HashRouter>
               <NavBar></NavBar>
               <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
                 <TopBar/>
@@ -41,7 +41,7 @@ function App() {
                     </Routes>
                 </Card>
               </div>
-            </BrowserRouter>
+            </HashRouter>
           </SettingsContextComponent>
         </TrainingContextComponent>
       </ThemeContextComponent>
