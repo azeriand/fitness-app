@@ -1,15 +1,17 @@
-import {Card, Button} from 'azeriand-library'
+import { Card, Button } from 'azeriand-library'
 import { FaPause, FaPlay, FaStop } from "react-icons/fa";
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { TrainingContext } from './training-context'
 
 export default function PlayPause(){
 
     const { switchTimer, resetTimer, trainingData } = useContext(TrainingContext)
+    const navigate = useNavigate()
 
     const discard = () => {
         resetTimer()
-        window.location.href = '/routines'
+        navigate('/routines')
     }
 
     const renderIcon = () => {
