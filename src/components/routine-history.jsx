@@ -67,7 +67,7 @@ export default function RoutineHistory({routine}){
                     }
                     
                 </div>
-                <Button label={collapsedButtonText} onClick={onButtonClicked} className='w-full'/>
+                <Button label={collapsedButtonText} onClick={onButtonClicked} noPadding className='w-full py-3'/>
             </div>
         </Card>
     )
