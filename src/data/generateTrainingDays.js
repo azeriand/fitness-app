@@ -57,11 +57,11 @@ while (currentWeekStart >= oneYearAgo) {
 
             weekDates.push({
                 day: date.toISOString().split('T')[0],
-                user: 'Andriu',
+                user: 'User Name',
                 duration: 2050,
                 volume: 4300,
-                name: 'Legs and glutes',
-                type: 'Quads',
+                name: 'Routine Name',
+                type: 'Muscle',
                 exercises: [
                     {
                         ...mainExercises[Math.floor(Math.random() * mainExercises.length)],
