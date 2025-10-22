@@ -27,10 +27,10 @@ export default function Settings(){
             <p className='text-start text-[2rem] font-bold m-0'>Settings</p>
             <div className='mt-[2rem] grid grid-col-[100%] justify-start gap-y-[0.5rem]'>
                 <p className='font-semibold text-start'>Weekly training days</p>
-                <Input type='number' size={5} maxLength={5} value={storedStreak} onChange={handleChange}/>
+                <Input type='number' maxLength={5} value={storedStreak} centerText onChange={handleChange} className='w-[5rem] font-semibold'/>
                 <div className= 'text-gray-400 flex items-center ml-[0.5rem] gap-x-[0.25rem]'>
                    <LuInfo/> 
-                   <p>The default number of weekly training days to keep the streak.</p>
+                   <p className='italic text-xs'>The default number of weekly training days to keep the streak.</p>
                 </div>
             </div>
 

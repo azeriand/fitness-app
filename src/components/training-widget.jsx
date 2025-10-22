@@ -1,6 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { FaPause } from "react-icons/fa";
-import { FaStop } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import { Button } from 'azeriand-library'
 import { Card } from 'azeriand-library'
@@ -21,8 +19,8 @@ export default function TrainingWidget({...cardProps}){
 
         if (trainingData.state ==='STOPPED' || trainingData.state === null ){
             return (
-                <Card noPadding noBlur className='m-[0.5rem]'>
-                    <Button label='Start Training' icon={<FaPlay/>} position='right' className='w-full' onClick={()=> navigate('/routines')}/>
+                <Card noPadding noBlur className='m-[0.5rem] py-[0.5rem]'>
+                    <Button label='Start Training' icon={<FaPlay/>} position='right' appearance='ghost' className='w-full' onClick={()=> navigate('/routines')}/>
                 </Card>            
             )
         }

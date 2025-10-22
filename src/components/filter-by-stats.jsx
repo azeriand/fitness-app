@@ -31,7 +31,7 @@ export default function FilterByStats(){
 
         <Card noPadding className={`h-full overflow-y-scroll p-[1rem] rounded-lg ${customScrollbar}`}>
             <SectionName section='filter by'/>
-            <Input type='search' iconPosition='right' value={searchValue} placeholder='Search Exercise' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full'/>
+            <Input type='search' iconPosition='right' value={searchValue} placeholder='Search Exercise' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full my-[1rem]'/>
             <SectionName section='muscle groups' className='pt-[1rem]'/>
             <div className='flex flex-wrap gap-[0.5rem] py-[1rem]'>
                 {
@@ -39,7 +39,7 @@ export default function FilterByStats(){
                                 <Badge label={muscleGroup} size='sm' onClick={() => {
                                     setFilterSelected({name: muscleGroup, type: 'muscle_group'})
                                     setSearchValue(muscleGroup)
-                                }} appearance={filterSelected && filterSelected.name === muscleGroup ? 'mate' : 'ghost'}/>)
+                                }} appearance={filterSelected && filterSelected.name === muscleGroup ? 'mate' : 'ghost'} className='cursor-pointer'/>)
                 }
             </div>
 
@@ -47,7 +47,7 @@ export default function FilterByStats(){
             {
                 exercises.filter((exercise) => formatString(exercise.exercise_name).includes(formatString(searchValue)) || formatString(exercise.muscle_type).includes(formatString(searchValue)))
                         .map((exercise) => 
-                        <div className='p-[0.5rem]' key={exercise.exercise_name}>
+                        <div className='p-[0.5rem] cursor-pointer' key={exercise.exercise_name}>
                             <ExerciseCard label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img} 
                             onClick ={() => {
                                 setFilterSelected({name: exercise.exercise_name, type: 'exercise'})
