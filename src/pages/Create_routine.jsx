@@ -66,29 +66,31 @@ export default function CreateRoutine(){
 
             <div className='grid grid-cols-[70%_30%] gap-[1rem]'>
                 <Card noPadding appearance='ghost'>
-                    <div className='flex justify-start gap-[1rem] my-[2rem]'>
-                         <Input onChange={updateRoutineName} value={routine.routine_name} type='text'size='60' placeholder='New routine'/>
-                         <Button label='Save Routine' color='green'/>
+                    <div className='grid grid-cols-[75%_25%] w-full justify-center gap-x-[1rem] my-[2rem]'>
+                        <Input onChange={updateRoutineName} value={routine.routine_name} type='text'size='60' placeholder='New routine' className='font-semibold'/>
+                        <Button label='Save Routine' color='green'/>
                     </div>
-                    <SectionName section='Exercises'/>
-                    {
-                        routine.exercises.map((routine) => {
-                            const foundExercise = exercises.find(({exercise_name}) => exercise_name === routine.exercise_name)
+                    <SectionName section='Exercises' className='mb-[1rem]'/>
+                    <div className='flex flex-col gap-y-[1rem] mb-[1rem]'>
+                        {
+                            routine.exercises.map((routine) => {
+                                const foundExercise = exercises.find(({exercise_name}) => exercise_name === routine.exercise_name)
 
-                            const newExercise = {
-                                ...foundExercise,
-                                ...routine
-                            }
+                                const newExercise = {
+                                    ...foundExercise,
+                                    ...routine
+                                }
 
-                            if (!newExercise) return null;
-                            return (
-                            <SetsWidget key={newExercise.exercise_name} exercise={newExercise} onAddSet={() => addSet(newExercise.exercise_name)}>
-                                {newExercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG}/>)}
-                            </SetsWidget>
-                        )})
-                    }
+                                if (!newExercise) return null;
+                                return (
+                                <SetsWidget key={newExercise.exercise_name} exercise={newExercise} onAddSet={() => addSet(newExercise.exercise_name)}>
+                                    {newExercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG}/>)}
+                                </SetsWidget>
+                            )})
+                        }
+                    </div>
 
-                    <Button label='Add Exercise' className='w-full mt-[1rem]'/>
+                    <Button label='Add Exercise' className='w-full'/>
                 </Card>
                 <Card noPadding appearance='ghost'>
                     <AddExercise onExerciseAdded={addExercise}/>

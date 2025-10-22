@@ -39,7 +39,7 @@ export default function RoutineHistory({routine}){
             <div>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-x-[1rem]'>
-                        <Avatar src={Goku} className='rounded-sm'/>
+                        <Avatar src={Goku} className='rounded-md'/>
                         <div className='aside-avatar'>
                             <p className='p-0 m-0 text-start'>{routine.user}</p>
                             <p className='p-0 m-0 text-start text-[0.75rem] last-time'>{dayjs(routine.day).format('dddd')}</p>
@@ -67,7 +67,7 @@ export default function RoutineHistory({routine}){
                     }
                     
                 </div>
-                <Button label={collapsedButtonText} onClick={onButtonClicked} noPadding className='w-full py-3'/>
+                <Button label={collapsedButtonText} onClick={onButtonClicked} className='w-full py-[3rem]'/>
             </div>
         </Card>
     )
