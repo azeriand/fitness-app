@@ -10,23 +10,27 @@ import generateTrainingDays from '../data/generateTrainingDays';
 import StreakInfo from '../components/streak-info';
 import TrainingWidget from '../components/training-widget';
 import Logo from '../components/logo'
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export default function NavBar() {
-    const navigate = useNavigate()
-    const location = useLocation();
-    const { pathname } = location;
 
-    const [selectedDates] = useState(generateTrainingDays().map(({day}) => day));
-    
-    const listItems = [
+    const listItems = useMemo(() => [
         {logo: <TbHomeFilled/>, label: 'Feed', destination: '/'},
         {logo: <FaDumbbell/>, label: 'Routines', destination: '/routines'},
         {logo: <FaChartSimple/>, label: 'Stats', destination: '/stats'},
         {logo: <IoMdSettings/>, label: 'Settings', destination: '/settings'}
-    ]
+    ], []);
 
-    const currentItem = listItems.find(item => item.destination === pathname);
+    const navigate = useNavigate()
+    const location = useLocation();
+    const { pathname } = location;
+    const [selectedPath, setSelectedPath] = useState(listItems.find(item => item.destination === pathname));
+
+    const [selectedDates] = useState(generateTrainingDays().map(({day}) => day));
+
+    useEffect(() => {
+        setSelectedPath(listItems.find(item => item.destination === pathname))
+    }, [pathname]);
 
     return (
         <Card intensity={500} noPadding className='flex flex-col justify-between h-full'>
@@ -34,7 +38,7 @@ export default function NavBar() {
                 <Logo></Logo>
                 <StreakInfo noPadding/>
                 <div style={{padding: '1rem'}}>
-                    <List items={listItems} defaultValue={currentItem} onListItemSelected={(itemSelected) => navigate(itemSelected.destination)}/>
+                    <List items={listItems} defaultValue={selectedPath} value={selectedPath} onListItemSelected={(itemSelected) => navigate(itemSelected.destination)}/>
                 </div>
             </div>
             <TrainingWidget className='justify-self-end'/>
