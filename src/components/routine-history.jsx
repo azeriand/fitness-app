@@ -1,14 +1,10 @@
 import './routine-history.css'
-import { Card } from 'azeriand-library'
-import { Input } from 'azeriand-library'
-import { Button } from 'azeriand-library'
-import { Badge } from 'azeriand-library'
-import { Avatar } from 'azeriand-library'
-import { SectionName } from 'azeriand-library'
+import { Card, Input, Button, Avatar, SectionName } from 'azeriand-library'
+import ColorBadge from './color-badge';
 import ExerciseCard from './exercise-card'
 import Goku from '../assets/goku2.jpg'
 import dayjs from 'dayjs'
-import {FaDumbbell} from 'react-icons/fa'
+import { FaDumbbell } from 'react-icons/fa'
 import { IoTimerOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react'
 
@@ -53,7 +49,7 @@ export default function RoutineHistory({routine}){
 
                 <div className='flex items-center gap-x-[1rem] py-[1rem]'>
                     <p className='font-bold text-[1.5rem]'>{routine.name}</p>
-                    <Badge label={routine.type}/>
+                    <ColorBadge label={routine.type}/>
                 </div>
 
                 <div className='grid grid-cols-[80%_20%] gap-[1rem] mb-[1rem]'>
@@ -62,7 +58,7 @@ export default function RoutineHistory({routine}){
 
                     {
                         collapsedExercises.map((exercise, index) => (
-                            <ExerciseCard key={index} label={exercise.exercise_name} sets={exercise.sets.length} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}/> 
+                            <ExerciseCard key={index} label={exercise.exercise_name} sets={exercise.sets.length} badge={<ColorBadge label={exercise.muscle_type}/>} img={exercise.img}/> 
                         ))
                     }
                     

@@ -3,7 +3,8 @@ import useGetExercises from '../hooks/useGetExercises';
 import { useContext } from 'react';
 import { TrainingContext } from './training-context';
 import './routine-card.css'
-import { Button, Badge, Card, Timeline, TlListItem } from 'azeriand-library'
+import { Button, Card, Timeline, TlListItem } from 'azeriand-library'
+import ColorBadge from './color-badge';
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
@@ -49,7 +50,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
                     <Timeline style={trainingWidgetStyle}>
                         {
                             exerciseList.map((exercise, index) => (
-                                <TlListItem key={index} label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type} size='sm'/>}/>
+                                <TlListItem key={index} label={exercise.exercise_name} badge={<ColorBadge label={exercise.muscle_type} size='sm'/>}/>
                             ))
                         }
                     </Timeline>
