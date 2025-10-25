@@ -1,4 +1,5 @@
-import { Card, Button, SectionName, Input, Badge } from 'azeriand-library'
+import { Card, Button, SectionName, Input } from 'azeriand-library'
+import ColorBadge from './color-badge';
 import ExerciseCard from './exercise-card'
 import { HiPlusSm } from "react-icons/hi";
 import { IoMdSearch } from "react-icons/io";
@@ -29,7 +30,7 @@ export default function AddExercise({ onExerciseAdded }){
                                  .map((exercise) => 
                                     <div className='grid grid-cols-[20%_80%] gap-y-[1rem]' key={exercise.exercise_name}>
                                         <Button appearance='ghost' icon={<HiPlusSm/>} onClick={() => onExerciseAdded(exercise.exercise_name)} />
-                                        <ExerciseCard appearance='ghost' label={exercise.exercise_name} badge={<Badge label={exercise.muscle_type}/>} img={exercise.img}></ExerciseCard>
+                                        <ExerciseCard appearance='ghost' label={exercise.exercise_name} badge={<ColorBadge label={exercise.muscle_type}/>} img={exercise.img}></ExerciseCard>
                                     </div>
                                 )
                     }

@@ -1,7 +1,8 @@
 
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
-import { Badge, Button, Card, Avatar, Input, SectionName, Dropdown} from 'azeriand-library'
+import { Button, Card, Avatar, Input, SectionName, Dropdown} from 'azeriand-library'
+import ColorBadge from './color-badge';
 
 export default function SetsWidget({children, exercise, onAddSet}){
     return(
@@ -12,7 +13,7 @@ export default function SetsWidget({children, exercise, onAddSet}){
                     <Avatar src={exercise.img} className='rounded-sm'/>
                     <div>
                         <p className='m-0'>{exercise.exercise_name}</p>
-                        <Badge label={exercise.muscle_type}/>
+                        <ColorBadge label={exercise.muscle_type}/>
                     </div>
                 </div>
                 <div className='flex'>
