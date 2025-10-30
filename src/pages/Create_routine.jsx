@@ -7,15 +7,19 @@ import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/row-set'
 import { useContext, useEffect, useState } from 'react'
 import { TrainingContext } from '../components/training-context'
+import useDraggable from '../hooks/useDraggable'
 import { useSearchParams } from "react-router";
 import { getCurrentDateTime } from '../utils/datetime.js'
 
 export default function CreateRoutine(){
+
+    
     const [routine, setRoutine] = useState({
         routine_name: '',
         created_day: getCurrentDateTime(),
         exercises: []
     })
+    const { isDraggingUp, isDraggingDown, onDragStart, onDragOver, onDrop, draggedCardIndex } = useDraggable([routine, setRoutine]);
     const {getRoutineByName, exercises} = useContext(TrainingContext)
     const [searchParams] = useSearchParams();
 
@@ -57,14 +61,14 @@ export default function CreateRoutine(){
                 setRoutine(foundRoutine);
             }
         }
-    })
+    }, [])
 
     return(
         <>
             <p className='text-start text-[2rem] font-bold m-0'>Create Routine</p>
             
 
-            <div className='grid grid-cols-[70%_30%] gap-[1rem]'>
+            <div onDrop={onDrop} className='grid grid-cols-[70%_30%] gap-[1rem]'>
                 <Card noPadding appearance='ghost'>
                     <div className='grid grid-cols-[75%_25%] w-full justify-center gap-x-[1rem] my-[2rem]'>
                         <Input onChange={updateRoutineName} value={routine.routine_name} type='text'size='60' placeholder='New routine' className='font-semibold'/>
@@ -73,7 +77,7 @@ export default function CreateRoutine(){
                     <SectionName section='Exercises' className='mb-[1rem]'/>
                     <div className='flex flex-col gap-y-[1rem] mb-[1rem]'>
                         {
-                            routine.exercises.map((routine) => {
+                            routine.exercises.map((routine, index) => {
                                 const foundExercise = exercises.find(({exercise_name}) => exercise_name === routine.exercise_name)
 
                                 const newExercise = {
@@ -83,10 +87,18 @@ export default function CreateRoutine(){
 
                                 if (!newExercise) return null;
                                 return (
-                                <SetsWidget key={newExercise.exercise_name} exercise={newExercise} onAddSet={() => addSet(newExercise.exercise_name)}>
-                                    {newExercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG}/>)}
-                                </SetsWidget>
-                            )})
+                                    <div key={newExercise.exercise_name}>
+                                        <div className={`bg-white h-[3px] w-full mb-[0.25rem] ${isDraggingUp(index) ? '' : 'hidden'}`}/>
+                                        <div draggable='true' className={`${draggedCardIndex === index? 'opacity-25' : 'opacity-100'}`} onDragStart={() => onDragStart(index)} onDragOver={(e) => onDragOver(e, index)}>
+                                            <SetsWidget exercise={newExercise} onAddSet={() => addSet(newExercise.exercise_name)}>
+                                                {newExercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG}/>)}
+                                            </SetsWidget>
+
+                                        </div>
+                                        <div className={`bg-white h-[3px] w-full mt-[0.25rem] ${isDraggingDown(index) ? '' : 'hidden'}`}/>
+                                    </div>
+                                )
+                            })
                         }
                     </div>
 
