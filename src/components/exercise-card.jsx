@@ -3,7 +3,7 @@ import { Avatar } from 'azeriand-library'
 import { Input } from 'azeriand-library'
 
 export default function ExerciseCard({label, badge, sets, img, ...cardProps}){
-    const inputClassNames = 'rounded-sm w-20 h-[2.5rem] text-base box-border p-0 text-center font-bold'
+    const inputClassNames = 'rounded-sm w-[4rem] h-[2.5rem] text-base box-border p-0 text-center font-bold'
     return(
         <>
             <Card className='flex items-center gap-x-[1rem] w-full p-2' noPadding {...cardProps}>
@@ -15,7 +15,7 @@ export default function ExerciseCard({label, badge, sets, img, ...cardProps}){
             </Card>
             <div className='flex items-center'>
                 {
-                    sets && <Input centerText className={inputClassNames} style={cardProps.style} maxLength='7' value={sets} disabled/>
+                    sets && <Input centerText className={inputClassNames} style={cardProps.style} maxLength='3' value={sets} disabled/>
                 }
             </div> 
 

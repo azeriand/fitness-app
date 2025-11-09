@@ -3,6 +3,9 @@ import { Calendar } from 'azeriand-library'
 import { useContext, useState } from 'react'
 import { TrainingContext } from '../components/training-context'
 import InfiniteScroller from '../components/infinite-scroller';
+import { useMediaQuery } from 'react-responsive'
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 
 export default function Home(){
 
@@ -10,6 +13,7 @@ export default function Home(){
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [visibleHistory, setVisibleHistory] = useState(6); // Start with 6 items visible
+  const isMobile = useMediaQuery({ query: '(max-width: 48rem)' });
 
   const getMoreData = () => {
     if (isLoading || visibleHistory >= history.length) return;
@@ -32,24 +36,24 @@ export default function Home(){
   return(
     <>
       <p className='text-start text-[2rem] font-bold'>Your latest Trainings</p>
-      <InfiniteScroller
-        className='grid grid-cols-[70%_30%] grid-rows-[100%] gap-x-[1rem] mt-[2rem]'
-        getMoreData={getMoreData}
-        hasMore={hasMore}
-        isLoading={isLoading}
-        containerHeight={600} // Example height
-        bufferPx={50} // Optional buffer
-        loader={<p>Loading...</p>} // Optional loader
-      >
-        <div className='flex flex-col gap-y-[1rem]'>
-          {
-            history.slice(0, visibleHistory).map((routine) => <RoutineHistory key={routine.day} routine={routine}/>)
-          }
+      <div className='grid grid-cols-[100%] md:!grid-cols-[70%_30%] grid-rows-[100%] gap-[1rem]'>
+        <InfiniteScroller
+          className='mt-[2rem]'
+          getMoreData={getMoreData}
+          hasMore={hasMore}
+          isLoading={isLoading}
+          containerHeight={isMobile ? 'calc(100vh - 124px)' : 'calc(100vh - 280px)'} // Example height
+          bufferPx={50} // Optional buffer
+          loader={<AiOutlineLoading3Quarters className='animate-spin'/>} // Optional loader
+        >
+            {
+              history.slice(0, visibleHistory).map((routine) => <RoutineHistory key={routine.day} routine={routine} className='mb-4'/>)
+            }
+        </InfiniteScroller>
+        <div className='hidden md:!block'>
+          <Calendar selectedDates={history} className='hidden md:!block'/>
         </div>
-        <div>
-          <Calendar selectedDates={history}/>
-        </div>
-      </InfiniteScroller>
+      </div>
     </>
   )
 }
