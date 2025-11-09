@@ -1,5 +1,5 @@
 import './routine-history.css'
-import { Card, Input, Button, Avatar, SectionName } from 'azeriand-library'
+import { Card, Input, Button, Avatar, SectionName } from 'azeriand-library';
 import ColorBadge from './color-badge';
 import ExerciseCard from './exercise-card'
 import Goku from '../assets/goku2.jpg'
@@ -9,7 +9,7 @@ import { IoTimerOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react'
 
 
-export default function RoutineHistory({routine}){
+export default function RoutineHistory({routine, className}){
 
     const [cardExpanded, setCardExpanded] = useState(false);
 
@@ -31,9 +31,9 @@ export default function RoutineHistory({routine}){
 
 
     return(
-        <Card>
+        <Card className={'rounded-xl ' + className}>
             <div>
-                <div className='flex items-center justify-between'>
+                <div className='md:flex items-center justify-between'>
                     <div className='flex items-center gap-x-[1rem]'>
                         <Avatar src={Goku} className='rounded-md'/>
                         <div className='aside-avatar'>
@@ -41,7 +41,7 @@ export default function RoutineHistory({routine}){
                             <p className='p-0 m-0 text-start text-[0.75rem] last-time'>{dayjs(routine.day).format('dddd')}</p>
                         </div>
                     </div>
-                    <div className='flex items-center justify-end gap-x-2'>
+                    <div className='flex items-center justify-start md:!justify-end gap-x-2 mt-[1rem] md:!mt-0'>
                         <Input className='rounded-sm w-26' centerText value={routine.duration} icon={<IoTimerOutline/>} disabled/>
                         <Input className='rounded-sm w-26' centerText value={routine.volume} icon={<FaDumbbell/>} disabled/>
                     </div>
@@ -52,7 +52,7 @@ export default function RoutineHistory({routine}){
                     <ColorBadge label={routine.type}/>
                 </div>
 
-                <div className='grid grid-cols-[80%_20%] gap-[1rem] mb-[1rem]'>
+                <div className='grid grid-cols-[80%_20%] gap-y-[0.5rem] gap-x-[1rem] mb-[1rem]'>
                     <SectionName section='exercise'/>   
                     <SectionName section='sets'/>
 

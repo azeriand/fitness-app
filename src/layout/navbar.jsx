@@ -33,7 +33,7 @@ export default function NavBar() {
     }, [pathname]);
 
     return (
-        <Card intensity={500} noPadding className='flex flex-col justify-between h-full'>
+        <Card intensity={500} noPadding className='flex !hidden md:!block flex-col justify-between h-full'>
             <div>
                 <Logo></Logo>
                 <StreakInfo noPadding/>
