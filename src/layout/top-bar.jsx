@@ -19,8 +19,8 @@ export default function TopBar(){
             <div className='md:!hidden text-[2rem]' onClick={() => navigate('/')}><FaDumbbell/></div>
             <div className='flex gap-[1rem] items-center'>
                 <Button label='Go to my portfolio!' className='h-full'/>
-                <Button icon={<IoMdSettings/>} onClick={() => navigate('/settings')}/>
-                <Avatar src={Goku}/>
+                <Button icon={<IoMdSettings/>} onClick={() => navigate('/settings')} className='md:!hidden'/>
+                <Avatar className='md:!hidden' src={Goku}/>
                 <Button icon={theme === 'dark' ? <MdLightMode/> : <MdDarkMode/>} onClick={() => setTheme((oldValue) => oldValue === 'dark' ? 'light' : 'dark')} className={isMobile? '!hidden' : ''}/>
             </div>
         </Card>
