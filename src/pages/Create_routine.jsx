@@ -71,8 +71,8 @@ export default function CreateRoutine(){
                     <Button label='Save Routine' color='green' className='md:!hidden'/>
                 </div>
                 
-                <div onDrop={onDrop} className='flex md:!grid md:!grid-cols-10 gap-[1rem] pb-32 md:pb-0 overflow-x-visible w-full'>
-                    <Card noPadding appearance='ghost' className='w-full md:col-span-6'>
+                <div onDrop={onDrop} className='flex md:!grid md:!grid-cols-12 gap-[1rem] pb-32 md:pb-0 overflow-x-visible w-full'>
+                    <Card noPadding appearance='ghost' className='w-full md:col-span-7'>
                         <div className='grid md:!grid-cols-[75%_25%] w-full justify-between items-center gap-[0.5rem] mt-[1rem] mb-[2rem] md:!my-[2rem] p-[0.5rem]'>
                             <Input onChange={updateRoutineName} value={routine.routine_name} type='text' placeholder='New routine' className='font-semibold w-full'/>
                             <Button label='Save Routine' size='sm' color='green' className={isMobile? '!hidden' : ''}/>
@@ -107,7 +107,7 @@ export default function CreateRoutine(){
 
                         <Button label='Add Exercise' className='w-full md:!hidden' onClick={() => setExercisePickerHidden('!hidden')}/>
                     </Card>
-                    <Card noPadding appearance='ghost' className={`md:col-span-4 ${isMobile ? '!hidden' : 'w-full'}`}>
+                    <Card noPadding appearance='ghost' className={`md:col-span-5 ${isMobile ? '!hidden' : 'w-full'}`}>
                         <AddExercise onExerciseAdded={addExercise}/>
                     </Card>
                 </div>

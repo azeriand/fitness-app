@@ -52,9 +52,9 @@ export default function RoutineHistory({routine, className}){
                     <ColorBadge label={routine.type}/>
                 </div>
 
-                <div className='grid grid-cols-[80%_20%] gap-y-[0.5rem] gap-x-[1rem] mb-[1rem]'>
-                    <SectionName section='exercise'/>   
-                    <SectionName section='sets'/>
+                <div className='grid grid-cols-12 gap-y-[0.5rem] gap-x-[1rem] mb-[1rem]'>
+                    <SectionName section='exercise' className='col-span-10'/>   
+                    <SectionName section='sets' className='col-span-2'/>
 
                     {
                         collapsedExercises.map((exercise, index) => (

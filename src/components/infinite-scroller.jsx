@@ -42,11 +42,9 @@ export default function InfiniteScroller({children, getMoreData, containerHeight
     }, [debouncedScroll]);
 
     return(
-        <div className='relative'>
             <div ref={containerRef} style={{ height: containerHeight, overflowY: 'scroll' }} className={className + ' pb-8'}>
                 {children}
+                {<div className={`flex justify-center py-6 ${!isLoading ? 'invisible' : ''}`}>{loader}</div>}
             </div>
-            {isLoading && <div className='absolute bottom-0 left-1/2 !-translate-x-1/2'>{loader}</div>}
-        </div>
     )
 }
