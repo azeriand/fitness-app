@@ -34,11 +34,11 @@ export default function AddExercise({ onExerciseAdded, changeHiddenState }){
                     {
                         exercises.filter((filteredExercise) => formatString(filteredExercise.exercise_name).includes(formatString(searchbarValue)))
                                  .map((exercise) => 
-                                    <div className='flex justify-between' key={exercise.exercise_name}>
-                                        <Button appearance='ghost' icon={<HiPlusSm/>} onClick={() => {
+                                    <div className='flex justify-between cursor-pointer hover:bg-inherit' key={exercise.exercise_name} onClick={() => {
                                                 onExerciseAdded(exercise.exercise_name)
                                                 if (isMobile) {changeHiddenState()}
-                                            }} />
+                                            }}>
+                                        <Button appearance='ghost' icon={<HiPlusSm/>}/>
                                         <ExerciseCard appearance='ghost' label={exercise.exercise_name} badge={<ColorBadge label={exercise.muscle_type}/>} img={exercise.img}/>
                                     </div>
                                 )
