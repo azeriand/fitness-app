@@ -29,7 +29,7 @@ export default function AddExercise({ onExerciseAdded, changeHiddenState }){
                 <Card>
                     <div className='flex items-center gap-[1rem] cursor-pointer mb-[1rem]'>
                         <Button icon={<FaArrowLeft/>} appearance='ghost' onClick={changeHiddenState} className='md:!hidden'/>
-                        <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-[23.5rem]' />
+                        <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full' />
                     </div>
                     {
                         exercises.filter((filteredExercise) => formatString(filteredExercise.exercise_name).includes(formatString(searchbarValue)))
