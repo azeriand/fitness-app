@@ -71,11 +71,11 @@ export default function CreateRoutine(){
                     <Button label='Save Routine' color='green' className='md:!hidden'/>
                 </div>
                 
-                <div onDrop={onDrop} className='flex md:!grid md:!grid-cols-[70%_30%] gap-[1rem] pb-32 md:pb-0 overflow-x-hidden max-w-full'>
-                    <Card noPadding appearance='ghost'>
-                        <div className='grid md:!grid-cols-[75%_25%] w-full justify-center gap-x-[1rem] mt-[1rem] mb-[2rem] md:!my-[2rem]'>
-                            <Input onChange={updateRoutineName} value={routine.routine_name} type='text' size='60' placeholder='New routine' className='font-semibold'/>
-                            <Button label='Save Routine' color='green' className={isMobile? '!hidden' : ''}/>
+                <div onDrop={onDrop} className='flex md:!grid md:!grid-cols-10 gap-[1rem] pb-32 md:pb-0 overflow-x-visible w-full'>
+                    <Card noPadding appearance='ghost' className='w-full md:col-span-6'>
+                        <div className='grid md:!grid-cols-[75%_25%] w-full justify-between items-center gap-[0.5rem] mt-[1rem] mb-[2rem] md:!my-[2rem] p-[0.5rem]'>
+                            <Input onChange={updateRoutineName} value={routine.routine_name} type='text' placeholder='New routine' className='font-semibold w-full'/>
+                            <Button label='Save Routine' size='sm' color='green' className={isMobile? '!hidden' : ''}/>
                         </div>
                         <SectionName section='Exercises' className={isMobile? '!hidden' : 'mb-[1rem]'}/>
                         <div className='flex flex-col gap-y-[1rem] mb-[1rem]'>
@@ -107,7 +107,7 @@ export default function CreateRoutine(){
 
                         <Button label='Add Exercise' className='w-full md:!hidden' onClick={() => setExercisePickerHidden('!hidden')}/>
                     </Card>
-                    <Card noPadding appearance='ghost' className={isMobile ? '!hidden' : ''}>
+                    <Card noPadding appearance='ghost' className={`md:col-span-4 ${isMobile ? '!hidden' : 'w-full'}`}>
                         <AddExercise onExerciseAdded={addExercise}/>
                     </Card>
                 </div>
