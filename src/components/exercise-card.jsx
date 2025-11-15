@@ -6,14 +6,14 @@ export default function ExerciseCard({label, badge, sets, img, ...cardProps}){
     const inputClassNames = 'rounded-sm w-[4rem] h-[2.5rem] text-base box-border p-0 text-center font-bold'
     return(
         <>
-            <Card className='flex items-center gap-x-[1rem] w-full p-2' noPadding {...cardProps}>
+            <Card className='flex items-center gap-x-[1rem] w-full p-2 col-span-10' noPadding {...cardProps}>
                 <Avatar src={img} className='rounded-sm'/>
                 <div className='w-full'>
                     <p className='m-0 p-0 text-start'>{label}</p>
                     {badge}
                 </div>
             </Card>
-            <div className='flex items-center'>
+            <div className='flex items-center col-span-2'>
                 {
                     sets && <Input centerText className={inputClassNames} style={cardProps.style} maxLength='3' value={sets} disabled/>
                 }

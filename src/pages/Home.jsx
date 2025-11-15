@@ -36,21 +36,21 @@ export default function Home(){
   return(
     <>
       <p className='text-start text-[2rem] font-bold'>Your latest Trainings</p>
-      <div className='grid grid-cols-[100%] md:!grid-cols-[70%_30%] grid-rows-[100%] gap-[1rem]'>
+      <div className='grid grid-cols-[100%] md:!grid-cols-12 grid-rows-[100%] gap-[1rem]'>
         <InfiniteScroller
-          className='mt-[2rem]'
+          className='mt-[2rem] md:!col-span-8'
           getMoreData={getMoreData}
           hasMore={hasMore}
           isLoading={isLoading}
           containerHeight={isMobile ? 'calc(100vh - 124px)' : 'calc(100vh - 280px)'} // Example height
-          bufferPx={50} // Optional buffer
+          bufferPx={600} // Optional buffer
           loader={<AiOutlineLoading3Quarters className='animate-spin'/>} // Optional loader
         >
             {
               history.slice(0, visibleHistory).map((routine) => <RoutineHistory key={routine.day} routine={routine} className='mb-4'/>)
             }
         </InfiniteScroller>
-        <div className='hidden md:!block'>
+        <div className='hidden md:!block md:!col-span-4'>
           <Calendar selectedDates={history} className='hidden md:!block'/>
         </div>
       </div>

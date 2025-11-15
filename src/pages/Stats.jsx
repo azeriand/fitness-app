@@ -58,9 +58,13 @@ export default function Stats(){
       <>
         <ExerciseContextComponent>
           <p className='text-start text-[2rem] font-bold m-0'>Stats</p>
-          <div className='grid grid-cols-[30%_70%] gap-[1rem] row-span-[100%] h-[calc(100%-3rem)] mt-[2rem]'>
-            <FilterByStats/>
-            <ChartStats/>
+          <div className='grid grid-cols-12 gap-[1rem] row-span-[100%] h-[calc(100%-3rem)] mt-[2rem]'>
+            <div className='col-span-4'>
+              <FilterByStats/>
+            </div>
+            <div className='col-span-8'>
+              <ChartStats/>
+            </div>
             {/* <Line options={options} data={data}/> */}
           </div>
         </ExerciseContextComponent>

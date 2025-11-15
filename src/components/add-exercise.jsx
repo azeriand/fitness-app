@@ -26,7 +26,7 @@ export default function AddExercise({ onExerciseAdded, changeHiddenState }){
         <>
             <Card noPadding appearance='ghost' className='overflow-y-scroll h-full pb-32 md:pb-0'>
                 <SectionName section='add exercise' className='mb-[0.5rem]'/>
-                <Card>
+                <Card noPadding className='px-[1rem] py-[2rem]'>
                     <div className='flex items-center gap-[1rem] cursor-pointer mb-[1rem]'>
                         <Button icon={<FaArrowLeft/>} appearance='ghost' onClick={changeHiddenState} className='md:!hidden'/>
                         <Input type='search' placeholder='Search exercises...' iconPosition='right' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full' />
@@ -34,12 +34,12 @@ export default function AddExercise({ onExerciseAdded, changeHiddenState }){
                     {
                         exercises.filter((filteredExercise) => formatString(filteredExercise.exercise_name).includes(formatString(searchbarValue)))
                                  .map((exercise) => 
-                                    <div className='grid grid-cols-[20%_80%] gap-y-[1rem]' key={exercise.exercise_name}>
+                                    <div className='flex justify-between' key={exercise.exercise_name}>
                                         <Button appearance='ghost' icon={<HiPlusSm/>} onClick={() => {
                                                 onExerciseAdded(exercise.exercise_name)
                                                 if (isMobile) {changeHiddenState()}
                                             }} />
-                                        <ExerciseCard appearance='ghost' label={exercise.exercise_name} badge={<ColorBadge label={exercise.muscle_type}/>} img={exercise.img}></ExerciseCard>
+                                        <ExerciseCard appearance='ghost' label={exercise.exercise_name} badge={<ColorBadge label={exercise.muscle_type}/>} img={exercise.img}/>
                                     </div>
                                 )
                     }

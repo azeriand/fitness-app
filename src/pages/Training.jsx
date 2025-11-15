@@ -48,8 +48,8 @@ export default function Training(){
                 </div>
             </div>
 
-            <div onDrop={onDrop} className='grid grid-cols-[70%_30%] gap-[1rem] mt-[2rem]'>
-                <Card noPadding appearance='ghost'>
+            <div onDrop={onDrop} className='grid grid-cols-12 gap-[1rem] mt-[2rem]'>
+                <Card noPadding appearance='ghost' className='col-span-8'>
                     <SectionName section='Exercises' className='mb-[0.5rem]'/>
                     <div className='flex flex-col gap-[1rem]'>
                         {
@@ -77,7 +77,7 @@ export default function Training(){
                         <p className='m-0 p-[1rem] text-center text-[1rem] font-bold'>Exercise can be picked from the right panel!</p>
                     </Card>
                 </Card>
-                <Card noPadding appearance='ghost'>
+                <Card noPadding appearance='ghost' className='col-span-4'>
                     <AddExercise onExerciseAdded={addExercise}/>
                 </Card>
             </div>
