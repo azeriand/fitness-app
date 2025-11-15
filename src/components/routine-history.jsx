@@ -6,7 +6,8 @@ import Goku from '../assets/goku2.jpg'
 import dayjs from 'dayjs'
 import { FaDumbbell } from 'react-icons/fa'
 import { IoTimerOutline } from "react-icons/io5";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { TrainingContext } from './training-context';
 
 
 export default function RoutineHistory({routine, className}){
@@ -23,6 +24,17 @@ export default function RoutineHistory({routine, className}){
     const [collapsedButtonText, setCollapsedButtonText] = useState(buttonTextCollapsed)
 
     const [collapsedExercises, setCollapsedExercises] = useState(routine.exercises.slice(0, 3))
+
+    function formatTime(time) {
+        let hours = Math.floor(time/3600)
+        let minutes = Math.floor((time%3600)/60)
+        let seconds = (time%3600)%60
+
+        const format = (time) => time<10 ? `0${time}` : `${time}`
+        const timeFormat = (`${format(hours)}:${format(minutes)}:${format(seconds)}`)
+        
+        return timeFormat
+    }
 
     useEffect(() => {
        setCollapsedExercises(routine.exercises.slice(0, cardExpanded ? routine.exercises.length : 3))
@@ -42,8 +54,8 @@ export default function RoutineHistory({routine, className}){
                         </div>
                     </div>
                     <div className='flex items-center justify-start md:!justify-end gap-x-2 mt-[1rem] md:!mt-0'>
-                        <Input className='rounded-sm w-26' centerText value={routine.duration} icon={<IoTimerOutline/>} disabled/>
-                        <Input className='rounded-sm w-26' centerText value={routine.volume} icon={<FaDumbbell/>} disabled/>
+                        <Input className='rounded-sm w-34' centerText value={formatTime(routine.duration)} icon={<IoTimerOutline/>} disabled/>
+                        <Input className='rounded-sm w-34' centerText value={`${routine.volume} KG`} icon={<FaDumbbell/>} disabled/>
                     </div>
                 </div>
 
