@@ -31,32 +31,58 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
     }
 
     return (
-        <Card noBlur noPadding {...cardProps}>
-            <div className='p-[1.25rem]'>
-                <div className='flex items-center gap-x-[1rem] mb-[1rem] justify-between'>
-                    <div className='text-start'>
-                        <div className='font-bold text-[1.5rem]'>{label}</div>
-                        <div className='rc-timeago text-[0.75rem]'>{timeAgo}</div>
-                    </div>
-
-                    <div>
-
-                        <Button onClick={editRoutine} appearance='ghost' label='Edit' icon={<MdEdit/>} position='right'/>
-                        <Button appearance='mate' dark={false} label='Start' icon={<FaPlay/>} position='right' onClick={() => {handleStart()}}/>
-
-                    </div>
-                </div>
-                <div className='routine-card-ul'>
-                    <Timeline style={trainingWidgetStyle}>
-                        {
-                            exerciseList.map((exercise, index) => (
-                                <TlListItem key={index} label={exercise.exercise_name} badge={<ColorBadge label={exercise.muscle_type} size='sm'/>}/>
-                            ))
-                        }
-                    </Timeline>
-                </div>
+      <Card
+        intensity={900}
+        blur={40}
+        color="zinc"
+        noBlur
+        noPadding
+        {...cardProps}
+      >
+        <div className="p-[1.25rem]">
+          <div className="flex items-center gap-x-[1rem] mb-[1rem] justify-between">
+            <div className="text-start">
+              <div className="font-bold text-[1.5rem]">{label}</div>
+              <div className="rc-timeago text-[0.75rem] text-zinc-400">
+                {timeAgo}
+              </div>
             </div>
-        </Card>
 
+            <div>
+              <Button
+                onClick={editRoutine}
+                appearance="ghost"
+                label="Edit"
+                icon={<MdEdit />}
+                position="right"
+              />
+              <Button
+                appearance="mate"
+                color="purple"
+                intensity={600}
+                dark={false}
+                label="Start"
+                icon={<FaPlay />}
+                position="right"
+                className="!text-purple-950"
+                onClick={() => {
+                  handleStart();
+                }}
+              />
+            </div>
+          </div>
+          <div className="routine-card-ul">
+            <Timeline style={trainingWidgetStyle}>
+              {exerciseList.map((exercise, index) => (
+                <TlListItem
+                  key={index}
+                  label={exercise.exercise_name}
+                  badge={<ColorBadge label={exercise.muscle_type} size="sm" />}
+                />
+              ))}
+            </Timeline>
+          </div>
+        </div>
+      </Card>
     );
 }

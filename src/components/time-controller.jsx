@@ -11,7 +11,7 @@ export default function TimeController({appearance}){
     return(
         <Card className='w-fit' noPadding appearance={appearance}>
             <div className='flex items-center justify-between p-[0.5rem] gap-x-[0.5rem]'>
-                <div className='text-[1.5rem] font-bold'>{timerformat}</div>
+                <div className='text-[1.5rem] font-bold text-purple-200'>{timerformat}</div>
                 <PlayPause/>
             </div>
         </Card>

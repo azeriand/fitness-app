@@ -43,14 +43,14 @@ export default function RoutineHistory({routine, className}){
 
 
     return(
-        <Card className={'rounded-xl ' + className}>
+        <Card intensity={500} noBlur color='zinc' className={'rounded-xl ' + className}>
             <div>
                 <div className='md:flex items-center justify-between'>
                     <div className='flex items-center gap-x-[1rem]'>
                         <Avatar src={Goku} className='rounded-md'/>
                         <div className='aside-avatar'>
-                            <p className='p-0 m-0 text-start'>{routine.user}</p>
-                            <p className='p-0 m-0 text-start text-[0.75rem] last-time'>{dayjs(routine.day).format('dddd')}</p>
+                            <p className='p-0 m-0 text-start text-purple-100'>{routine.user}</p>
+                            <p className='p-0 m-0 text-start text-[0.75rem] text-zinc-400'>{dayjs(routine.day).format('dddd')}</p>
                         </div>
                     </div>
                     <div className='flex items-center justify-start md:!justify-end gap-x-2 mt-[1rem] md:!mt-0'>
@@ -60,22 +60,22 @@ export default function RoutineHistory({routine, className}){
                 </div>
 
                 <div className='flex items-center gap-x-[1rem] py-[1rem]'>
-                    <p className='font-bold text-[1.5rem]'>{routine.name}</p>
+                    <p className='font-bold text-[1.5rem] text-purple-100'>{routine.name}</p>
                     <ColorBadge label={routine.type}/>
                 </div>
 
                 <div className='grid grid-cols-12 gap-y-[0.5rem] gap-x-[1rem] mb-[1rem]'>
-                    <SectionName section='exercise' className='col-span-10'/>   
-                    <SectionName section='sets' className='col-span-2'/>
+                    <SectionName section='exercise' className='col-span-10 text-purple-200'/>   
+                    <SectionName section='sets' className='col-span-2 text-purple-200'/>
 
                     {
                         collapsedExercises.map((exercise, index) => (
-                            <ExerciseCard key={index} label={exercise.exercise_name} sets={exercise.sets.length} badge={<ColorBadge label={exercise.muscle_type}/>} img={exercise.img}/> 
+                            <ExerciseCard key={index} label={exercise.exercise_name} sets={exercise.sets.length} badges={[<ColorBadge label={exercise.muscle_type}/>, exercise.sub_muscle.map(sub => <ColorBadge key={sub} label={sub}/>)]} img={exercise.img}/> 
                         ))
                     }
                     
                 </div>
-                <Button label={collapsedButtonText} onClick={onButtonClicked} className='w-full py-[3rem]'/>
+                <Button intensity={800} color='zinc' label={collapsedButtonText} onClick={onButtonClicked} className='w-full py-[3rem] !text-purple-100'/>
             </div>
         </Card>
     )

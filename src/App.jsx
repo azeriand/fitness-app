@@ -1,6 +1,7 @@
 import './App.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
+import { useEffect, useRef } from 'react'
 import Home from './pages/Home.jsx'
 import Stats from './pages/Stats.jsx'
 import Settings from './pages/Settings.jsx'
@@ -19,13 +20,48 @@ import TopBar from './layout/top-bar.jsx'
 import TrainingContextComponent from './components/training-context.jsx'
 import 'azeriand-library/dist/styles.css';
 import SettingsContextComponent from './components/settings-context.jsx'
+import backgroundVideo from './assets/background.mp4'
 
 function App() {
 
   const isMobile = useMediaQuery({ query: '(max-width: 48rem)' });
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log('Video autoplay failed:', error);
+      });
+    }
+  }, []);
 
   return(
-    <div className='viewport'>
+    <div className='viewport' style={{ position: 'relative', minHeight: '100vh' }}>
+      <video 
+        ref={videoRef}
+        autoPlay 
+        loop 
+        muted
+        playsInline
+        preload="auto"
+        disablePictureInPicture
+        webkit-playsinline="true"
+        x5-playsinline="true"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+          pointerEvents: 'none',
+          opacity: 0.7
+        }}
+        src={backgroundVideo}
+      />
       
       <ThemeContextComponent>
         <TrainingContextComponent>
@@ -35,7 +71,7 @@ function App() {
               <NavBar></NavBar>
               <div style={{height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0}}>
                 <TopBar/>
-                <Card intensity={500} appearance={isMobile ? 'ghost' : 'glass'} noPadding={isMobile} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}} className={isMobile? 'p-[0.5rem]': ''}>
+                <Card intensity={900} blur={40} color='purple' appearance={isMobile ? 'ghost' : 'glass'} noPadding={isMobile} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}} className={isMobile? 'p-[0.5rem]': ''}>
                   <Routes>
                     <Route path='/' element={<Home/>}></Route>
                     <Route path='/stats' element={<Stats/>}></Route>

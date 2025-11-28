@@ -26,7 +26,7 @@ export default function Logo() {
                     </linearGradient>
                 </svg>
                     <FaDumbbell style={iconStyle}></FaDumbbell>
-                    <div style={{ fontWeight: 'bold' }}>FitnessTracker</div>
+                    <div className="text-purple-200" style={{ fontWeight: 'bold' }}>FitnessTracker</div>
             </div>
         </>
     )
