@@ -31,13 +31,13 @@ export default function Settings(){
             <Helmet>
                 <title>Settings | Fitness App</title>
             </Helmet>
-            <p className='text-start text-[2rem] font-bold m-0'>Settings</p>
+            <p className='text-start text-[2rem] font-bold text-purple-100 m-0'>Settings</p>
             <div className='mt-[2rem] grid grid-col-[100%] justify-start gap-y-[0.5rem]'>
-                <p className='font-semibold text-start'>Weekly training days</p>
+                <p className='font-semibold text-purple-100 text-start'>Weekly training days</p>
                 <Input type='number' maxLength={5} value={storedStreak} centerText onChange={handleChange} className='w-[5rem] font-semibold'/>
                 <div className= 'text-gray-400 flex items-center ml-[0.5rem] gap-x-[0.25rem]'>
                    <LuInfo/> 
-                   <p className='italic text-xs'>The default number of weekly training days to keep the streak.</p>
+                   <p className='italic text-xs text-purple-100'>The default number of weekly training days to keep the streak.</p>
                 </div>
             </div>
             <div className='mt-[2rem] grid grid-col-[100%] justify-start gap-y-[0.5rem]'>

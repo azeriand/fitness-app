@@ -23,8 +23,8 @@ export default function PlayPause(){
 
     return(
         <Card noPadding appearance='ghost' className='flex items-center'>
-            <Button icon={renderIcon()} appearance='ghost' onClick={switchTimer}/>
-            <Button icon={<FaStop/>} appearance='mate' onClick={discard}/>
+            <Button color='purple' icon={renderIcon()} appearance='ghost' onClick={switchTimer}/>
+            <Button color='purple' icon={<FaStop/>} appearance='ghost' onClick={discard}/>
         </Card>
     )
 }

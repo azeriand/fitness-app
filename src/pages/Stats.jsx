@@ -61,7 +61,7 @@ export default function Stats(){
           <title>Stats | Fitness App</title>
         </Helmet>
         <ExerciseContextComponent>
-          <p className='text-start text-[2rem] font-bold m-0'>Stats</p>
+          <p className='text-start text-[2rem] font-bold text-purple-100 m-0'>Stats</p>
           <div className='grid grid-cols-12 gap-[1rem] row-span-[100%] h-[calc(100%-3rem)] mt-[2rem]'>
             <div className='col-span-4'>
               <FilterByStats/>
