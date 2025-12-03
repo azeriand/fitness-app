@@ -2,6 +2,7 @@
 import RoutineCard from "../components/routine-card"
 import { SectionName } from 'azeriand-library'
 import { useContext } from "react"
+import { Helmet } from "react-helmet"
 import { TrainingContext } from "../components/training-context"
 
 export default function Train(){
@@ -10,6 +11,9 @@ export default function Train(){
 
   return(
     <>
+      <Helmet>
+        <title>Routines | Fitness App</title>
+      </Helmet>
       <p className='text-start text-[2rem] font-bold m-0'>Train</p>
       <SectionName section='Routines'/>
       <div className="grid grid-cols-3 auto-rows-fr justify-stretch mt-[1rem] gap-[1.5rem]">

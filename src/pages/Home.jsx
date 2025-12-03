@@ -1,6 +1,7 @@
 import RoutineHistory from '../components/routine-history'
 import { Calendar } from 'azeriand-library'
 import { useContext, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import { TrainingContext } from '../components/training-context'
 import InfiniteScroller from '../components/infinite-scroller';
 import { useMediaQuery } from 'react-responsive'
@@ -35,6 +36,9 @@ export default function Home(){
 
   return(
     <>
+      <Helmet>
+        <title>Home | Fitness App</title>
+      </Helmet>
       <p className='text-start text-[2rem] font-bold'>Your latest Trainings</p>
       <div className='grid grid-cols-[100%] md:!grid-cols-12 grid-rows-[100%] gap-[1rem]'>
         <InfiniteScroller
