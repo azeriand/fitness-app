@@ -1,10 +1,15 @@
 
+import { useContext } from 'react';
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
 import { Button, Card, Avatar, Input, SectionName, Dropdown} from 'azeriand-library'
 import ColorBadge from './color-badge';
+import { SettingsContext } from './settings-context';
 
 export default function SetsWidget({children, exercise, onAddSet}){
+
+    const { defaultWeightUnit, calculateToIbs } = useContext(SettingsContext);
+
     return(
         <Card noBlur>
             <div className='flex items-center justify-between mb-[1rem]'>
@@ -31,7 +36,7 @@ export default function SetsWidget({children, exercise, onAddSet}){
                 <SectionName className='text-xs' section='set'/>
                 <SectionName className='text-xs' section='previous'/>
                 <SectionName className='text-xs' section='reps'/>
-                <SectionName className='text-xs' section='kg'/>
+                <SectionName className='text-xs' section={defaultWeightUnit}/>
                 <SectionName className='text-xs' section='done'/>
                 {children}
             </div>

@@ -2,6 +2,7 @@ import { Card, Button, Timeline, TlListItem } from 'azeriand-library'
 import Logo from '../components/logo'
 import { useContext, useState } from 'react'
 import { TrainingContext } from '../components/training-context'
+import { SettingsContext } from '../components/settings-context'
 import { TiArrowForward } from "react-icons/ti";
 import { FaWeightHanging } from "react-icons/fa6";
 import { TbStopwatch } from "react-icons/tb";
@@ -9,6 +10,7 @@ import { TbStopwatch } from "react-icons/tb";
 
 export default function Finished_training(){
 
+    const { defaultWeightUnit, calculateToIbs } = useContext(SettingsContext);
     const {trainingData} = useContext(TrainingContext)
     const [isTextShared, setTextShared] = useState(false)
     const [timeoutId, setTimeoutId] = useState();
@@ -33,7 +35,7 @@ export default function Finished_training(){
                         </Card>
                         <Card noPadding appearance='outlined' className='items-center justify-items-center py-[1.25rem] px-[1rem] rounded-xl'>
                             <FaWeightHanging/>
-                            <p>3200kg</p>
+                            <p> 3200 {defaultWeightUnit}</p>
                         </Card>
                     </div>
                 </div>
