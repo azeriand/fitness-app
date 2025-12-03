@@ -1,6 +1,7 @@
 import { Card, Button, Timeline, TlListItem } from 'azeriand-library'
 import Logo from '../components/logo'
 import { useContext, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import { TrainingContext } from '../components/training-context'
 import { SettingsContext } from '../components/settings-context'
 import { TiArrowForward } from "react-icons/ti";
@@ -17,6 +18,9 @@ export default function Finished_training(){
  
     return(
         <Card className='grid w-[40%] gap-y-[1rem] items-center justify-self-center self-center'>
+            <Helmet>
+                <title>Finished Training | Fitness App</title>
+            </Helmet>
             <p className='text-7xl'>🎉</p>
             <p className='font-bold text-2xl'>Well done!</p>
             <Card color='purple' noPadding>

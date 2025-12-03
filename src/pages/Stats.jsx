@@ -1,6 +1,7 @@
 import FilterByStats from '../components/filter-by-stats'
 import ChartStats from '../components/chart-stats'
 import ExerciseContextComponent from '../components/exercise-context'
+import { Helmet } from 'react-helmet';
 
 import {
     Chart as ChartJS,
@@ -56,6 +57,9 @@ export default function Stats(){
 
   return(
       <>
+        <Helmet>
+          <title>Stats | Fitness App</title>
+        </Helmet>
         <ExerciseContextComponent>
           <p className='text-start text-[2rem] font-bold m-0'>Stats</p>
           <div className='grid grid-cols-12 gap-[1rem] row-span-[100%] h-[calc(100%-3rem)] mt-[2rem]'>

@@ -3,7 +3,8 @@ import TimeController from '../components/time-controller'
 import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/row-set'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
+import { Helmet } from 'react-helmet';
 import useDraggable from '../hooks/useDraggable'
 import { useNavigate } from 'react-router-dom';
 import { TrainingContext } from '../components/training-context'
@@ -38,6 +39,9 @@ export default function Training(){
 
     return(
         <>
+            <Helmet>
+                <title>Training | Fitness App</title>
+            </Helmet>
             <p className='text-start text-[2rem] font-bold m-0'>{trainingData.routine_name}</p>
             <div className='flex justify-between mt-[0.5rem]'>
                 <TimeController cardAppearance='mate'/>

@@ -3,6 +3,7 @@ import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/row-set'
 import { useContext, useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import { TrainingContext } from '../components/training-context'
 import useDraggable from '../hooks/useDraggable'
 import { useSearchParams } from "react-router";
@@ -65,6 +66,9 @@ export default function CreateRoutine(){
 
     return(
         <div className='overflow-x-hidden w-full'>
+            <Helmet>
+                <title>Edit Routine | Fitness App</title>
+            </Helmet>
             <div className={exercisePickerHidden ? '!hidden' : ''}>
                 <div className='flex justify-between items-center'>
                     <p className='text-start text-[2rem] font-bold m-0'>Create Routine</p>
