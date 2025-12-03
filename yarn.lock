@@ -1050,6 +1050,16 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.52.3.tgz#3f55b6e8fe809a7d29959d6bc686cce1804581f0"
   integrity sha512-zGIbEVVXVtauFgl3MRwGWEN36P5ZGenHRMgNw88X5wEhEBpq0XrMEZwOn07+ICrwM17XO5xfMZqh0OldCH5VTA==
 
+"@storybook/manager-api@^8.6.14":
+  version "8.6.14"
+  resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-8.6.14.tgz#1e0740193fbfd4a66e9ff5f75c7f976e16028752"
+  integrity sha512-ez0Zihuy17udLbfHZQXkGqwtep0mSGgHcNzGN7iZrMP1m+VmNo+7aGCJJdvXi7+iU3yq8weXSQFWg5DqWgLS7g==
+
+"@storybook/theming@^8.6.14":
+  version "8.6.14"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.14.tgz#78c6dc878f705de70c67f2b2d08b8313b985d81a"
+  integrity sha512-r4y+LsiB37V5hzpQo+BM10PaCsp7YlZ0YcZzQP1OCkPlYXmUAFy2VvDKaFRpD8IeNPKug2u4iFm/laDEbs03dg==
+
 "@tailwindcss/node@4.1.13":
   version "4.1.13"
   resolved "https://registry.yarnpkg.com/@tailwindcss/node/-/node-4.1.13.tgz#cecd0dfa4f573fd37fdbaf29403b8dba9d50f118"
@@ -1449,15 +1459,17 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-azeriand-library@^1.14.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.14.0.tgz#9eba386b45400d786a71550fcb3736881391b0ec"
-  integrity sha512-SFbLNjMCHQNGZljUPpd60EDS/TgeTnKLHwHK3hUvPLdPK0DiV0PZ/Q1cjEveONLpURz9KN1bbiiterHedLGoUQ==
+azeriand-library@^1.14.2:
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.14.2.tgz#be898f5a844979710ecae0dc6a114487f0da10d4"
+  integrity sha512-GRF2FfNaFQhvJ1V6tGSHvAVGCdiMySCYHeswcNAYwnGaipO97Vz7pdMQPRdkZbBwCTt1wc42HkK9KBxN8hIcNw==
   dependencies:
     "@emotion/react" "^11.14.0"
     "@emotion/styled" "^11.14.1"
     "@mui/material" "^7.3.4"
     "@mui/x-date-pickers" "^8.12.0"
+    "@storybook/manager-api" "^8.6.14"
+    "@storybook/theming" "^8.6.14"
     dayjs "^1.11.18"
     react-icons "^5.5.0"
 
