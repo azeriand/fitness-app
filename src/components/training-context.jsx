@@ -146,6 +146,13 @@ export default function TrainingContextComponent({ children }) {
         updateSetValue(SetProperties.KG, exerciseName, setIndex, newValue);
     }
 
+    function getTrainingDays() {
+        const trainingDays = []
+        history.forEach((day) => (trainingDays.push(day.day)))
+
+        return trainingDays;
+    }
+
     const exportItems = {
         history, 
         exercises,
@@ -162,7 +169,8 @@ export default function TrainingContextComponent({ children }) {
         timer, 
         timerformat, 
         updateReps, 
-        updateKg
+        updateKg,
+        getTrainingDays
     }
 
     return (

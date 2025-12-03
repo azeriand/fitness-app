@@ -10,7 +10,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export default function Home(){
 
-  const { history } = useContext(TrainingContext);
+  const { history, getTrainingDays } = useContext(TrainingContext);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [visibleHistory, setVisibleHistory] = useState(6); // Start with 6 items visible
@@ -55,7 +55,7 @@ export default function Home(){
             }
         </InfiniteScroller>
         <div className='hidden md:!block md:!col-span-4'>
-          <Calendar selectedDates={history} className='hidden md:!block'/>
+          <Calendar selectedDates={getTrainingDays()} className='hidden md:!block'/>
         </div>
       </div>
     </>
