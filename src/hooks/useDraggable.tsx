@@ -6,9 +6,7 @@ export default function useDraggable([data, setData]) {
     const [newDragPosition, setNewDragPosition] = useState(null);
     const [dragDirection, setDragDirection] = useState<'UP' | 'DOWN' | null>(null);
 
-    function onDragStart(index){
-        console.log('START',index);
-        
+    function onDragStart(index){        
         setDraggedCardIndex(index);
     }
     
@@ -39,7 +37,6 @@ export default function useDraggable([data, setData]) {
     
     function onDrop(e){
         e.preventDefault();
-        console.log('DROP', draggedCardIndex, newDragPosition, dragDirection);
         if (draggedCardIndex !== null && newDragPosition !== null){
             let targetIndex: number = newDragPosition;
             if (dragDirection === 'DOWN') {

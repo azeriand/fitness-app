@@ -48,7 +48,6 @@ export default function CreateRoutine(){
     }
 
     function updateRoutineName(value) {
-        console.log(value)
         setRoutine((oldRoutine) => ({...oldRoutine, routine_name: value}))
     }
 
