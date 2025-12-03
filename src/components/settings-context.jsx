@@ -5,22 +5,25 @@ import dayjs from "dayjs";
 
 export const SettingsContext = createContext();
 
-export default function SettingsContextComponent({children}){
-
-    const {history} = useContext(TrainingContext);
+export default function SettingsContextComponent({ children }) {
+    const { history } = useContext(TrainingContext);
 
     const [defaultStreak, setDefaultStreak] = useState(3);
     const [currentStreak, setCurrentStreak] = useState(0);
-    
-    function calculateCurrentStreak(){
-        //Add the history days into an array
-        let days = history.map((routine) => routine.day)
-        let daysReversed = [...days].reverse();
 
-        //Transform the array elements into days of the week (0-6)
+    // Use useLocalStorage for defaultWeightUnit to persist changes
+    const [defaultWeightUnit, setDefaultWeightUnit] = useLocalStorage('weightUnit', 'KG');
+    
+    function calculateToIbs(kg){
+        if (defaultWeightUnit !== 'IBS') return kg;
+        return (kg * 2.20462).toFixed(0);
+    }
+
+    function calculateCurrentStreak() {
+        let days = history.map((routine) => routine.day);
+        let daysReversed = [...days].reverse();
         let daysOfWeek = daysReversed.map((day) => dayjs(day).day());
 
-        //Create a loop that goes through the days, +1 to a counter if the day is less than or equal to the next (if it reach the defaultStreak, +1 is added to the streak), if it's greater, reset the counter
         let dayCounter = 0;
         let streakCounter = 0;
         let streakActive = false;
@@ -29,40 +32,39 @@ export default function SettingsContextComponent({children}){
             const actualDay = daysOfWeek[i];
             const nextDay = daysOfWeek[i + 1];
 
-            //If today is less than or equal to the next day and it's not the end of the array, +1 to the counter
             if (nextDay != undefined && actualDay <= nextDay) {
                 dayCounter++;
-
-                //If the counter is greater than or equal to the defaultStreak and the streak is not active, +1 to the streak and activate it
                 if (dayCounter >= defaultStreak && !streakActive) {
                     streakCounter++;
                     streakActive = true;
-                    setCurrentStreak(streakCounter)
+                    setCurrentStreak(streakCounter);
                 }
-            }
-            //If it's the end of the array or today is greater than the next day, we have two options:
-            if (nextDay === undefined || actualDay > nextDay) {
-                //If the streak is active, reset the counters
+            } else {
                 if (!streakActive) {
                     dayCounter = 0;
                     streakCounter = 0;
                     setCurrentStreak(0);
-                }
-                //If the streak is not active, reset the counter and deactivate the streak
-                else {
+                } else {
                     dayCounter = 0;
                     streakActive = false;
                 }
             }
         }
     }
-    
-    useEffect(calculateCurrentStreak,[defaultStreak])
 
-    return(
-        <SettingsContext.Provider value={{defaultStreak, setDefaultStreak, currentStreak, setCurrentStreak}}>
+    useEffect(calculateCurrentStreak, [defaultStreak]);
+
+    return (
+        <SettingsContext.Provider value={{
+            defaultStreak,
+            setDefaultStreak,
+            currentStreak,
+            setCurrentStreak,
+            defaultWeightUnit,
+            setDefaultWeightUnit,
+            calculateToIbs
+        }}>
             {children}
         </SettingsContext.Provider>
-    )
-
+    );
 }
