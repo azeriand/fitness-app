@@ -12,13 +12,10 @@ import NavBar from './layout/navbar'
 import MobileNavbar from './components/mobile-navbar.jsx'
 import { ThemeContextComponent, Card } from 'azeriand-library'
 import TopBar from './layout/top-bar.jsx'
-
-
-
-//Envolviendo todos los componentes en el 'entorno' para que puedan usar el contexto
 import TrainingContextComponent from './components/training-context.jsx'
 import 'azeriand-library/dist/styles.css';
 import SettingsContextComponent from './components/settings-context.jsx'
+import PopupDiscardFinish from './components/popup-discard-finish.jsx'
 
 function App() {
 
@@ -49,6 +46,9 @@ function App() {
                 <div className='md:!hidden'>
                   <MobileNavbar/>
                 </div>
+                  <div className='fixed inset-0 bg-black/60 backdrop-blur-lg flex items-center justify-center z-40'>
+                    <PopupDiscardFinish/>
+                  </div>
               </div>
             </HashRouter>
           </SettingsContextComponent>
