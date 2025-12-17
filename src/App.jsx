@@ -46,7 +46,7 @@ function App() {
                 <div className='md:!hidden'>
                   <MobileNavbar/>
                 </div>
-                  <div className='fixed inset-0 bg-black/60 backdrop-blur-lg flex items-center justify-center z-40'>
+                  <div className='fixed inset-0 bg-black/60 flex items-center justify-center z-40' style={{backdropFilter: "blur(4px)"}}>
                     <PopupDiscardFinish/>
                   </div>
               </div>
