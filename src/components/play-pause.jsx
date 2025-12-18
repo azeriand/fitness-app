@@ -3,15 +3,17 @@ import { FaPause, FaPlay, FaStop } from "react-icons/fa";
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TrainingContext } from './training-context'
+import { usePopup } from './popup-context'
 
 export default function PlayPause(){
 
     const { switchTimer, resetTimer, trainingData } = useContext(TrainingContext)
+    const { setIsPopupOpen } = usePopup()
     const navigate = useNavigate()
 
     const discard = () => {
-        resetTimer()
-        navigate('/routines')
+        switchTimer()
+        setIsPopupOpen(true)
     }
 
     const renderIcon = () => {
