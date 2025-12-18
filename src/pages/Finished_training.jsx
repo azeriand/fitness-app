@@ -17,7 +17,7 @@ export default function Finished_training(){
     const [timeoutId, setTimeoutId] = useState();
  
     return(
-        <Card className='grid w-[40%] gap-y-[1rem] items-center justify-self-center self-center'>
+        <Card className='grid grid-cols-[4fr] gap-y-[1rem] items-center justify-self-center self-center' appearance='ghost'>
             <Helmet>
                 <title>Finished Training | Fitness App</title>
             </Helmet>
@@ -44,8 +44,8 @@ export default function Finished_training(){
                     </div>
                 </div>
             </Card>
-            <div className='flex grid gap-y-[0.5rem]'>
-                <Button noPadding position='right' icon={isTextShared ? null : <TiArrowForward/>} appearance='mate' className='rounded-3xl items-center px-[2rem]' 
+            <div className='grid grid-cols-1 gap-y-[0.5rem]'>
+                <Button position='right' icon={isTextShared ? null : <TiArrowForward/>} appearance='outlined' className='rounded-3xl items-center px-[2rem] w-full h-[3rem]' 
                     onClick={() => {
                         
                         clearTimeout(timeoutId)
@@ -58,7 +58,7 @@ export default function Finished_training(){
                     }}>
                     {isTextShared ? 'Link Copied to clipboard!' : 'Share'}
                 </Button>
-                <Button noPadding appearance='mate' className='rounded-3xl'>New Training</Button>
+                <Button appearance='mate' className='rounded-xl w-full h-[3rem]' label='New Training'/>  
             </div>
         </Card>
     )
