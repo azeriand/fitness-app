@@ -61,15 +61,16 @@ export default function Stats(){
           <title>Stats | Fitness App</title>
         </Helmet>
         <ExerciseContextComponent>
-          <p className='text-start text-[2rem] font-bold text-purple-100 m-0'>Stats</p>
-          <div className='grid grid-cols-12 gap-[1rem] row-span-[100%] h-[calc(100%-3rem)] mt-[2rem]'>
-            <div className='col-span-4'>
-              <FilterByStats/>
+          <div className='flex flex-col h-full'>
+            <p className='text-start text-[2rem] font-bold text-purple-100 m-0 mb-[2rem]'>Stats</p>
+            <div className='grid grid-cols-12 gap-[1rem] flex-1 min-h-0'>
+              <div className='col-span-4 min-h-0'>
+                <FilterByStats/>
+              </div>
+              <div className='col-span-8 min-h-0'>
+                <ChartStats/>
+              </div>
             </div>
-            <div className='col-span-8'>
-              <ChartStats/>
-            </div>
-            {/* <Line options={options} data={data}/> */}
           </div>
         </ExerciseContextComponent>
 

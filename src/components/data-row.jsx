@@ -15,10 +15,17 @@ export default function DataRow(){
     const [totalFrequency, setTotalFrequency] = useState(0)
     const [lastYearFrequency, setLastYearFrequency] = useState(340)
     const [lastMonthFrequency, setLastMonthFrequency] = useState(100)
-    const [rmWeight, setRmWeight] = useState(0)
+    const [rmWeight, setRmWeight] = useState(120)
+    const [rmExerciseName, setRmExerciseName] = useState('')
+    
+    // Percentage changes
+    const [yearFrequencyChange, setYearFrequencyChange] = useState(0)
+    const [monthFrequencyChange, setMonthFrequencyChange] = useState(0)
 
     const yearAgoDate = dayjs().subtract(1, 'year');
     const monthAgoDate = dayjs().subtract(1, 'month');
+    const twoYearsAgoDate = dayjs().subtract(2, 'year');
+    const twoMonthsAgoDate = dayjs().subtract(2, 'month');
 
     function calculateTotalFrequency() {
         let count = 0;
@@ -39,43 +46,172 @@ export default function DataRow(){
     }
 
     function calculateLastYearFrequency() {
-        let count = 0;
-        let filterLastYear = history.filter((trainingDay) => dayjs(trainingDay.day, "YYYY-MM-DD").isAfter(yearAgoDate))
+        let currentYearCount = 0;
+        let previousYearCount = 0;
+        
+        // Current year (last 365 days)
+        let filterCurrentYear = history.filter((trainingDay) => dayjs(trainingDay.day, "YYYY-MM-DD").isAfter(yearAgoDate))
+        
+        // Previous year (365 days before that)
+        let filterPreviousYear = history.filter((trainingDay) => {
+            const dayDate = dayjs(trainingDay.day, "YYYY-MM-DD");
+            return dayDate.isAfter(twoYearsAgoDate) && dayDate.isBefore(yearAgoDate);
+        })
 
-        filterLastYear.forEach((day) => {
+        filterCurrentYear.forEach((day) => {
             if (filterSelected) {
                 if (day.exercises.findIndex((exercise) => exercise.exercise_name === filterSelected.name) !== -1) {
-                    count++;
+                    currentYearCount++;
                 }
                 else if (day.exercises.findIndex((exercise) => exercise.muscle_type === filterSelected.name) !== -1) {
-                    count++;
+                    currentYearCount++;
                 }
             }
             else {
-                count = filterLastYear.length;
+                currentYearCount = filterCurrentYear.length;
             }
         })
-        setLastYearFrequency(count);
+
+        filterPreviousYear.forEach((day) => {
+            if (filterSelected) {
+                if (day.exercises.findIndex((exercise) => exercise.exercise_name === filterSelected.name) !== -1) {
+                    previousYearCount++;
+                }
+                else if (day.exercises.findIndex((exercise) => exercise.muscle_type === filterSelected.name) !== -1) {
+                    previousYearCount++;
+                }
+            }
+            else {
+                previousYearCount = filterPreviousYear.length;
+            }
+        })
+
+        setLastYearFrequency(currentYearCount);
+        
+        // Calculate percentage change
+        const percentageChange = previousYearCount === 0 
+            ? (currentYearCount > 0 ? 100 : 0)
+            : ((currentYearCount - previousYearCount) / previousYearCount) * 100;
+        setYearFrequencyChange(Math.round(percentageChange));
     }
     
     function calculateLastMonthFrequency() {
-        let count = 0;
-        let filterLastMonth = history.filter((trainingDay) => dayjs(trainingDay.day, "YYYY-MM-DD").isAfter(monthAgoDate))
+        let currentMonthCount = 0;
+        let previousMonthCount = 0;
         
-        filterLastMonth.forEach((day) => {
+        // Current month (last 30 days)
+        let filterCurrentMonth = history.filter((trainingDay) => dayjs(trainingDay.day, "YYYY-MM-DD").isAfter(monthAgoDate))
+        
+        // Previous month (30 days before that)
+        let filterPreviousMonth = history.filter((trainingDay) => {
+            const dayDate = dayjs(trainingDay.day, "YYYY-MM-DD");
+            return dayDate.isAfter(twoMonthsAgoDate) && dayDate.isBefore(monthAgoDate);
+        })
+        
+        filterCurrentMonth.forEach((day) => {
             if (filterSelected) {
                 if (day.exercises.findIndex((exercise) => exercise.exercise_name === filterSelected.name) !== -1) {
-                    count++;
+                    currentMonthCount++;
                 }
                 else if (day.exercises.findIndex((exercise) => exercise.muscle_type === filterSelected.name) !== -1) {
-                    count++;
+                    currentMonthCount++;
                 }
             }
             else {
-                count = filterLastMonth.length;
+                currentMonthCount = filterCurrentMonth.length;
             }
         })
-        setLastMonthFrequency(count);
+
+        filterPreviousMonth.forEach((day) => {
+            if (filterSelected) {
+                if (day.exercises.findIndex((exercise) => exercise.exercise_name === filterSelected.name) !== -1) {
+                    previousMonthCount++;
+                }
+                else if (day.exercises.findIndex((exercise) => exercise.muscle_type === filterSelected.name) !== -1) {
+                    previousMonthCount++;
+                }
+            }
+            else {
+                previousMonthCount = filterPreviousMonth.length;
+            }
+        })
+
+        setLastMonthFrequency(currentMonthCount);
+        
+        // Calculate percentage change
+        const percentageChange = previousMonthCount === 0 
+            ? (currentMonthCount > 0 ? 100 : 0)
+            : ((currentMonthCount - previousMonthCount) / previousMonthCount) * 100;
+        setMonthFrequencyChange(Math.round(percentageChange));
+    }
+
+    function calculateRMWeight() {
+        let maxWeight = 0;
+        let exerciseWithMaxWeight = '';
+        
+        // If a specific exercise is selected, find its RM
+        if (filterSelected && filterSelected.type === 'exercise') {
+            for (let i = history.length - 1; i >= 0; i--) {
+                const day = history[i];
+                const exercise = day.exercises.find((ex) => ex.exercise_name === filterSelected.name);
+                
+                if (exercise && exercise.sets && exercise.sets.length > 0) {
+                    const dayMaxWeight = Math.max(...exercise.sets.map(set => set.weight || 0));
+                    if (dayMaxWeight > maxWeight) {
+                        maxWeight = dayMaxWeight;
+                        exerciseWithMaxWeight = exercise.exercise_name;
+                    }
+                }
+            }
+        }
+        // If a muscle group is selected or no filter, find the exercise with highest RM in that muscle group
+        else {
+            history.forEach((day) => {
+                day.exercises.forEach((exercise) => {
+                    // Check if exercise matches the filter (muscle group or no filter)
+                    const matchesFilter = !filterSelected || 
+                                        exercise.muscle_type === filterSelected.name || 
+                                        !filterSelected.name;
+                    
+                    if (matchesFilter && exercise.sets && exercise.sets.length > 0) {
+                        const dayMaxWeight = Math.max(...exercise.sets.map(set => set.weight || 0));
+                        if (dayMaxWeight > maxWeight) {
+                            maxWeight = dayMaxWeight;
+                            exerciseWithMaxWeight = exercise.exercise_name;
+                        }
+                    }
+                });
+            });
+        }
+
+        setRmWeight(maxWeight);
+        setRmExerciseName(exerciseWithMaxWeight);
+    }
+
+    const formatPercentageChange = (change) => {
+        if (change === 0) return "0%";
+        const sign = change > 0 ? "+" : "";
+        return `${sign}${change}%`;
+    }
+
+    const getChangeColor = (change) => {
+        if (change > 0) return "text-green-400";
+        if (change < 0) return "text-red-400";
+        return "text-gray-400";
+    }
+
+    const getTotalFrequencyTitle = () => {
+        if (!filterSelected || !filterSelected.name) {
+            return 'Total Trainings';
+        }
+        
+        // Check if it's a specific exercise
+        if (filterSelected.type === 'exercise') {
+            return `${filterSelected.name} Days`;
+        }
+        
+        // It's a muscle group
+        return `${filterSelected.name} Trainings`;
     }
 
     function calculateRMWeight() {
@@ -110,39 +246,32 @@ export default function DataRow(){
 
 
     return(
-        <Card noPadding appearance='ghost' className='grid grid-rows-2 gap-y-[3rem]'>
-            <div>
-                <SectionName section='frequency' className='pb-[0.5rem] tracking-normal'/>
-                <Card noPadding className='grid grid-cols-3 gap-x-[0.5rem] flex-wrap p-[1rem] rounded-xl'>
-                    <Card noPadding className='content-center justify-items-center'>
-                        <SectionName section='total' className='text-xs tracking-normal'/>
-                        <div className='text-xs font-bold'>{totalFrequency}</div>
-                    </Card>
-                    <Card noPadding className='content-center justify-items-center'>
-                        <SectionName section='last year' className='text-xs tracking-normal'/>
-                        <div className='text-xs font-bold'>{lastYearFrequency}</div>
-                    </Card>
-                    <Card noPadding className='content-center justify-items-center'>
-                        <SectionName section='last month' className='text-xs tracking-normal'/>
-                        <div className='text-xs font-bold'>{lastMonthFrequency}</div>
-                    </Card>
-                </Card>
-            </div>
-
-            {
-                filterSelected && filterSelected.type !== 'no_selected' && (
-                    <div>
-                        <SectionName section='weight' className='pb-[0.5rem] tracking-normal'/>
-                        <Card noPadding className='grid grid-cols-3 gap-x-[0.5rem] flex-wrap p-[1rem] rounded-xl'>
-                            <Card noPadding className='content-center justify-items-center'>
-                                <SectionName section='rm' className='text-xs tracking-normal'/>
-                                <div className='text-xs font-bold'>{rmWeight}</div>
-                            </Card>
-                        </Card>
-                    </div>
-                )
-            }
-            
-        </Card>
+        <div className='grid grid-cols-4 gap-x-[1rem]'>
+            <Card className='content-center justify-items-center p-[1rem]'>
+                <SectionName section={getTotalFrequencyTitle()} className='text-xs tracking-normal'/>
+                <div className='text-xs font-bold'>{totalFrequency}</div>
+            </Card>
+            <Card className='content-center justify-items-center p-[1rem]'>
+                <SectionName section='Last year frequency' className='text-xs tracking-normal'/>
+                <div className='text-xs font-bold'>{lastYearFrequency}</div>
+                <div className={`text-xs ${getChangeColor(yearFrequencyChange)}`}>
+                    {formatPercentageChange(yearFrequencyChange)}
+                </div>
+            </Card>
+            <Card className='content-center justify-items-center p-[1rem]'>
+                <SectionName section='Last month frequency' className='text-xs tracking-normal'/>
+                <div className='text-xs font-bold'>{lastMonthFrequency}</div>
+                <div className={`text-xs ${getChangeColor(monthFrequencyChange)}`}>
+                    {formatPercentageChange(monthFrequencyChange)}
+                </div>
+            </Card>
+            <Card className='content-center justify-items-center p-[1rem]'>
+                <SectionName section='RM Weight' className='text-xs tracking-normal'/>
+                <div className='text-xs font-bold'>{rmWeight} kg</div>
+                <div className='text-xs text-gray-300 text-center'>
+                    {rmExerciseName || 'No data'}
+                </div>
+            </Card>
+        </div>
     )
 }
