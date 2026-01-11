@@ -27,17 +27,17 @@ export default function FilterByStats(){
     let muscleTypes = [...new Set(exercises.map((exercise) => exercise.muscle_type))]
     return(
 
-        <Card noPadding className={`h-full overflow-y-scroll p-[1rem] rounded-lg ${customScrollbar}`}>
+        <Card noPadding className={`h-full overflow-y-auto p-[1rem] rounded-lg ${customScrollbar}`}>
             <SectionName section='filter by'/>
             <Input type='search' iconPosition='right' value={searchValue} placeholder='Search Exercise' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full my-[1rem]'/>
             <SectionName section='muscle groups' className='pt-[1rem]'/>
             <div className='flex flex-wrap gap-[0.5rem] py-[1rem]'>
                 {
                     muscleTypes.map((muscleGroup) => 
-                                <ColorBadge label={muscleGroup} size='sm' onClick={() => {
-                                    setFilterSelected({name: muscleGroup, type: 'muscle_group'})
-                                    setSearchValue(muscleGroup)
-                                }} appearance={filterSelected && filterSelected.name === muscleGroup ? 'mate' : 'ghost'} className='cursor-pointer'/>)
+                        <ColorBadge key={muscleGroup} label={muscleGroup} size='sm' onClick={() => {
+                            setFilterSelected({name: muscleGroup, type: 'muscle_group'})
+                            setSearchValue(muscleGroup)
+                        }} appearance={filterSelected && filterSelected.name === muscleGroup ? 'mate' : 'ghost'} className='cursor-pointer'/>)
                 }
             </div>
 
