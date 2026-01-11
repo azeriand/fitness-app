@@ -1,6 +1,6 @@
 import RoutineHistory from '../components/routine-history'
 import { Calendar } from 'azeriand-library'
-import { useContext, useState } from 'react'
+import { useContext, useState, useMemo } from 'react'
 import { Helmet } from 'react-helmet';
 import { TrainingContext } from '../components/training-context'
 import InfiniteScroller from '../components/infinite-scroller';
@@ -15,6 +15,8 @@ export default function Home(){
   const [hasMore, setHasMore] = useState(true);
   const [visibleHistory, setVisibleHistory] = useState(6); // Start with 6 items visible
   const isMobile = useMediaQuery({ query: '(max-width: 48rem)' });
+
+  const trainedDays = useMemo(() => history.map(exercise => exercise.day), [history]);
 
   const getMoreData = () => {
     if (isLoading || visibleHistory >= history.length) return;
@@ -55,7 +57,7 @@ export default function Home(){
             }
         </InfiniteScroller>
         <div className='hidden md:!block md:!col-span-4 mt-8'>
-          <Calendar appearance='glass' color='zinc' intensity={500} selectedDates={history} className='hidden md:!block rounded-xl py-4'/>
+          <Calendar appearance='glass' color='zinc' intensity={500} selectedDates={trainedDays} className='hidden md:!block rounded-xl py-4'/>
         </div>
       </div>
     </>
