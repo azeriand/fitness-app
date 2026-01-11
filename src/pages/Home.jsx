@@ -10,7 +10,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export default function Home(){
 
-  const { history, getTrainingDays } = useContext(TrainingContext);
+  const { history } = useContext(TrainingContext);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [visibleHistory, setVisibleHistory] = useState(6); // Start with 6 items visible
@@ -39,7 +39,7 @@ export default function Home(){
       <Helmet>
         <title>Home | Fitness App</title>
       </Helmet>
-      <p className='text-start text-[2rem] font-bold'>Your latest Trainings</p>
+      <p className='text-start text-[2rem] font-bold text-purple-200'>Your latest Trainings</p>
       <div className='grid grid-cols-[100%] md:!grid-cols-12 grid-rows-[100%] gap-[1rem]'>
         <InfiniteScroller
           className='mt-[2rem] md:!col-span-8'
@@ -54,8 +54,8 @@ export default function Home(){
               history.slice(0, visibleHistory).map((routine) => <RoutineHistory key={routine.day} routine={routine} className='mb-4'/>)
             }
         </InfiniteScroller>
-        <div className='hidden md:!block md:!col-span-4'>
-          <Calendar selectedDates={getTrainingDays()} className='hidden md:!block'/>
+        <div className='hidden md:!block md:!col-span-4 mt-8'>
+          <Calendar appearance='glass' color='zinc' intensity={500} selectedDates={history} className='hidden md:!block rounded-xl py-4'/>
         </div>
       </div>
     </>

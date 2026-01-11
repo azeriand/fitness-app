@@ -12,10 +12,10 @@ export default function StreakInfo({className, ...cardProps}){
     const { currentStreak } = useContext(SettingsContext);
 
     return(
-        <Card className='flex items-center gap-x-[1.5rem] p-[1rem]' {...cardProps} style={{...cardProps.style}} appearance='ghost'>
+        <Card className='flex items-center gap-x-[1.5rem] p-[1rem]' {...cardProps} style={{...cardProps.style}} appearance='glass'>
             <Avatar src={Goku2} className='size-[5rem] rounded-md'/>
             <div>
-                <p className='m-0 p-0 font-bold text-start'>Profile 1</p>
+                <p className='m-0 p-0 font-bold text-start text-purple-100'>Profile 1</p>
                 <div className='flex items-center gap-x-[0.5rem]'>
                     <SectionName className='text-xs text-left' section={`${currentStreak} streak weeks`}/>
                     <FaArrowTrendUp/>

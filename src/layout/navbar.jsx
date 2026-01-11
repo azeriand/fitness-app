@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import { Card } from 'azeriand-library'
+import { Card, SectionName } from 'azeriand-library'
 import {FaDumbbell} from 'react-icons/fa'
 import {FaChartSimple} from 'react-icons/fa6'
 import { IoMdSettings } from 'react-icons/io';
@@ -33,15 +33,18 @@ export default function NavBar() {
     }, [pathname]);
 
     return (
-        <Card intensity={500} noPadding className='flex !hidden md:!block flex-col justify-between h-full'>
+        <Card intensity={900} blur={40} color='purple' noPadding className='flex !hidden md:!block flex-col justify-between h-full'>
             <div>
                 <Logo></Logo>
-                <StreakInfo noPadding/>
+                <div className="p-4">
+                    <StreakInfo noPadding/>
+                </div>
                 <div style={{padding: '1rem'}}>
+                    <SectionName className='hidden md:block mb-2' section="Sections"/>
                     <List items={listItems} defaultValue={selectedPath} value={selectedPath} onListItemSelected={(itemSelected) => navigate(itemSelected.destination)}/>
                 </div>
             </div>
-            <TrainingWidget className='justify-self-end'/>
+            <TrainingWidget className='absolute left-0 right-0 bottom-8'/>
         </Card>
     )
 }
