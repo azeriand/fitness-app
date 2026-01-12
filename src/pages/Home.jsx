@@ -55,7 +55,7 @@ export default function Home(){
             }
         </InfiniteScroller>
         <div className='hidden md:!block md:!col-span-4 mt-8'>
-          <Calendar appearance='glass' color='zinc' intensity={500} selectedDates={history} className='hidden md:!block rounded-xl py-4'/>
+          <Calendar appearance='glass' color='zinc' intensity={500} selectedDates={history} className='hidden md:!block rounded-xl'/>
         </div>
       </div>
     </>
