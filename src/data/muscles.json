@@ -1,62 +1,22 @@
 [
-    {
-        "name": "Chest",
-        "color": "red"
-    },
-    {
-        "name": "Shoulders",
-        "color": "orange"
-    },
-    {
-        "name": "Biceps",
-        "color": "yellow"
-    },
-    {
-        "name": "Triceps",
-        "color": "lime"
-    },
-    {
-        "name": "Calves",
-        "color": "green"
-    },
-    {
-        "name": "Glutes",
-        "color": "emerald"
-    },
-    {
-        "name": "Legs",
-        "color": "teal"
-    },
-    {
-        "name": "Hamstrings",
-        "color": "cyan"
-    },
-    {
-        "name": "Lower Back",
-        "color": "sky"
-    },
-    {
-        "name": "Back",
-        "color": "blue"
-    },
-    {
-        "name": "Abs",
-        "color": "indigo"
-    },
-    {
-        "name": "Core",
-        "color": "violet"
-    },
-    {
-        "name": "Fullbody",
-        "color": "purple"
-    },
-    {
-        "name": "Inner Thigh",
-        "color": "fuchsia"
-    },
-    {
-        "name": "Forearms",
-        "color": "pink"
-    }
+  { "name": "Chest", "color": "red" },
+  { "name": "Lower Chest", "color": "rose" },
+  { "name": "Upper Chest", "color": "pink" },
+  { "name": "Shoulders", "color": "orange" },
+  { "name": "Front Delts", "color": "amber" },
+  { "name": "Rear Delts", "color": "yellow" },
+  { "name": "Biceps", "color": "lime" },
+  { "name": "Triceps", "color": "green" },
+  { "name": "Forearms", "color": "emerald" },
+  { "name": "Back", "color": "blue" },
+  { "name": "Lower Back", "color": "sky" },
+  { "name": "Abs", "color": "indigo" },
+  { "name": "Core", "color": "violet" },
+  { "name": "Glutes", "color": "teal" },
+  { "name": "Legs", "color": "cyan" },
+  { "name": "Quadriceps", "color": "fuchsia" },
+  { "name": "Hamstrings", "color": "purple" },
+  { "name": "Calves", "color": "stone" },
+  { "name": "Inner Thigh", "color": "zinc" },
+  { "name": "Fullbody", "color": "slate" }
 ]
