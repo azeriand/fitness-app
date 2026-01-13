@@ -62,8 +62,8 @@ export default function Stats(){
         </Helmet>
         <ExerciseContextComponent>
           <div className='flex flex-col h-full'>
-            <p className='text-start text-[2rem] font-bold text-purple-100 m-0 mb-[2rem]'>Stats</p>
-            <div className='grid grid-cols-12 gap-[1rem] flex-1 min-h-0'>
+            <p className='text-start text-[2rem] font-bold text-purple-100 m-0'>Stats</p>
+            <div className='grid grid-cols-12 gap-[1rem] mt-[1rem] flex-1 min-h-0'>
               <div className='col-span-4 min-h-0'>
                 <FilterByStats/>
               </div>

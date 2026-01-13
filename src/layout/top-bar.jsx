@@ -15,7 +15,7 @@ export default function TopBar(){
     const navigate = useNavigate();
 
     return(
-        <Card intensity={900} blur={40} color='purple' noPadding className='w-full flex justify-between gap-[1rem] mb-[1rem] p-[1rem] items-center rounded-xl'>
+        <Card intensity={900} blur={40} color='purple' noPadding className={`w-full flex gap-[1rem] mb-[1rem] p-[1rem] items-center rounded-xl ${isMobile ? 'justify-center' : 'justify-end'}`}>
             <div className='md:!hidden text-[2rem]' onClick={() => navigate('/')}><FaDumbbell/></div>
             <div className='flex gap-[1rem] items-center'>
                 <Button label='Go to my portfolio!' className='h-full'/>

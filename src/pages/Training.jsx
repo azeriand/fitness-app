@@ -66,11 +66,11 @@ export default function Training(){
                                 return (
                                     <>
                                     <div className={`bg-white h-[3px] w-full mb-[0.25rem] ${isDraggingUp(index) ? '' : 'hidden'}`}/>
-                                    <div key={exercise.exercise_name} draggable='true' className={`${draggedCardIndex === index? 'opacity-25' : 'opacity-100'}`} onDragStart={() => onDragStart(index)} onDragOver={(e) => onDragOver(e, index)}>
-                                        <SetsWidget exercise={exercise} key={exercise.exercise_name} onAddSet={() => addSet(exercise.exercise_name)}>
-                                            {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG} onRepsChange={(value) => updateReps(exercise.exercise_name, index, value)} onKgChange={(value) => updateKg(exercise.exercise_name, index, value)}/>)}
-                                        </SetsWidget>
-                                    </div>
+                                        <div key={exercise.exercise_name} draggable='true' className={`${draggedCardIndex === index? 'opacity-25' : 'opacity-100'}`} onDragStart={() => onDragStart(index)} onDragOver={(e) => onDragOver(e, index)}>
+                                            <SetsWidget exercise={exercise} key={exercise.exercise_name} onAddSet={() => addSet(exercise.exercise_name)}>
+                                                {exercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG} onRepsChange={(value) => updateReps(exercise.exercise_name, index, value)} onKgChange={(value) => updateKg(exercise.exercise_name, index, value)}/>)}
+                                            </SetsWidget>
+                                        </div>
                                     <div className={`bg-white h-[3px] w-full mt-[0.25rem] ${isDraggingDown(index) ? '' : 'hidden'}`}/>
                                     </>
                             )})
