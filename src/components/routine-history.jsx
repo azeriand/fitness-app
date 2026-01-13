@@ -7,11 +7,12 @@ import dayjs from 'dayjs'
 import { FaDumbbell } from 'react-icons/fa'
 import { IoTimerOutline } from "react-icons/io5";
 import { useState, useEffect, useContext } from 'react'
-import { TrainingContext } from './training-context';
+import { SettingsContext } from './settings-context';
 
 
 export default function RoutineHistory({routine, className}){
 
+    const { defaultWeightUnit, calculateToIbs } = useContext(SettingsContext);
     const [cardExpanded, setCardExpanded] = useState(false);
 
     const onButtonClicked = () => {
@@ -55,7 +56,7 @@ export default function RoutineHistory({routine, className}){
                     </div>
                     <div className='flex items-center justify-start md:!justify-end gap-x-2 mt-[1rem] md:!mt-0'>
                         <Input className='rounded-sm w-34' centerText value={`${formatTime(routine.duration)}h`} icon={<IoTimerOutline/>} disabled/>
-                        <Input className='rounded-sm w-34' centerText value={`${routine.volume} KG`} icon={<FaDumbbell/>} disabled/>
+                        <Input className='rounded-sm w-34' centerText value={calculateToIbs(routine.volume) + ` ${defaultWeightUnit}`} icon={<FaDumbbell/>} disabled/>
                     </div>
                 </div>
 
