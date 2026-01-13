@@ -42,7 +42,7 @@ export default function Settings(){
             </div>
             <div className='mt-[2rem] grid grid-col-[100%] justify-start gap-y-[0.5rem]'>
                 <p className='font-semibold text-start'>Weight unit</p>
-                <div className='flex'>
+                <div className='flex gap-x-[0.5rem]'>
                     <Button label='KG' onClick={() => setWeightUnit('KG')}/>
                     <Button label='IBS' onClick={() => setWeightUnit('IBS')}/>
                 </div>
