@@ -67,7 +67,7 @@ export default function RoutineHistory({routine, className}){
 
                 <div className='grid grid-cols-12 gap-y-[0.5rem] gap-x-[1rem] mb-[1rem]'>
                     <SectionName section='exercise' className='col-span-10 text-purple-200'/>   
-                    <SectionName section='sets' className='col-span-2 text-purple-200'/>
+                    <SectionName section='sets' className='col-span-2 text-purple-200 justify-self-center'/>
 
                     {
                         collapsedExercises.map((exercise, index) => (
