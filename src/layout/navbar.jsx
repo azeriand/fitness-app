@@ -33,7 +33,7 @@ export default function NavBar() {
     }, [pathname]);
 
     return (
-        <Card intensity={900} blur={40} color='purple' noPadding className='flex !hidden md:!block flex-col justify-between h-full'>
+        <Card intensity={900} blur={40} noPadding className='flex !hidden md:!block flex-col justify-between h-full'>
             <div>
                 <Logo></Logo>
                 <div className="p-4">

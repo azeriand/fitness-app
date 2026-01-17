@@ -20,7 +20,7 @@ export default function TrainingWidget({...cardProps}){
         if (trainingData.state ==='STOPPED' || trainingData.state === null ){
             return (
                 <Card noPadding noBlur className='m-[0.5rem] py-[0.5rem]' appearance='ghost' {...cardProps} style={{...cardProps.style, ...trainingWidgetProps}}>
-                    <Button appearance="mate" color='purple' intensity={900} label='Start Training' icon={<FaPlay/>} position='right' className='w-full' onClick={()=> navigate('/routines')}/>
+                    <Button appearance="mate" intensity={900} label='Start Training' icon={<FaPlay/>} position='right' className='w-full' onClick={()=> navigate('/routines')}/>
                 </Card>            
             )
         }

@@ -716,10 +716,10 @@
     prop-types "^15.8.1"
     react-is "^19.0.0"
 
-"@mui/x-charts-vendor@8.23.0":
-  version "8.23.0"
-  resolved "https://registry.yarnpkg.com/@mui/x-charts-vendor/-/x-charts-vendor-8.23.0.tgz#0d94e78ee3adc5879dd7587e17a67714f93dfa96"
-  integrity sha512-AmGNPEFX8bTgmCuljxEcFaa2JQkUxRJKvHJYfCvy76Hexu4O1aQC15wznlKiL1nrFo3otQHw0bnozpz0PHIxWg==
+"@mui/x-charts-vendor@8.25.0":
+  version "8.25.0"
+  resolved "https://registry.yarnpkg.com/@mui/x-charts-vendor/-/x-charts-vendor-8.25.0.tgz#62406f94bd1de4bd00482e602a6e8724db3558a5"
+  integrity sha512-/DFLI/3DSN+JbgQTNROTzioK6Bg25I5CoJXyEO1sT9DCLAtZ+iqq0UqoxAYKX8f46eeZbd1YArcozcwAcp5UeA==
   dependencies:
     "@babel/runtime" "^7.28.4"
     "@types/d3-array" "^3.2.2"
@@ -746,15 +746,15 @@
     internmap "^2.0.3"
 
 "@mui/x-charts@^8.9.0":
-  version "8.24.0"
-  resolved "https://registry.yarnpkg.com/@mui/x-charts/-/x-charts-8.24.0.tgz#3a27059beff0aa045c762f9f019fe5af8c5c2757"
-  integrity sha512-SPpEwd5a+17wrnvCXnKTZbLU1pyhlpd8W23p7RW6ZVniQc9Gw+AOcQvQY5QXHHvcsu6WTd1V0pbCZDg39+w+Iw==
+  version "8.25.0"
+  resolved "https://registry.yarnpkg.com/@mui/x-charts/-/x-charts-8.25.0.tgz#950b8197b6b769a69537e59dc8ebf3989adeccc1"
+  integrity sha512-ath3WDUCHEJEUvH/vLzNAKPiIVHggglY70tcpkl60FQybyhF27TdegfKNtO0dmaOlCLvroWXaRfLD/S9NLe9xw==
   dependencies:
     "@babel/runtime" "^7.28.4"
     "@mui/utils" "^7.3.5"
-    "@mui/x-charts-vendor" "8.23.0"
+    "@mui/x-charts-vendor" "8.25.0"
     "@mui/x-internal-gestures" "0.4.0"
-    "@mui/x-internals" "8.24.0"
+    "@mui/x-internals" "8.25.0"
     bezier-easing "^2.1.0"
     clsx "^2.1.1"
     prop-types "^15.8.1"
@@ -775,13 +775,13 @@
     react-transition-group "^4.4.5"
 
 "@mui/x-date-pickers@^8.12.0":
-  version "8.24.0"
-  resolved "https://registry.yarnpkg.com/@mui/x-date-pickers/-/x-date-pickers-8.24.0.tgz#f50034acc453ae170b66f9b26c75d7011fd22725"
-  integrity sha512-wxh/BuL3OGcMa1Z90mcBgew7v0VW2M044bCOIpypu8cJeOv8mEcxRl/JE/e9xFyPq4/C1B1gXtf2j6tpYIM1lQ==
+  version "8.25.0"
+  resolved "https://registry.yarnpkg.com/@mui/x-date-pickers/-/x-date-pickers-8.25.0.tgz#6e35a740969eeacf3f532e24ffd8960c761bdd10"
+  integrity sha512-XmLQwlo9C9gPWY9OeFbQka4TGi3MXrW/jJ+E4LV1wdfg/ebOklq6KKKTbvRgTVWlMcIoQwqPbalFxcwQSUUbDw==
   dependencies:
     "@babel/runtime" "^7.28.4"
     "@mui/utils" "^7.3.5"
-    "@mui/x-internals" "8.24.0"
+    "@mui/x-internals" "8.25.0"
     "@types/react-transition-group" "^4.4.12"
     clsx "^2.1.1"
     prop-types "^15.8.1"
@@ -802,10 +802,10 @@
     "@babel/runtime" "^7.25.7"
     "@mui/utils" "^5.16.6 || ^6.0.0 || ^7.0.0"
 
-"@mui/x-internals@8.24.0":
-  version "8.24.0"
-  resolved "https://registry.yarnpkg.com/@mui/x-internals/-/x-internals-8.24.0.tgz#99f8c61f82ab7075135cc0b7ec41fbc053ac3cbe"
-  integrity sha512-tHPk8eUcuwvhNsAc4zcia8y+issjC+bLGssrQQSdLLeLIf9ewFbcwAURNTSnNhreyj/4RJOemVrSxKXpjkdVvQ==
+"@mui/x-internals@8.25.0":
+  version "8.25.0"
+  resolved "https://registry.yarnpkg.com/@mui/x-internals/-/x-internals-8.25.0.tgz#93849275bfb3a4e5e0130ae91449bb4f8517a1d7"
+  integrity sha512-RKexkVaK3xvAeLBNeLAw6oJCsQrXkx7TYSRoSUmmJveydqOqoBbimv+nbc8PmL4UL0ShVNkaFL1YWY7kYCCXUA==
   dependencies:
     "@babel/runtime" "^7.28.4"
     "@mui/utils" "^7.3.5"
@@ -1441,10 +1441,10 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-azeriand-library@^1.14.4:
-  version "1.14.4"
-  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.14.4.tgz#4653fac5779c4ea8f7023dd881288c9edb240cca"
-  integrity sha512-3IpZvNEiLGOUAew8D9OUeVMsmk8uZ6byMcclten5lH6efJx3jp6TQaVapZ1ySRw/25E1+hAcJjdY2oG6KKNIpA==
+azeriand-library@1.14.4-revision-8:
+  version "1.14.4-revision-8"
+  resolved "https://registry.yarnpkg.com/azeriand-library/-/azeriand-library-1.14.4-revision-8.tgz#411e3a55a1771de5ebf81cba21a9fc6ab6ff1d7e"
+  integrity sha512-RZbaNzlQgyIGXnnnsXr6MxQk42s50HLwR7iUTjUCunCqLrzGL+S5S6SjLWn0uXqpf8+DKs3/amwH0YLxIrHUlQ==
   dependencies:
     "@emotion/react" "^11.14.0"
     "@emotion/styled" "^11.14.1"
@@ -1646,9 +1646,9 @@ csstype@^3.0.2, csstype@^3.1.3, csstype@^3.2.2, csstype@^3.2.3:
   integrity sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==
 
 "d3-format@1 - 3", d3-format@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-3.1.0.tgz#9260e23a28ea5cb109e93b21a06e24e2ebd55641"
-  integrity sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-3.1.2.tgz#01fdb46b58beb1f55b10b42ad70b6e344d5eb2ae"
+  integrity sha512-AJDdYOdnyRDV5b6ArilzCPPwc1ejkHcoyFarqlPqT7zRYjhavcT3uSrqcMvsgh2CgoPbK3RCwyHaVyxYcP2Arg==
 
 "d3-interpolate@1.2.0 - 3", d3-interpolate@^3.0.1:
   version "3.0.1"

@@ -23,7 +23,7 @@ export default function List({children, onListItemSelected, name, defaultValue, 
             <ul className='list-none ps-[0] hover:cursor-pointer'>
                 {items.map((item, index)=>
                     <div key={item.label}>
-                        <Card className='rounded-md' color='purple' intensity={700} noBlur appearance={listItemSelected && item.destination === listItemSelected.destination ? 'glass' : 'ghost'} noPadding onClick={() => onItemClicked(item)} {...cardProps}>
+                        <Card className='rounded-md' intensity={700} noBlur appearance={listItemSelected && item.destination === listItemSelected.destination ? 'glass' : 'ghost'} noPadding onClick={() => onItemClicked(item)} {...cardProps}>
                             <div  className='font-bold text-[1.5rem] text-purple-100 pl-[1rem] py-[0.3rem] flex items-center gap-x-[0.5rem] content-start'>
                                 {item.logo}
                                 {item.label}

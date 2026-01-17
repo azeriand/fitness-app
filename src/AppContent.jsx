@@ -26,7 +26,7 @@ export default function AppContent() {
       <div className='h-full min-h-0 flex flex-col'>
         <TopBar />
 
-        <Card intensity={900} blur={40} color='purple' appearance={isMobile ? 'ghost' : 'glass'} noPadding={isMobile} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}} className={isMobile? 'p-[0.5rem]': ''}>
+        <Card intensity={900} blur={40} appearance={isMobile ? 'ghost' : 'glass'} noPadding={isMobile} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}} className={isMobile? 'p-[0.5rem]': ''}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/stats' element={<Stats />} />
