@@ -23,7 +23,7 @@ export default function Finished_training(){
             </Helmet>
             <p className='text-7xl'>🎉</p>
             <p className='font-bold text-2xl'>Well done!</p>
-            <Card color='purple' noPadding>
+            <Card noPadding>
                 <Logo/>
                 <div className='flex justify-between items-center gap-x-[1rem] px-[1.5rem] pb-[1.5rem]'>
                     <Timeline>

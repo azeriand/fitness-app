@@ -49,7 +49,10 @@ function App() {
       />
       
       <PopupContextComponent>
-        <ThemeContextComponent>
+        <ThemeContextComponent defaultTheme={{
+          theme: 'dark',
+          color: 'purple'
+        }}>
           <TrainingContextComponent>
             <SettingsContextComponent>
               <AppContent />
