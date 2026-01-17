@@ -48,7 +48,7 @@ export default function Home(){
           getMoreData={getMoreData}
           hasMore={hasMore}
           isLoading={isLoading}
-          containerHeight={isMobile ? 'calc(100vh - 124px)' : 'calc(100vh - 280px)'} // Example height
+          containerHeight={isMobile ? 'calc(100vh - 124px)' : 'calc(100vh - 225px)'} // Example height
           bufferPx={600} // Optional buffer
           loader={<AiOutlineLoading3Quarters className='animate-spin'/>} // Optional loader
         >
