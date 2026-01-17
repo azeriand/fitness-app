@@ -23,7 +23,7 @@ export default function AppContent() {
     <HashRouter>
       <NavBar />
 
-      <div style={{ height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <div className='h-full min-h-0 flex flex-col'>
         <TopBar />
 
         <Card intensity={900} blur={40} color='purple' appearance={isMobile ? 'ghost' : 'glass'} noPadding={isMobile} style={{overflowX: 'hidden', height: '100%', overflowY: 'auto'}} className={isMobile? 'p-[0.5rem]': ''}>

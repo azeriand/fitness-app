@@ -51,8 +51,8 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
             <div className='col-span-4 flex justify-end align-top'>
               <Button
                 onClick={editRoutine}
-                appearance="ghost"
-                icon={<MdEdit />}
+                appearance="outlined"
+                icon={<MdEdit size={20}/>}
                 position="right"
               />
               
