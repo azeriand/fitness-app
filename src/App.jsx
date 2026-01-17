@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return(
-    <div className='viewport' style={{ position: 'relative', minHeight: '100vh' }}>
+    <div className='grid grid-cols-[320px_1fr] gap-x-[1rem] grid-rows-[100%] h-full ' style={{ position: 'relative', minHeight: '100vh' }}>
       <video 
         ref={videoRef}
         autoPlay 
