@@ -21,7 +21,6 @@ export default function TopBar(){
                 <Button label='Go to my portfolio!' className='h-full'/>
                 <Button icon={<IoMdSettings/>} onClick={() => navigate('/settings')} className='md:!hidden'/>
                 <Avatar className='md:!hidden' src={Goku}/>
-                <Button icon={theme === 'dark' ? <MdLightMode size={20}/> : <MdDarkMode size={20}/>} onClick={() => setTheme((oldValue) => oldValue === 'dark' ? 'light' : 'dark')} className={isMobile? '!hidden' : ''}/>
             </div>
         </Card>
     )
