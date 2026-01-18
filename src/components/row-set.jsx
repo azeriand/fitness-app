@@ -12,7 +12,7 @@ export default function RowSet({num, reps, kg, onRepsChange, onKgChange}){
 
     return(
         <>
-            <Input className='w-full' noPadding disabled placeholder={num}/>
+            <Input centerText className='w-full' noPadding disabled placeholder={num}/>
             <Input className='w-full' noPadding disabled placeholder={reps !== '' ? `${repsCopy} x ${calculateToIbs(kgCopy)} ${defaultWeightUnit}` : ''}/>
             <Input className='w-full' noPadding type='number' placeholder='0' value={reps} onChange={onRepsChange}/>
             <Input className='w-full' noPadding type='number' placeholder='0' value={calculateToIbs(kg)} onChange={onKgChange}/>
