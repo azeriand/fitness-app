@@ -31,7 +31,7 @@ export default function Settings(){
             <Helmet>
                 <title>Settings | Fitness App</title>
             </Helmet>
-            <p className='text-start text-[2rem] font-bold text-purple-100 m-0'>Settings</p>
+            <p className='text-start text-[2rem] font-bold text-purple-200 m-0'>Settings</p>
             <div className='mt-[2rem] grid grid-col-[100%] justify-start gap-y-[0.5rem]'>
                 <p className='font-semibold text-purple-100 text-start'>Weekly training days</p>
                 <Input type='number' maxLength={5} value={storedStreak} centerText onChange={handleChange} className='w-[5rem] font-semibold'/>

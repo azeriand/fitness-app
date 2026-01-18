@@ -70,7 +70,7 @@ export default function CreateRoutine(){
             </Helmet>
             <div className={exercisePickerHidden ? '!hidden' : ''}>
                 <div className='flex justify-between items-center'>
-                    <p className='text-start text-[2rem] font-bold m-0'>Create Routine</p>
+                    <p className='text-start text-[2rem] font-bold text-purple-200 m-0'>Create Routine</p>
                     <Button label='Save Routine' color='green' className='md:!hidden'/>
                 </div>
                 
