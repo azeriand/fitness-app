@@ -43,7 +43,7 @@ export default function AppContent() {
         </div>
 
         {isPopupOpen && (
-          <div className='fixed flex inset-0 bg-black/60 backdrop-blur-lg items-center justify-center z-40'>
+          <div className='fixed flex inset-0 bg-black/60 items-center justify-center z-40' style={{backdropFilter: 'blur(5px)'}}>
             <PopupDiscardFinish />
           </div>
         )}
