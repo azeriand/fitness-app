@@ -1,6 +1,7 @@
 import { Card, Button, Timeline, TlListItem } from 'azeriand-library'
 import Logo from '../components/logo'
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 import { TrainingContext } from '../components/training-context'
 import { SettingsContext } from '../components/settings-context'
@@ -11,6 +12,7 @@ import { TbStopwatch } from "react-icons/tb";
 
 export default function Finished_training(){
 
+    const navigate = useNavigate();
     const { defaultWeightUnit, calculateToIbs } = useContext(SettingsContext);
     const {trainingData} = useContext(TrainingContext)
     const [isTextShared, setTextShared] = useState(false)
@@ -58,7 +60,7 @@ export default function Finished_training(){
                     }}>
                     {isTextShared ? 'Link Copied to clipboard!' : 'Share'}
                 </Button>
-                <Button appearance='mate' className='rounded-xl w-full h-[3rem]' label='New Training'/>  
+                <Button appearance='mate' className='rounded-xl w-full h-[3rem]' label='New Training' onClick={() => navigate('/routines')}/>  
             </div>
         </Card>
     )
