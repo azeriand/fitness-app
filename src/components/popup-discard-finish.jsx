@@ -7,7 +7,7 @@ import { ImCross } from "react-icons/im";
 
 export default function PopupDiscardFinish({ onDiscard, onFinish, onCancel}) {
 
-    const { resetTimer, switchTimer } = useContext(TrainingContext);
+    const { resetTimer, switchTimer, pauseTraining, removeTraining, setTrainingData} = useContext(TrainingContext);
     const { setIsPopupOpen } = usePopup()
     const navigate = useNavigate();
 
@@ -18,8 +18,11 @@ export default function PopupDiscardFinish({ onDiscard, onFinish, onCancel}) {
     }
 
     function onFinish() {
-        navigate('/finished-training');
         setIsPopupOpen(false)
+        setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'STOPPED'}));
+        navigate('/finished-training');
+        pauseTraining();
+        removeTraining();
     }
 
     function onCancel() {
