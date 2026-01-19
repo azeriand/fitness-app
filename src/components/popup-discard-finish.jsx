@@ -34,7 +34,8 @@ export default function PopupDiscardFinish({ onDiscard, onFinish, onCancel}) {
         <Card noPadding className='w-[90%] h-fit max-w-[25rem] p-[1rem]'>
             <Button icon={<ImCross/>} className='justify-self-end' onClick={onCancel}/>
             <div className='flex flex-col gap-y-6 px-6 pb-6 pt-2 items-center'>
-                <p className='text-[1.25rem] font-semibold p-0'>Are you sure you want to discard this routine?</p>
+                <p className='text-[1.25rem] font-semibold p-0'>
+                    Would you like to save your progress or discard this session?</p>
                 <div className='flex justify-center gap-x-4'>
                     <Button label='Discard' color='red' onClick={onDiscard}/>
                     <Button label='Finish' color='green' onClick={onFinish}/>
