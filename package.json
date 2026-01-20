@@ -16,7 +16,7 @@
     "@mui/x-charts": "^8.9.0",
     "@mui/x-date-pickers": "^7.28.0",
     "@tailwindcss/vite": "^4.1.4",
-    "azeriand-library": "1.17.3",
+    "azeriand-library": "1.17.4",
     "chart.js": "^4.4.8",
     "dayjs": "^1.11.13",
     "react": "^18.3.1",
