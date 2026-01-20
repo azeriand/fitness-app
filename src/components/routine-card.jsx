@@ -59,7 +59,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
             </div>
           </div>
           <div className="routine-card-ul">
-            <Timeline style={trainingWidgetStyle}>
+            <Timeline style={trainingWidgetStyle} faded>
               {exerciseList.map((exercise, index) => (
                 <TlListItem
                   key={index}

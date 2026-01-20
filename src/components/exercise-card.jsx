@@ -15,7 +15,7 @@ export default function ExerciseCard({label, badges, sets, img, ...cardProps}){
                     </div>
                 </div>
             </Card>
-            <div className='flex items-center col-span-2'>
+            <div className='flex items-center col-span-2 justify-center'>
                 {
                     sets && <Input centerText className={inputClassNames} color='zinc' intensity={800} style={cardProps.style} maxLength='3' value={sets} disabled/>
                 }

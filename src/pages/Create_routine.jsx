@@ -70,7 +70,7 @@ export default function CreateRoutine(){
             </Helmet>
             <div className={exercisePickerHidden ? '!hidden' : ''}>
                 <div className='flex justify-between items-center'>
-                    <p className='text-start text-[2rem] font-bold m-0'>Create Routine</p>
+                    <p className='text-start text-[2rem] font-bold text-purple-200 m-0'>Create Routine</p>
                     <Button label='Save Routine' color='green' className='md:!hidden'/>
                 </div>
                 
@@ -78,7 +78,7 @@ export default function CreateRoutine(){
                     <Card noPadding appearance='ghost' className='w-full md:col-span-7'>
                         <div className='grid md:!grid-cols-[75%_25%] w-full justify-between items-center gap-[0.5rem] mt-[1rem] mb-[2rem] md:!my-[2rem] p-[0.5rem]'>
                             <Input onChange={updateRoutineName} value={routine.routine_name} type='text' placeholder='New routine' className='font-semibold w-full'/>
-                            <Button label='Save Routine' size='sm' color='green' className={isMobile? '!hidden' : ''}/>
+                            <Button label='Save Routine' color='green' className={isMobile? '!hidden' : 'w-full'}/>
                         </div>
                         <SectionName section='Exercises' className={isMobile? '!hidden' : 'mb-[1rem]'}/>
                         <div className='flex flex-col gap-y-[1rem] mb-[1rem]'>

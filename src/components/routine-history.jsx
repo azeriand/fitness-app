@@ -55,7 +55,7 @@ export default function RoutineHistory({routine, className}){
                         </div>
                     </div>
                     <div className='flex items-center justify-start md:!justify-end gap-x-2 mt-[1rem] md:!mt-0'>
-                        <Input className='rounded-sm w-34' centerText value={`${formatTime(routine.duration)}h`} icon={<IoTimerOutline/>} disabled/>
+                        <Input className='rounded-sm w-34' centerText value={formatTime(routine.duration)} icon={<IoTimerOutline/>} disabled/>
                         <Input className='rounded-sm w-34' centerText value={calculateToIbs(routine.volume) + ` ${defaultWeightUnit}`} icon={<FaDumbbell/>} disabled/>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ export default function RoutineHistory({routine, className}){
 
                 <div className='grid grid-cols-12 gap-y-[0.5rem] gap-x-[1rem] mb-[1rem]'>
                     <SectionName section='exercise' className='col-span-10 text-purple-200'/>   
-                    <SectionName section='sets' className='col-span-2 text-purple-200'/>
+                    <SectionName section='sets' className='col-span-2 text-purple-200 justify-self-center'/>
 
                     {
                         collapsedExercises.map((exercise, index) => (

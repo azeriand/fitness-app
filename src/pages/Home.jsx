@@ -42,13 +42,13 @@ export default function Home(){
         <title>Home | Fitness App</title>
       </Helmet>
       <p className='text-start text-[2rem] font-bold text-purple-200'>Your latest Trainings</p>
-      <div className='grid grid-cols-[100%] md:!grid-cols-12 grid-rows-[100%] gap-[1rem]'>
+      <div className='grid grid-cols-[100%] md:!grid-cols-12 grid-rows-[100%] gap-[1rem] justify-items-stretch'>
         <InfiniteScroller
-          className='mt-[2rem] md:!col-span-8'
+          className='mt-[2rem] md:!col-span-8 w-full'
           getMoreData={getMoreData}
           hasMore={hasMore}
           isLoading={isLoading}
-          containerHeight={isMobile ? 'calc(100vh - 124px)' : 'calc(100vh - 280px)'} // Example height
+          containerHeight={isMobile ? 'calc(100vh - 124px)' : 'calc(100vh - 225px)'} // Example height
           bufferPx={600} // Optional buffer
           loader={<AiOutlineLoading3Quarters className='animate-spin'/>} // Optional loader
         >
@@ -56,8 +56,8 @@ export default function Home(){
               history.slice(0, visibleHistory).map((routine) => <RoutineHistory key={routine.day} routine={routine} className='mb-4'/>)
             }
         </InfiniteScroller>
-        <div className='hidden md:!block md:!col-span-4 mt-8'>
-          <Calendar appearance='glass' color='zinc' intensity={500} selectedDates={trainedDays} className='hidden md:!block rounded-xl py-4'/>
+        <div className='hidden md:!block md:!col-span-4 w-full mt-8'>
+          <Calendar appearance='glass' color='zinc' intensity={500} selectedDates={trainedDays} className='hidden md:!block rounded-xl'/>
         </div>
       </div>
     </>

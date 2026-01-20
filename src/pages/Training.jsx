@@ -11,7 +11,7 @@ import { TrainingContext } from '../components/training-context'
 
 export default function Training(){
   
-    const { trainingData, setTrainingData, updateReps, addExercise, addSet, updateKg, startTraining, resetTimer, exercises } = useContext(TrainingContext)
+    const { trainingData, setTrainingData, updateReps, addExercise, addSet, updateKg, startTraining, finishTraining, resetTimer, exercises } = useContext(TrainingContext)
     const { isDraggingUp, isDraggingDown, onDragStart, onDragOver, onDrop, draggedCardIndex } = useDraggable([trainingData, setTrainingData]);
     const navigate = useNavigate();
 
@@ -20,9 +20,10 @@ export default function Training(){
     }
 
     function finish(){
-        finishTraining()
-        navigate('/finished-training')
-        resetTimer()
+        setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'STOPPED'}));
+        navigate('/finished-training');
+        pauseTraining();
+        removeTraining();
     }
 
     useEffect(() => {
@@ -47,7 +48,7 @@ export default function Training(){
                 <TimeController cardAppearance='mate'/>
                 <div className='flex gap-x-[0.5rem]'>
                     <Button label='View Routine' onClick={() => navigate('/edit-routine')}/>
-                    <Button label='Finish Training' color='green' onClick={finish}/>
+                    <Button label='Finish Training' color='green' onClick={() => {finish()}}/>
                     <Button label='Discard Training' color='red' onClick={discard}/>
                 </div>
             </div>
