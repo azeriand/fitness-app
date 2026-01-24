@@ -43,7 +43,7 @@ function App() {
           objectFit: 'cover',
           zIndex: 0,
           pointerEvents: 'none',
-          opacity: 0.7
+          opacity: 0.6
         }}
         src={backgroundVideo}
       />
