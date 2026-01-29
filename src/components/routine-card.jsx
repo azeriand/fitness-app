@@ -77,7 +77,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
             label="Start"
             icon={<FaPlay />}
             position="right"
-            className="!text-purple-950 w-full"
+            className="!text-white w-full"
             onClick={() => {
               handleStart();
             }}
