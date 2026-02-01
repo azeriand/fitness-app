@@ -76,7 +76,7 @@ export default function RoutineHistory({routine, className}){
                     }
                     
                 </div>
-                <Button intensity={800} color='zinc' label={collapsedButtonText} onClick={onButtonClicked} className='w-full py-[3rem] !text-purple-100'/>
+                <Button blur={40} label={collapsedButtonText} onClick={onButtonClicked} className='w-full py-[3rem] !text-purple-100'/>
             </div>
         </Card>
     )
