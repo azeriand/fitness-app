@@ -15,7 +15,7 @@ export default function TopBar(){
         <Card intensity={900} blur={40} noPadding appearance='glass' className={`w-full flex gap-[1rem] mb-[1rem] p-[1rem] items-center rounded-xl ${isMobile ? 'justify-center' : 'justify-end'}`}>
             <div className='md:!hidden text-[2rem]' onClick={() => navigate('/')}><FaDumbbell/></div>
             <div className='flex gap-[1rem] items-center'>
-                <Button label='Go to my portfolio!' className='h-full'/>
+                <Button label='Go to my portfolio!' className='h-full' onClick={() => window.open('http://andrearc.com/', '_blank')}/>
                 <Button icon={<IoMdSettings/>} onClick={() => navigate('/settings')} className='md:!hidden'/>
                 <Avatar className='md:!hidden' src={Goku}/>
             </div>
