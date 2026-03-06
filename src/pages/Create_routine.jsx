@@ -106,6 +106,9 @@ export default function CreateRoutine(){
                                     )
                                 })
                             }
+                            <Card noPadding color='yellow' className='w-full mt-[1rem]'>
+                                <p className='m-0 p-[1rem] text-center text-[1rem] font-bold'>Exercise can be picked from the right panel!</p>
+                            </Card>
                         </div>
 
                         <Button label='Add Exercise' className='w-full md:!hidden' onClick={() => setExercisePickerHidden('!hidden')}/>
