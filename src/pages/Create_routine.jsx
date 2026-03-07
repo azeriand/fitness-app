@@ -23,11 +23,15 @@ export default function CreateRoutine(){
         exercises: []
     })
     const { isDraggingUp, isDraggingDown, onDragStart, onDragOver, onDrop, draggedCardIndex } = useDraggable([routine, setRoutine]);
-    const {getRoutineByName, exercises, setUpdatedRoutineList, updatedRoutineList} = useContext(TrainingContext)
+    const {getRoutineByName, exercises, setUpdatedRoutineList, updatedRoutineList, limitMaxRoutines} = useContext(TrainingContext)
     const [searchParams] = useSearchParams();
-   
+
 
     function saveRoutine(routine) {
+        if (!routine.routine_name) {
+            alert('Please enter a name for the routine before saving.')
+            return;
+        }
         if (updatedRoutineList.length < limitMaxRoutines) {
             setUpdatedRoutineList([...updatedRoutineList, routine])
             navigate('/routines')
