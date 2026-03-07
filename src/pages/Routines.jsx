@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function Train(){
 
-  const { routinesList } = useContext(TrainingContext)
+  const { updatedRoutineList } = useContext(TrainingContext)
   const navigate = useNavigate();
 
   return(
@@ -24,7 +24,7 @@ export default function Train(){
         <Button label='New Routine' appearance='outlined' onClick={() => navigate('/edit-routine')} className='rounded-lg'/>
       </section>
       <div className="grid grid-cols-3 auto-rows-fr justify-stretch mt-[1rem] gap-[1.5rem]">
-        {routinesList.map((routine, index) => <RoutineCard key={index} exercises={routine.exercises} label={routine.routine_name} timeAgo='Last time: 4 years ago.'/>) }
+        {updatedRoutineList.map((routine, index) => <RoutineCard key={index} exercises={routine.exercises} label={routine.routine_name} timeAgo='Last time: 4 years ago.'/>) }
       </div>
     </>
   )

@@ -10,6 +10,7 @@ export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const routinesList = routines
+    const [updatedRoutineList, setUpdatedRoutineList] = useState(routinesList)
     const [history, setHistory] = useState(generateTrainingDays());
 
     useEffect(() => {
@@ -163,6 +164,8 @@ export default function TrainingContextComponent({ children }) {
         history, 
         exercises,
         routinesList,
+        updatedRoutineList,
+        setUpdatedRoutineList,
         getRoutineByName,
         trainingData, 
         addExercise,
