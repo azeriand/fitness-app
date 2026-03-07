@@ -3,6 +3,7 @@ import AddExercise from '../components/add-exercise'
 import SetsWidget from '../components/sets-widget'
 import RowSet from '../components/row-set'
 import { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 import { TrainingContext } from '../components/training-context'
 import useDraggable from '../hooks/useDraggable'
@@ -12,6 +13,7 @@ import { getCurrentDateTime } from '../utils/datetime.js'
 
 export default function CreateRoutine(){
 
+    const navigate = useNavigate();
     const isMobile = useMediaQuery({ query: '(max-width: 48rem)' });
     const [exercisePickerHidden, setExercisePickerHidden] = useState(false);
 
@@ -21,8 +23,20 @@ export default function CreateRoutine(){
         exercises: []
     })
     const { isDraggingUp, isDraggingDown, onDragStart, onDragOver, onDrop, draggedCardIndex } = useDraggable([routine, setRoutine]);
-    const {getRoutineByName, exercises} = useContext(TrainingContext)
+    const {getRoutineByName, exercises, setUpdatedRoutineList, updatedRoutineList, limitMaxRoutines} = useContext(TrainingContext)
     const [searchParams] = useSearchParams();
+
+
+    function saveRoutine(routine) {
+        if (!routine.routine_name) {
+            alert('Please enter a name for the routine before saving.')
+            return;
+        }
+        if (updatedRoutineList.length < limitMaxRoutines) {
+            setUpdatedRoutineList([...updatedRoutineList, routine])
+            navigate('/routines')
+        }
+    }
 
     function getExercise(exerciseName){
         return routine.exercises.find((exercise) => exercise.exercise_name === exerciseName)
@@ -78,7 +92,7 @@ export default function CreateRoutine(){
                     <Card noPadding appearance='ghost' className='w-full md:col-span-7'>
                         <div className='grid md:!grid-cols-[75%_25%] w-full justify-between items-center gap-[0.5rem] mt-[1rem] mb-[2rem] md:!my-[2rem] p-[0.5rem]'>
                             <Input onChange={updateRoutineName} value={routine.routine_name} type='text' placeholder='New routine' className='font-semibold w-full'/>
-                            <Button label='Save Routine' color='green' className={isMobile? '!hidden' : 'w-full'}/>
+                            <Button label='Save Routine' color='green' onClick={() => saveRoutine(routine)} className={isMobile? '!hidden' : 'w-full'}/>
                         </div>
                         <SectionName section='Exercises' className={isMobile? '!hidden' : 'mb-[1rem]'}/>
                         <div className='flex flex-col gap-y-[1rem] mb-[1rem]'>
@@ -106,6 +120,9 @@ export default function CreateRoutine(){
                                     )
                                 })
                             }
+                            <Card noPadding color='yellow' className='w-full mt-[1rem]'>
+                                <p className='m-0 p-[1rem] text-center text-[1rem] font-bold'>Exercise can be picked from the right panel!</p>
+                            </Card>
                         </div>
 
                         <Button label='Add Exercise' className='w-full md:!hidden' onClick={() => setExercisePickerHidden('!hidden')}/>

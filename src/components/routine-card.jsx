@@ -13,13 +13,13 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
     const exerciseList = useGetExercises(exercises.map((exercise, index) => exercise.exercise_name))
     const navigate = useNavigate()
-    const { routinesList, setTrainingData } = useContext(TrainingContext)
+    const { updatedRoutineList, setUpdatedRoutineList, setTrainingData } = useContext(TrainingContext)
 
     const trainingWidgetStyle = {
         height: '4.5rem',
     }
 
-    const currentRoutine = routinesList.find((routine) => routine.routine_name === label)
+    const currentRoutine = updatedRoutineList.find((routine) => routine.routine_name === label)
 
     function handleStart(){
         navigate('/training')
@@ -27,7 +27,7 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
     }
 
     function editRoutine() {
-        navigate('/edit-routine?name=' + currentRoutine.routine_name)
+      navigate('/edit-routine?name=' + currentRoutine.routine_name)
     }
 
     return (

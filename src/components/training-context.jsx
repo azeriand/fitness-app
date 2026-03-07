@@ -10,6 +10,8 @@ export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const routinesList = routines
+    const [updatedRoutineList, setUpdatedRoutineList] = useLocalStorage('routines-list', routinesList)
+    const limitMaxRoutines = 9;
     const [history, setHistory] = useState(generateTrainingDays());
 
     useEffect(() => {
@@ -62,7 +64,7 @@ export default function TrainingContextComponent({ children }) {
     useEffect(() => {formatTimer()},[timer])
 
     function getRoutineByName(name) {
-        return routinesList.find(({routine_name}) => routine_name === name);
+        return updatedRoutineList.find(({routine_name}) => routine_name === name);
     }
 
     function startTraining(){
@@ -163,6 +165,9 @@ export default function TrainingContextComponent({ children }) {
         history, 
         exercises,
         routinesList,
+        updatedRoutineList,
+        setUpdatedRoutineList,
+        limitMaxRoutines,
         getRoutineByName,
         trainingData, 
         addExercise,
