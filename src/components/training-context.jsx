@@ -10,7 +10,7 @@ export const TrainingContext = createContext();
 export default function TrainingContextComponent({ children }) {
 
     const routinesList = routines
-    const [updatedRoutineList, setUpdatedRoutineList] = useState(routinesList)
+    const [updatedRoutineList, setUpdatedRoutineList] = useLocalStorage('routines-list', routinesList)
     const limitMaxRoutines = 9;
     const [history, setHistory] = useState(generateTrainingDays());
 

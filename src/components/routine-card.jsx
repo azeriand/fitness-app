@@ -28,7 +28,6 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
 
     function editRoutine() {
       navigate('/edit-routine?name=' + currentRoutine.routine_name)
-      setUpdatedRoutineList(updatedRoutineList.filter((routine) => routine.routine_name !== currentRoutine.routine_name))
     }
 
     return (
