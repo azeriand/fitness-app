@@ -28,8 +28,10 @@ export default function CreateRoutine(){
    
 
     function saveRoutine(routine) {
-        setUpdatedRoutineList([...updatedRoutineList, routine])
-        navigate('/routines')
+        if (updatedRoutineList.length < limitMaxRoutines) {
+            setUpdatedRoutineList([...updatedRoutineList, routine])
+            navigate('/routines')
+        }
     }
 
     function getExercise(exerciseName){

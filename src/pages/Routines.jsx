@@ -9,7 +9,18 @@ import { useNavigate } from "react-router-dom"
 export default function Train(){
 
   const { updatedRoutineList } = useContext(TrainingContext)
+  const limitMaxRoutines = 9;
   const navigate = useNavigate();
+
+  function newRoutine(){
+    if (updatedRoutineList.length == limitMaxRoutines) {
+      alert(`You can only have a maximum of ${limitMaxRoutines} routines. Please delete an existing routine before adding a new one.`);
+      return;
+    }
+    else {
+      navigate('/edit-routine')
+    }
+  }
 
   return(
     <>
@@ -21,7 +32,7 @@ export default function Train(){
           <p className='text-start text-[2rem] font-bold text-purple-200 m-0'>Train</p>
           <SectionName section='Routines'/>
         </div>
-        <Button label='New Routine' appearance='outlined' onClick={() => navigate('/edit-routine')} className='rounded-lg'/>
+        <Button label='New Routine' appearance='outlined' onClick={newRoutine} className='rounded-lg'/>
       </section>
       <div className="grid grid-cols-3 auto-rows-fr justify-stretch mt-[1rem] gap-[1.5rem]">
         {updatedRoutineList.map((routine, index) => <RoutineCard key={index} exercises={routine.exercises} label={routine.routine_name} timeAgo='Last time: 4 years ago.'/>) }
