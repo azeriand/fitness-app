@@ -64,7 +64,7 @@ export default function TrainingContextComponent({ children }) {
     useEffect(() => {formatTimer()},[timer])
 
     function getRoutineByName(name) {
-        return routinesList.find(({routine_name}) => routine_name === name);
+        return updatedRoutineList.find(({routine_name}) => routine_name === name);
     }
 
     function startTraining(){
