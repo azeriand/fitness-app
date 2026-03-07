@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function Train(){
 
-  const { updatedRoutineList } = useContext(TrainingContext)
-  const limitMaxRoutines = 9;
+  const { updatedRoutineList, limitMaxRoutines } = useContext(TrainingContext)
   const navigate = useNavigate();
 
   function newRoutine(){
@@ -35,7 +34,7 @@ export default function Train(){
         <Button label='New Routine' appearance='outlined' onClick={newRoutine} className='rounded-lg'/>
       </section>
       <div className="grid grid-cols-3 auto-rows-fr justify-stretch mt-[1rem] gap-[1.5rem]">
-        {updatedRoutineList.map((routine, index) => <RoutineCard key={index} exercises={routine.exercises} label={routine.routine_name} timeAgo='Last time: 4 years ago.'/>) }
+        {updatedRoutineList.reverse().map((routine, index) => <RoutineCard key={index} exercises={routine.exercises} label={routine.routine_name} timeAgo='Last time: 4 years ago.'/>) }
       </div>
     </>
   )

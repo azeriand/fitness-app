@@ -11,6 +11,7 @@ export default function TrainingContextComponent({ children }) {
 
     const routinesList = routines
     const [updatedRoutineList, setUpdatedRoutineList] = useState(routinesList)
+    const limitMaxRoutines = 9;
     const [history, setHistory] = useState(generateTrainingDays());
 
     useEffect(() => {
@@ -166,6 +167,7 @@ export default function TrainingContextComponent({ children }) {
         routinesList,
         updatedRoutineList,
         setUpdatedRoutineList,
+        limitMaxRoutines,
         getRoutineByName,
         trainingData, 
         addExercise,
