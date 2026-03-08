@@ -18,6 +18,7 @@ export default function CreateRoutine(){
     const [exercisePickerHidden, setExercisePickerHidden] = useState(false);
 
     const [routine, setRoutine] = useState({
+        id: Date.now(),
         routine_name: '',
         created_day: getCurrentDateTime(),
         exercises: []
@@ -69,9 +70,13 @@ export default function CreateRoutine(){
         const routineQueryName = searchParams.get('name');
 
         if (routineQueryName) {
-            const foundRoutine = getRoutineByName(searchParams.get('name'));
+            const foundRoutine = getRoutineByName(routineQueryName);
 
             if (foundRoutine) {
+
+                if (!foundRoutine.id) {
+                    foundRoutine.id = Date.now();
+                }
                 setRoutine(foundRoutine);
             }
         }
