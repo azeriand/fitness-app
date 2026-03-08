@@ -7,7 +7,7 @@ import { Button, Card, Avatar, Input, SectionName, Dropdown} from 'azeriand-libr
 import ColorBadge from './color-badge';
 import { SettingsContext } from './settings-context';
 
-export default function SetsWidget({children, exercise, onAddSet}){
+export default function SetsWidget({children, exercise, onAddSet, onDeleteExercise}){
 
     const { defaultWeightUnit, calculateToIbs } = useContext(SettingsContext);
 
