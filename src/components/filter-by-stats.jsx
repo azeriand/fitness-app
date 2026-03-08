@@ -21,13 +21,10 @@ export default function FilterByStats(){
         return str.toLowerCase().replace(/[^A-Z0-9]/ig, "")
     }
 
-
-    const customScrollbar = "overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
-
     let muscleTypes = [...new Set(exercises.map((exercise) => exercise.muscle_type))]
     return(
 
-        <Card noPadding className={`h-full overflow-y-auto p-[1rem] rounded-lg ${customScrollbar}`}>
+        <Card noPadding appearance='ghost' className={'h-full overflow-y-auto pt-0 pl-0 pr-4 pb-0 rounded-lg'}>
             <SectionName section='filter by'/>
             <Input type='search' iconPosition='right' value={searchValue} placeholder='Search Exercise' icon={<IoMdSearch/>} onChange={inputUpdated} className='w-full my-[1rem]'/>
             <SectionName section='muscle groups' className='pt-[1rem]'/>

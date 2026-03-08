@@ -24,7 +24,7 @@ export default function AddExercise({ onExerciseAdded, changeHiddenState }){
 
     return(
         <>
-            <Card noPadding appearance='ghost' className='overflow-y-scroll h-full pb-32 md:pb-0'>
+            <Card noPadding appearance='ghost' className='overflow-y-scroll h-[100%] pb-32 md:pb-0'>
                 <SectionName section='add exercise' className='mb-[0.5rem]'/>
                 <Card noPadding className='px-[1rem] py-[2rem]'>
                     <div className='flex items-center gap-[1rem] cursor-pointer mb-[1rem]'>
