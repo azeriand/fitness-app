@@ -18,25 +18,37 @@ export default function CreateRoutine(){
     const [exercisePickerHidden, setExercisePickerHidden] = useState(false);
 
     const [routine, setRoutine] = useState({
+        id: Date.now(),
         routine_name: '',
         created_day: getCurrentDateTime(),
         exercises: []
     })
     const { isDraggingUp, isDraggingDown, onDragStart, onDragOver, onDrop, draggedCardIndex } = useDraggable([routine, setRoutine]);
-    const {getRoutineByName, exercises, setUpdatedRoutineList, updatedRoutineList, limitMaxRoutines} = useContext(TrainingContext)
+    const { getRoutineByName, exercises, setUpdatedRoutineList, updatedRoutineList, limitMaxRoutines } = useContext(TrainingContext)
     const [searchParams] = useSearchParams();
 
 
     function saveRoutine(routine) {
         if (!routine.routine_name) {
-            alert('Please enter a name for the routine before saving.')
+            alert('Please enter a name for the routine before saving.');
             return;
         }
-        if (updatedRoutineList.length < limitMaxRoutines) {
-            setUpdatedRoutineList([...updatedRoutineList, routine])
-            navigate('/routines')
-        }
+
+        setUpdatedRoutineList(oldList => {
+
+            const exists = oldList.some(r => r.id === routine.id);
+
+            if (exists) {
+
+                return oldList.map(r => r.id === routine.id ? routine : r);
+            }
+
+            return [...oldList, { ...routine, id: Date.now() }];
+        });
+
+        navigate('/routines');
     }
+
 
     function getExercise(exerciseName){
         return routine.exercises.find((exercise) => exercise.exercise_name === exerciseName)
@@ -69,9 +81,13 @@ export default function CreateRoutine(){
         const routineQueryName = searchParams.get('name');
 
         if (routineQueryName) {
-            const foundRoutine = getRoutineByName(searchParams.get('name'));
+            const foundRoutine = getRoutineByName(routineQueryName);
 
             if (foundRoutine) {
+
+                if (!foundRoutine.id) {
+                    foundRoutine.id = Date.now();
+                }
                 setRoutine(foundRoutine);
             }
         }
