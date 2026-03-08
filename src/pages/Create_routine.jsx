@@ -62,6 +62,13 @@ export default function CreateRoutine(){
         }))
     }
 
+    function deleteExercise(exerciseName) {
+        setRoutine(oldRoutine => ({
+            ...oldRoutine,
+            exercises: oldRoutine.exercises.filter(exercise => exercise.exercise_name !== exerciseName)
+        }))
+    }
+
     function addSet(exerciseName) {
         setRoutine(oldRoutine => {
 
@@ -126,7 +133,7 @@ export default function CreateRoutine(){
                                         <div key={newExercise.exercise_name}>
                                             <div className={`bg-white h-[3px] w-full mb-[0.25rem] ${isDraggingUp(index) ? '' : 'hidden'}`}/>
                                             <div draggable='true' className={`${draggedCardIndex === index? 'opacity-25' : 'opacity-100'}`} onDragStart={() => onDragStart(index)} onDragOver={(e) => onDragOver(e, index)}>
-                                                <SetsWidget exercise={newExercise} onAddSet={() => addSet(newExercise.exercise_name)}>
+                                                <SetsWidget exercise={newExercise} onAddSet={() => addSet(newExercise.exercise_name)} onDeleteExercise={() => deleteExercise(newExercise.exercise_name)}>
                                                     {newExercise.sets.map((set, index) => <RowSet key={`${set}-${index}`} num={index +1} reps={set.reps} kg={set.KG}/>)}
                                                 </SetsWidget>
 

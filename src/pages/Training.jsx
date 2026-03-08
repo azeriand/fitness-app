@@ -47,7 +47,6 @@ export default function Training(){
             <div className='flex justify-between mt-[0.5rem]'>
                 <TimeController cardAppearance='mate'/>
                 <div className='flex gap-x-[0.5rem]'>
-                    <Button label='View Routine' onClick={() => navigate('/edit-routine')}/>
                     <Button label='Finish Training' color='green' onClick={() => {finish()}}/>
                     <Button label='Discard Training' color='red' onClick={discard}/>
                 </div>
