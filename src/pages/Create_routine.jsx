@@ -33,11 +33,22 @@ export default function CreateRoutine(){
             alert('Please enter a name for the routine before saving.');
             return;
         }
-        if (updatedRoutineList.length < limitMaxRoutines) {
-            setUpdatedRoutineList([...updatedRoutineList, routine])
-            navigate('/routines')
-        }
+
+        setUpdatedRoutineList(oldList => {
+
+            const exists = oldList.some(r => r.id === routine.id);
+
+            if (exists) {
+
+                return oldList.map(r => r.id === routine.id ? routine : r);
+            }
+
+            return [...oldList, { ...routine, id: Date.now() }];
+        });
+
+        navigate('/routines');
     }
+
 
     function getExercise(exerciseName){
         return routine.exercises.find((exercise) => exercise.exercise_name === exerciseName)
