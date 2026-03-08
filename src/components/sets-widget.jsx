@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { TbDotsVertical } from "react-icons/tb";
+import { MdDeleteOutline } from "react-icons/md";
 import { Button, Card, Avatar, Input, SectionName, Dropdown} from 'azeriand-library'
 import ColorBadge from './color-badge';
 import { SettingsContext } from './settings-context';
@@ -21,9 +22,9 @@ export default function SetsWidget({children, exercise, onAddSet}){
                         <ColorBadge label={exercise.muscle_type}/>
                     </div>
                 </div>
-                <div className='flex'>
+                <div className='flex gap-x-4'>
                     <Dropdown buttonText={exercise.technique} options={exercise.techniques}/>
-                    <Button icon={<TbDotsVertical/>} appearance='ghost'/>
+                    <Button icon={<MdDeleteOutline size={24}/>} appearance='outlined' onClick={onDeleteExercise}/>
                 </div>
                 
             </div>
