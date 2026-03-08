@@ -69,7 +69,6 @@ export default function TrainingContextComponent({ children }) {
 
     function startTraining(){
         if (intervalRef.current) return;
-        removeTimer();
         setTrainingData(({state, ...oldTrainingData}) => ({...oldTrainingData, state: 'RUNNING'}))
         intervalRef.current = setInterval(updateTimer, 1000);
     }
