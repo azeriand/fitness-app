@@ -4,8 +4,8 @@ import ColorBadge from './color-badge';
 import ExerciseCard from './exercise-card'
 import Goku from '../assets/goku2.jpg'
 import dayjs from 'dayjs'
-import { FaDumbbell } from 'react-icons/fa'
-import { IoTimerOutline } from "react-icons/io5";
+import { FaWeightHanging } from "react-icons/fa6";
+import { RxLapTimer } from "react-icons/rx";
 import { useState, useEffect, useContext } from 'react'
 import { SettingsContext } from './settings-context';
 
@@ -55,8 +55,8 @@ export default function RoutineHistory({routine, className}){
                         </div>
                     </div>
                     <div className='flex items-center justify-start md:!justify-end gap-x-2 mt-[1rem] md:!mt-0'>
-                        <Input className='rounded-sm w-34' centerText value={formatTime(routine.duration)} icon={<IoTimerOutline/>} disabled/>
-                        <Input className='rounded-sm w-34' centerText value={calculateToIbs(routine.volume) + ` ${defaultWeightUnit}`} icon={<FaDumbbell/>} disabled/>
+                        <Input className='rounded-md w-34' centerText value={formatTime(routine.duration)} icon={<RxLapTimer/>} disabled/>
+                        <Input className='rounded-md w-34' centerText value={calculateToIbs(routine.volume) + ` ${defaultWeightUnit}`} icon={<FaWeightHanging/>} disabled/>
                     </div>
                 </div>
 
