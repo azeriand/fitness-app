@@ -10,6 +10,7 @@ export default function SettingsContextComponent({ children }) {
 
     const [defaultStreak, setDefaultStreak] = useState(3);
     const [currentStreak, setCurrentStreak] = useState(0);
+    const [defaultUserName, setDefaultUserName] = useState('Azeriand');
 
     // Use useLocalStorage for defaultWeightUnit to persist changes
     const [defaultWeightUnit, setDefaultWeightUnit] = useLocalStorage('weightUnit', 'KG');
@@ -62,7 +63,9 @@ export default function SettingsContextComponent({ children }) {
             setCurrentStreak,
             defaultWeightUnit,
             setDefaultWeightUnit,
-            calculateToIbs
+            calculateToIbs,
+            defaultUserName,
+            setDefaultUserName
         }}>
             {children}
         </SettingsContext.Provider>
