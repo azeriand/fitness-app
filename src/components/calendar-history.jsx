@@ -2,10 +2,12 @@ import { Calendar, Card, SectionName } from 'azeriand-library'
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { ExerciseContext } from './exercise-context';
 import { TrainingContext } from './training-context';
+import { SettingsContext } from './settings-context';
 
 export function CalendarHistory() {
   
-  const {history} = useContext(TrainingContext)
+  const {history,} = useContext(TrainingContext)
+  const {defaultWeightUnit, calculateToIbs} = useContext(SettingsContext)
   const {filterSelected} = useContext(ExerciseContext)
   const [filteredExercises, setFilteredExercises] = useState([]);
   // Initialize with current month
@@ -96,7 +98,7 @@ export function CalendarHistory() {
       <SectionName section="Training History" className="text-lg mb-[1rem]"/>
         <div className="flex gap-[1rem] w-full h-full">
             <div className="flex-1">
-                <Card title="Training Calendar" className='h-full'>
+                <Card noPadding title="Training Calendar" className='h-full p-4'>
                     <Calendar 
                         selectedDates={trainedDays}
                         onMonthChange={handleMonthChange}
@@ -111,17 +113,17 @@ export function CalendarHistory() {
                 <Card title={`Training Stats - ${selectedMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`}>
                     <div className="space-y-4">
                         <Card noPadding className='p-2'>
-                            <div className="flex justify-between items-center font-medium text-gray-300">
+                            <div className="grid grid-cols-3 justify-around flex-wrap gap-x-4 items-center text-sm font-medium text-gray-300">
                                 <span>Date</span>
-                                <span>Day RM (kg)</span>
-                                <span>Volume (kg)</span>
+                                <span>Day RM</span>
+                                <span>Volume</span>
                             </div>
                         </Card>
-                        <div className="space-y-2 max-h-72 overflow-y-auto">
+                        <div className="space-y-2 max-h-72 flex flex-col overflow-y-auto">
                             {dayStats.length > 0 ? (
                                 dayStats.map((day) => (
-                                    <div key={day.date} className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-700/20 border border-gray-600/20 transition-colors">
-                                        <span className="text-sm">
+                                    <div key={day.date} className="grid grid-cols-3 rounded-lg hover:bg-gray-700/20 border border-gray-600/20 transition-colors">
+                                        <span className="text-xs font-bold">
                                             {new Date(day.date).toLocaleDateString('en-US', {
                                                 month: 'short',
                                                 day: 'numeric',
@@ -129,10 +131,10 @@ export function CalendarHistory() {
                                             })}
                                         </span>
                                         <span className="text-sm font-medium">
-                                            {day.dayRM > 0 ? `${day.dayRM} kg` : '-'}
+                                            {day.dayRM > 0 ? `${calculateToIbs(day.dayRM)} ${defaultWeightUnit}` : '-'}
                                         </span>
                                         <span className="text-sm">
-                                            {day.volume > 0 ? day.volume.toLocaleString() : '-'}
+                                            {day.volume > 0 ? `${calculateToIbs(day.volume)} ${defaultWeightUnit}` : '-'}
                                         </span>
                                     </div>
                                 ))

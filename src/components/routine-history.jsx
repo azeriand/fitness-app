@@ -12,7 +12,7 @@ import { SettingsContext } from './settings-context';
 
 export default function RoutineHistory({routine, className}){
 
-    const { defaultWeightUnit, calculateToIbs } = useContext(SettingsContext);
+    const { defaultWeightUnit, calculateToIbs, defaultUserName } = useContext(SettingsContext);
     const [cardExpanded, setCardExpanded] = useState(false);
 
     const onButtonClicked = () => {
@@ -50,7 +50,7 @@ export default function RoutineHistory({routine, className}){
                     <div className='flex items-center gap-x-[1rem]'>
                         <Avatar src={Goku} className='rounded-md'/>
                         <div className='aside-avatar'>
-                            <p className='p-0 m-0 text-start text-purple-100'>{routine.user}</p>
+                            <p className='p-0 m-0 text-start font-bold text-purple-100'>{defaultUserName}</p>
                             <p className='p-0 m-0 text-start text-[0.75rem] text-zinc-400'>{dayjs(routine.day).format('dddd')}</p>
                         </div>
                     </div>
