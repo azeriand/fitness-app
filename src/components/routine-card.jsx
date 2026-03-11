@@ -7,6 +7,7 @@ import { Button, Card, Timeline, TlListItem } from 'azeriand-library'
 import ColorBadge from './color-badge';
 import { FaPlay } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
+import { MdDeleteOutline } from "react-icons/md";
 
 
 export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
@@ -48,42 +49,51 @@ export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
               </div>
             </div>
 
-            <div className='col-span-4 flex justify-end align-top'>
-              <Button
-                onClick={editRoutine}
-                appearance="outlined"
-                icon={<MdEdit size={20}/>}
-                position="right"
-              />
-              
-            </div>
-          </div>
-          <div className="routine-card-ul">
-            <Timeline style={trainingWidgetStyle} faded>
-              {exerciseList.map((exercise, index) => (
-                <TlListItem
-                  key={index}
-                  label={exercise.exercise_name}
-                  badge={<ColorBadge label={exercise.muscle_type} size="sm" />}
-                />
-              ))}
-            </Timeline>
-          </div>
-          <Button
-            appearance="mate"
-            color="purple"
-            intensity={600}
-            dark={false}
-            label="Start"
-            icon={<FaPlay />}
-            position="right"
-            className="!text-white w-full"
-            onClick={() => {
-              handleStart();
-            }}
+          <div className='col-span-4 flex gap-x-1 justify-end align-top'>
+
+            <Button
+              onClick={editRoutine}
+              appearance="outlined"
+              icon={<MdEdit size={20}/>}
+              position="right"
             />
+
+            <Button
+              color='red'
+              onClick={() => deleteRoutine(id)}
+              appearance="outlined"
+              icon={<MdDeleteOutline size={20}/>}
+              position="right"
+            />
+          </div>
+
         </div>
-        
-      </Card>
-    );
+        <div className="routine-card-ul">
+          <Timeline style={trainingWidgetStyle} faded>
+            {exerciseList.map((exercise, index) => (
+              <TlListItem
+                key={index}
+                label={exercise.exercise_name}
+                badge={<ColorBadge label={exercise.muscle_type} size="sm" />}
+              />
+            ))}
+          </Timeline>
+        </div>
+        <Button
+          appearance="mate"
+          color="purple"
+          intensity={600}
+          dark={false}
+          label="Start"
+          icon={<FaPlay />}
+          position="right"
+          className="!text-white w-full"
+          onClick={() => {
+            handleStart();
+          }}
+          />
+      </div>
+      
+    </Card>
+  );
 }
