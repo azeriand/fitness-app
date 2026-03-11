@@ -10,44 +10,48 @@ import { MdEdit } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
 
 
-export default function RoutineCard({exercises, label, timeAgo, ...cardProps}){
+export default function RoutineCard({id, exercises, label, timeAgo, ...cardProps}){
 
-    const exerciseList = useGetExercises(exercises.map((exercise, index) => exercise.exercise_name))
-    const navigate = useNavigate()
-    const { updatedRoutineList, setUpdatedRoutineList, setTrainingData } = useContext(TrainingContext)
+  const exerciseList = useGetExercises(exercises.map((exercise, index) => exercise.exercise_name))
+  const navigate = useNavigate()
+  const { updatedRoutineList, setUpdatedRoutineList, setTrainingData } = useContext(TrainingContext)
 
-    const trainingWidgetStyle = {
-        height: '4.5rem',
-    }
+  const trainingWidgetStyle = {
+    height: '4.5rem',
+  }
 
-    const currentRoutine = updatedRoutineList.find((routine) => routine.routine_name === label)
+  const currentRoutine = updatedRoutineList.find((routine) => routine.routine_name === label)
 
-    function handleStart(){
-        navigate('/training')
-        setTrainingData({...currentRoutine, state: 'RUNNING'})
-    }
+  function handleStart(){
+    navigate('/training')
+    setTrainingData({...currentRoutine, state: 'RUNNING'})
+  }
 
-    function editRoutine() {
-      navigate('/edit-routine?name=' + currentRoutine.routine_name)
-    }
+  function editRoutine() {
+    navigate('/edit-routine?name=' + currentRoutine.routine_name)
+  }
 
-    return (
-      <Card
-        intensity={900}
-        blur={40}
-        color="zinc"
-        noBlur
-        noPadding
-        {...cardProps}
-      >
-        <div className="p-[1rem] flex flex-col gap-[1rem]">
-          <div className="grid grid-cols-12 items-center gap-[1rem] justify-between align-center">
-            <div className="text-start col-span-8">
-              <div className="font-bold text-[1.25rem] truncate">{label}</div>
-              <div className="rc-timeago text-[0.75rem] text-zinc-400">
-                {timeAgo}
-              </div>
+  function deleteRoutine(id) {
+    setUpdatedRoutineList((prev) => prev.filter((routine) => routine.id !== id));
+  }
+  
+  return (
+    <Card
+      intensity={900}
+      blur={40}
+      color="zinc"
+      noBlur
+      noPadding
+      {...cardProps}
+    >
+      <div className="p-[1rem] flex flex-col gap-[1rem]">
+        <div className="grid grid-cols-12 items-center gap-[1rem] justify-between align-center">
+          <div className="text-start col-span-8">
+            <div className="font-bold text-[1.25rem] truncate">{label}</div>
+            <div className="rc-timeago text-[0.75rem] text-zinc-400">
+              {timeAgo}
             </div>
+          </div>
 
           <div className='col-span-4 flex gap-x-1 justify-end align-top'>
 
